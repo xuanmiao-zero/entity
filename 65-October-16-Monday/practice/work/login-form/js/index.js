@@ -25,35 +25,8 @@ window.onload = function () {
             this.okNumber = 0;
 
             /*各输入框的正则表达式*/
-            this.regObj = {
-                phone:/^1(3|4|5|7|8)[0-9]\d{8}$/,
-                qq:/^[1-9]\d{4,13}$/,
-                birthday: this.birthdayReg(),
-                email:/^([\w-_]+(?:\.[\w-_]+)*)@((?:[a-z0-9]+(?:-[a-zA-Z0-9]+)*)+\.[a-z]{2,6})$/i,
-                password:/^[0-9A-Za-z!@#$%^&*]{6,16}$/
-        };
+            this.regObj = regObj;
             this.inputChangeExec();
-        }
-
-        birthdayReg(){
-            let date = new Date();
-            /**
-             * 判断闰年函数
-             * @param  {number} year 要判断的年份
-             * @return {bool} 返回布尔值
-             *
-             * 其实只要满足下面几个条件即可、
-             * 1.普通年能被4整除且不能被100整除的为闰年。如2004年就是闰年,1900年不是闰年
-             * 2.世纪年能被400整除的是闰年。如2000年是闰年，1900年不是闰年
-             */
-            function leapYear(year) {
-                return !(year % (year % 100 ? 4 : 400));
-            }
-
-            if(this.id === "qq"){
-                this.
-            }
-            return /^(19\d{2}|200\d|201[0-7])-(1[0-2]|0?[1-9])-(0?[1-9]|[1-2][0-9]|3[0-1])$/;
         }
 
         /*焦点切换时切换目标输入框*/
@@ -69,7 +42,8 @@ window.onload = function () {
 
         /*判断输入字符是否合法并改变输入框状态*/
         inputChange() {
-            if(!this.regObj[this.id].test(this.ele.value)){
+            console.log(this[regObj]);
+            if(!this.regObj[this.id].test(this.ele.value) && this.ele.value !== ""){
                 this.ele.className = "form-control warn";
                 this.ele.checkout = "false";
             }else{
@@ -93,6 +67,36 @@ window.onload = function () {
             }else{
                 signUp.setAttribute("disabled","disabled");
             }
+        }
+    }
+
+
+    class regObj {
+        constructor(){
+            this.phone = /^1(3|4|5|7|8)[0-9]\d{8}$/;
+            this.qq = /^[1-9]\d{4,13}$/;
+            this.email=/^([\w-_]+(?:\.[\w-_]+)*)@((?:[a-z0-9]+(?:-[a-zA-Z0-9]+)*)+\.[a-z]{2,6})$/i;
+            password = /^[0-9A-Za-z!@#$%^&*]{6,16}$/;
+        }
+        birthdayReg(){
+            let date = new Date();
+            /**
+             * 判断闰年函数
+             * @param  {number} year 要判断的年份
+             * @return {bool} 返回布尔值
+             *
+             * 其实只要满足下面几个条件即可、
+             * 1.普通年能被4整除且不能被100整除的为闰年。如2004年就是闰年,1900年不是闰年
+             * 2.世纪年能被400整除的是闰年。如2000年是闰年，1900年不是闰年
+             */
+            function leapYear(year) {
+                return !(year % (year % 100 ? 4 : 400));
+            }
+
+            if(this.id === "birthday"){
+                console.log(this.id.match(/\d+/g));
+            }
+            return /^(19\d{2}|200\d|201[0-7])-(1[0-2]|0?[1-9])-(0?[1-9]|[1-2][0-9]|3[0-1])$/;
         }
     }
     new Checkout();
