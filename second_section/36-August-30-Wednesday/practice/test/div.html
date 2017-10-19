@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="轩邈">
+    <meta name="copyright" content="轩邈">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <!-- 网站SEO -->
+    <title>Title</title>
+    <meta name="keywords" content="轩邈 xuanmiao xuanmiao.com">
+    <meta name="description" content="轩邈 | 猎奇蜗牛">
+    <!-- 标题栏logo图标 -->
+    <link rel="icon" href="" type="image/x-icon">
+    <!-- 收藏夹logo图标 -->
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <style>
+        h2{
+            height: 30px;
+        }
+        li{
+            list-style: none;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>
+            <h2>+列表一</h2>
+            <ul>
+                <li>123</li>
+                <li>123</li>
+                <li>123</li>
+            </ul>
+        </li>
+        <li>
+            <h2>+列表二</h2>
+            <ul>
+                <li>123</li>
+                <li>123</li>
+                <li>123</li>
+            </ul>
+        </li>
+        <li>
+            <h2>+列表三</h2>
+            <ul>
+                <li>123</li>
+                <li>123</li>
+                <li>123</li>
+            </ul>
+        </li>
+    </ul>
+
+<script>
+    h2s = document.querySelectorAll('h2');
+    for( var i = 0; i < h2s.length; i++){
+        h2s[i].index = i;
+        h2s[i].isShow = true;
+
+        h2s[i].onclick = function () {
+            if(this.isShow){
+                console.log(getComputedStyle(this)['height']);
+                h2s[this.index].parentNode.style.height = "50px";
+                this.isShow =false;
+            }else{
+                h2s[this.index].parentNode.style.height = "auto";
+                this.isShow = true;
+            }
+        }
+    }
+</script>
+</body>
+</html>

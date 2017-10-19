@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="轩邈">
+    <meta name="copyright" content="轩邈">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <!-- 网站SEO -->
+    <title>Title</title>
+    <meta name="keywords" content="轩邈 xuanmiao xuanmiao.com">
+    <meta name="description" content="轩邈 | 猎奇蜗牛">
+    <!-- 标题栏logo图标 -->
+    <link rel="icon" href="" type="image/x-icon">
+    <!-- 收藏夹logo图标 -->
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <style>
+        body{
+            height: 1000px;
+        }
+        div{
+            width: 300px;
+            height: 300px;
+            border: 1px solid #000;
+            margin: 0 80px;
+            /*padding: 0 20px;*/
+            overflow: auto;
+        }
+    </style>
+</head>
+<body style="margin: 0;">
+    <div id="box1">
+
+        <div id="box2" style="position: relative; border:10px solid #000; padding: 5px;">1
+            <div id="box3" style="border:1px solid yellow; padding: 1px;">
+
+            </div>
+        </div>
+    </div>
+
+<script>
+    var box1 =  document.getElementById('box1');
+    var box2 =  document.getElementById('box2');
+    var box3 =  document.getElementById('box3');
+    box3.offsetParent.style.backgroundColor = "blue";
+//    offset
+//    console.log(box3.offsetParent);
+//    console.log(box3.offsetLeft);
+//    console.log(box3.offsetTop);
+//    console.log(box1.offsetLeft);
+
+//    console.log(box3.offsetWidth);
+//    console.log(box3.offsetHeight);
+
+//    console.log(document.documentElement.offsetWidth);
+//    console.log(document.documentElement.offsetHeight);
+
+
+
+
+//    client
+//    console.log(box3.clientLeft);
+//    console.log(box2.clientLeft);
+//    console.log(box3.clientWidth);
+
+//    scroll
+//    box1.scrollTop = "100";
+//    console.log(document.body.scrollTop);
+//    console.log(box1.scrollTop);
+
+
+</script>
+</body>
+</html>

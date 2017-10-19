@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>select</title>
+    <script>
+        window.onload=function(){
+            var input = document.getElementById('text');
+            var select = document.getElementById('select1');
+            var btn1 = document.getElementById('btn1');
+            btn1.onclick =function(){
+                alert(input.value　+　'在' +　select.value);
+            };
+
+        };
+    </script>
+</head>
+<body>
+    <input id="text" type="text">
+    <select name="" id="select1">
+        <option value="北京">北京</option>
+        <option value="上海">上海</option>
+        <option value="杭州">杭州</option>
+    </select>
+    <input id = "btn1" type="button" value="按钮" />
+</body>
+</html>

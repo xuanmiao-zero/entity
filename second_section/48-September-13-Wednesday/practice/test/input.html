@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width">
+    <title>Demo Page</title>
+    <style>
+
+        *{
+            padding: 0;
+            margin: 0;
+            border: none;
+            font-size: 0;
+            vertical-align: top;
+        }
+
+        .btn-box {
+            margin: 30px auto;
+            border: 1px dashed #0094ff;
+            heihgt:40px;
+            width:1000px;
+        }
+
+        .standard-btn {
+            display: inline-block;
+            border: none;
+            /*padding: 5px 10px;*/
+            margin:0;
+            height: 40px;
+            width: 100px;
+            text-align: center;
+            line-height: 40px;
+            font-size:18px;
+
+            /*display: inline-block;*/
+            /*width: 100px;*/
+            /*height: 40px;*/
+            /*background-color: red;*/
+            /*text-align: center;*/
+            /*line-height: 40px;*/
+            /*margin-right: 10px;*/
+            /*font-size: 16px;*/
+
+            /*font-size:18px;*/
+
+            /*height:40px;*/
+            /*-moz-height:inherit;*/
+            /*-moz-line-height:40px;*/
+
+            /*!*font: 20px/30px "Microsoft YaHei", sans-erif;*!*/
+            /*vertical-align: middle;*/
+            text-decoration: none;
+
+            color: white;
+            background-color: #fe532d;
+        }
+
+        /*Firefox在私有属性里面额外设置了边框和留白，去掉即可。*/
+        button::-moz-focus-inner,
+        input[type="button"]::-moz-focus-inner {
+            border: none;
+        }
+
+    </style>
+</head>
+<body>
+<div class="btn-box">
+    <input class="standard-btn" type="text" placeholder="Input Text Tag">
+    <div class="standard-btn">Div Tag</div>
+    <a href="#" class="standard-btn">Anchor Tag</a>
+    <input class="standard-btn" type="button" value="Input Button Tag" >
+    <span class="standard-btn">Span Tag Button</span>
+    <button class="standard-btn">Normal Button Tag</button>
+</div>
+</body>
+</html>

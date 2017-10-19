@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="轩邈">
+    <meta name="copyright" content="轩邈">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <!-- 网站SEO -->
+    <title>冒泡事件</title>
+    <meta name="keywords" content="轩邈 xuanmiao xuanmiao.com">
+    <meta name="description" content="轩邈 | 猎奇蜗牛">
+    <style>
+        body{
+            text-align: center;
+        }
+        #div1{
+            width:800px;
+            height: 800px;
+            background-color: #00a8e0;
+        }
+
+        #div2{
+            width: 700px;
+            height: 700px;
+            background: #fff58b;
+        }
+
+        #div3{
+            width: 600px;
+            height: 600px;
+            background-color: #00AA88;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <div id="div2">
+            <div id="div3"></div>
+        </div>
+    </div>
+
+<script>
+    var divs = document.getElementsByTagName('div');
+    divs[0].onclick = function (ev) {
+        console.log(this.id, ev.target.id)
+    };
+    divs[1].onclick = function (ev) {
+        console.log(this.id, ev.target.id)
+    };
+    divs[2].onclick = function (ev) {
+        console.log(this.id, ev.target.id)
+    };
+</script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+body{
+	margin: 0;
+}
+a{
+	text-decoration: none;
+	color: #c5c7c4;
+	font: 14px "微软雅黑";
+}
+.clearfix{
+	zoom: 1;
+}
+.clearfix:after{
+	content: "";
+	display: block;
+	clear: both;
+}
+.sidebar{
+	width: 233px;
+	height: 588px;
+	background-color: #2c2c2c;
+	margin: 50px auto;
+}
+.sidebar .select{
+	height: 169px;
+}
+.sidebar .select a{
+	float: left;
+	width: 233px;
+	height: 33px;
+	border-bottom: 1px solid #313131;
+}
+.sidebar .select a{
+	font: 14px "微软雅黑";
+}
+.sidebar .select a .id{
+	margin-left: 18px;
+	line-height: 14px;
+	margin-top: 9px;
+	float: left;
+}
+.sidebar .select a img{
+	float: left;
+	margin: 6px 0 0 27px;
+}
+.sidebar .select a:hover{
+	background-color: #ff6600;
+}
+.sidebar .colume{
+	height: 387px;
+	padding: 5px 10px  0 17px;
+}
+.sidebar .colume .head{
+	height: 28px;
+	border-bottom: 2px solid #FF6600;
+}
+.sidebar .colume .head a{
+	width: 87px;
+	height: 18px;
+	float: left;
+	padding: 7px 0 3px 16px;
+}
+.sidebar .colume .head .col{
+	background-color: #FF6600;
+}
+.sidebar .colume .head a img{
+	margin-right: 13px;
+	float: left;
+}
+.sidebar .colume .head .name{
+	height: 18px;
+	float: left;
+	line-height: 18px;
+}
+.sidebar .colume .channel{
+	height: 357px;
+}
+.hot_game,.indoor_game,.move_game{
+	margin: 14px 0 4px;
+}
+.sidebar .colume .hot_game{
+	height: 129px;
+}
+.sidebar .colume .channel_head{
+	background: url(../img/border.png) no-repeat;
+}
+.sidebar .colume .channel_head a{
+	float: left;
+	display: block;
+	padding-left: 15px;
+	width: 191px;
+	height: 14px;
+	line-height: 14px;
+}
+.sidebar .colume .channel_content{
+	margin:7px -4px 0 0;
+}
+.sidebar .colume .channel_content .mod{
+	float: left;
+	height: 24px;
+	width: 66px;
+	line-height: 24px;
+	background-color: #3f3f3f;
+	text-align: center;
+	margin: 0 4px 4px 0;
+	font-size: 12px;
+}
+.sidebar .colume .indoor_game .channel_content{
+	height: 81px;
+}
+.sidebar .colume .channel_content .mod .all{
+	color: #FF6600;
+}
+.sidebar .colume .channel_content .mod:hover{
+	background-color: #FF6600;
+	color: white;
+}
+.sidebar .colume .channel_content .mod .all:hover{
+	color: white;
+}
+.sidebar .colume .channel_head a:hover{
+	color: #ff6600;
+}
+.sidebar .foot{
+	float: left;
+	margin-left: 35px;
+	margin-top: 10px;
+}
+.sidebar .foot a{
+	font: 12px "微软雅黑";
+	float: left;
+	margin-right: 8px;
+}

@@ -1,0 +1,154 @@
+.box{
+	width:1263px;
+	height:6644px;
+	margin: 0 auto;
+}
+.top{
+	width:1191px;
+	height:42px;
+	background: url(../img/top-bj.jpg) repeat-x;
+	padding-top: 18px;
+	padding-left: 72px;
+}
+.top-left{
+	float: left;
+}
+.top-middle li{
+	margin-right: 30px;
+	float: left;
+	line-height: 17px;
+}
+.top-middle{
+	margin-left: 475px;
+}
+.top-middle li a{
+	color:white;
+}
+.top-right-bj{
+	width:1px;
+	height:13px;
+	background: url(../img/shu.jpg) no-repeat;
+	float: left;
+	margin-right: 39px;
+	text-align: top;
+	margin-left: 43px;
+}
+.top-right{
+	float: left;
+}
+.top-right span{
+	display: inline-block;
+	width:1px;
+	height:11px;
+	background: url(../img/top-you.jpg) no-repeat;
+	margin-left: 9px;
+	margin-right: 9px;
+	line-height: 16px;
+	font-size: 11px;
+}
+.top-right a{
+	color:white;
+}
+.top2{
+	width:1263px;
+	height:40px;
+	background: url(../img/top2-bj.jpg) repeat-x;
+}
+.top2-left .bj{
+	float: left;
+	background: url(../img/shouye.jpg) no-repeat 72px 14px;
+}
+.top2-left .shouye{
+	float: left;
+	margin-left: 92px;
+	margin-top: 9px;
+	line-height: 24px;
+	color:black;
+}
+.top2-right{
+	float: left;
+	margin-left: 850px;
+	margin-top: 8px;
+}
+.content{
+	width:1120px;
+	height:6413px;
+	background: #f5f5f5;
+	padding-top: 19px;
+	padding-left: 72px;
+	padding-right: 71px;
+	padding-bottom: 111px;
+}
+.dec1{
+	width:1118px;
+	height:458px;
+	background: pink;
+	border:1px solid #d5d2d1;
+	border-radius: 8px;
+	margin-bottom: 18px;
+}
+h3 span{
+	font-size: 33px;
+	line-height: 58px;
+}
+a{
+	color:black;
+}
+h3 a{
+	display: inline-block;
+	font-family: arial;
+	font-size: 28px;
+	line-height: 58px;
+	margin-left: 270px;
+	margin-top: 67px;
+}
+.dec1 ul{
+	margin-left: 270px;
+}
+.dec1 ul li{
+	float: left;
+}
+.xunhuan{
+	font-size: 14px;
+	line-height: 26px;
+	margin-right: 39px;
+	color:#949293;
+	vertical-align: top;
+}
+.chongdian{
+	font-size: 14px;
+	line-height: 30px;
+	margin-right: 49px;
+	color:#949293;
+	vertical-align: top;
+}
+.xieyi{
+	font-size: 14px;
+	line-height: 30px;
+	color:#949293;
+	vertical-align: top;
+}
+.gongneng img{
+	margin-right: 10px;
+}
+.money{
+	font-size: 27px;
+	line-height: 30px;
+	color:#d6192f;
+	font-weight: bold;
+	margin-left: 515px;
+	margin-bottom: 43px;
+}
+.dianbao{
+	margin-left: 256px;
+}
+.dec2{
+	width:1118px;
+	height:2819px;
+}
+.dec2-left{
+	width:786px;
+	height:2819px;
+	border:1px solid #d9d9d9;
+	border-radius:9px;
+}

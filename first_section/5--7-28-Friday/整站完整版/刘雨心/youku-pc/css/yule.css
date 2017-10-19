@@ -1,0 +1,442 @@
+/*内容*/
+
+.yule .con_top{
+	margin-bottom: 33px;
+}
+
+.yule .con_left{
+	width: 860px;
+	float: left;
+}
+
+.yule .con_right{
+	width: 310px;
+	float: right;
+	overflow: hidden;
+}
+
+.yule .main_ad{
+	margin-bottom: 33px;
+}
+
+.yule .main_ad .ad_btns{
+	position: absolute;
+	left: 375px;
+	bottom: 25px;
+	z-index: 1;
+}
+
+.yule .channel_title{
+	font: 26px/66px "微软雅黑";
+	color: #909090;
+}
+
+.yule .chan_head_icon{
+	margin-top: 28px;
+}
+
+.yule .channel_con{
+	margin-right: -20px;
+	margin-bottom: -20px;
+}
+
+.yule .channel_con li{
+	float: left;
+	margin-right: 20px;
+	margin-bottom: 20px;
+}
+
+.yule .dingyue{
+	font: 13px/20px "微软雅黑";
+	width: 155px;
+	margin-left: 45px;
+}
+
+.yule .mr0{
+	margin-right: 0;
+}
+
+.yule .dingyue a{
+	color: #3399e0;
+	float: left;
+}
+
+.yule .dingyue span{
+	color: #909090;
+	float: right;
+}
+
+.yule .yu_icon{
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.yule .con_mod{
+	width: 200px;
+}
+
+.yule .con_mod p{
+	margin-left: 5px;
+}
+
+.yule .play_icon{
+	margin-right: 8px;
+	background-image: url(../img/sprit.png);
+	background-position: -54px -127px;
+	width: 12px;
+	height: 12px;
+}
+
+.yule .pinglun_icon{
+	margin-right: 8px;
+	background-image: url(../img/sprit.png);
+	background-position: -54px -139px;
+	width: 12px;
+	height: 12px;
+}
+
+.yule .mod_play span{
+	float: left;
+}
+
+.yule .mod_title{
+	font: 14px/32px "微软雅黑";
+}
+
+.yule .mod_play{
+	font: 12px/16px "微软雅黑";
+	color: #909090;
+}
+
+.yule .play_text{
+	margin-right: 10px;
+}
+
+.yule .baoliao{
+	margin-top: 33px;
+}
+
+.yule .chan_head_text{
+	font: 12px/20px "微软雅黑";
+	margin-top: 15px;
+}
+
+.yule .baoliao .yu_icon,.yule .zuiai .yu_icon{
+	position: absolute;
+	left: 3px;
+	top: 95px;
+}
+
+.yule .baoliao .dingyue{
+	margin-left: 42px;
+}
+
+.yule .baoliao_con{
+	margin-right: -20px;
+}
+
+.yule .baoliao_con li{
+	float: left;
+	margin-right: 20px;
+}
+
+.yule .mod_text{
+	width: 190px;
+}
+
+.yule .chupin{
+	margin-top: 33px;
+}
+
+.yule .mod_info{
+	font: 12px/18px "微软雅黑";
+	color: #bbbbbb;
+	float: left;
+}
+
+.yule .mod_date{
+	float: right;
+	font: 13px/18px "微软雅黑";
+	color: white;
+}
+
+.yule .chupin_con{
+	margin-right: -20px;
+	margin-bottom: -16px;
+}
+
+.yule .chupin_con li{
+	float: left;
+	margin-right: 20px;
+	margin-bottom: 16px;
+}
+
+.yule .chupinad{
+	padding-top: 4px;
+}
+
+.yule .renren{
+	margin-top: 33px;
+}
+
+.yule .renren .con_mod,.yule .renren .channel_con{
+	margin-bottom: 0;
+}
+
+.yule .mingxing{
+	margin-top: 33px;
+}
+
+.yule .renren .con_mod,.yule .renren .channel_con{
+	margin-bottom: 0;
+}
+
+.yule .hanban,.yule .yingshi,.yule .yinyue{
+	margin-top: 33px;
+}
+
+.yule .yingshi_mod .play_icon,.yule .yingshi_mod .pinglun_icon{
+	margin-right: 5px;
+}
+
+.yule .yingshi_mod .mod_play{
+	margin-top: 2px;
+}
+
+.yule .yingshi_con{
+	margin-right: -20px;
+	margin-bottom: -20px;
+}
+
+.yule .yingshi_con li{
+	float: left;
+	margin-right: 20px;
+	margin-bottom: 20px;
+}
+
+.yule .foot_bg{
+	background-color: white;
+}
+
+.yule .zuiai{
+	margin-top: 33px;
+}
+
+.yule .zuiai_con li{
+	margin-bottom: 20px;
+	margin-right: 20px;
+	float: left;
+}
+
+.yule .zuiai_con{
+	margin-right: -20px;
+	margin-bottom: -20px;
+}
+
+.yule .zuiai_nav{
+	margin-left: 20px;
+	margin-top: 15px;
+}
+
+.yule .zuiai_nav a{
+	float: left;
+	font: 13px/30px "微软雅黑";
+	padding: 0 10px;
+}
+
+.yule .zuiai_nav .on{
+	background-color: #06a7e1;
+	color: white;
+}
+
+.yule .zuiai_nav a:hover{
+	background-color: #06a7e1;
+	color: white;
+}
+
+.yule .xinwen .channel_title{
+	line-height: 30px;
+}
+
+.yule .xinwen{
+	height: 370px;
+	margin-bottom: 33px;
+}
+
+.yule .xinwen .channel_head{
+	margin-bottom: 20px;
+}
+
+.yule .xinwen_mod .mod_title{
+	width: 160px;
+	float: left;
+	font: 13px/21px "微软雅黑";
+}
+
+.yule .xinwen_mod .mod_play{
+	float: left;
+	margin-left: 10px;
+	margin-top: 3px;
+}
+
+.yule .xinwen_con li{
+	margin-bottom: 17px;
+}
+
+.yule .xinwen_con{
+	margin-bottom: -20px;
+}
+
+.yule .no{
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.yule .paihang_con{
+	margin-bottom: -20px;
+}
+
+.yule .paihang_con li{
+	margin-bottom: 20px;
+}
+
+.yule .paihang_mod p{
+	color: #909090;
+	font: 12px/20px "微软雅黑";
+}
+
+.yule .paihang_img{
+	margin-right: 10px;
+}
+
+.yule .paihang_text a{
+	font: 13px/20px "微软雅黑";
+	width: 130px;
+	margin-right: 10px;
+}
+
+.yule .right_ad{
+	margin-top: 50px;
+}
+
+.yule .ad_text{
+	background-color: #888888;
+}
+
+.yule .ad_text a{
+	font: 12px/20px "微软雅黑";
+	color: white;
+}
+
+.yule .dashijian{
+	margin-top: 16px;
+}
+
+.yule .dashijian .xinwen_con{
+	padding-top: 4px;
+}
+
+.yule .xinwen_con li{
+	margin-bottom: 10px;
+}
+
+.yule .dashijian .xinwen_con .mb20{
+	margin-bottom: 20px;
+}
+
+.yule .zipindao{
+	margin-top: 53px;
+}
+
+.yule .zpd_con .mb10{
+	margin-bottom: 10px;
+}
+
+.yule .zpd_con .mb20{
+	margin-bottom: 20px;
+}
+
+.yule .zpd_mod a{
+	float: left;
+}
+
+.yule .zpd_icon{
+	margin-right: 5px;
+}
+
+.yule .zpd_img{
+	margin-right: 10px;
+}
+
+.yule .zpd_text{
+	font: 14px/20px "微软雅黑";
+	width: 155px;
+}
+
+.yule .name{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	font: 12px/20px "微软雅黑";
+	color: white;
+	text-align: center;
+	width: 90px;
+}
+
+.yule .mingxingpaike{
+	margin-top: 31px;
+}
+
+.yule .mxpk_con{
+	margin-right: -20px;
+	margin-bottom: -20px;
+}
+
+.yule .mxpk_con li{
+	float: left;
+	margin-right: 20px;
+	margin-bottom: 20px;
+}
+
+.yule .hanyujingxuan{
+	margin-top: 39px;
+}
+
+.yule .hy_con .mb10{
+	margin-bottom: 10px;
+}
+
+.yule .guanfangpindao{
+	margin-top: 81px;
+}
+
+.yule .gfad{
+	margin-top: 20px;
+}
+
+.yule .tebietuijian{
+	margin-top: 33px;
+}
+
+.yule .tebietuijian .mb20{
+	margin-bottom: 20px;
+}
+
+.yule .yanchuqingbao{
+	margin-top: 42px;
+}
+
+.yule .foot_bg{
+	margin-top: 100px;
+}
+
+.yule .zuiai .mod_title{
+	line-height: 21px;
+	margin-bottom: 5px;
+}
+
+.yule .zuiai .mb21{
+	margin-bottom: 41px;
+}

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>call this</title>
+    <script>
+        //使用call方法调用函数并且指定上下文的‘this’
+        function greet() {
+            var reply = [this.person, 'Is An Awesome', this.role].join(' ');
+            console.log(reply);
+        }
+        var i = {
+            person: 'Douglas Crockford', role: 'Javascript Developer'
+        };
+        greet.call(i); // Douglas Crockford Is An Awesome Javascript Developer
+    </script>
+</head>
+<body>
+
+</body>
+</html>

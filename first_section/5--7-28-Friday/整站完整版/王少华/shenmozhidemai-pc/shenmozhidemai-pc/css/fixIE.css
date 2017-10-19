@@ -1,0 +1,31 @@
+.index .content .banner{
+	margin-top: 0;
+}
+.index .lar{
+	display: none;
+}
+.index .content .party_bottom nav a{
+	color: #fff;
+}
+.index .content .party_bottom .more a{
+	color: #fff58b;
+}
+.index .content .party_bottom .guard .guard_bottom{
+	overflow: hidden;
+}
+.index .content .banner .banner_left .live_list1{
+	*overflow: hidden;
+}
+.index .content .banner .banner_left .live_list1 .fenlei li{
+	float: left;
+	*vertical-align: top;
+	font-size: 12px;
+	line-height: 23px;
+}
+.index .content .banner .banner_left .live_list1 .jiushui{
+	width: 158px;
+}
+.index .content .banner_right ul .right_none{
+	*overflow: hidden;
+	*display: inline;
+}

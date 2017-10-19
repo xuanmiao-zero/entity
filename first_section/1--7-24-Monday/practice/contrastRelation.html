@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>contrastRelation</title>
+</head>
+
+<style>
+    #modifyStyle{
+        width:200px;
+        height:200px;
+    }
+</style>
+<script>
+    window.onload=function(){
+
+        /**
+         * js基本思路
+         * 1.找元素
+         * 2.找事件
+         * 3.找方法
+         */
+
+        /**
+         * 通过ID获取元素
+         * document.getElementById();
+         */
+        var modifyStyle = document.getElementById('modifyStyle');
+        console.log(modifyStyle);
+        console.dir(modifyStyle);
+        //修改元素的样式
+        modifyStyle.onclick=function(){
+            this.style.width="200px";
+            this.style.height="200px";
+            this.style.backgroundColor = "skyblue";
+        };
+    }
+</script>
+<body>
+    <div id="modifyStyle">
+        <button>显示div</button>
+    </div>
+</body>
+
+</html>

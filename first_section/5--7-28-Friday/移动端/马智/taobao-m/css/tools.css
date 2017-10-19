@@ -1,0 +1,23 @@
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}
+.clearfix:after{
+	content: "";
+	display: block;
+	clear: both;
+}
+.tac{
+	text-align: center;
+}
+.rel{
+	position: relative;
+}
+.abs{
+	position: absolute;
+}
+.w{
+	width: 100%;
+}

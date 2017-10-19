@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--
+			email  :  电子邮箱文本框，跟普通的没什么区别
+				当输入不是邮箱的时候，验证通不过
+				移动端的键盘会有变化
+			tel   :   电话号码
+			url   :   网页的URL
+				校验规则：字母开头并且有冒号和双斜杠
+				超文本传输协议
+					http://
+					https://
+					
+				ftp://
+				samba://
+				file://
+			search  :  搜索引擎
+				chrome下输入文字后，会多出一个关闭的X
+			range  :  特定范围内的数值选择器
+			number  :  只能包含数字的输入框
+
+		-->
+	</head>
+	<body>
+		<form action="">
+			<div>
+				<label>邮箱：</label>
+				<input type="email" />
+			</div>
+			<div>
+				<label>电话：</label>
+				<input type="tel" />
+			</div>
+			<div>
+				<label>url：</label>
+				<input type="url" />
+			</div>
+			<div>
+				<label>搜索：</label>
+				<input type="search" />
+			</div>
+			<div>
+				<label>范围选择：</label>
+				<input type="range" min="1" max="6" step="2" />
+			</div>
+			<div>
+				<label>数字：</label>
+				<input type="number" />
+			</div>
+			<div>
+				<input type="submit" />
+			</div>
+		</form>
+	</body>
+</html>

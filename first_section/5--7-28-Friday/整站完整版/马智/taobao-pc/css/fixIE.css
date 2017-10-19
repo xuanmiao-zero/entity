@@ -1,0 +1,35 @@
+/*顶部,边侧定位*/
+body{
+	margin: 0;
+	overflow: auto;
+}
+.index .top_pos_bg{
+	width: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;	
+}
+.index .right_pos{
+	position: absolute;
+	right: 50px;
+	top: 500px;
+}
+/*h5标签转换*/
+header,nav,footer,section {
+	display: block;
+}
+input,select,form{
+	border:0;
+	*zoom:1;
+}
+.inbl{
+	*display:inline;
+	*zoom:1;
+}
+/*第一部分内容ul、li*/
+.index .content .nav_top_left .nav_top_left_item{
+	overflow: hidden;
+}
+span,a,h5,ul,li,dl,dd,dt,p,form,select,input{
+	overflow: hidden;
+}

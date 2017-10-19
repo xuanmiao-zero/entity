@@ -1,0 +1,66 @@
+body{
+	margin:0;
+}
+ul,li{
+	padding:0;
+	margin:0;
+	list-style:none;
+}
+a{
+	text-decoration:none;
+	color:#404040;
+}
+body{
+	font:12px "宋体";
+}
+.box{
+	width:941px;
+	height:593px;
+	border-top:1px solid #05a790;
+}
+img{
+	vertical-align:top;
+}
+.fl{
+	float:left;
+}
+.fr{
+	float:right;
+}
+.item{
+	width:234px;
+	height:295px;
+	border:1px solid #dfdedd;
+	border-top:none;
+	margin-right:-1px;
+}
+.item .pic{
+	width:200px;
+	height:200px;
+	margin:11px 17px 0 17px;
+}
+.item .text{
+	width:234px;
+	height:84px;
+	background:url(../img/dang_text.jpg);
+}
+.text a{
+	margin:0 17px 0 17px;
+}
+.text .name{
+	line-height:18px;
+	margin-top:6px;
+	display: block;
+}
+.text .money{
+	margin-top:6px;
+	width:51px;
+	height:13px;
+	display: block;
+}
+.text .orng{
+	margin-top:8px;
+	width:46px;
+	height:11px;
+	display: block;
+}

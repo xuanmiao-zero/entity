@@ -1,0 +1,772 @@
+.variety .content{
+	height:4871px;
+	border-bottom:1px solid #cccccc;
+	
+}
+.variety .content .content_one{
+	width:1180px;
+	height:398px;
+	padding-top:24px;
+	margin:0 auto;
+}
+.variety .content_one .qdtuijian_head{
+	height:46px;
+	border-bottom:2px solid #8ac025;
+}
+.variety .qdtuijian_head .qdtuijian_title{
+	width:140px;
+	height:46px;
+}
+.variety .content_ico{
+	background-image: url(../img/variety.img/content_xuebitu.png);
+	background-repeat:no-repeat;
+}
+.variety .qdtuijian_title .title_xbt{
+	width:15px;
+	height:46px;
+	background-position: 0 0;
+}
+.variety .qdtuijian_title .qdtuijian_name{
+	font-size:28px;
+	line-height:46px;
+	color:#699f00;
+	padding-left:6px;
+}
+.variety .qdtuijian_head .qdtuijian_more{
+	line-height:36px;
+	color:#699f00;
+	padding-top:10px;
+}
+.variety .qdtuijian_head .title_heizi{
+	padding-left:26px;
+	height:34px;
+	padding-top:12px;
+	
+}
+.variety .title_heizi a{
+	font-size:14px;
+	line-height:34px;
+	color:#333333;
+	padding:0 8px;
+}
+.variety .title_heizi span{
+	width:14px;
+	height:34px;
+	background-position: -19px 0;
+}
+.variety .content_one .qdtuijian_bottom{
+	height:350px;
+}
+.variety .qdtuijian_bottom .qdtuijian_left{
+	width:380px;
+	height:325px;
+	margin-top:25px;
+	position: relative;
+}
+.variety .qdtuijian_left .bg_ribo{
+	width:54px;
+	height:16px;
+	background-color: #000000;
+	position: absolute;
+	right:4px;
+	top:250px;
+	opacity: 0.5;
+	border-radius: 2px;
+}
+.variety .qdtuijian_left .ribo_font{
+	line-height:16px;
+	color:#fff;
+	position: absolute;
+	right:9px;
+	top:249px;
+}
+.variety .qdtuijian_left .bg_left{
+	width:42px;
+	height:16px;
+	position: absolute;
+	left:4px;
+	top:250px;
+	opacity: 0.5;
+	border-radius: 2px;
+}
+.variety .qdtuijian_left .lebo_font{
+	font-size:14px;
+	line-height:16px;
+	color:#fff;
+	position: absolute;
+	left:7px;
+	top:250px;
+}
+.variety .qdtuijian_left .lianjie{
+	width:380px;
+	height:270px;
+	position: absolute;
+	left:0;
+	top:0;
+}
+.variety .qdtuijian_left .left_text{
+	width:375px;
+	height:48px;
+	padding:6px 0 0 5px;
+	border-bottom:1px solid #ebebeb;
+	background-color: #f2f2f2;
+}
+.variety .left_text .left_name{
+	line-height:22px;
+	display: block;
+}
+.variety .left_text .text_info{
+	line-height:20px;
+	color:#999999;
+	display: block;
+}
+.variety .qdtuijian_bottom .qdtuijian_right{
+	width:800px;
+	height:340px;
+	padding-top:10px;
+}
+.variety .qdtuijian_right .right_tv{
+	width:180px;
+	height:155px;
+	padding:15px 0 0 20px;
+}
+.variety .right_tv .bg_ribo{
+	width:54px;
+	height:16px;
+	background-color: #000000;
+	position: absolute;
+	right:4px;
+	top:81px;
+	opacity: 0.5;
+	border-radius: 2px;
+}
+.variety .right_tv .ribo_font{
+	line-height:16px;
+	color:#fff;
+	position: absolute;
+	right:9px;
+	top:81px;
+}
+.variety .right_tv .bg_lebo{
+	width:42px;
+	height:16px;
+	position: absolute;
+	left:4px;
+	top:81px;
+	opacity: 0.5;
+	border-radius: 2px;
+}
+.variety .right_tv .lebo_font{
+	font-size:14px;
+	line-height:16px;
+	color:#fff;
+	position: absolute;
+	left:7px;
+	top:81px;
+}
+.variety .right_tv .lianjie{
+	width:380px;
+	height:270px;
+	position: absolute;
+	left:20px;
+	top:15px;
+}
+.variety .qdtuijian_right .tv_text{
+	width:175px;
+	height:48px;
+	padding:6px 0 0 5px;
+	border-bottom:1px solid #ebebeb;
+	background-color: #f2f2f2;
+}
+.variety .qdtuijian_right a{
+	line-height:22px;
+	display: block;
+}
+.variety .qdtuijian_right span{
+	line-height:20px;
+	color:#999999;
+	display: block;
+}
+/*第二部分 自制综艺*/
+.content .content_two{
+	width:1180px;
+	height:215px;
+	padding-top:11px;
+	margin:0 auto;
+}
+.variety .content_two .zzzongyi_head{
+	height:44px;
+	border-bottom:1px solid #e1e1e1;
+}
+.variety .zzzongyi_head .zzzongyi_title{
+	width:99px;
+	height:44px;
+	padding-left:2px;
+}
+.variety .zzzongyi_title .zzzongyi_name{
+	font-size:22px;
+	line-height:44px;
+	color:#979f00;
+}
+.variety .zzzongyi_head .zzzongyi_more{
+	font-size:14px;
+	line-height:36px;
+	color:#979f00;
+	padding-top:8px;
+}
+.variety .zzzongyi_head .title_right{
+	height:40px;
+	padding:4px 0 0 24px;
+}
+.variety .title_right a{
+	font-size:14px;
+	line-height:40px;
+	padding:0 9px;
+}
+.variety .title_right span{
+	width:14px;
+	height:40px;
+	background-position: -36px 0;
+}
+.variety .content_two .zzzongyi_pic{
+	width:1180px;
+	height:155px;
+	padding-top:15px;
+	display: flex;
+	justify-content:space-between;
+}
+.variety .zzzongyi_pic .zzzongyi_tv{
+	width:180px;
+	height:155px;
+}
+.variety .zzzongyi_tv .zzzongyi_text{
+	width:175px;
+	height:47px;
+	padding:6px 0 0 5px;
+	border-bottom:1px solid #ebebeb;
+	background-color: #f2f2f2;
+}
+.variety .zzzongyi_text .tv_name{
+	width:66px;
+	height:19px;
+	border:1px solid #e7e7e7;
+	background-color: #ffffff;
+	line-height:19px;
+	color:#979f00;
+	text-indent:3px;
+}
+.variety .zzzongyi_text .wh73{
+	width:73px;
+}
+.variety .zzzongyi_text .wh61{
+	width:61px;
+}
+.variety .zzzongyi_text .wh54{
+	width:54px;
+}
+.variety .zzzongyi_text .tv_font{
+	line-height:22px;
+	padding-left:3px;
+}
+/*广告*/
+.variety .content .content_guanggao{
+	width:1180px;
+	height:100px;
+	padding-top:50px;
+	margin:0 auto;
+	position: relative;
+}
+.variety .content_guanggao .bg_leto{
+	width:28px;
+	height:18px;
+	background-color: #000000;
+	position: absolute;
+	left:0;
+	top:50px;
+	opacity: 0.4;
+}
+.variety .content_guanggao .leto_font{
+	line-height:16px;
+	color:#fff;
+	position: absolute;
+	left:4px;
+	top:52px;
+}
+.variety .content_guanggao a{
+	width:1180px;
+	height:100px;
+	position: absolute;
+	left:0;
+	top:50px;
+}
+/*第三部分 节目单*/
+.variety .content .content_three{
+	width:1180px;
+	height:518px;
+	padding-top:39px;
+	margin:0 auto;
+}
+.variety .content_three .jiemudan{
+	height:46px;
+	border-bottom:2px solid #8ac024;
+}
+.variety .jiemudan .bg_title{
+	width:15px;
+	height:46px;
+	background-position: 0 0;
+}
+.variety .jiemudan .jiemudan_name{
+	font-size:28px;
+	line-height:46px;
+	color:#699f00;
+	padding-left:6px;
+}
+.variety .content_three .jiemudan_bottom{
+	height:426px;
+	padding-top:6px;
+}
+.variety .jiemudan_bottom .gengxin_top{
+	height:67px;
+	display: flex;
+	justify-content:space-between;
+	align-items:center;
+	position: relative;
+}
+.variety .gengxin_top .gengxin{
+	width:140px;
+	height:29px;
+	background-color: #78b600;
+	position: relative;
+}
+.variety .gengxin_top .gengxin:hover{
+	background-color: #ff580a;
+}
+.variety .gengxin .date{
+	display: inline-block;
+	font-size:14px;
+	line-height:29px;
+	color:#fff;
+	padding-left:42px;
+}
+.variety .gengxin a{
+	width:140px;
+	height:29px;
+	position: absolute;
+	left:0;
+	top:0;
+}
+.variety .gengxin .bg_date{
+	width:16px;
+	height:25px;
+	background-position: -53px 0;
+	position: absolute;
+	left:61px;
+	top:36px;
+}
+.variety .gengxin .bg_date1{
+	width:16px;
+	height:25px;
+	background-position: -74px 0;
+	position: absolute;
+	left:61px;
+	top:36px;
+}
+.variety .jiemudan_bottom .jiemudan_pic{
+	width:1180px;
+	height:319px;
+	padding-top:19px;
+	border-top:2px solid #ececec;
+	display: flex;
+	justify-content:space-between;
+}
+.variety .jiemudan_pic .jiemudan_tv{
+	width:140px;
+	height:147px;
+	position: relative;
+}
+.variety .jiemudan_tv .bg_ribo{
+	width:66px;
+	height:16px;
+	background-color: #000;
+	position: absolute;
+	right:4px;
+	top:74px;
+	opacity: 0.5;
+	border-radius: 2px;
+}
+.variety .jiemudan_tv .ribo_font{
+	line-height:16px;
+	color:#fff;
+	position: absolute;
+	right:9px;
+	top:74px;
+}
+.variety .jiemudan_tv .tv_text{
+	width:135px;
+	height:48px;
+	margin-bottom:8px;
+	padding:6px 0 0 5px;
+	background-color: #666666;
+}
+.variety .tv_text .tv_name{
+	line-height:22px;
+	color:#fff;
+	display: block;
+}
+.variety .tv_text .tv_font{
+	line-height:20px;
+	color:#cccccc;
+}
+.variety .jiemudan_tv .pic_text{
+	height:53px;
+	padding:7px 0 0 5px;
+	border-top:1px dashed #cccccc;
+}
+.variety .pic_text .pic_name{
+	line-height:24px;
+	display: block;
+}
+.variety .pic_text .pic_font{
+	line-height:22px;
+	color:#999999;
+	display: block;
+}
+.variety .content_three .quanbu{
+	width:1180px;
+	height:26px;
+	margin-top:10px;
+	border:1px solid #e8e8e8;
+	background-color: #f2f2f2;
+}
+.variety .quanbu .qb{
+	line-height:26px;
+	padding-left:571px;
+	padding-right:4px;
+}
+.variety .quanbu .bg_quanbu{
+	width:8px;
+	height:26px;
+	background-position: -93px 0;
+}
+/*猜你喜欢*/
+.content .padding-top24{
+	height:252px;
+}
+.variety .padding-top24 .qdtuijian_head{
+	padding-top:24px;
+	height:46px;
+	border-bottom:2px solid #8ac025;
+}
+.variety .padding-top24 .padding-top25{
+	padding-top:10px;
+}
+.variety .qdtuijian_head .ht34{
+	height:34px;
+	padding-top:12px;
+}
+.variety .ht34 span{
+	width:14px;
+	height:34px;
+	background-position: -19px 0;
+}
+.variety .ht34 a{
+	font-size:14px;
+	line-height:34px;
+}
+.variety .padding-top25 .nopadding{
+	padding-left:0;
+}
+.variety .right_tv .tv_pic{
+	position:relative;
+}
+/*第五部分 独家策划*/
+.variety .content .content_five{
+	width:1180px;
+	height:360px;
+	padding-top:39px;
+	margin:0 auto;
+}
+.variety .content_five .djcehua_left{
+	width:580px;
+}
+.variety .djcehua_left .djcehua_head{
+	height:46px;
+	border-bottom:2px solid #8ac024;
+}
+.variety .djcehua_head .djcehua_title{
+	width:144px;
+}
+.variety .djcehua_title .bg_title{
+	width:15px;
+	height:46px;
+	background-position: 0 0;
+}
+.variety .djcehua_title .djcehua_name{
+	font-size:28px;
+	line-height:46px;
+	color:#699f00;
+	padding-left:5px;
+}
+.variety .djcehua_head .djcehua_more{
+	padding-top:10px;
+	line-height:36px;
+	color:#699f00;
+}
+.variety .djcehua_left .djcehua_pic{
+	width:580px;
+	height:302px;
+	margin-top:10px;
+}
+.variety .djcehua_pic .djcehua_tv{
+	width:180px;
+	height:136px;
+	margin:15px 20px 0 0;
+	position: relative;
+}
+.variety .djcehua_pic .nomargin{
+	margin-right:0;
+}
+.variety .djcehua_tv .bg_lebo{
+	width:42px;
+	height:16px;
+	background-color: #000;
+	position: absolute;
+	left:4px;
+	top:81px;
+	opacity: 0.5;
+	border-radius: 2px;
+}
+.variety .djcehua_tv .lebo_font{
+	font-size:14px;
+	line-height:16px;
+	color:#fff;
+	position: absolute;
+	left:7px;
+	top:81px;
+}
+.variety .djcehua_tv .bg_ribo{
+	width:42px;
+	height:16px;
+	background-color: #000;
+	position: absolute;
+	right:4px;
+	top:81px;
+	opacity: 0.5;
+	border-radius: 2px;
+}
+.variety .djcehua_tv .ribo_font{
+	line-height:16px;
+	color:#fff;
+	position: absolute;
+	right:8px;
+	top:81px;
+}
+.variety .djcehua_tv .lianjie{
+	width:180px;
+	height:101px;
+	position: absolute;
+	left:0;
+	top:0;
+}
+.variety .djcehua_tv .tv_text{
+	width:175px;
+	height:34px;
+	padding-left:5px;
+	border-bottom: 1px solid #ebebeb;
+	background-color: #f2f2f2;
+}
+.variety .tv_text .cehua_name{
+	line-height:34px;
+}
+.variety .djcehua_head .wh172{
+	width:172px;
+}
+/*内地综艺*/
+.variety .qdtuijian_right .last{
+	width:178px;
+	height:153px;
+	padding:0;
+	margin:15px 0 0 20px;
+	border:1px solid #e6e6e6;
+	background-color: #f7f7f7;
+}
+.variety .last img{
+	margin:16px 0 0 54px;
+}
+.variety .tv_pic .zhuomian{
+	fong-size:14px;
+	line-height:28px;
+	display: block;
+	padding:7px 0 0 25px;
+}
+.variety .tv_pic .geng{
+	line-height:22px;
+	color:#699f01;
+	display: inline-block;
+	padding-left:3px;
+}
+.variety .tv_pic .gao{
+	padding-left:17px;
+}
+/*热门专题*/
+.variety .content .ht209{
+	height:209px;
+	padding-top:39px;
+}
+.variety .ht209 .qdtuijian_head{
+	height:46px;
+	border-bottom: 2px solid #8ac024;
+}
+.variety .content_two .rmzhuanti_pic{
+	width:1180px;
+	height:136px;
+	margin-top:25px;
+	display: flex;
+	justify-content:space-between;
+}
+.variety .rmzhuanti_pic .rmzhuanti_tv{
+	width:180px;
+	height:136px;
+}
+.variety .rmzhuanti_tv .rmzhuanti_text{
+	height:34px;
+	padding-left:5px;
+	border-bottom: 1px solid #ebebeb;
+	background-color: #f2f2f2;
+}
+.variety .rmzhuanti_text a{
+	line-height:34px;
+}
+/*互动 游戏*/
+.variety .content .ht399{
+	height:398px;
+}
+.variety .djcehua_left .ht350{
+	height:350px;
+}
+.variety .djcehua_pic .ht155{
+	height:155px;
+}
+.variety .djcehua_left .wh153{
+	width:153px;
+}
+.variety .djcehua_head .hdyx_heizi{
+	height:34px;
+	padding:12px 0 0 26px;
+}
+.variety .hdyx_heizi a{
+	font-size:14px;
+	line-height:34px;
+	padding:0 8px;
+}
+.variety .hdyx_heizi span{
+	width:14px;
+	height:34px;
+	background-position: -19px 0;
+}
+.variety .djcehua_tv .ht54{
+	height:47px;
+	padding-top:6px;
+}
+.variety .ht54 .cehua_name{
+	line-height:22px;
+	display: block;
+}
+.variety .ht54 .cehua_font{
+	line-height:20px;
+	color:#999999;
+}
+.variety .djcehua_head .wh181{
+	width:181px;
+}
+/*爱奇艺号推荐*/
+.variety .qdtuijian_head .wh1180{
+	width:1180px;
+}
+.variety .right_tv .aiqiyi_text{
+	height:47px;
+	padding:6px 0 0 5px;
+	border-bottom: 1px solid #ebebeb;
+	background-color: #f2f2f2;
+}
+.variety .aiqiyi_text .bg{
+	width:11px;
+	height:22px;
+	background-position: -105px 0;
+}
+.variety .aiqiyi_text .aiqiyi_font{
+	line-height:22px;
+	color:#999999;
+	padding-left:5px;
+}
+.variety .aiqiyi_text .aiqiyi_name{
+	line-height:22px;
+	display: block;
+}
+.variety .text .aiqiyi_font2{
+	line-height:22px;
+	color:#999999;
+	padding-left:5px;
+}
+/*完结经典*/
+.variety .content_two .wh1180{
+	width:1180px;
+}
+.variety .zzzongyi_title .bg_title{
+	width:15px;
+	height:46px;
+	background-position: 0 0;
+	margin-right:5px;
+}
+.variety .zzzongyi_text .wh97{
+	width:97px;
+}
+.variety .zzzongyi_text .wh66{
+	width:66px;
+}
+.variety .zzzongyi_text .wh54{
+	width:54px;
+}
+.variety .zzzongyi_text .wh30{
+	width:30px;
+}
+.variety .zzzongyi_text .wh86{
+	width:86px;
+}
+.variety .content .content_last{
+	width:1180px;
+	height:34px;
+	padding-top:65px;
+	margin:0 auto;
+}
+.variety .content_last .last_info{
+	line-height:34px;
+	color:#a5a599;
+}
+/*底部区域*/
+.foot{
+	width:1180px;
+	height:69px;
+	margin:0 auto;
+}
+.variety .foot .foot_info{
+	height:20px;
+	padding-top:23px;
+	padding-left:163px;
+}
+.variety .foot_info a{
+	line-height:20px;
+	padding-right:11px;
+	padding-left:9px;
+}
+.variety .foot_info .shugang{
+	width:1px;
+	height:11px;
+	background-color: #cccccc;
+	margin-top:4px;
+}
+.variety .foot .foot_bottom{
+	height:26px;
+	padding-left:460px;
+	line-height:26px;
+}

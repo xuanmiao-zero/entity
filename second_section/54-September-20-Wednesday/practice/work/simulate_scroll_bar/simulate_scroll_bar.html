@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="轩邈">
+    <meta name="copyright" content="轩邈">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <!-- 网站SEO -->
+    <title>simulate scroll bar</title>
+    <meta name="keywords" content="轩邈 xuanmiao xuanmiao.com">
+    <meta name="description" content="轩邈 | 猎奇蜗牛">
+    <style>
+        html{
+            height: 100%;
+        }
+
+        body{
+            margin: 0;
+            background: url("2.jpg");
+            width: 100%;
+            height: 100%;
+        }
+        
+        h1{
+            display: inline-block;
+            z-index: 0;
+            position: relative;
+            margin: 20px 0 0 600px;
+            font-size: 30px;
+            color: #fff;
+        }
+
+
+        h1:before{
+            z-index: -1;
+            position: absolute;
+            content: '';
+            display: block;
+            width: 24%;
+            height: 80%;
+            background-color: #fff;
+            border-radius: 100%;
+            margin: 6% 0 0 -8%;
+        }
+
+        h1::first-letter {
+            margin-right: 2%;
+            color: #315296;
+            font-size: 120%;
+        }
+
+        #simulateScrollBarBox{
+            position: relative;
+            margin: 60px auto;
+            width: 100px;
+            height: 388px;
+            background-color: #000;
+            overflow: hidden;
+        }
+
+        .content{
+            margin: 0;
+            padding: 0;
+            width: 86px;
+            background-color: #fff;
+        }
+
+        #simulateScrollBarBox li{
+            text-align: center;
+            list-style: none;
+        }
+
+        .simulate-scroll-bar{
+            display: flex;
+            flex-flow: column;
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 14px;
+            height: 100%;
+            text-align: center;
+            background-color: #D7FFF1;
+        }
+
+        .simulate-scroll-bar .up,.simulate-scroll-bar .down{
+            width: 100%;
+            height: 12px;
+            font-size: 12px;
+            text-align: center;
+            line-height: 12px;
+            color:#8CD790;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        .simulate-scroll-bar .up:hover,.simulate-scroll-bar .down:hover{
+            color: #99f19e;
+        }
+
+        .simulate-scroll-bar .slider{
+            border-radius: 10px;
+            display: inline-block;
+            margin-left: 15%;
+            width: 70%;
+            background-color: #8CD790;
+        }
+        .simulate-scroll-bar .down{
+            position: absolute;
+            bottom: 0;
+        }
+
+    </style>
+</head>
+<body>
+<h1>xuanmiao</h1>
+<div id="simulateScrollBarBox">
+    <ul class="content">
+        <li>001</li>
+        <li>002</li>
+        <li>003</li>
+        <li>004</li>
+        <li>005</li>
+        <li>006</li>
+        <li>007</li>
+        <li>008</li>
+        <li>009</li>
+        <li>010</li>
+        <li>011</li>
+        <li>012</li>
+        <li>013</li>
+        <li>014</li>
+        <li>015</li>
+        <li>016</li>
+        <li>017</li>
+        <li>018</li>
+        <li>019</li>
+        <li>020</li>
+        <li>021</li>
+        <li>022</li>
+        <li>023</li>
+        <li>024</li>
+        <li>025</li>
+        <li>026</li>
+        <li>027</li>
+        <li>028</li>
+        <li>029</li>
+        <li>030</li>
+        <li>031</li>
+        <li>032</li>
+        <li>033</li>
+        <li>034</li>
+        <li>035</li>
+        <li>036</li>
+        <li>037</li>
+        <li>038</li>
+        <li>039</li>
+        <li>040</li>
+        <li>041</li>
+        <li>042</li>
+        <li>043</li>
+        <li>044</li>
+        <li>045</li>
+        <li>046</li>
+        <li>047</li>
+        <li>048</li>
+        <li>049</li>
+        <li>050</li>
+        <li>051</li>
+        <li>052</li>
+        <li>053</li>
+        <li>054</li>
+        <li>055</li>
+        <li>056</li>
+        <li>057</li>
+        <li>058</li>
+        <li>059</li>
+        <li>060</li>
+        <li>061</li>
+        <li>062</li>
+        <li>063</li>
+        <li>064</li>
+        <li>065</li>
+        <li>066</li>
+        <li>067</li>
+        <li>068</li>
+        <li>069</li>
+        <li>070</li>
+        <li>071</li>
+        <li>072</li>
+        <li>073</li>
+        <li>074</li>
+        <li>075</li>
+    </ul>
+    <div class="simulate-scroll-bar">
+        <div class="up">▲</div>
+        <div class="slider"></div>
+        <div class="down">▼</div>
+    </div>
+</div>
+
+<script>
+    var simulateScrollBarBox = document.getElementById('simulateScrollBarBox');
+    var content = simulateScrollBarBox.getElementsByClassName('content')[0];
+    var simulateScrollBar = simulateScrollBarBox.getElementsByClassName('simulate-scroll-bar')[0];
+
+    var up = simulateScrollBarBox.getElementsByClassName('up')[0];
+    var slider = simulateScrollBarBox.getElementsByClassName('slider')[0];
+    var down = simulateScrollBarBox.getElementsByClassName('down')[0];
+
+    /*设置滑块高度*/
+    slider.style.height =  (simulateScrollBarBox.clientWidth/content.offsetHeight) * (simulateScrollBar.clientHeight- up.offsetHeight - down.offsetHeight) + "px";
+
+    /*每次滚动的距离*/
+    var perScrollDistance = 10;
+
+//    滑块最大可滚动距离
+    var maxSliderDistance = simulateScrollBar.clientHeight- up.offsetHeight - down.offsetHeight - getCss(slider, "height");
+//    内容最大可滚动距离
+    var maxContentDistance = content.offsetHeight - simulateScrollBarBox.clientHeight;
+
+    /*滚动时滑块的移动动画*/
+    /*滚动到边界时没有滚动父级 ？？？*/
+    scroll({
+        obj:simulateScrollBarBox,
+        up: function () {
+            var nextUpPosition = getCss(slider, "marginTop") - perScrollDistance;
+            if(nextUpPosition < 0){
+                nextUpPosition = 0;
+                return false;
+            }
+
+            slider.style.marginTop = nextUpPosition + "px";
+            contentPosition ();
+            return true;
+        },
+        down:function () {
+            var nextDownPosition = getCss(slider, "marginTop") + perScrollDistance;
+            if(nextDownPosition > maxSliderDistance){
+                nextDownPosition = maxSliderDistance;
+                return false;
+            }
+
+            slider.style.marginTop = nextDownPosition + "px";
+            contentPosition ();
+            return true;
+        }
+    });
+
+    /*点击上下按钮滑块移动*/
+    up.onmousedown = function () {
+        var nextUpPosition = getCss(slider, "marginTop") - perScrollDistance;
+        if(nextUpPosition < 0)
+            nextUpPosition = 0;
+        slider.style.marginTop = nextUpPosition + "px";
+        contentPosition ();
+    };
+    down.onmousedown = function () {
+        var nextDownPosition = getCss(slider, "marginTop") + perScrollDistance;
+        if(nextDownPosition > maxSliderDistance)
+            nextDownPosition = maxSliderDistance;
+        slider.style.marginTop = nextDownPosition + "px";
+        contentPosition ();
+    };
+
+    /*拖动滑块*/
+    slider.onmousedown = function (ev) {
+        var startY = ev.clientY;
+        var currSite = this.offsetTop;
+        document.onmousemove = function (ev) {
+            sliderPosition = ev.clientY;
+            var currentY = ev.clientY;
+            var distance = currentY - startY + currSite;
+            if(distance < 0)
+                distance = 0;
+            if(distance > maxSliderDistance)
+                distance = maxSliderDistance;
+            slider.style.marginTop = distance + 'px';
+            contentPosition ();
+            return false;
+        };
+//        ev.cancelBubble = true;
+    };
+
+    document.onmouseup = function () {
+        document.onmousemove = null;
+    };
+
+    /*点哪到哪*/
+    simulateScrollBarBox.onmousedown = function (ev) {
+        if(ev.target === up || ev.target === down)
+            return;
+        var temp = ev.clientY + window.pageYOffset - this.offsetTop - up.offsetHeight - slider.offsetHeight/2;
+        if(temp < slider.offsetHeight/2)
+            temp = 0;
+        if(temp > maxSliderDistance - slider.offsetHeight/2)
+            temp = maxSliderDistance;
+        slider.style.marginTop = temp + "px";
+        contentPosition ();
+    };
+
+
+    function contentPosition () {
+        var percentage = getCss(slider, "marginTop")/maxSliderDistance;
+        content.style.marginTop = - maxContentDistance * percentage + "px";
+    }
+
+
+    /*滚动函数*/
+    function scroll(option){
+
+        var onoff = true;
+
+        if(option.obj === null)
+            option.obj = document;
+        option.obj.onmousewheel = function (ev) {
+
+            /*向上滚动*/
+            if(ev.wheelDelta > 0){
+                onoff = option.up&&option.up(ev);
+            }
+
+            /*向下滚动*/
+            if(ev.wheelDelta < 0){
+                onoff = option.down&&option.down(ev);
+            }
+
+            if(onoff){
+                ev.preventDefault();
+                return false;
+            }
+        };
+
+        option.obj.addEventListener("DOMMouseScroll", function (ev) {
+
+            /*向上滚动*/
+            if(ev.detail < 0){
+                onoff =  option.up&&option.up(ev);
+            }
+
+            /*向下滚动*/
+            if(ev.detail > 0)
+                onoff = option.down&&option.down(ev);
+
+            if(onoff){
+                ev.preventDefault();
+                return false;
+            }
+
+        }, false);
+    }
+
+
+    //获取元素属性
+    function getCss(obj,attr){
+        var objAttr = getComputedStyle(obj)[attr];
+        return isNaN(parseFloat(objAttr))?objAttr:parseFloat(objAttr);
+    }
+
+
+    /*
+     * t   已过时间
+     * b:  开始位置
+     * c:  总路程
+     * d:  总时间
+     *
+     * */
+    var Tween = {
+        linear: function (t, b, c, d){  //匀速
+            return c*t/d + b;
+        },
+        easeIn: function(t, b, c, d){  //加速曲线
+            return c*(t/=d)*t + b;
+        },
+        easeOut: function(t, b, c, d){  //减速曲线
+            return -c *(t/=d)*(t-2) + b;
+        },
+        easeBoth: function(t, b, c, d){  //加速减速曲线
+            if ((t/=d/2) < 1) {
+                return c/2*t*t + b;
+            }
+            return -c/2 * ((--t)*(t-2) - 1) + b;
+        },
+        easeInStrong: function(t, b, c, d){  //加加速曲线
+            return c*(t/=d)*t*t*t + b;
+        },
+        easeOutStrong: function(t, b, c, d){  //减减速曲线
+            return -c * ((t=t/d-1)*t*t*t - 1) + b;
+        },
+        easeBothStrong: function(t, b, c, d){  //加加速减减速曲线
+            if ((t/=d/2) < 1) {
+                return c/2*t*t*t*t + b;
+            }
+            return -c/2 * ((t-=2)*t*t*t - 2) + b;
+        },
+        elasticIn: function(t, b, c, d, a, p){  //正弦衰减曲线（弹动渐入）
+            if (t === 0) {
+                return b;
+            }
+            if ( (t /= d) == 1 ) {
+                return b+c;
+            }
+            if (!p) {
+                p=d*0.3;
+            }
+            if (!a || a < Math.abs(c)) {
+                a = c;
+                var s = p/4;
+            } else {
+                var s = p/(2*Math.PI) * Math.asin (c/a);
+            }
+            return -(a*Math.pow(2,10*(t-=1)) * Math.sin( (t*d-s)*(2*Math.PI)/p )) + b;
+        },
+        elasticOut: function(t, b, c, d, a, p){    //*正弦增强曲线（弹动渐出）
+            if (t === 0) {
+                return b;
+            }
+            if ( (t /= d) == 1 ) {
+                return b+c;
+            }
+            if (!p) {
+                p=d*0.3;
+            }
+            if (!a || a < Math.abs(c)) {
+                a = c;
+                var s = p / 4;
+            } else {
+                var s = p/(2*Math.PI) * Math.asin (c/a);
+            }
+            return a*Math.pow(2,-10*t) * Math.sin( (t*d-s)*(2*Math.PI)/p ) + c + b;
+        },
+        elasticBoth: function(t, b, c, d, a, p){
+            if (t === 0) {
+                return b;
+            }
+            if ( (t /= d/2) == 2 ) {
+                return b+c;
+            }
+            if (!p) {
+                p = d*(0.3*1.5);
+            }
+            if ( !a || a < Math.abs(c) ) {
+                a = c;
+                var s = p/4;
+            }
+            else {
+                var s = p/(2*Math.PI) * Math.asin (c/a);
+            }
+            if (t < 1) {
+                return - 0.5*(a*Math.pow(2,10*(t-=1)) *
+                    Math.sin( (t*d-s)*(2*Math.PI)/p )) + b;
+            }
+            return a*Math.pow(2,-10*(t-=1)) *
+                Math.sin( (t*d-s)*(2*Math.PI)/p )*0.5 + c + b;
+        },
+        backIn: function(t, b, c, d, s){     //回退加速（回退渐入）
+            if (typeof s == 'undefined') {
+                s = 1.70158;
+            }
+            return c*(t/=d)*t*((s+1)*t - s) + b;
+        },
+        backOut: function(t, b, c, d, s){
+            if (typeof s == 'undefined') {
+                s = 3.70158;  //回缩的距离
+            }
+            return c*((t=t/d-1)*t*((s+1)*t + s) + 1) + b;
+        },
+        backBoth: function(t, b, c, d, s){
+            if (typeof s == 'undefined') {
+                s = 1.70158;
+            }
+            if ((t /= d/2 ) < 1) {
+                return c/2*(t*t*(((s*=(1.525))+1)*t - s)) + b;
+            }
+            return c/2*((t-=2)*t*(((s*=(1.525))+1)*t + s) + 2) + b;
+        },
+        bounceIn: function(t, b, c, d){    //弹球减振（弹球渐出）
+            return c - Tween['bounceOut'](d-t, 0, c, d) + b;
+        },
+        bounceOut: function(t, b, c, d){//*
+            if ((t/=d) < (1/2.75)) {
+                return c*(7.5625*t*t) + b;
+            } else if (t < (2/2.75)) {
+                return c*(7.5625*(t-=(1.5/2.75))*t + 0.75) + b;
+            } else if (t < (2.5/2.75)) {
+                return c*(7.5625*(t-=(2.25/2.75))*t + 0.9375) + b;
+            }
+            return c*(7.5625*(t-=(2.625/2.75))*t + 0.984375) + b;
+        },
+        bounceBoth: function(t, b, c, d){
+            if (t < d/2) {
+                return Tween['bounceIn'](t*2, 0, c, d) * 0.5 + b;
+            }
+            return Tween['bounceOut'](t*2-d, 0, c, d) * 0.5 + c*0.5 + b;
+        }
+    };
+
+
+    /*
+     * obj  ：  要运动的元素
+     * count:  运动的总路程
+     * duration: 运动的总时间
+     * attr ： 变化的属性
+     * fx: 运动的模式
+     * fn：运动结束后要做的事情 （回调函数）
+     *
+     * */
+
+    function ATween(obj,count,duration,attr,fx,fn){
+        //清除定时器
+        clearInterval(obj.timer);
+        var startTime = new Date().getTime();//运动前的时间
+        var begin = getCss(obj,attr);//运动前的位置
+
+        //运动动画
+        obj.timer = setInterval(function(){
+            //计算已经运动过的时间
+            //由于定时器执行间隔时间不稳定，受到其他程序影响，所以间隔时间要通过计算来获取
+            var t = new Date().getTime()-startTime;
+            if(t>=duration){
+                t = duration;
+                clearInterval(obj.timer);
+            }
+            obj.style[attr] = Tween[fx](t,begin,count,duration)+'px';
+            //是否有fn参数
+            if(t>=duration&&fn) fn();
+        },30);
+    }
+</script>
+</body>
+</html>

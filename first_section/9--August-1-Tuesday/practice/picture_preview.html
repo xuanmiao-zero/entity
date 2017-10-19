@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="author" content="xuanmiao"/>
+    <meta name="copyright" content="xuanmiao"/>
+    <meta name="keywords" content="轩邈"/>
+    <meta name="description" content="xuanmiao"/>
+
+    <title>图片预览</title>
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+            background: #FFD400 url("../../img/desktop/desktop_7.jpg")  no-repeat;
+            background-size: 700px 400px;
+        }
+
+        #container{
+            width:440px;
+            height: 260px;
+            background: deepskyblue;
+            margin:70px auto;
+            padding: 0px;
+            border: 1px solid transparent;
+            position: relative;
+            box-shadow: 1px 1px 10px 2px #999;
+            border-radius: 3px;
+        }
+
+        #container .carryPlace{
+            width: 50px;
+            height: 6px;
+            background: #FFD400;
+            border-radius: 4px;
+            box-shadow: 1px 1px 5px #999 inset;
+            margin: 10px auto;
+        }
+
+        #container .logo{
+            position: absolute;
+            left: 10px;
+            top: 46%;
+            color: #fff;
+            font: 22px bold;
+            transform: rotate(270deg) ;
+        }
+
+        #container .pic{
+            width:300px;
+            height: 180px;
+            background: skyblue;
+            margin:20px 0px auto 100px;
+            position: relative;
+        }
+        #container .pic img{
+            position: absolute;
+            width: 300px;
+            height: 180px;
+            opacity: 0;
+            transition: 1s;
+        }
+        #container .pic .pre{
+            position: absolute;
+            width: 34px;
+            height: 60px;
+            left:0;
+            background: url("../../img/mushRoom/dot-set.png") 0 0;
+            top:50%;
+            transform: translate(0%,-50%);
+            cursor: pointer;
+            display: block;
+            opacity: 0;
+            transition: 0.5s;
+        }
+        #container .pic .next{
+            position: absolute;
+            width: 34px;
+            height: 60px;
+            right:0;
+            top:50%;
+            transform: translate(0%,-50%);
+            background: url("../../img/mushRoom/dot-set.png") -50px 0;
+            cursor: pointer;
+            display: block;
+            opacity: 0;
+            transition: 0.5s;
+        }
+
+        #container .dotBox{
+            width:100%;
+            height: 30px;
+            background: #f3f3f3;
+            position: absolute;
+            bottom: 0;
+            border: 1px solid transparent;
+            margin: -1px;
+            text-align: center;
+        }
+        /*float没有生效 margin设置不正确*/
+        .dotAndThum{
+            width: 60px;
+            height: 50px;
+            background: transparent;
+            margin: -30px -20px auto -20px;
+            user-select: none;
+            float: left;
+            position: relative;
+        }
+
+        #container .dotBox .dotAndThum:first-child{
+            width: 60px;
+            height: 50px;
+            border-radius: 4px;
+            margin: -30px -20px auto 180px;
+            float: left;
+            user-select: none;
+            text-align: center;
+        }
+
+        #container .dotBox .dotAndThum .Thum{
+            width: 100%;
+            background: #5A94EF;
+            margin: 0;
+            display: none;
+            position: relative;
+            border:1px solid #aaa9ae;
+        }
+        /*疑问*/
+        /*原点和图片之间有点空白 如何设置*/
+        /*小三角不显示  单标签不能加after*/
+        #container .dotBox .dotAndThum .dot:after{
+            content: " ";
+            display: none;
+            position: relative;
+            border:5px solid transparent;
+            border-top-color: #aaa9ae;
+            right: 0;
+            top: -7px;
+        }
+        #container .dotBox .dotAndThum .dot{
+            width: 10px;
+            height: 10px;
+            background: #aaa9ae;
+            border-radius: 5px;
+            cursor: pointer;
+            user-select: none;
+            text-align: center;
+            display: block;
+            margin: 7px auto auto;
+            position: absolute;
+            bottom: 7px;
+            top:36px;
+            left:50%;
+            transform: translate(-50%,0%);
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+<h1 id="title" class="title"></h1>
+<div id="container">
+    <div class="carryPlace"></div>
+    <div class="logo">xuanmiao</div>
+    <div class="pic">
+        <img src="../../img/simple_style/simpleStyle%20(1).jpg" alt="">
+        <img src="../../img/simple_style/simpleStyle%20(2).jpg" alt="">
+        <img src="../../img/simple_style/simpleStyle%20(3).jpg" alt="">
+        <img src="../../img/simple_style/simpleStyle%20(4).jpg" alt="">
+        <img src="../../img/simple_style/simpleStyle%20(5).jpg" alt="">
+        <div class="pre"></div>
+        <div class="next"></div>
+    </div>
+    <div class="dotBox">
+        <div class="dotAndThum">
+            <img class="Thum" src="../../img/simple_style/simpleStyle%20(1).jpg">
+            <div class="dot"></div>
+            <span></span>
+        </div>
+        <div class="dotAndThum">
+            <img class="Thum" src="../../img/simple_style/simpleStyle%20(2).jpg">
+            <div class="dot"></div>
+        </div>
+        <div class="dotAndThum">
+            <img class="Thum" src="../../img/simple_style/simpleStyle%20(3).jpg">
+            <div class="dot"></div>
+        </div>
+        <div class="dotAndThum">
+            <img class="Thum" src="../../img/simple_style/simpleStyle%20(4).jpg">
+            <div class="dot"></div>
+        </div>
+        <div class="dotAndThum">
+            <img class="Thum" src="../../img/simple_style/simpleStyle%20(5).jpg">
+            <div class="dot"></div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    //获取元素
+    var imgs = document.querySelectorAll('#container .pic img');
+    var btns = document.querySelectorAll('.pre,.next');
+    var pre = document.querySelector('.pre');
+    var next = document.querySelector('.next');
+    var pic = document.querySelector('.pic');
+    var dots = document.querySelectorAll('.dot');
+    var Thums = document.querySelectorAll('.Thum');
+//    var ThumTriangles = document.querySelectorAll('#container .dotBox .dotAndThum .dot:after');
+//    console.log(ThumTriangles);
+    //声明变量
+    var index = 0;
+    //初始化
+    imgs[index].style.opacity = 1;
+    //绑定事件
+    pre.onclick = function () {
+        index > 0 ? index -- : index = imgs.length-1;
+        for(var i = 0 ; i < imgs.length; i ++){
+            imgs[i].style.opacity = "0";
+        }
+        imgs[index].style.opacity = "1";
+    };
+    next.onclick = function () {
+        index < imgs.length-1? index ++ : index = 0 ;
+        for(var i = 0 ; i < imgs.length; i ++){
+            imgs[i].style.opacity = "0";
+        }
+        imgs[index].style.opacity = "1";
+    };
+    pic.onmouseover = function () {
+        btns[0].style.opacity = "1";
+        btns[1].style.opacity = "1";
+    };
+    pic.onmouseout = function () {
+        pre.style.opacity = "0";
+        next.style.opacity = "0";
+    };
+    for(var i=0; i < dots.length; i ++){
+        dots[i].index = i;
+        dots[i].onmouseover=function () {
+            Thums[this.index].style.display = "block";
+        };
+        dots[i].onmouseout=function () {
+            Thums[this.index].style.display = "none";
+        };
+        dots[i].onclick=function () {
+            index = this.index;
+            for(var i = 0 ; i < imgs.length; i ++){
+                imgs[i].style.opacity = "0";
+            }
+            imgs[index].style.opacity = "1";
+        }
+    }
+
+
+</script>
+</body>
+</html>

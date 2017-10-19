@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+        div{
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            position: absolute;
+        }
+
+
+    </style>
+</head>
+<body>
+
+
+<div></div>
+
+<script>
+
+
+    /*
+    *
+    * 上下左右移动人物
+    *
+    * 回车     13
+     左键     37
+     上键     38
+     右键     39
+     下键     40
+     空格     32
+    *
+    * */
+
+    var div = document.querySelector('div');
+
+    var leftonoff = false;
+    var rightonoff = false;
+    var bottoonoff = false;
+
+    document.onkeydown = function(ev){
+
+        if(ev.keyCode==37){
+            if(leftonoff) return;
+            leftonoff = true;
+            clearInterval(div.leftTimer);
+            div.leftTimer = setInterval(function(){
+
+                var left = div.offsetLeft - 10;
+                if(left<=0){
+                    left = 0;
+                    clearInterval(div.leftTimer);
+                }
+                div.style.left = left + 'px';
+            },10);
+        }
+
+
+        if(ev.keyCode==39){
+
+            if(rightonoff) return;
+
+            rightonoff = true;
+
+            clearInterval(div.rightTimer);
+            div.rightTimer = setInterval(function(){
+                div.style.left = div.offsetLeft + 10 + 'px';
+            },10);
+        }
+
+        if(ev.keyCode==40){
+
+            if(bottoonoff) return;
+
+            bottoonoff = true;
+
+            clearInterval(div.bottomTimer);
+            div.bottomTimer = setInterval(function(){
+                div.style.top = div.offsetTop + 10 + 'px';
+            },10);
+
+        }
+
+
+    };
+
+    document.onkeyup = function(ev){
+
+        leftonff = false;
+        rightonff = false;
+        bottoonoff = false;
+
+        clearInterval(div.bottomTimer);
+        clearInterval(div.rightTimer);
+
+
+    }
+
+
+
+
+</script>
+
+</body>
+</html>

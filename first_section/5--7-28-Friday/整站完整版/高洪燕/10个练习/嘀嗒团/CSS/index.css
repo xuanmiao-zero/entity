@@ -1,0 +1,86 @@
+body,h4,dl,dd{
+	margin:0;
+}
+ul,li{
+	padding:0;
+	margin:0;
+	list-style:none;
+}
+a{
+	text-decoration:none;
+	color:#444444;
+}
+body{
+	font:12px "宋体";
+}
+img{
+	vertical-align: top;
+	border:none;
+}
+.box{
+	width:989px;
+	height:115px;
+}
+.content{
+	width:968px;
+	height:66px;
+	padding:4px 10px 0px 10px;
+	background-color:#f3f3f3;
+}
+.fl{
+	float:left;
+}
+.fr{
+	float:right;
+}
+.item{
+	
+	height:32px;
+	border-bottom:1px solid #e2e2e2;;
+}
+.item .title{
+	font:12px/32px "宋体";
+}
+.item .all{
+	font:12px/18px "宋体";
+	text-align: center;
+	width:34px;
+	height:18px;
+	margin-top:6px;
+	margin-left:29px;
+}
+.item span{
+	color:#b29487;
+}
+.item a{
+	line-height:32px;
+	margin-right:20px;
+}
+.item .more{
+	color:#ff9900;
+	margin-right:0;
+}
+.more img{
+	margin-top:8px;
+	margin-left:4px;
+	
+}
+.item .all:visited{
+	background-color:#0066cc;
+	color:#ffffff;
+}
+.content2{
+	height:34px;
+	padding-bottom:9px;
+	background-color:#f3f3f3;
+	padding-left:10px;
+}
+
+.content2 .name{
+	font:12px/34px "微软雅黑";
+	margin-right:30px;
+}
+.content2 dd{
+	margin-right:10px;
+	margin-top:6px;
+}

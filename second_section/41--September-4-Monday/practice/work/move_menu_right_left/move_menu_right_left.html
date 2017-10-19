@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="轩邈">
+    <meta name="copyright" content="轩邈">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <!-- 网站SEO -->
+    <title>MOVE_RIGHT</title>
+    <meta name="keywords" content="轩邈 xuanmiao xuanmiao.com">
+    <meta name="description" content="轩邈 | 猎奇蜗牛">
+    <!-- 标题栏logo图标 -->
+    <link rel="icon" href="" type="image/x-icon">
+    <!-- 收藏夹logo图标 -->
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <style>
+        #moveMenu{
+            width: 450px;
+            height: 400px;
+            background-color: royalblue;
+            color: #fff;
+        }
+        ul, li{
+            padding: 0;
+        }
+        #moveMenu ul{
+            margin: 0;
+            display: inline-block;
+            vertical-align: top;
+        }
+        #moveMenu ul li {
+            line-height: 40px;
+            list-style: none;
+        }
+        #moveMenu ul li:hover{
+            background-color: deepskyblue;
+        }
+        #moveMenu ul li:before{
+            margin-left: 10px;
+            content: ' ● ';
+        }
+        .left-list,.right-list{
+            width: 170px;
+            height: 100%;
+            background-color: dodgerblue;
+        }
+        .operating-area{
+            display: inline-block;
+            width: 100px;
+            height: 100%;
+        }
+        .to-left{
+            background-color: #00AA88;
+        }
+        .to-right{
+            background-color: deepskyblue;
+        }
+        .operating-area div{
+            height: 30px;
+            border-radius: 4px;
+            margin: auto;
+            text-align: center;
+            line-height: 30px;
+            cursor: pointer;
+        }
+        .operating-area .to-left{
+            margin-top: 150px;
+        }
+        .operating-area .to-right{
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<div id="moveMenu">
+    <ul class="left-list">
+        <li>miniPrograms</li>
+        <li>easy-ui</li>
+        <li>three.js</li>
+        <li>vue</li>
+        <li>canvas</li>
+    </ul>
+    <div class="operating-area">
+        <div class="to-left"><< 向左</div>
+        <div class="to-right">向右 >></div>
+    </div>
+
+    <ul class="right-list">
+        <li>miniPrograms2</li>
+        <li>easy-ui2</li>
+        <li>three.js2</li>
+        <li>vue2</li>
+        <li>canvas2</li>
+    </ul>
+</div>
+
+<script>
+    var toLeft = document.querySelector('.to-left');
+    var toRight = document.querySelector('.to-right');
+
+    var leftUl = document.querySelector('.left-list');
+    var rightUl = document.querySelector('.right-list');
+
+    var leftLis = document.querySelectorAll('.left-list li');
+    var RightLis = document.querySelectorAll('.right-list li');
+
+    var chosenLis = [];
+    //设置左边点击变色
+    for(var i = 0; i < leftLis.length; i++){
+        leftLis[i].checked = false;
+        leftLis[i].onclick = function () {
+            if(!this.checked){
+                this.style.backgroundColor = "deepskyblue";
+                this.checked = true;
+                chosenLis.push(this);
+            }else{
+                this.style.backgroundColor = "";
+                this.checked = false;
+                chosenLis.splice(chosenLis.indexOf(this),1);
+            }
+        };
+    }
+    //设置右边点击变色
+    for(var i = 0; i < RightLis.length; i++){
+        RightLis[i].checked = false;
+        RightLis[i].onclick = function () {
+            if(!this.checked){
+                this.style.backgroundColor = "deepskyblue";
+                this.checked = true;
+                chosenLis.push(this);
+            }else{
+                this.style.backgroundColor = "";
+                this.checked = false;
+                chosenLis.splice(chosenLis.indexOf(this),1);
+            }
+        };
+    }
+
+    //左移
+    toLeft.onclick = function () {
+        for(var i = 0; i < chosenLis.length; i++){
+            chosenLis[i].style.backgroundColor = "";
+            chosenLis[i].checked = false;
+            leftUl.appendChild(chosenLis[i]);
+        }
+        chosenLis = [];
+    };
+
+    //右移
+    toRight.onclick = function () {
+        console.log(chosenLis);
+        for(var i = 0; i < chosenLis.length; i++){
+            chosenLis[i].style.backgroundColor = "";
+            chosenLis[i].checked = false;
+            rightUl.appendChild(chosenLis[i]);
+        }
+        chosenLis = [];
+    };
+</script>
+</body>
+</html>

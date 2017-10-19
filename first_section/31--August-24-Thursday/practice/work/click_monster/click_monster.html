@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="轩邈">
+    <meta name="copyright" content="轩邈">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <!-- 网站SEO -->
+    <title>CLICK MONSTER</title>
+    <meta name="keywords" content="轩邈 xuanmiao xuanmiao.com">
+    <meta name="description" content="轩邈 | 猎奇蜗牛">
+    <!-- 标题栏logo图标 -->
+    <link rel="icon" href="" type="image/x-icon">
+    <!-- 收藏夹logo图标 -->
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <style>
+        body{
+            margin: 0;
+            background: url("img/1.bmp");
+            user-select: none;
+        }
+        #clickMonsterGame{
+            margin: 20px auto;
+            border: 1px solid transparent;
+            width: 800px;
+            height: 560px;
+            text-align: center;
+            color: #fff;
+        }
+        h1,h2,p{
+            margin: 0;
+        }
+        #clickMonsterGame h1{
+            margin: 6px auto;
+            font-size: 36px;
+        }
+        #clickMonsterGame h2{
+            margin: 8px;
+            font-size: 18px;
+            font-weight: 100;
+        }
+        #clickMonsterGame .game-introduce{
+            font-size: 14px;
+        }
+        .game-box{
+            position: relative;
+            margin: 40px auto;
+            width: 574px;
+            height: 341px;
+            border: 6px inset #0A4D6A;
+            background-image: url("img/recycled_texture_background_by_sandeep_m-d6aeau9_PZ9chud.jpg");
+            background-size: 100% 100%;
+        }
+
+        .game-box, .game-box *{
+            cursor: url(./cd_glowsword.cur),auto !important;
+        }
+        .game-box:active, .game-box *:active{
+            cursor: url(./cd_glaive.cur),auto !important;
+        }
+        .game-box .cover{
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+        }
+        .game-box .score{
+            margin: 10px;
+            border: 1px solid transparent;
+            width: 68px;
+            height: 68px;
+            border-radius: 34px;
+        }
+        .game-box .score span{
+            display: inline-block;
+            margin-top: 14px;
+        }
+        .game-box .grade{
+            background-color: #71ABFA;
+        }
+        .game-box .lose-point{
+            background-color: #C944C6;
+        }
+        .game-box .start-game{
+            outline: none;
+            position: absolute;
+            left: 50%;
+            right: 0;
+            bottom: 10px;
+            transform: translate(-50%,0);
+            border: none;
+            border-radius: 30px;
+            padding: 8px 36px;
+            letter-spacing: 1px;
+            background-image: linear-gradient(50deg,#71ABFA 0%,#71ABFA 20%,#C944C6 80%, #C944C6 100% );
+            color: #eee;
+            cursor: pointer;
+        }
+        .game-box .start-game:hover{
+            color: #fff;
+        }
+        .game-box>.monster{
+            display: none;
+            position: absolute;
+            top:0;
+            left: 10px;
+            cursor: pointer;
+        }
+        .game-over-prompt{
+            /*display: none;*/
+            position: relative;
+            border-radius: 4px 100px 100px 4px;
+            margin: -240px auto;
+            width: 80%;
+            height: 20%;
+            background-color: #FFCE44;
+            line-height: 70px;
+            font-size: 20px;
+            font-weight: 700;
+            color: #DE5246;
+            opacity: 0;
+        }
+        .game-over-prompt .monster{
+            position: relative;
+            vertical-align: -14%;
+            margin-left: 4px;
+        }
+
+    </style>
+    <script src="js/animal_collection.js"></script>
+    <script src="js/jquery-3.1.1.js"></script>
+    <script src="js/Boom.js"></script>
+</head>
+<body>
+    <div id="clickMonsterGame">
+        <h1>xuanmiao</h1>
+        <h2>你的鼠标有多快？</h2>
+        <p class="game-introduce">游戏说明：用你的鼠标干掉神出鬼没的小怪兽，为了王国，千万别让它逃走！！</p>
+        <div class="game-box">
+            <!--<img class="cover" src="img/recycled_texture_background_by_sandeep_m-d6aeau9_PZ9chud.jpg" alt="">-->
+            <img class="monster" src="img/green_monster.svg" alt="">
+            <div class="grade score"><span>0</span>分 <p>得分</p></div>
+            <div class="lose-point score"><span>0</span>分 <p>失分</p></div>
+            <input class="start-game" type="button" value="开始游戏">
+            <div class="game-over-prompt">恭喜你一共击杀了<span>0</span>头小<img class="monster" src="img/green_monster.svg" alt=""></div>
+        </div>
+    </div>
+    <script src="js/animal_collection.js"></script>
+    <script src="js/jquery-3.1.1.js"></script>
+    <script src="js/Boom.js"></script>
+<script>
+    //获取元素
+    var monster = document.querySelector('.monster');
+    var startGame = document.querySelector('.start-game');
+    var score = document.querySelectorAll('.score');
+    var grade = document.querySelector('.grade span');
+    var losePoint = document.querySelector('.lose-point span');
+    var gameOverPrompt = document.querySelector('.game-over-prompt');
+    var gameOverPromptGrade = gameOverPrompt.querySelector('span');
+    var gameOverPromptMonster = gameOverPrompt.querySelector('.monster');
+    var gameBox = document.querySelector('.game-box');
+
+    var gameStatus = false;
+    var monsterFallTime = 2000;     //每个小怪兽下落的时间
+    //开始游戏按钮点击事件
+    startGame.onclick = function () {
+        if(gameStatus){
+            monster.style.top = "";
+            monster.style.display = "none";
+            for(var i = 0; i < score.length; i++){
+                MTween(score[i],100, 500,"marginLeft","linear");
+            }
+            MTween(this,60, 500,"bottom","linear");
+            gameOverPrompt.style.opacity = "1";
+            MTween(gameOverPrompt,200, 500,"marginTop","linear");
+            this.value = "开始游戏";
+            gameOverPromptGrade.innerHTML = grade.innerHTML;
+            console.log(gameOverPromptGrade.innerHTML);
+            gameOverPrompt.style.display = "block";
+            clearInterval(monster.timer);
+            grade.innerHTML = 0;
+            losePoint.innerHTML = 0;
+
+        }else{
+            gameOverPrompt.style.marginTop = "-240px";
+            gameOverPrompt.innerHTML = '恭喜你一共击杀了<span>0</span>头小<img class="monster" src="img/green_monster.svg" alt="">';
+            gameOverPromptGrade = gameOverPrompt.querySelector('span');
+            monsterFallTime = 2000;
+            this.value = "结束游戏";
+            for(var j = 0; j < score.length; j++){
+                MTween(score[j],-100, 500,"marginLeft","linear");
+            }
+            MTween(this,-60, 500,"bottom","linear");
+            produceMonsters(monster);
+            jitter(gameBox,"marginTop",10,2,20);
+            gameOverPrompt.style.display = "none";
+//            gameOverPrompt.style.display = "block";
+
+        }
+        gameStatus = !gameStatus;
+    };
+    //小怪兽产生函数
+    function produceMonsters(obj) {
+        monster.style.top = "";
+        monster.style.display = "block";
+        obj.style.left =  getRandom(10,521) + 'px';
+        MTween(obj,302, monsterFallTime,"top","linear",function () {
+            //因为jitter会清除传过去的对象的timer，因此不会继续下落
+            jitter(gameBox,"marginTop",10,2,20,function () {
+                losePoint.innerHTML = parseInt(losePoint.innerHTML) + 1;
+                produceMonsters(monster);
+                //达到一定数量的话
+                if(monsterFallTime === 0|| parseInt(losePoint.innerHTML) === 4){
+                    monster.style.top = "";
+                    monster.style.display = "none";
+                    //提示语 移入效果
+                    gameOverPrompt.style.opacity = "1";
+                    MTween(gameOverPrompt,200, 500,"marginTop","linear");
+                    clearInterval(monster.timer);
+                    gameOverPrompt.style.display = "block";
+                    gameOverPrompt.innerHTML = "GAME OVER!";
+                    for(var i = 0; i < score.length; i++){
+                        MTween(score[i],100, 500,"marginLeft","linear");
+                    }
+                    MTween(startGame,60, 500,"bottom","linear");
+                    startGame.value = "开始游戏";
+                    gameStatus = !gameStatus;
+                    losePoint.innerHTML = 0;
+                    grade.innerHTML = 0;
+                    clearInterval(monster.timer);
+                }
+            });
+        });
+    }
+    //点击怪兽操作
+    monster.onmousedown = function () {
+        this.style.display = "block";
+        monsterFallTime -= 100;
+        grade.innerHTML = parseInt(grade.innerHTML) + 1;
+        clearInterval(this.timer);
+        //爆炸效果
+        boom($('.game-box>.monster'));
+        setTimeout(function () {
+            //移出爆炸效果生成的div
+            document.body.removeChild(document.body.lastElementChild);
+
+            monster.style = "";
+            gameOverPromptMonster.innerHTML = "";
+            produceMonsters(monster);
+        },800);
+    };
+    var monsterMask;
+    gameOverPromptMonster.onclick = function () {
+        boom($('.game-over-prompt .monster'));
+        setTimeout(function () {
+            gameOverPromptMonster.style = "";
+            gameOverPromptMonster.innerHTML = "";
+            document.body.removeChild(document.body.lastElementChild);
+        },800)
+    };
+</script>
+</body>
+</html>

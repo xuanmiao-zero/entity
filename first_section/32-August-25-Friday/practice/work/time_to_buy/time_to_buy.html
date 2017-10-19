@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="轩邈">
+    <meta name="copyright" content="轩邈">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <!-- 网站SEO -->
+    <title>TIME TO BUY</title>
+    <meta name="keywords" content="轩邈 xuanmiao xuanmiao.com">
+    <meta name="description" content="轩邈 | 猎奇蜗牛">
+    <!-- 标题栏logo图标 -->
+    <link rel="icon" href="" type="image/x-icon">
+    <!-- 收藏夹logo图标 -->
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <style>
+        a{
+            text-decoration: none;
+        }
+        a:link{
+            color: #000;
+        }
+        /*a:visited{*/
+            /*color: purple;*/
+        /*}*/
+        a:hover{
+            color: #4C8BF5;
+        }
+        h4{
+            margin: 0;
+        }
+        ul,li{
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+
+        /*标题*/
+        h1{
+            color: #fff;
+            font-size: 46px;
+        }
+
+        /*上面的商品图片盒子*/
+        #timeToBuy .product-box{
+            width: 770px;
+        }
+
+        body{
+            margin: 0;
+            background-color: #DE4A63;
+        }
+
+        /*商品总盒子*/
+        #timeToBuy{
+            margin: 0 auto;
+            width: 770px;
+            text-align: center;
+            font-size: 12px;
+        }
+        /*商品项目*/
+        #timeToBuy .product-box .product-wrap{
+            position: relative;
+            display: inline-block;
+            margin:10px 4px;
+            width: 180px;
+            background-color: #fff;
+        }
+
+        /*截止时间设置*/
+        .product-wrap .end-time{
+            background-color: #171717;
+            width: 100%;
+            height: 32px;
+            color: #DE4A63;
+            border: none;
+            outline: none;
+            line-height: 32px;
+            vertical-align: middle;
+        }
+
+        /*倒计时*/
+        .countdown{
+            margin: 4px auto 10px auto;
+            width: 100%;
+            height: 46px;
+            font-weight: 700;
+        }
+        .countdown>span{
+
+            display: block;
+            color: #999;
+            line-height: 26px;
+            vertical-align: top;
+        }
+        .countdown .countdown-time{
+            display: inline-block;
+            margin: auto;
+            color: #fff;
+            width: 166px;
+            height: 26px;
+            word-spacing: 0;
+            text-align: right;
+        }
+        .countdown .countdown-time span{
+            display: inline-block;
+            float: left;
+            margin: 1px;
+            padding: 0 4px;
+            background-color: #DE4A63;
+            border-radius: 3px;
+            color: #fff;
+        }
+        .countdown .countdown-time span.colon{
+            background-color: transparent;
+            color: #DE4A63;
+            padding: 0 0;
+        }
+
+        /*商品图片*/
+        .product-pic{
+            width: 160px;
+            height: 150px;
+        }
+
+        /*商品价格*/
+        .product-price-box{
+            margin-top: 20px;
+            color: #777;
+            font-weight: bold;
+        }
+        .product-price-box span{
+            color: #DE4A63;
+        }
+
+        /*遮罩*/
+        .mask{
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.3);
+            display: none;
+            opacity: 0;
+        }
+
+        /*商品已下架*/
+        .off-shelf{
+            display: block;
+            position: absolute;
+            top: 0;
+            width: 180%;
+            left: -40%;
+            height: 100%;
+            background: url("image/off_shelf.jpg") no-repeat center;
+            background-size: 180%;
+            opacity: 0;
+            transition: 0.16s ease-in;
+            z-index: -1;
+        }
+        /*下架动画*/
+        .off-shelf.active {
+            display: block;
+            width: 100%;
+            left: 0;
+            background-size: 140%;
+            opacity: 0.4;
+            z-index: 2;
+        }
+
+        /*商品列表*/
+        .product-text{
+            margin: auto;
+            width: 756px;
+            text-align: left;
+        }
+
+        /*商品列表标题*/
+        .product-text .title{
+            height: 32px;
+            background-color: #171717;
+            color: #fff;
+            line-height: 32px;
+            font-size: 12px;
+        }
+
+        .product-text .title span{
+            display: inline-block;
+            box-sizing: border-box;
+            padding: 0 0 0 10px;
+            width:45%;
+        }
+        .product-text .title span:last-child {
+            padding: 0;
+            width:9%;
+            text-align: center;
+        }
+        /*产品*/
+        .product-text .product-text-item{
+            height: 62px;
+            background-color: #fff;
+            opacity: 0;
+        }
+
+        .product-text .product-text-item *{
+            line-height: 62px;
+            vertical-align: middle;
+        }
+
+        /*产品名称*/
+        .product-text .product-text-item .product-name{
+            padding-left: 10px;
+            width: 44%;
+            display: inline-block;
+        }
+
+        /*产品价格*/
+        .product-text .product-text-item .product-price{
+            display: inline-block;
+            width: 47%;
+            color: #DE4A63;
+            font-weight: bold;
+        }
+
+        /*商品图片*/
+        .product-text .product-text-item img{
+            width: 49px;
+            height: 76%;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div id="timeToBuy">
+        <h1>xuanmiao</h1>
+        <div class="product-box">
+
+        </div>
+        <div class="product-text">
+            <h3 class="title">
+                <span>商品</span>
+                <span>价钱</span>
+                <span>图片</span>
+            </h3>
+            <ul class="product-text-list"></ul>
+        </div>
+    </div>
+    <script src="animal_collection.js"></script>
+<script>
+    /*获取元素*/
+    var productBox = document.querySelector('.product-box');
+    var productTextList = document.querySelector('.product-text-list');
+    /*声明变量*/
+    var productArr = [
+        {
+            name: "iphone7s plus 酷炫手机",
+            price: 8000,
+            imgSrc: "image/0.png",
+            href:"http://www.xuanmiao.wang/"
+        },
+        {
+            name: "27 英寸配备 Retina 5K显示屏",
+            price: 15999,
+            imgSrc: "image/1.png",
+            href:"http://www.xuanmiao.wang/"
+        },
+        {
+            name: "魅族、锤子、小米“集”群",
+            price: 20000,
+            imgSrc: "image/2.png",
+            href:"http://www.xuanmiao.wang/"
+        },
+        {
+            name: "iWatch 智能手表不智能",
+            price: 5000,
+            imgSrc: "image/3.png",
+            href:"http://www.xuanmiao.wang/"
+        }
+    ];
+
+    /*获取下架动画图片*/
+
+    /*初始化*/
+
+    /*商品图片列表初始化*/
+    initialProductPictureList();
+    /*商品文字列表初始化*/
+    initialProductTextList();
+
+    /*下面的列表隔行换色*/
+
+    /*获取元素*/
+
+    //获取显示时间的盒子
+    var countdownTimes = document.querySelectorAll('.countdown-time');
+    var offShelf =  document.querySelectorAll('.off-shelf');
+    var productWrap = document.querySelectorAll(".product-wrap");
+    var countdownTimeEles = [];
+    var productTextItem = document.querySelectorAll('.product-text-item');
+
+    var endTime = document.querySelectorAll('.end-time');
+    var endTimeSet = [];
+    var endTimeString = [];
+    /*下面的列表隔行换色*/
+    listChangeColor();
+    function listChangeColor() {
+        for(var i = 0; i < productTextItem.length; i++){
+            if(i % 2){
+                productTextItem[i].style.backgroundColor = "#f7f7f7";
+            }
+        }
+    }
+    /*声明变量*/
+    //获取显示时间的span元素
+    for(var i = 0; i < countdownTimes.length; i++){
+        countdownTimeEles[i] = countdownTimes[i].querySelectorAll('span');
+    }
+
+    /*设置活动结束时间*/
+    for(var k = 0; k < endTime.length; k++){
+        endTime[k].index = k;
+        endTime[k].onchange = function () {
+            endTimeString[this.index] = endTime[this.index].value;
+            if(endTimeString[this.index] !== ""){
+                var year = parseInt(endTimeString[this.index].substr(0, 4));
+                var month = parseInt(endTimeString[this.index].substr(6, 8));
+                var day = parseInt(endTimeString[this.index].substr(8, 10));
+                var hour = parseInt(endTimeString[this.index].substr(11, 13));
+                var minute = parseInt(endTimeString[this.index].substr(14, 16));
+                endTimeSet[this.index]= new Date(year, month - 1, day, hour, minute, 0);
+            }
+
+            /*刷新倒计时*/
+            for(var i = 0; i < endTimeSet.length; i ++){
+                productWrap[i].shelfStatus = false;
+                fCountdown(endTimeSet[i],i);
+            }
+
+        };
+    }
+
+    /*函数*/
+
+    /*商品图片列表初始化*/
+    function initialProductPictureList(){
+        for(var i = 0; i < productArr.length; i++){
+            var productWrap = document.createElement('div');
+            productWrap.className = "product-wrap";
+
+            var endTime = document.createElement('input');
+            endTime.className = "end-time";
+            endTime.type = "datetime-local";
+            productWrap.appendChild(endTime);
+
+            var countdown = document.createElement('div');
+            countdown.className = "countdown";
+
+            var spanShengYu = document.createElement('span');
+            spanShengYu.innerHTML = "倒计时";
+            countdown.appendChild(spanShengYu);
+
+            var countdownTime = document.createElement('div');
+            countdownTime.className = "countdown-time";
+            countdownTime.innerHTML = '<span>0</span><span>0</span><span class="colon">天</span><span>0</span><span>0</span><span class="colon">:</span><span>0</span><span>0</span><span class="colon">:</span><span>0</span><span>0</span>';
+            countdown.appendChild(countdownTime);
+
+            productWrap.appendChild(countdown);
+
+            var aProductPic = document.createElement('a');
+            aProductPic.href = productArr[i].href;
+
+            var imgProductPic = document.createElement('img');
+            imgProductPic.className = "product-pic";
+            imgProductPic.src= productArr[i].imgSrc;
+            imgProductPic.alt= productArr[i].name;
+            aProductPic.appendChild(imgProductPic);
+
+            productWrap.appendChild(aProductPic);
+
+            var aProductName = document.createElement('a');
+            aProductName.href = productArr[i].href;
+
+            var hProductName = document.createElement('h4');
+            hProductName.className = "product-name";
+            hProductName.innerHTML = productArr[i].name;
+
+            aProductName.appendChild(hProductName);
+
+            productWrap.appendChild(aProductName);
+
+            var pProductPriceBox = document.createElement('p');
+            pProductPriceBox.className = "product-price-box";
+            pProductPriceBox.innerText = "抢购价： ";
+
+            var spanProductPrice = document.createElement('span');
+            spanProductPrice.className = "product-price";
+            spanProductPrice.innerHTML = "￥" + productArr[i].price.toString();
+
+            pProductPriceBox.appendChild(spanProductPrice);
+
+            productWrap.appendChild(pProductPriceBox);
+
+            var divMask = document.createElement('div');
+            divMask.className = "mask";
+
+            productWrap.appendChild(divMask);
+
+            var imgOffShelf = document.createElement("img");
+            imgOffShelf.className = "off-shelf";
+
+            productWrap.appendChild(imgOffShelf);
+
+            productBox.appendChild(productWrap); //怎么这么麻烦！！！ ？ 用innerHTML比较好。
+        }
+    }
+
+    /*商品文字列表初始化*/
+    function initialProductTextList() {
+        for(var j = 0; j < productArr.length; j++) {
+            //商品列表项
+            var productTextItem = document.createElement('li');
+            productTextItem.className = "product-text-item";
+
+            //商品名称
+            var aProductName  = document.createElement('a');
+            aProductName.href = productArr[j].href;
+
+            var hProductName = document.createElement('h4');
+            hProductName.className = "product-name";
+            hProductName.innerHTML = productArr[j].name;
+
+            aProductName.appendChild(hProductName);
+
+            productTextItem.appendChild(aProductName);
+
+            //商品价格
+            var spanProductPrice = document.createElement('span');
+            spanProductPrice.className = "product-price";
+            spanProductPrice.innerHTML = "￥" + productArr[j].price;
+
+            productTextItem.appendChild(spanProductPrice);
+
+            var aProductPic = document.createElement('a');
+            aProductPic.href = productArr[j].href;
+
+            var productPic = document.createElement('img');
+            productPic.className = "product-pic";
+            productPic.src = productArr[j].imgSrc;
+            productPic.alt = productArr[j].name;
+            aProductPic.appendChild(productPic);
+
+            productTextItem.appendChild(aProductPic);
+
+
+            productTextList.appendChild(productTextItem);
+
+
+        }
+    }
+
+    /*倒计时*/
+    function fCountdown(endTime,i){
+
+        if(!endTime) return;
+
+        productWrap[i].timer1 = setInterval(function () {
+            var currentTime = new Date();
+            var differTime, countdownDay, countdownHour, countdownMinutes, countdownSecond;
+            if(currentTime.getTime() < endTime.getTime()){
+                differTime = endTime.getTime() - currentTime.getTime();
+            }else{
+                differTime = 0;
+                offShelfAnimation(i);
+                clearInterval(productWrap[i].timer1);
+            }
+
+            countdownDay = parseInt (differTime / 86400000);
+            if(countdownDay >= 100){
+                countdownDay = 99;
+            }
+            countdownHour = parseInt (differTime % 86400000 / 3600000);
+            countdownMinutes = parseInt (differTime % 3600000 / (60*1000));
+            countdownSecond = parseInt (differTime % 60000 / 1000 );
+
+            /*天*/
+            if(countdownDay < 10){
+                countdownTimeEles[i][0].innerHTML = 0;
+                countdownTimeEles[i][1].innerHTML = countdownDay;
+            }else{
+                var day0 = countdownDay.toString().charAt(0);
+                var day1 = countdownDay.toString().charAt(1);
+                countdownTimeEles[i][0].innerHTML = day0;
+                countdownTimeEles[i][1].innerHTML = day1;
+            }
+
+            /*时*/
+            if(countdownHour < 10){
+                countdownTimeEles[i][3].innerHTML = 0;
+                countdownTimeEles[i][4].innerHTML = countdownHour;
+            }else{
+                var hour0 = countdownHour.toString().charAt(0);
+                var hour1 = countdownHour.toString().charAt(1);
+                countdownTimeEles[i][3].innerHTML = hour0;
+                countdownTimeEles[i][4].innerHTML = hour1;
+            }
+
+            /*分*/
+            if(countdownMinutes < 10){
+                countdownTimeEles[i][6].innerHTML = 0;
+                countdownTimeEles[i][7].innerHTML = countdownMinutes;
+            }else{
+                var minute0 = countdownMinutes.toString().charAt(0);
+                var minute1 = countdownMinutes.toString().charAt(1);
+                countdownTimeEles[i][6].innerHTML = minute0;
+                countdownTimeEles[i][7].innerHTML = minute1;
+            }
+
+            /*秒*/
+            if(countdownSecond < 10){
+                countdownTimeEles[i][9].innerHTML = 0;
+                countdownTimeEles[i][10].innerHTML = countdownSecond;
+            }else{
+                var second0 = countdownSecond.toString().charAt(0);
+                var second1 = countdownSecond.toString().charAt(1);
+                countdownTimeEles[i][9].innerHTML = second0;
+                countdownTimeEles[i][10].innerHTML = second1;
+            }
+        },1000);
+
+    }
+
+    /*商品下架通知动画*/
+    function offShelfAnimation(i){
+        offShelf[i].className = "off-shelf active";
+
+        var num = 0;
+
+        setTimeout(function () {
+            if(!productWrap[i].shelfStatus){
+                jitter(productWrap[i],"margin-left",20,2,0.2,function () {
+                    productWrap[i].shelfStatus = true;
+                    /*console.log(productWrap[i].shelfStatus);*/ //？为什么还会输出 重新赋值了timer导致timer无法清除
+                });
+
+                /*底下的列表逐渐显示*/
+                clearInterval(productTextItem.timer);
+                var startTime = new Date().getTime();//运动前的时间
+                var begin = getCss(productTextItem[i],"opacity");
+                //运动动画
+                productTextItem[i].timer = setInterval(function () {
+                    //计算已经运动过的时间
+                    var t = new Date().getTime() - startTime;
+                    if(t >= 500){
+                        t = 500;
+                        clearInterval(productTextItem[i].timer);
+                    }
+                    productTextItem[i].style["opacity"] = Tween["linear"](t,begin,1,500);
+                },30);
+            }
+        },160)
+    }
+/*
+    width: 100%;
+    left: 0;
+    background-size: 140%;*/
+
+</script>
+</body>
+</html>
+

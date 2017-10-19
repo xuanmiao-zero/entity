@@ -1,0 +1,84 @@
+body,h3{
+	margin: 0;
+}
+ul,li{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+a{
+	text-decoration: none;
+	color: #4898a3;
+}
+img{
+	border: 0;
+	vertical-align: top;
+}
+.clearfix{
+	zoom: 1;
+}
+.clearfix:after{
+	content: "";
+	display: block;
+	clear: both;
+}
+.box{
+	margin: 50px auto;
+	width: 390px;
+	height: 444px;
+}
+.box .head{
+	height: 55px;
+	background: url(../img/bg.png);
+}
+.box .head h3{
+	float: left;
+	background: url(../img/title.png) no-repeat;
+	text-indent: -9999px;
+	width: 110px;
+	height: 55px;
+	margin-left: 28px;
+}
+.box .head .right{
+	float: right;
+	width: 125px;
+	font: 12px "微软雅黑";
+	color: #fefffd;
+	margin-top: 23px;
+}
+.box .content{
+	width: 371px;
+	height: 362px;
+	margin: 10px 9px 17px 10px;
+	background-color: #e7e7e7;
+}
+.box .content li{
+	float: left;
+	width: 185px;
+	height: 120px;
+	font: 13px "微软雅黑";
+	margin: 0 1px 1px 0;
+	background-color: white;
+}
+.box .content .dec2,.box .content .dec4,.box .content .dec6{
+	margin-right: 0;
+}
+.box .content li .text{
+	float: left;
+	margin: 19px 0 0 20px;
+}
+.box .content li .left{
+	width: 97px;
+	height: 120px;
+	float: left;
+}
+.box .content li .right{
+	width: 88px;
+	height: 120px;
+	float: right;
+}
+.box .content li .right .img{
+	float: left;
+	height: 84px;
+	margin-top: 36px;
+}

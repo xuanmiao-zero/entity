@@ -1,0 +1,101 @@
+body,h3,p{
+	margin: 0;
+	padding: 0;
+}
+ul,li{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+.clearfix{
+	zoom: 1;
+}
+.clearfix:after{
+	content: "";
+	display: block;
+	clear: both;
+}
+.box{
+	width: 680px;
+	height: 507px;
+	margin: 20px auto;
+	padding: 0 4px 0 5px;
+}
+.box .head{
+	height: 30px;
+	margin-bottom: 9px;
+}
+.box .head h3{
+	font: 12px/24px "微软雅黑";
+	height: 24px;
+	margin-top: 6px;
+	float: left;
+}
+.box .head .button{
+	float: right;
+	height: 22px;
+	margin-top: 4px;
+}
+.box .head .button a{
+	float: left;
+	width: 24px;
+	height: 22px;
+}
+.box .head .button .left{
+	margin-right: 10px;
+}
+.box .content{
+	height: 468px;
+	margin-right: -10px;
+}
+.box .content li{
+	float: left;
+	width: 333px;
+	height: 140px;
+	border: 1px solid #e6e6e6;
+	background-color: #f3f3f3;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+.box .content li .left{
+	height: 140px;
+	width: 100px;
+	float: left;
+}
+.box .content li .left .img{
+	width: 80px;
+	height: 80px;
+	margin: 10px;
+}
+.box .content li .left .follow{
+	width: 54px;
+	height: 22px;
+	margin-left: 23px;
+}
+.box .content li .left .follow a{
+	display: inline-block;
+	width: 54px;
+	height: 22px;
+	background: url(../img/follow.png);
+}
+.box .content li .right{
+	width: 233px;
+	height: 130px;
+	margin-top: 10px;
+	float: right;
+}
+.box .content li .right .name{
+	font: bold 13px "宋体";
+	color: #0a8cd2;
+}
+.box .content li .right .summary{
+	font: 12px/20px "times new roman","宋体";
+	color: #808080;
+}
+.box .content li .info,.box .content li .follow_{
+	font: 12px/20px "times new roman","宋体";
+	color: black;
+}

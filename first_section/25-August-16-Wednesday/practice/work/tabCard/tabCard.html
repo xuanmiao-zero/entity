@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="轩邈">
+    <meta name="copyright" content="轩邈">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <!-- 网站SEO -->
+    <title>tabCard</title>
+    <meta name="keywords" content="轩邈 xuanmiao xuanmiao.com">
+    <meta name="description" content="轩邈 | 猎奇蜗牛">
+    <!-- 标题栏logo图标 -->
+    <link rel="icon" href="" type="image/x-icon">
+    <!-- 收藏夹logo图标 -->
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <style>
+        #tabCard{
+            margin: 200px auto;
+            width: 440px;
+            height: 260px;
+            color: #eee;
+            background: #0a8cd2;
+            border:1px solid transparent;
+            padding: 10px 20px;
+        }
+        ul{
+            display: flex;
+            justify-content: space-around;
+            margin: 10px auto;
+            padding: 0;
+            list-style: none;
+            text-align: center;
+            cursor: pointer;
+        }
+        #tabCard ul li{
+            display: inline-block;
+            border-radius: 5px;
+            width: 120px;
+            font: 16px/34px bold 微软雅黑;
+        }
+        #tabCard .content-box img{
+            margin: 20px 10px;
+            border: 2px solid #eee;
+            width: 180px;
+        }
+        #tabCard .content-box .message{
+            display: inline-block;
+            margin-right: 10px;
+            width: 180px;
+            height: 260px;
+            float: right;
+            overflow: hidden;
+        }
+        #tabCard .content-box .message p{
+            display: none;
+            margin: 0;
+            padding: 10px;
+            line-height: 20px;
+        }
+        #tabCard .content-box .message.active p{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div id="tabCard">
+        <ul class="tabBtn">
+            <li>专题</li>
+            <li>视频</li>
+            <li>图片</li>
+        </ul>
+        <div class="content-box">
+            <img src="img/personSociety%20(1).jpg" alt="">
+            <div class="message active">
+                <p>中国单身人数达2亿</p>
+                <p>涉猥亵女童男子已被抓获</p>
+                <p>百度作业帮网小猿搜题放黄色信息</p>
+            </div>
+        </div>
+    </div>
+
+<script>
+    var tabBtns = document.querySelectorAll("#tabCard .tabBtn li");
+    var imgs = document.querySelector(".content-box img");
+    var messages = document.querySelectorAll(".content-box .message p");
+
+    var messagesArr = [
+        [
+            "中国单身人数达2亿",
+            "涉猥亵女童男子已被抓获",
+            "百度作业帮网小猿搜题放黄色信息"
+        ],
+        [
+            "火狐浏览器64位PC版发布",
+            "腾讯音乐状告网易云音乐侵权",
+            "软银有意收购Uber股票"
+        ],
+        [
+            "微博封掉今日头条内容授权接口",
+            "微博封掉今日头条内容授权接口",
+            "BOSS直聘发公开信：将承担法律责任并落实整改"
+        ]
+    ];
+    var imgsArr = [
+        [
+            "img/personSociety%20(1).jpg",
+            "img/personSociety%20(2).jpg",
+            "img/personSociety%20(3).jpg"
+        ],
+        [
+            "img/personSociety%20(4).jpg",
+            "img/personSociety%20(5).jpg",
+            "img/personSociety%20(6).jpg"
+        ],
+        [
+            "img/personSociety%20(7).jpg",
+            "img/personSociety%20(8).jpg",
+            "img/personSociety%20(9).jpg"
+        ]
+    ];
+    var activeBtn = 0;
+    var activeMessage = 0;
+    var activeImg = [[],[],[]];
+    var timer;
+
+    startTimer();
+    for(var i1 = 0; i1 < imgsArr.length; i1++){
+        activeImg[i1] = 0;
+    }
+    for(var i = 0; i < tabBtns.length; i++){
+        tabBtns[i].index = i;
+        tabBtns[i].onmouseover = function () {
+
+            clearInterval(timer);
+            //修改选项卡序号
+            activeBtn = this.index;
+            //高亮显示当前选项卡按钮，其他恢复原色
+            for(var i = 0; i < tabBtns.length; i ++){
+                if( i === this.index){
+                    tabBtns[i].style.backgroundColor = "#fff";
+                    tabBtns[i].style.color = "#0a8cd2";
+                }else{
+                    tabBtns[i].style.backgroundColor = "";
+                    tabBtns[i].style.color = "";
+                }
+            }
+            //改变消息内容
+            for(var j = 0; j < messages.length; j ++){
+                messages[j].innerHTML = messagesArr[this.index][j];
+            }
+            //去除所有选中消息颜色
+            for(var k = 0; k < messages.length; k ++){
+                messages[k].style.backgroundColor = "";
+                messages[k].style.color = "";
+            }
+
+            //将第一个消息高亮
+            activeMessage = 0;
+            messages[activeMessage].style.backgroundColor = "#fff";
+            messages[activeMessage].style.color = "#0a8cd2";
+
+        };
+        tabBtns[i].onmouseout = function () {
+            startTimer();
+        }
+    }
+    for(var j = 0; j < messages.length; j++){
+        messages[j].index = j;
+        messages[j].onmouseover = function () {
+            activeMessage = this.index;
+            for(var j = 0; j < messages.length; j ++){
+                //鼠标移入的按钮高亮显示，其他恢复原色
+                if( j === this.index){
+                    messages[j].style.backgroundColor = "#fff";
+                    messages[j].style.color = "#0a8cd2";
+                }else{
+                    messages[j].style.backgroundColor = "";
+                    messages[j].style.color = "";
+                }
+            }
+            //改变图像序号
+            activeImg[activeBtn] = this.index;
+            imgs.src = imgsArr[activeBtn][activeImg[activeBtn]];
+        }
+    }
+    function startTimer(){
+        timer = setInterval(function () {
+            for(var i = 0; i < tabBtns.length; i ++){
+                tabBtns[i].style.backgroundColor = "";
+                tabBtns[i].style.color = "";
+            }
+            for(var j = 0; j < messages.length; j ++){
+                messages[j].style.backgroundColor = "";
+                messages[j].style.color = "";
+            }
+            tabBtns[activeBtn].style.backgroundColor = "#fff";
+            tabBtns[activeBtn].style.color = "#0a8cd2";
+
+            messages[activeMessage].style.backgroundColor = "#fff";
+            messages[activeMessage].style.color = "#0a8cd2";
+
+            activeMessage++;
+            if(activeMessage === messages.length){
+                activeBtn === tabBtns.length-1 ? activeBtn = 0:activeBtn++;            ;
+                activeMessage = 0;
+            }
+        },1000)
+    }
+
+</script>
+</body>
+</html>

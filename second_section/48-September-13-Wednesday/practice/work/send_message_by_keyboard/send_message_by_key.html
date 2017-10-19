@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>imitationTeacher</title>
+    <style>
+        *{
+            padding: 0;
+            margin:0;
+        }
+        body{
+            background-color: cornflowerblue;
+        }
+        #phone{
+            width:360px;
+            height: 700px;
+            margin:0 auto 40px auto;
+            border:1px solid #fff;
+            background-color: rgba(255,255,255,.7);
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 30px;
+            padding: 0 20px;
+        }
+        #phone .tt{
+            text-align: center;
+            padding:5px 0 10px;
+        }
+        #phone .tt span{
+            display: inline-block;
+            height:4px;
+            width: 60px;
+            background-color: #666;
+            -webkit-border-radius: 2px;
+            -moz-border-radius: 2px;
+            border-radius: 2px;
+        }
+        #phone .pm{
+            border: 1px solid #ccc;
+            height:580px;
+            background-color: #fff;
+            list-style: none;
+            padding: 10px;
+        }
+        #phone .btns{
+            position: relative;
+            margin-top:7px;
+            height:45px;
+        }
+        #phone .btns div{
+            float: left;
+        }
+        #phone .btns .ava{
+            width:40px;
+            height:40px;
+            margin-top:2px;
+        }
+        #phone .btns img{
+            width:100%;
+            height:100%;
+            border-radius: 20px;
+        }
+        #phone .inp-box{
+            width:220px;
+            height:30px;
+            margin:2px 10px 0;
+        }
+        #phone .inp-box input{
+            font-size: 15px;
+            outline: none;
+            width:210px;
+            height:30px;
+            line-height:30px;
+            padding:5px;
+            background-color: transparent;
+            border:1px solid #ffffff;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+        }
+        #phone .send-btn{
+            margin-top: 6px;
+            width:70px;
+            height:30px;
+            line-height: 30px;
+            border-radius: 5px;
+            color: #fff;
+            background-color: #1C9ABE;
+        }
+        #phone .send-btn span{
+            padding-top: 20px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+        #phone .pm li{
+            margin-top:10px;
+        }
+        #phone .pm .ava{
+            width:40px;
+            height:40px;
+            -webkit-border-radius: 20px;
+            -moz-border-radius: 20px;
+            border-radius: 20px;
+            overflow: hidden;
+            float: left;
+        }
+        #phone .pm .ava img{
+            width: 100%;
+            height: 100%;
+        }
+        #phone .pm .text{
+            margin: auto 50px;
+            line-height:1.5em;
+            word-break: break-all;
+        }
+        #phone .pm .text span{
+            display: inline-block;
+            padding:5px 10px;
+            border:1px solid #f1f1f1;
+            border-radius: 5px;
+            background: #f2f2f2;
+        }
+        #phone .pm .right .ava{
+            float: right;
+        }
+        #phone .pm .right .text{
+            text-align: right;
+        }
+        #phone .pm .right span{
+            color:#fff;
+            background-color:green;
+            text-align: left;
+        }
+        #content{
+            height: 30px;
+        }
+
+        #sent-btn{
+            cursor: pointer;
+            outline: none;
+            height: 30px;
+            border-radius: 4px;
+            padding: 2px 10px;
+            border: none;
+            color: #fff;
+            background: transparent;
+        }
+        .send-way{
+            display: none;
+            position: absolute;
+            line-height: 18px;
+            right: -78px;
+            bottom: -36px;
+            padding: 4px;
+            color: #fff;
+            background: #1C9ABE;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+        .send-way p{
+            cursor: pointer;
+        }
+        .send-way p span{
+            opacity: 0;
+        }
+        .send-way p:nth-of-type(1) span{
+            opacity: 1;
+        }
+        .send-way p:hover{
+            background-color: #00a8e0;
+        }
+    </style>
+</head>
+<body>
+<!--手机-->
+<div id="phone">
+    <!--听筒-->
+    <div class="tt">
+        <span></span>
+    </div>
+    <!--屏幕-->
+    <ul class="pm">
+        <li>
+            <div class="ava"><img src="img/eye%20(3).jpg" alt=""></div>
+            <div class="text"><span>你好，轩邈！</span></div>
+        </li>
+        <li class="right">
+            <div class="ava"><img src="img/eye%20(3).jpg" alt=""></div>
+            <div class="text"><span>你好，轩邈！fsdfsfsffsfsfsfsfsfsfs</span></div>
+        </li>
+    </ul>
+    <!--按钮-->
+    <div class="btns">
+        <div class="ava"><img id="ava" src="img/eye%20(1).jpg" alt=""></div>
+        <div class="inp-box">
+            <input id="content" type="text" title="请输入" placeholder="请输入">
+        </div>
+        <div class="send-btn"><input type="button" id="sent-btn" value="发送"><span class="send-way-btn">▼</span></div>
+
+        <div class="send-way">
+            <p><span>✔</span>按Enter键发送消息</p>
+            <p><span>✔</span>按Ctrl + Enter键发送消息</p>
+        </div>
+    </div>
+</div>
+<script src="send_message.js"></script>
+<script>
+</script>
+</body>
+</html>

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!-- 重置样式 -->
+		<link rel="stylesheet" href="../css/reset.css" />
+		<!-- 工具样式 -->
+		<link rel="stylesheet" href="../css/tools.css" />
+		<!-- 对应同名html文件样式 -->
+		<link rel="stylesheet" href="../css/taobaophone.css" />
+		<script>
+			//动态设置像素比
+			var dpr = 1 / window.devicePixelRatio;
+			document.write('<meta name="viewport" content="width=device-width,initial-scale='+ dpr +',minimum-scale='+ dpr +',maximum-scale='+ dpr +',user-scalable=no" />');
+			
+			/*
+			 * 	根据屏幕宽度设置HTML字体大小
+			 * 	1、获取屏幕宽度
+			 * 		document.documentElement.clientWidth
+			 * 	2、通过一个计算公式得出等比缩放结果
+			 * 		屏幕宽度 / 固定数值 = 结果
+			 * 	3、通过JS设置HTML的字体大小
+			 * 		a.获取元素
+			 * 
+			 * 	计算过程
+					测量元素 / HTML字体大小 = 百分值
+					
+				注意事项：
+					1、根据设计图尺寸选择及其	- 假设：640
+					2、通过动态处理像素比后的机器
+					3、确定符合要求的机型		- 假设：iPhone5
+			 */
+			var w = document.documentElement.clientWidth / 10;
+			var html = document.getElementsByTagName('html')[0];
+			html.style.fontSize = w + 'px';
+		</script>
+	</head>
+	<body>
+		<header class="head abs w">
+			<h1 class="head_bg fl">淘宝</h1>
+			<form action="" method="post" class="fl head_form rel">
+				<input type="search" value="寻找宝贝店铺" class="tac fl head_search"/>
+				<span class="fl search_bg abs">放大镜</span>
+			</form>
+		</header>
+		<section class="w">
+			<nav class="banner w">
+				<div class="banner_img rel w">
+					<a href="" class="banner_img w">
+						<img src="../img/banner_1.png" class="banner_img w"/>
+					</a>
+					<div class="banner_btn abs">
+						<span class="yuan"></span>
+						<span class="yuan"></span>
+						<span class="active yuan"></span>
+						<span class="yuan"></span>
+						<span class="yuan"></span>
+						<span class="yuan"></span>
+						<span class="yuan"></span>
+					</div>
+				</div>
+				<div class="banner_nav ">
+					<a href="" class="fl tmall_ico tac">
+						<img src="../img/nav_1.png" class="tmall_icos fl"/>
+						<span class="tmall_icot fl">天猫</span>
+					</a>
+					<a href="" class="fl tmall_ico tac">
+						<img src="../img/nav_2.png" class="tmall_icos fl"/>
+						<span class="tmall_icot fl">聚划算</span>
+					</a>
+					<a href="" class="fl tmall_ico tac">
+						<img src="../img/nav_3.png" class="tmall_icos fl"/>
+						<span class="tmall_icot fl">天猫国际</span>
+					</a>
+					<a href="" class="fl tmall_ico tac">
+						<img src="../img/nav_4.png" class="tmall_icos fl"/>
+						<span class="tmall_icot fl">外卖</span>
+					</a>
+					<a href="" class="fl tmall_ico tac">
+						<img src="../img/nav_5.png" class="tmall_icos fl"/>
+						<span class="tmall_icot fl">天猫超市</span>
+					</a>
+					<a href="" class="fl tmall_ico tac">
+						<img src="../img/nav_6.png" class="tmall_icos fl"/>
+						<span class="tmall_icot fl">充值中心</span>
+					</a>
+					<a href="" class="fl tmall_ico tac">
+						<img src="../img/nav_7.png" class="tmall_icos fl"/>
+						<span class="tmall_icot fl">飞猪旅行</span>
+					</a>
+					<a href="" class="fl tmall_ico tac">
+						<img src="../img/nav_8.png" class="tmall_icos fl"/>
+						<span class="tmall_icot fl">领金币</span>
+					</a>
+					<a href="" class="fl tmall_ico tac">
+						<img src="../img/nav_9.png" class="tmall_icos fl"/>
+						<span class="tmall_icot fl">拍卖</span>
+					</a>
+					<a href="" class="fl tmall_ico tac">
+						<img src="../img/nav_10.png" class="tmall_icos fl"/>
+						<span class="tmall_icot fl">分类</span>
+					</a>
+				</div>
+				<div class="banner_photo w">
+					<a href="" class="fl toutiao">淘宝头条</a>
+					<a href="" class="fl new tac">最新</a>
+					<a href="" class="fl how">怎么样才能让你在人山人海中拍</a>
+				</div>
+			</nav>
+			<div class="sec3 w">
+				<div class="sec-left fl">
+					<div class="sec-left_top">
+						<h5 class="taoqianghui fl">
+							<a href="" class="fl taoqianghui-img"></a>
+						</h5>
+						<strong class="fl haohuo">
+							限时限量汇全网好货
+						</strong>
+						<time class="fl">
+							<span class="time0 fl tac">00</span>
+							<span class="timehao fl tac">:</span>
+							<span class="time0 fl tac">00</span>
+							<span class="timehao fl tac">:</span>
+							<span class="time0 fl tac">00</span>
+						</time>
+					</div>
+					<div class="sec-left_bot">
+						<a href="">
+							<img src="../img/sec3_1.png" class="sec-left_bot"/>
+						</a>
+					</div>
+				</div>
+				<div class="sec-right fl">
+					<div class="sec-right_top">
+						<img src="../img/haohuo_1.png"/>
+					</div>
+					<div class="sec-right_bot">
+						<div class="shopping fl">
+							<img src="../img/shopping.png"/>
+						</div>
+						<div class="must fl">
+							<img src="../img/must.png"/>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="good w">
+				<header class="goodhead w">
+					<h3>特色好货</h3>
+				</header>
+				<div class="goodcon w">
+					<div class="list w">
+						<div class="list_left fl">
+							<div class="global">
+								<img src="../img/global.png"/>
+							</div>
+							<div class="global">
+								<img src="../img/china.png"/>
+							</div>
+						</div>
+						<ul class="list_right fl">
+							<li class="bor fl">
+								<img src="../img/li_1.png"/>
+							</li>
+							<li class="bor fl">
+								<img src="../img/li_2.png"/>
+							</li>
+							<li class="bor fl">
+								<img src="../img/li_3.png"/>
+							</li>
+							<li class="bor fl">
+								<img src="../img/li_4.png"/>
+							</li>
+							<li class="bor fl">
+								<img src="../img/li_5.png"/>
+							</li>
+							<li class="bor fl">
+								<img src="../img/li_6.png"/>
+							</li>
+						</ul>
+					</div>
+					<div class="ser w">
+						<div class="ser_left fl">
+							<a href="">
+								<img src="../img/people_1.png"/>
+							</a>
+							<a href="">
+								<img src="../img/people_2.png"/>
+							</a>
+							<a href="">
+								<img src="../img/people_3.png"/>
+							</a>
+						</div>
+						<div class="ser_right fr">
+							<img src="../img/more.png"/>
+						</div>
+					</div>
+					<div class="long w">
+						<a href="" class="long fl">
+							<img src="../img/long.png"/>
+						</a>
+					</div>
+				</div>
+			</div>
+			<dl class="guess w clearfix">
+				<dt class="guesshead fl">
+					<h3 class="">
+						<img src="../img/guess.png"/>
+					</h3>
+					<div class="w tac">实时推荐最适合你的宝贝</div>
+				</dt>
+				<dd class="guess_item fl">
+					<div class="guessimg">
+						<a href="">
+							<img src="../img/guess_1.png"/>
+						</a>
+					</div>
+					<div class="guessinfo">
+						<a href="">
+							[为你推荐]加厚泡脚足浴盆按摩泡脚桶家用塑料
+						</a>
+					</div>
+					<div class="guessmoney">
+						¥ 15.8
+					</div>
+				</dd>
+				<dd class="guess_item fl">
+					<div class="guessimg">
+						<a href="">
+							<img src="../img/guess_2.png"/>
+						</a>
+					</div>
+					<div class="guessinfo">
+						<a href="">
+							[为你推荐]家用热水瓶玻璃内胆保温暖水瓶内胆
+						</a>
+					</div>
+					<div class="guessmoney">
+						¥ 16.0
+					</div>
+				</dd>
+				<dd class="guess_item fl">
+					<div class="guessimg">
+						<a href="">
+							<img src="../img/guess_3.png"/>
+						</a>
+					</div>
+					<div class="guessinfo">
+						<a href="">
+							[为你推荐]景德镇陶瓷器溪山瑞雪装饰盘子做盘
+						</a>
+					</div>
+					<div class="guessmoney">
+						¥ 26.0
+					</div>
+				</dd>
+				<dd class="guess_item fl">
+					<div class="guessimg">
+						<a href="">
+							<img src="../img/guess_4.png"/>
+						</a>
+					</div>
+					<div class="guessinfo">
+						<a href="">
+							[为你推荐]夹缝柜 夹缝置物架超窄柜子18cm
+						</a>
+					</div>
+					<div class="guessmoney">
+						¥ 39.9
+					</div>
+				</dd>
+			</dl>
+			<div class="end">
+				<div class="btn">
+					<a href="" class="fl tac">登录</a>
+					<a href="" class="fl tac">注册</a>
+					<a href="" class="fl tac">电脑版</a>
+					<a href="" class="fl tac">用户反馈</a>
+				</div>
+				<p class="text w tac">
+					2016 浙 B2-20080224 服务中心
+				</p>
+			</div>
+		</section>
+		<footer class="foot abs w">
+			<a href="" class="fl tac">
+				<span class="fl foot_img">
+					<img src="../img/foot_1.png"/>
+				</span>
+				<span class="fl foot_text">	
+					首页
+				</span>
+			</a>
+			<a href="" class="fl tac">
+				<span class="fl foot_img">
+					<img src="../img/foot_2.png"/>
+				</span>
+				<span class="fl foot_text">	
+					物流
+				</span>
+			</a>
+			<a href="" class="fl tac">
+				<span class="fl foot_img">
+					<img src="../img/foot_3.png"/>
+				</span>
+				<span class="fl foot_text">	
+					购物车
+				</span>
+			</a>
+			<a href="" class="fl tac">
+				<span class="fl foot_img">
+					<img src="../img/foot_4.png"/>
+				</span>
+				<span class="fl foot_text">	
+					我的淘宝
+				</span>
+			</a>
+			<a href="" class="fl tac">
+				<span class="fl foot_img">
+					<img src="../img/foot_5.png"/>
+				</span>
+				<span class="fl foot_text">	
+					更多
+				</span>
+			</a>
+		</footer>
+	</body>
+</html>

@@ -1,0 +1,62 @@
+
+body{
+	font:12px "宋体";
+	color:#333333;
+}
+.fl{
+	float:left;
+}
+.fr{
+	float:right;
+}
+.clearfix{
+	*zoom:1;
+}
+.clearfix:after{
+	content:"";
+	display: block;
+	clear:both;
+}
+.index .var_bottom .var_right .nomargin{
+	margin-right:0;
+}
+.index .bottom_text .wh74{
+	width:74px;
+}
+.index .bottom_text .wh170{
+	width:167px;
+}
+.index .bottom_text .wh130{
+	width:127px;
+}
+.index .bottom_text .wh129{
+	width:126px;
+}
+.index .bottom_text .wh140{
+	width:137px;
+}
+.index .bottom_text .wh188{
+	width:188px;
+}
+.index .bottom_text .wh259{
+	width:253px;
+}
+.index .bottom_text .wh81{
+	width:81px;
+}
+.index .title_right .wh94{
+	width:94px;
+}
+.index .home_tv .tv_info .wh49{
+	width:49px;
+}
+.index .home_tv .tv_info .wh73{
+	width:73px;
+}
+.index .home_tv .tv_info .wh61{
+	width:61px;
+}
+.index .home_tv .tv_info .wh66{
+	width:66px;
+}
+

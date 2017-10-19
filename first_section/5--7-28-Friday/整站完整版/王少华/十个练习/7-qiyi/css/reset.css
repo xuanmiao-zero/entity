@@ -1,0 +1,39 @@
+/* CSS Document */
+body,h1,h2,h4,h5,h6,p,dl,dd{
+	margin:0;
+	font-weight:normal;
+	font-size:12px;
+	font-family:"微软雅黑";
+}
+a{
+	text-decoration:none;
+	/*color:inherit;*/	
+}
+ul,ol{
+	list-style:none;
+	margin:0;
+	padding:0;	
+}
+strong{
+	font-weight:normal;	
+}
+i,em{
+	font-style:normal;	
+}
+mark{
+	background:none;
+	color:inherit;	
+}
+.clearfix:after{
+	content:"";
+	display:block;
+	clear:both;
+	overflow:hidden;
+	height:0;
+	}
+.clearfix{
+	zoom:1;
+}
+img{
+	margin: 0;
+}

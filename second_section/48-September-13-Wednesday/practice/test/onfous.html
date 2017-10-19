@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="轩邈">
+    <meta name="copyright" content="轩邈">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <!-- 网站SEO -->
+    <title>Title</title>
+    <meta name="keywords" content="轩邈 xuanmiao xuanmiao.com">
+    <meta name="description" content="轩邈 | 猎奇蜗牛">
+    <style>
+
+    </style>
+</head>
+<body>
+<input type="text">
+<input type="button" value="提交">
+<img src="eye%20(1).jpg" alt="">
+<script>
+    var inputText1 = document.querySelector('input[type="text"]');
+    var inputButton1 = document.querySelector('input[type="button"]');
+    var img = document.querySelector('img');
+    inputText1.onfocus = function () {
+        console.log('inputText1');
+    };
+    inputText1.onblur = function () {
+        console.log('inputText1失去焦点');
+    };
+    inputText1.oninput = function () {
+        console.log('正在输入');
+    };
+    inputButton1.onfocus = function () {
+        console.log('inputButton1');
+    };
+    img.onfocus = function () {
+        console.log('img');
+    };
+
+    inputText1.onchange = function () {
+        console.log("表单发生变化");
+    };
+
+//    inputText1.value = "this is change by innerHTML";
+</script>
+</body>
+</html>

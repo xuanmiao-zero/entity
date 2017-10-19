@@ -1,0 +1,245 @@
+/*工具类*/
+.clearfix{
+	*zoom: 1;
+}
+.clearfix:after{
+	content: "";
+	display: block;
+	clear: both;
+}
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}
+.index .content .banner .banner_left .live_list1 li .color_af{
+	color: #af5cea;
+}
+.index .content .banner .banner_left .live_list1{
+	padding-top:18px;
+}
+.index .content .banner .banner_left .live_list1{
+	*overflow: hidden;
+}
+.index .content .banner .banner_left .live_list1 .fenlei,.fenlei2,.fenlei3,.fenlei4,.fenlei5,.fenlei6 li{
+	font-size: 12px;
+	line-height: 23px;
+	overflow: hidden;
+	vertical-align: top;
+	zoom:1;
+}
+.index .content .banner .banner_left .live_list1 .ps21{
+	background-position: 0 -21px !important;
+}
+.index .content .banner .banner_ad a .btns .fff{
+	background-color: #fff;
+}
+.index .content .banner .banner_ad a .btns .mr_left16{
+	margin-left: 16px;
+}
+.index .content .lump .mr0{
+	margin-right: 0;
+}
+.index .content .lump li a .padding0{
+	padding-left: 0;
+}
+.index .content .lump ul .bg_2{
+	background: url(../img/lump2.jpg) no-repeat;
+}
+.index .content .lump ul .bg_3{
+	background: url(../img/lump3.jpg) no-repeat;
+}
+.index .content .banner_right ul .right_none{
+	border-right: none;
+}
+/*雪碧图位移量*/
+.index .content .banner_right ul li .ico1{
+	background-position: 0 -74px;
+}
+.index .content .banner_right ul li .ico2{
+	background-position: 0 -114px;
+}
+.index .content .banner_right ul li .ico3{
+	background-position: 0 -154px;
+}
+.index .content .banner_right ul li .ico4{
+	background-position: 0 -194px;
+}
+.index .content .banner_right ul li .ico5{
+	background-position: 0 -234px;
+}
+.index .content .banner_right ul li .ico6{
+	background-position: 0 -274px;
+}
+.index .content .banner_right ul li .ico7{
+	background-position: 0 -314px;
+}
+.index .content .banner_right ul li .ico8{
+	background-position: 0 -354px;
+}
+.index .content .banner_right ul li .ico9{
+	background-position: 0 -394px;
+}
+.index .content .banner_right ul li .ico10{
+	background-position: 0 -434px;
+}
+.index .content .banner_right ul li .ico11{
+	background-position: 0 -474px;
+}
+.index .content .goods_left dl dt .intro .time .data .talk1 i{
+	background-position: -597px 1px;
+}
+.index .content .goods_left dl dd .message1 .num span .i2{
+	background-position: -597px 0;
+}
+.index .content .goods2 header .title .logo2{
+	width: 172px !important;
+	background-position: -66px -235px !important;
+}
+.index .content .goods2 header .title .logo3{
+	width: 171px !important;
+	background-position: -66px -357px !important;
+}
+.index .content .goods2 header .title .logo4{
+	width: 112px !important;
+	background-position: -66px -474px !important;
+}
+.index .content .goods2 header .title .logo5{
+	width: 112px !important;
+	background-position: -66px -587px !important;
+}
+.index .content .goods2 header .title .logo6{
+	width: 112px !important;
+	background-position: -66px -696px !important;
+}
+.index .content .life ul li .ietm_top .person2{
+	background-position: -357px -91px;
+}
+.index .content .life ul li .ietm_top .person3{
+	background-position: -446px -91px;
+}
+.index .content .life ul li .ietm_top .person4{
+	background-position: -537px -91px;
+}
+/*雪碧图位移量 END*/
+/*活动板块定位*/
+.index .content .party ul .li1{
+	left: 86px;
+	bottom: 115px;
+}
+.index .content .party ul .li2{
+	left: 234px;
+	bottom: 115px;
+}
+.index .content .party ul .li3{
+	left: 382px;
+	bottom: 115px;
+}
+.index .content .party ul .li4{
+	left: 86px;
+	bottom: 29px;
+}
+.index .content .party ul .li5{
+	left: 234px;
+	bottom: 29px;
+}.index .content .party ul .li6{
+	left: 382px;
+	bottom: 29px;
+}
+/*活动板块定位 END*/
+/*字体颜色修改*/
+.index .content .party_bottom nav .teshu{
+	color: #fff58b;
+}
+.red{
+	color: #f04848;
+}
+.title{
+	font-size: 14px;
+	line-height: 14px;
+	font-family: "微软雅黑";
+	color: #333333;
+}
+.index .content .party_bottom .hot ul li div .money a{
+	font-size: 12px;
+	line-height: 29px;
+	font-family: "微软雅黑";
+	float: left;
+	color: #f26666;
+}
+.index .content .goods_left dl dd .message1 .text .money{
+	color: #f04848;
+}
+.index .content .goods_left dl dd .message1 .click .a1{
+	color: #f04848;
+	border-radius: 6px 0 0 6px;
+}
+.index .content .goods_left dl dd .message1 .click .a2{
+	color: #a9a9a9;
+	margin-left: -1px;
+	border-radius: 0 6px 6px 0;
+}
+.index .content .goods2 header .title nav .color{
+	color: #5188a6;
+}
+.index .content .goods2 header .title nav .more1{
+	color: #666666;
+	width: 85px;
+	border-left: 1px solid #aaaaaa;
+	margin-left: 8px;
+	padding-left: 19px;
+}
+.index .content .goods2 .article .article_left li .right_txt .link .evaluate .color{
+	color: #f48080;
+}
+.index .content .goods2 .list .item1 .item_top .cr1{
+	color: #e25b25 !important;
+}
+.index .content .goods2 .list .item1 .item_top .label .c1{
+	background-color: #ed9c7c;
+}
+.index .content .goods2 .list .item1 .item_top .cr2{
+	color: #7047a9 !important;
+	white-space: nowrap;
+}
+.index .content .goods2 .list .item1 .item_top .cr3{
+	color: #3541a0 !important;
+}
+.index .content .goods2 .list .item1 .item_top .c3 a{
+	background-color: #858dc6 !important;
+}
+.index .content .goods2 .list .item1 .item_top .cr4{
+	color: #ab1c1c !important;
+}
+.index .content .goods2 .list .item1 .item_top .c4{
+	width: 200px;
+}
+.index .content .goods2 .list .item1 .item_top .c4 a{
+	background-color: #cc7676 !important;
+}
+.index .content .goods2 .list .item1 .item_top .cr5{
+	color: #166b14 !important;
+}
+.index .content .goods2 .list .item1 .item_top .c5{
+	width: 220px;
+}
+.index .content .goods2 .list .item1 .item_top .c5 a{
+	background-color: #72a571 !important;
+}
+/*去边框*/
+.index .content .goods_left dl .no_border{
+	border-bottom: none;
+}
+/*清楚外边距*/
+.index .content .base .base_left .huati ul .no_mr{
+	margin-right: 0;
+}
+.index .content .base .base_left .huati ul .no_mrb{
+	border-bottom: none;
+	padding-bottom: 0;
+	margin-bottom: 10px;
+}
+.index footer .copy .text nav .margin0{
+	margin-right: 0;
+}

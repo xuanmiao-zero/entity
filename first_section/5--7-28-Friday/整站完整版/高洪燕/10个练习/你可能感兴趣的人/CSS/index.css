@@ -1,0 +1,84 @@
+body,h3{
+	margin:0;
+}
+a{
+	text-decoration:none;
+	color:#000000;
+}
+ul,li{
+	padding:0;
+	margin:0;
+	list-style:none;
+}
+img{
+	vertical-align:top;
+}
+body{
+	font:14px "宋体";
+}
+.box{
+	width:228px;
+	height:461px;
+	border:1px solid #c4c3be;
+}
+.head{
+	height:39px;
+	border-bottom:1px solid #dddddd;
+}
+.fl{
+	float:left;
+}
+.fr{
+	float:right;
+}
+.head .title{
+	width:228px;
+	height:37px;
+	margin:1px 0;
+	background-color:#f3f3f3;
+	font:14px/37px "微软雅黑";
+	text-indent:14px;
+}
+.head a{
+	margin-top:3px;
+	margin-right:14px;
+	font:12px/36px "宋体";
+	color:#999999;
+}
+.content{
+	width:201px;
+	height:407px;
+	margin:1px 14px 13px 14px;
+}
+.content .item{
+	height:101px;
+	border-bottom:1px dashed #cecece;
+}
+.item .pic{
+	margin-top:14px;
+	width:40px;
+	height:42px;	
+}
+.pic .pic_top{
+	margin-bottom:7px;
+}
+.item .text{
+	margin-top:14px;
+	width:148px;
+	margin-left:8px;
+}
+.text .name{
+	font:12px/20px "宋体";
+	display: block;
+}
+.text .frend{
+	font:12px/24px "宋体";
+	margin-top:1px;
+	display: block;
+	color:#5f80a9;
+}
+.text .game{
+	font:12px/18px "宋体";
+	display: block;
+	color:#999999;
+}

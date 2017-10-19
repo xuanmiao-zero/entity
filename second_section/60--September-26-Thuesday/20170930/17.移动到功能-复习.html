@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script src="data.js"></script>
+<script>
+
+    /*
+    * 1.找到被选择的内容  checkedContent 记录当前页面被选择的内容
+    *
+    * 2.找到放内容的位置  选择列表的时候可以获取到
+    *
+    *
+    * */
+    var currList = {
+        breadcrumb:'',
+        content:data[0].child[0]
+    };
+
+    var checkedContent = ['0_0_0','0_0_1'];//被移动的内容
+
+
+    toMove('0_0_2');
+
+
+
+    function toMove(route){
+
+        if(!route){
+            return;
+        }
+
+        var toSite = findDataByRoute(route); //移动到的位置
+
+        for(var i=0;i<checkedContent.length;i++){
+            //截取移动到的route信息  和  被移动的route信息对比
+            //如果出现相等的情况，就说明是自己或者是子集  ，不允许移动
+            if(route.slice(0,checkedContent[i].length)==checkedContent[i]){
+                alert('不能移动到自己和自己的子集中');
+            }
+        }
+
+
+
+        //从当前列表删除对应内容
+        var list = currList.content.child;
+
+        //循环遍历找到对应的内容，然后删除
+        for(var i=0;i<checkedContent.length;i++){
+
+            for(var j=0;j<list.length;j++){
+
+                if(list[j].route==checkedContent[i]){
+                    toSite.content.child.push(list.splice(j,1)[0]);
+                    break;
+                }
+            }
+
+        }
+
+        //重新排序list
+        for(var i=0;i<list.length;i++){
+            list[i].id = i;
+            list[i].route = currList.content.route+'_'+i;
+        }
+    }
+
+
+
+
+
+    function findDataByRoute(route){
+
+        route = route.split('_');
+
+        var obj={
+            content:'', //要被显示的内容对象
+            breadcrumb:'<a route="0_0" href="javascript:;">微云</a> &gt; ' //当前被显示内容的路径
+        };
+
+        findData(data,0);
+
+        //递归函数
+        function findData(dataJson,index){
+
+            if(index>1){
+                obj.breadcrumb += '<a route="'+dataJson[route[index]].route+'" href="javascript:;">'+dataJson[route[index]].title+'</a> &gt; ';
+            }
+
+
+            if(index<route.length-1){
+                findData(dataJson[route[index]].child,index+1);
+            }else{
+                obj.content = dataJson[route[index]];
+            }
+
+        }
+
+//        console.log(obj);
+
+        //去掉多余的 >
+        obj.breadcrumb = obj.breadcrumb.slice(0,-5);
+
+
+        return  obj; //把data传出去
+
+    }
+
+</script>
+</body>
+</html>

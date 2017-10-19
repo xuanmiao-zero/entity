@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DoublePicToggle</title>
+    <style>
+        #container{
+            padding: 0px;
+            width: 1020px;
+            height:630px;
+            background-image: url("img/PhotoFrame-woodenRope.jpg");
+            background-repeat: no-repeat;
+            position: relative;
+        }
+        #pic1{
+            width: 400px;
+            height: 256px;
+            background-color: #5A94EF;
+            position: absolute;
+            top:221px;
+            left:150px;
+            transform: rotate(2.8deg);
+        }
+        #pic2{
+            width: 228px;
+            height: 312px;
+            background-color: #5A94EF;
+            position: absolute;
+            top:220px;
+            left:644px;
+            /*transform: rotate(-0.1deg);*/
+        }
+        .pic{
+            height:100%;
+            width: 100%;
+        }
+        #pic2 p{
+            display: block;
+            margin-top: -8px;
+        }
+        #pic2 p,#pic1 p{
+            color: #59371B;
+            font-weight: bold;
+        }
+        #group{
+            position: absolute;
+            bottom:12px;
+            right: 60px;
+            color: #fff;
+        }
+        #group div{
+            cursor: pointer;
+            border:1px solid ;
+            border-radius: 20px;
+            padding: 3px 16px;
+            margin:12px;
+            display: inline-block;
+        }
+        #group div:hover{
+            background-color: #897654;
+        }
+        body
+        {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="container">
+        <div id="group">
+            <div class="pre">上一组</div>
+            <div class="next">下一组</div>
+        </div>
+        <div id="pic1"><img class="pic" src="img/eye (1).jpg" alt=""><p>1/4</p></div>
+        <div id="pic2"><img class="pic" src="img/phone (1).jpg" alt=""><p>1/3</p> </div>
+    </div>
+<script>
+    /**
+     * 功能点：
+     * 1.两组图片点击下一组/上一组两组图片都会切换
+     * 2.点击图片会切换到下一张
+     *
+     */
+
+    //获取元素
+    var preGroup = document.getElementById('group').querySelector('.pre');
+    var nextGroup = document.getElementById('group').getElementsByClassName('next')[0];
+    var pic1 = document.getElementById('pic1').getElementsByClassName('pic')[0];
+    var pic2 = document.getElementById('pic2').getElementsByClassName('pic')[0];
+    var pic1Seq = document.getElementById('pic1').getElementsByTagName('p')[0];
+    var pic2Seq = document.getElementById('pic2').getElementsByTagName('p')[0];
+    //声明两组图片数组
+    var picArray1 = ["img/eye (1).jpg","img/eye (2).jpg","img/eye (3).jpg","img/eye (4).jpg"];
+    var picArray2 = ["img/phone (1).jpg","img/phone (2).jpg","img/phone (3).jpg"];
+    var picArray1Index = 0;
+    var picArray2Index = 0;
+
+    //绑定事件
+    //上一组
+    preGroup.onclick = function () {
+        //图片组一
+        picArray1Index>0 ? picArray1Index-- : picArray1Index=3;
+        pic1.src= picArray1[picArray1Index];
+        pic1Seq.innerHTML = picArray1Index+1+"/4";
+        //图片组二
+        picArray2Index>0 ? picArray2Index-- : picArray2Index=2;
+        pic2.src= picArray2[picArray2Index];
+        pic2Seq.innerHTML = picArray2Index+1+"/3";
+    };
+    //下一组
+    nextGroup.onclick = function () {
+        //图片组一
+        picArray1Index<3 ? picArray1Index++ : picArray1Index=0;
+        pic1.src= picArray1[picArray1Index];
+        pic1Seq.innerHTML = picArray1Index+1+"/4";
+        //图片组二
+        picArray2Index<2 ? picArray2Index++ : picArray2Index=0;
+        pic2.src= picArray2[picArray2Index];
+        pic2Seq.innerHTML = picArray2Index+1+"/3";
+    };
+    //点击图片切换到下一张
+    pic1.onclick = function () {
+        //图片组一
+        picArray1Index<3 ? picArray1Index++ : picArray1Index=0;
+        pic1.src= picArray1[picArray1Index];
+        pic1Seq.innerHTML = picArray1Index+1+"/4";
+
+    };
+    pic2.onclick = function () {
+        //图片组二
+        picArray2Index<2 ? picArray2Index++ : picArray2Index=0;
+        pic2.src= picArray2[picArray2Index];
+        pic2Seq.innerHTML = picArray2Index+1+"/3";
+    };
+
+</script>
+</body>
+</html>

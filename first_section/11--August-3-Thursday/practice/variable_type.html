@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Variable Type</title>
+    <style>
+        body{
+            height: 570px;
+            margin:0;
+            background: url("../../img/background/2.jpg") no-repeat;
+            background-size: 100% 100%;
+        }
+        #laptop{
+            width:1000px;
+            height: 540px;
+            background:  url("../../img/laptop/mac/macbook_air_large.png") no-repeat;
+            background-size: 100% 100%;
+            margin:40px auto;
+            border: 1px solid transparent;
+            text-align: center;
+        }
+        #laptop .screen{
+            width: 678px;
+            height: 376px;
+            border: 1px solid #88898C;
+            margin:60px auto auto;
+            border-left: 3px solid #88898C;
+            background: #8BC5E6 url("../../img/background/3.jpg") ;
+        }
+        #laptop .logo{
+            background:  #D5D5D7;
+            margin: 4px auto;
+            line-height: 28px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        #laptop .screen .content{
+            height: 130px;
+            margin:20px;
+            border: 1px solid #999;
+            border-radius:5px;
+            background: rgba(148,221,248,0.5);
+            color: #f7f7f7;
+            line-height: 40px;
+            padding: 20px;
+            text-align: left;
+            font-size: 20px;
+        }
+        #laptop .screen .find-btn{
+            /*color: #45B5DA;*/
+            color: #fff;
+            /*background-color: #94DEF7;*/
+            border:1px solid #fff;
+            border-radius: 18px;
+            line-height: 36px;
+            display: inline-block;
+            text-align: right;
+            float: right;
+            margin-right: 20px;
+            padding: 0 30px;
+            letter-spacing: 2px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        #laptop .screen ul.answer{
+            list-style: none;
+            text-align: left;
+            margin:20px;
+            border-radius: 4px;
+            padding: 10px;
+        }
+        #laptop .screen ul li{
+            padding: 0;
+            margin-left: 24px;
+            line-height: 30px;
+            color: #F8FA00;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="laptop">
+        <div class="screen">
+            <div class="content">
+                var arr = ['100px', 'abd'-6, [], -98765, 34, -2, 0, '300',
+                 , function(){alert(1);}, null, document, [], true,
+                '200px'-30, '23.45元', 5, Number('abc'), function(){alert(3);},
+                'xyz'-90];
+            </div>
+            <div class="find-btn">开始查找</div>
+            <ul class="answer">
+                <li class="all-number">所有的数字是：</li>
+                <li class="turnto-number">可以转成数字的：</li>
+                <li class="max-number">转成数字的最大值：</li>
+                <li class="all-NaN-Index">所有运算结果是NaN的位置：</li>
+            </ul>
+        </div>
+        <div class="logo">xuanmiao</div>
+    </div>
+<script>
+
+    /*获取元素*/
+    var allNumber = document.querySelector('.all-number');
+    var toNumber = document.querySelector('.turnto-number');
+    var maxNumber = document.querySelector('.max-number');
+    var allNaNIndex = document.querySelector('.all-NaN-Index');
+    var findBtn = document.querySelector('.find-btn');
+    //声明数组
+    var arr = ['100px', 'abd'-6, [], -98765, 34, -2, 0, '300', ,
+         function(){ alert(1);}, null, document, [], true,
+        '200px'-30, '23.45元', 5, Number('abc'), function(){alert(3);},
+        'xyz'-90,undefined];
+    var maxNum =0;
+    //筛选数据
+    findBtn.onclick = function () {
+        maxNumber.innerHTML = "转成数字的最大值：";
+        allNumber.innerHTML = "所有的数字是：";
+        toNumber.innerHTML = "可以转成数字的：";
+        allNaNIndex.innerHTML = "所有运算结果是NaN的位置：";
+        for(var i = 0; i < arr.length; i ++){
+            findAllNumber(arr[i]);
+            canTurnToNumber(arr[i]);
+            findMax(arr[i]);
+            findNaNIndex(arr[i],i);
+        }
+        maxNumber.innerHTML += maxNum;
+    };
+    function findAllNumber(num){
+        if(typeof num === 'number'){
+            if(!isNaN(num))
+                allNumber.innerHTML += num + ',';
+        }
+    }
+    function canTurnToNumber(num){
+        if(typeof parseInt(num) === 'number'){
+            if(!isNaN(parseInt(num)))
+                toNumber.innerHTML += num + ',';
+        }
+    }
+    function findMax(num) {
+        if(typeof parseInt(num) === 'number'){
+            if(!isNaN(parseInt(num))){
+                if(maxNum < num)
+                    maxNum =num;
+            }
+        }
+    }
+    function findNaNIndex(num,i) {
+//        if(typeof num === "number"){
+//            if(isNaN(num))
+//                allNaNIndex.innerHTML += i + ",";
+//        }
+        if(String(num) == "NaN")
+            allNaNIndex.innerHTML += i + ",";
+    }
+</script>
+</body>
+</html>

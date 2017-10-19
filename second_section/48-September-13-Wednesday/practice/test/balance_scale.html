@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="轩邈">
+    <meta name="copyright" content="轩邈">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <!-- 网站SEO -->
+    <title>Title</title>
+    <meta name="keywords" content="轩邈 xuanmiao xuanmiao.com">
+    <meta name="description" content="轩邈 | 猎奇蜗牛">
+    <style>
+        html{
+            font-size: 100px;
+        }
+        .scale{
+            margin: 2rem auto;
+            width: 800px;
+            height: 40px;
+            background-color: #1C9ABE;
+            border: none;
+            transition: .2s;
+        }
+        input[type="text"]{
+            width: 300px;
+            border: 0;
+        }
+
+        .left{
+            float: left;
+        }
+
+        .right{
+            float: right;
+        }
+    </style>
+</head>
+<body>
+<form class="scale">
+    <input class="left" type="text" title="left">
+    <input class="right" type="text" title="right">
+</form>
+<script>
+
+    var inputLeft = document.querySelector('input.left');
+    var inputRight = document.querySelector('input.right');
+    var scale = document.querySelector('.scale');
+    inputLeft.onchange = function () {
+        console.log(1);
+        changeScale(this, this.value, inputRight.value);
+    };
+
+    inputRight.onchange = function () {
+        changeScale(this, inputLeft.value, this.value);
+    };
+    function changeScale(obj,value1,value2){
+        scale.style.transform = 'rotateZ(' + (value2 - value1) + 'deg)';
+
+        inputLeft.style.transform = 'rotateZ(' + (value1 - value2) + 'deg)';
+        inputRight.style.transform = 'rotateZ(' + (value1 - value2) + 'deg)';
+    }
+</script>
+</body>
+</html>

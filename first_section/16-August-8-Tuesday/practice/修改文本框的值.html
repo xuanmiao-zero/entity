@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="轩邈">
+    <meta name="copyright" content="轩邈">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <!-- 网站SEO -->
+    <title>修改文本框的值</title>
+    <meta name="keywords" content="轩邈 xuanmiao xuanmiao.com">
+    <meta name="description" content="轩邈 | 猎奇蜗牛">
+    <!-- 标题栏logo图标 -->
+    <link rel="icon" href="./style/image/favicon_logo.ico" type="image/x-icon">
+    <!-- 收藏夹logo图标 -->
+    <link rel="shortcut icon" href="./style/image/favicon_logo.ico" type="image/x-icon">
+    <style>
+        #modifyText{
+            margin: 100px auto;
+            border: 2px solid transparent;
+            border-radius: 4px;
+            width: 440px;
+            height: 240px;
+            background: #321C1F;
+        }
+        #modifyText header{
+            height: 74px;
+            background: #fff;
+            margin: auto ;
+            color: #DE4A63;
+            text-align: center;
+        }
+        #modifyText header h1, #modifyText header p{
+            display: inline-block;
+            font-size: 25px;
+            line-height: 74px;
+            margin: 0 0;
+        }
+        #modifyText header p{
+            display: inline-block;
+            margin: 10px;
+            color: #E4758A;
+            font: 700 17px "微软雅黑";
+        }
+        #modifyText .modify-bar{
+            position: relative;
+            text-align: center;
+            height: 80px;
+            line-height: 80px;
+        }
+        #modifyText .modify-bar:first-of-type{
+            border-bottom: 2px dashed #A39998;
+        }
+        #modifyText .modify-bar span{
+            display: inline-block;
+            float: left;
+            margin: 0 20px;
+            color: #fff;
+            line-height: 80px;
+            max-width: 360px;
+            overflow: hidden;
+            text-align: left;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        #modifyText .modify-btn{
+            float: left;
+            display: inline-block;
+            margin: 20px 0;
+            width: 40px;
+            height: 40px;
+            background: url("../../img/icon/modify.svg") no-repeat;
+            background-size: 100% 100%;
+            cursor: pointer;
+        }
+        #modifyText .modify-bar input{
+            display: none;
+            position: relative;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            height: 30px;
+            margin:auto;
+            border: none;
+            outline: none;
+        }
+        #modifyText .modify-bar input[type="text"]{
+            font: 16px consolas Arial;
+            color: #333;
+            letter-spacing: 1px;
+        }
+        #modifyText .modify-bar input[type="text"]:focus{
+            box-shadow: 0 0  3px 1px #DE4A63;
+        }
+        #modifyText .modify-bar input[type="button"]{
+            background: #DE4A63;
+            color: #f3f3f3;
+            border-radius: 5px;
+            padding: 0 16px;
+            height: 34px;
+            vertical-align: middle;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="modifyText">
+        <header>
+            <h1>轩邈</h1>
+            <p>课程分类</p>
+        </header>
+        <div class="modify-bar">
+            <span class="show-text">hello</span>
+            <div class="modify-btn"></div>
+            <input type="text" size="30px" placeholder="请输入你要修改的内容">
+            <input type="button" value="确定">
+            <input type="button" value="取消">
+        </div>
+        <div class="modify-bar">
+            <span class="show-text">欢迎来到轩邈说</span>
+            <div class="modify-btn"></div>
+            <input type="text" size="30px" placeholder="请输入你要修改的内容">
+            <input type="button" value="确定">
+            <input type="button" value="取消">
+        </div>
+    </div>
+
+<script>
+
+    //获取元素
+    var modifyBtns = document.querySelectorAll('.modify-btn');
+    var showTexts = document.querySelectorAll('.show-text');
+    var inputs = document.querySelectorAll('.modify-bar input');
+    var inputTexts = document.querySelectorAll('.modify-bar input[type="text"]');
+    var confirmBtns = document.querySelectorAll('.modify-bar input[value="确定"]');
+    var cancelBtns = document.querySelectorAll('.modify-bar input[value="取消"]');
+
+    //验证元素是否获取到
+//    console.log(modifyBtns,showText,inputs,inputTexts,confirmBtns,cancelBtns);
+
+    //绑定事件
+    for(var i = 0; i < modifyBtns.length; i++){
+        modifyBtns[i].index = i;
+        //点击修改按钮事件
+        modifyBtns[i].onclick = function () {
+            showInputText.call(this);
+        };
+        confirmBtns[i].index = i;
+        //点击确定按钮事件
+        confirmBtns[i].onclick = function () {
+            if(inputTexts[this.index].value === ""){
+                alert("您的输入为空");
+            }else{
+                showTexts[this.index].innerHTML = inputTexts[this.index].value;
+                hiddenInputText.call(this);
+            }
+        };
+        //点击取消按钮事件
+        cancelBtns[i].onclick = function () {
+            hiddenInputText.call(this);
+        }
+    }
+    function showInputText() {
+        inputTexts[this.index].value = showTexts[this.index].innerHTML;
+        //隐藏当前显示框和修改按钮
+        showTexts[this.index].style.display = "none";
+        modifyBtns[this.index].style.display = "none";
+        //显示输入框和确定取消按钮
+        inputTexts[this.index].style.display = "inline-block";
+        confirmBtns[this.index].style.display = "inline-block";
+        cancelBtns[this.index].style.display = "inline-block";
+    }
+    function hiddenInputText() {
+        //隐藏当前显示框和修改按钮
+        inputTexts[this.index].style.display = "";
+        confirmBtns[this.index].style.display = "";
+        cancelBtns[this.index].style.display = "";
+        //显示输入框和确定取消按钮
+        showTexts[this.index].style.display = "";
+        modifyBtns[this.index].style.display = "";
+    }
+</script>
+</body>
+</html>

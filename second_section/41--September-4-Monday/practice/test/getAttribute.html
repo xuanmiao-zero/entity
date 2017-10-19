@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="轩邈">
+    <meta name="copyright" content="轩邈">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <!-- 网站SEO -->
+    <title>Title</title>
+    <meta name="keywords" content="轩邈 xuanmiao xuanmiao.com">
+    <meta name="description" content="轩邈 | 猎奇蜗牛">
+    <!-- 标题栏logo图标 -->
+    <link rel="icon" href="" type="image/x-icon">
+    <!-- 收藏夹logo图标 -->
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <style>
+
+    </style>
+</head>
+<body>
+    <div id="box" userid="xuanmiao" username="xuanmiao" info="tree" style="background: skyblue;">加载中</div>
+    <button id="load">load</button>
+    <div style="color:red;">red</div>
+    <script>
+    var divs = document.querySelectorAll('div');
+    load.onclick = function () {
+        for(var i=0; i < divs.length; i ++){
+            divs[i].innerHTML = divs[i].getAttribute('username') + " " + divs[i].getAttribute('info');
+        }
+    };
+    divs[0].setAttribute('username', 'one');
+    console.log(divs[0].attributes);
+</script>
+
+</body>
+</html>

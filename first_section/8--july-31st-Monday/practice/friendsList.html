@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>friendList</title>
+    <style>
+        dl, dt, dd{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background: #828AD8;
+        }
+        #phone{
+            width: 270px;
+            height: 510px;
+            background: #0F1115;
+            border-radius: 10px;
+            margin:30px auto;
+            border:1px solid #7B839C;
+        }
+        #phone .earpiece{
+            background: #F9F9F9;
+            border:1px solid #D5D6D7;
+            width: 45px;
+            height:2px;
+            border-radius:2px;
+            margin: 14px auto;
+        }
+        #phone .screen{
+            margin:12px;
+            height:423px;
+            background: url("../../img/phone (7).jpg");
+            position: relative;
+            border:1px solid #0F1115;
+        }
+        #phone .fingerReco{
+            width: 30px;
+            height: 30px;
+            border:2px solid #363B3C;
+            margin: -3px auto;
+            border-radius:17px;
+        }
+        #phone .fingerReco .square{
+            width: 10px;
+            height: 10px;
+            border:2px solid #363B3C;
+            margin:7px auto;
+            border-radius:2px;
+        }
+        #phone .friendGroup{
+            color: rgba(255,255,255,0.7);
+            font-size: 13px;
+            letter-spacing: 1px;
+            width:210px ;
+            margin: 16px auto;
+            border:1px solid transparent;
+        }
+        /*#phone .friendGroup a:hover,#phone .friendGroup dt:hover{*/
+            /*background: rgba(255,255,255,0.7);*/
+            /*color: rgba(0,0,0,0.7);*/
+        /*}*/
+        #phone .friendGroup dl{
+            background: rgba(0,0,0,0.7);
+            padding: 5px 0;
+            word-break: break-all;
+            text-indent: 3em;
+            line-height: 24px;
+        }
+        #phone .friendGroup a{
+            display: block;
+            cursor: pointer;
+        }
+        #phone .friendGroup dd{
+            display: none;
+        }
+        #phone .friendGroup dl dt{
+            background: url("../../img/icon/rightTriangle.png") no-repeat 14px center;
+            cursor: pointer;
+            user-select: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="phone">
+        <div class="earpiece"></div>
+        <div class="screen">
+            <div class="friendGroup">
+                <dl class="myFriend">
+                    <dt>我的好友</dt>
+                    <dd>
+                        <a>轩邈love</a>
+                        <a>小轩</a>
+                        <a>阿杰</a>
+                    </dd>
+                </dl>
+                <dl class="enterpriseFriend">
+                    <dt>企业好友</dt>
+                    <dd>
+                        <a>轩邈love</a>
+                        <a>小轩</a>
+                        <a>阿杰</a>
+                    </dd>
+                </dl>
+                <dl class="blacklist">
+                    <dt>黑名单</dt>
+                    <dd>
+                        <a>轩邈love</a>
+                        <a>小轩</a>
+                        <a>阿杰</a>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="fingerReco">
+            <div class="square"></div>
+        </div>
+    </div>
+<script>
+    //获取元素
+    var friendGroupDt = document.querySelector('.friendGroup').getElementsByTagName('dt');
+    var friendGroupDd= document.querySelector('.friendGroup').getElementsByTagName('dd');
+    var DdA= document.querySelector('.friendGroup').getElementsByTagName('a');
+    //绑定事件
+    //组标题
+    for(var i = 0 ; i < friendGroupDt.length; i++){
+        //初始化
+        friendGroupDd[i].style.display = "none";
+        friendGroupDt[i].index = i;
+        //鼠标组标题点击
+        friendGroupDt[i].onclick = function () {
+            if(friendGroupDd[this.index].style.display === "none"){
+                friendGroupDd[this.index].style.display = "block";
+                this.style.background = " #5A94EF url(\"../../img/icon/downTriangle.png\") no-repeat 14px center";
+            }
+            for(var i = 0 ; i < friendGroupDt.length; i++){
+                if(i !== this.index){
+                    friendGroupDd[i].style.display = "none";
+                    friendGroupDt[i].style.background = "";
+                }
+            }
+        };
+        //鼠标组标题移入变色
+        friendGroupDt[i].onmouseover = function () {
+            if(friendGroupDd[this.index].style.display !== "block"){
+                this.style.backgroundColor = "rgba(255,255,255,0.7)";
+            }
+        };
+        friendGroupDt[i].onmouseout = function () {
+            for(var i = 0 ; i < friendGroupDt.length; i++){
+                if(friendGroupDd[i].style.display === "block"){
+                    continue;
+                }else{
+                    friendGroupDt[i].style.backgroundColor = "";
+                }
+
+            }
+        };
+
+    }
+    for(var j = 0; j < DdA.length; j ++){
+        DdA.index = j;
+        DdA[j].onclick = function () {
+            for(var j = 0; j < DdA.length; j ++){
+                DdA[j].style.backgroundColor = "";
+                DdA[j].choosenFlag = false;
+            }
+            this.style.backgroundColor = "#88bbef";
+            this.choosenFlag = true;
+
+        };
+        DdA[j].onmouseover = function () {
+            if(this.choosenFlag !== true )
+                this.style.backgroundColor = "rgba(255,255,255,0.7)";
+        };
+        DdA[j].onmouseout = function () {
+            for(var j=0; j < DdA.length; j ++){
+                if(this.choosenFlag !== true )
+                    this.style.backgroundColor = "";
+            }
+        }
+    }
+</script>
+</body>
+</html>

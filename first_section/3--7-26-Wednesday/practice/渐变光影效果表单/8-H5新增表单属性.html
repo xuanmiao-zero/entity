@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--
+			placeholder  :  输入框提示信息
+				例子 :  微博的密码框提示
+			autocomplete  :  是否保存用户输入值
+				默认为on，关闭提示选择off
+			autofocus  :  指定表单获取输入焦点
+			required  :  此项必填，不能为空
+			pattern : 正则验证  pattern="\d{1,5}"
+			
+		-->
+	</head>
+	<body>
+		<form action="">
+			<div>
+				<input type="text" placeholder="用户名" />
+				<input type="password" placeholder="密码" />
+			</div>
+			<div>
+				<input type="text" autofocus="" name="text" autocomplete="on" />
+			</div>
+			<div>
+				<input type="text" placeholder="必填项" required="" pattern="\d{1,5}" />
+				<input type="text" placeholder="非必填项" />
+			</div>
+			<div>
+				<input type="submit" />
+			</div>
+		</form>
+	</body>
+</html>

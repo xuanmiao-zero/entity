@@ -1,0 +1,62 @@
+/*css reset*/
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}
+.clearfix{
+	*zoom:1;
+}
+.clear:after{
+	content: "";
+	display: block;
+	clear:both;
+}
+/*main*/
+.item{
+	width: 941px;
+	border-top: 1px solid #05a790;
+	margin: 50px auto;
+	font: 12px/12px "宋体";
+}
+.block{
+	width: 200px;
+	height: 285px;
+	padding: 10px 17px 0 17px;
+	border:1px solid #dfdedd;
+	border-top: none;
+	background:  url(../img2/1.jpg) repeat-x;
+	margin-right: -1px;
+}
+.item_block{
+	display: block;
+}
+.img_text{
+	width: 200px;
+	display: block;
+	color: #404040;
+	margin-left: 4px;
+	margin-top: 8px;
+}
+.mark{
+	font-family: arial;
+	color: #404040;
+	margin-left: 4px;
+	margin-top: 8px;
+}
+.block_bottom{
+	width: 217px;
+	height: 36px;
+}
+.font{
+	width: 200px;
+	height: 48px;
+}
+.click{
+	margin-top: 14px;
+	width: 55px;
+	height: 22px;
+	background:  url(../img2/4.jpg) 0 0 no-repeat;
+	text-indent: -9999px;
+}

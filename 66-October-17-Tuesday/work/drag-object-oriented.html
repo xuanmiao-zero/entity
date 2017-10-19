@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="轩邈">
+    <meta name="copyright" content="轩邈">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <!-- 网站SEO -->
+    <title>拖拽面向对象</title>
+    <meta name="keywords" content="轩邈 xuanmiao xuanmiao.com">
+    <meta name="description" content="轩邈 | 猎奇蜗牛">
+    <style>
+        #drag{
+            width: 100px;
+            height: 100px;
+            background: skyblue;
+            cursor: pointer;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div id="drag">
+    </div>
+
+<script>
+    var dragDiv = document.querySelector("#drag");
+    function drag(dragEle){
+        this.dragEle = dragEle;
+        this.downExec();
+    }
+
+    drag.prototype.downExec = function () {
+        var _this = this;
+        /*this.dragEle.onmousedown = function (ev) {
+            _this.down(ev);
+        }*/
+        this.dragEle.addEventListener("mousedown",(e) => {
+            _this.down(e);
+        });
+    };
+
+    drag.prototype.down = function (ev) {
+        var left = ev.clientX - this.dragEle.offsetLeft;
+        var top = ev.clientY - this.dragEle.offsetTop;
+
+        this.moveExec(left,top);
+        this.upExec();
+        ev.preventDefault();
+    };
+
+
+    drag.prototype.moveExec = function (left,top) {
+        var _this = this;
+        document.onmousemove = function (ev) {
+            _this.move(ev,left,top);
+        }
+    };
+
+    drag.prototype.move = function (ev,left,top) {
+        this.dragEle.style.left = ev.clientX - left + "px";
+        this.dragEle.style.top = ev.clientY - top + "px";
+    };
+
+    drag.prototype.upExec = function () {
+        var _this = this;
+        document.onmouseup = function (ev) {
+            _this.up();
+        }
+    };
+
+    drag.prototype.up = function () {
+        document.onmousemove = null;
+        document.onmouseup = null;
+    };
+    var d = new drag(dragDiv);
+    d.downExec();
+
+</script>
+</body>
+</html>

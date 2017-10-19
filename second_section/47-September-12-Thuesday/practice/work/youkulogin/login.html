@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="轩邈">
+    <meta name="copyright" content="轩邈">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <!-- 网站SEO -->
+    <title>login</title>
+    <meta name="keywords" content="轩邈 xuanmiao xuanmiao.com">
+    <meta name="description" content="轩邈 | 猎奇蜗牛">
+    <style>
+        html{
+            font-size: 100px;
+        }
+        body{
+            background-color: #1C9ABE;
+            font-size: 0.16rem;
+        }
+        #login{
+            position: relative;
+            margin: auto;
+            box-sizing: border-box;
+            font-size: 0;
+            padding: 0.2rem;
+            width: 6.82rem;
+            height: 4.16rem;
+            -webkit-border-radius: .04rem;
+            -moz-border-radius: .04rem;
+            border-radius: .04rem;
+            background-color: #fff;
+        }
+        .wrap-left{
+            font-size: 0.16rem;
+            box-sizing: border-box;
+            display: inline-block;
+            width: 3.42rem;
+            height: 3.76rem;
+            border-right: 1px solid #777;
+        }
+        .wrap-right{
+            font-size: 0.16rem;
+            display: inline-block;
+            box-sizing: border-box;
+            width: 3rem;
+            height: 3.76rem;
+        }
+
+        /*左面*/
+        .wrap-left h2{
+            margin: 0;
+            font-size: .3rem;
+            font-weight: normal;
+            color: #555;
+        }
+        .remarks{
+            display: inline-block;
+            margin: .1rem;
+            color: #FF4E00;
+            font-size: .14rem;
+        }
+        .wrap-left .login{
+            text-align: center;
+            margin-top: 10px;
+            box-sizing: border-box;
+            display: inline-block;
+            width: 1.36rem;
+            height: 0.4rem;
+            color: #fff;
+            font-size: .2rem;
+            line-height: .4rem;
+        }
+        .wrap-left .weibo{
+            margin-right: .16rem;
+            background-color: #F66060;
+        }
+        .wrap-left .qq{
+            background-color: #4A9CF8;
+        }
+        .login span{
+            vertical-align: top;
+        }
+        .wrap-left .login img{
+            vertical-align: top;
+            width: .36rem;
+            height: .36rem;
+        }
+        .to-right{
+            display: inline-block;
+            color: #CCCCCC;
+            line-height: .4rem;
+            font-size: .2rem;
+        }
+        
+        .login-input input{
+            display: inline-block;
+            box-sizing: border-box;
+            outline: none;
+            margin-top: .2rem;
+            width: 3.2rem;
+            font-size: 0.14rem;
+            padding: .1rem
+        }
+
+        .login-input input[type="checkbox"]{
+            width: 20px;
+        }
+        
+        .login-input input::placeholder{
+            color: #aaa !important;
+        }
+
+        .wrap-left label{
+            display: inline-block;
+        }
+        a{
+            display: inline-block;
+            text-decoration: none;
+            color: #000;
+            padding: 0 20px;
+            line-height: 14px;
+            border-left: 1px solid #999;
+        }
+        .login-input label[for="auto-login"]{
+            padding-right: 20px;
+        }
+        input[value="登录"]{
+            border:none;
+            color: #fff;
+            background-color: #FF6600;
+        }
+
+        .wrap-right{
+            text-align: center;
+        }
+
+        .wrap-right p:first-of-type{
+        }
+
+        .close{
+            position: absolute;
+            top: 10px;
+            right:10px;
+            text-align: center;
+            display: block;
+            width: 40px;
+            height: 40px;
+            line-height:34px;
+            border-radius: 100px;
+            font-size: 40px;
+            color: #fff;
+            background-color: #F66060;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="login">
+        <div class="wrap-left">
+            <h2>登录<span class="remarks">支持优酷和土豆账号</span></h2>
+            <div class="weibo login">
+                <img src="weibo.png" alt="">
+                <span>微博登录</span>
+            </div>
+            <div class="qq login">
+                <img src="QQ.png" alt="">
+                <span>QQ登录</span>
+            </div>
+            <span class="to-right">〉</span>
+            <form class="login-input" action="">
+                <input class="phone-number" type="text" placeholder="手机号码或者邮箱地址">
+                <input type="text" placeholder="固定密码">
+                <input type="button" value="登录">
+                <input name="auto-login" type="checkbox" title="自动登录">
+                <label for="auto-login">自动登录</label>
+                <a href="">忘记密码</a>
+                <a href="">免费注册</a>
+            </form>
+        </div>
+
+        <div class="wrap-right">
+            <p>用土豆APP扫描，安全登陆</p>
+            <img src="tudou.png" alt="" title="扫我">
+            <p class=>也支持其他扫码工具</p>
+        </div>
+        <div class="close">×</div>
+    </div>
+
+<script>
+
+</script>
+</body>
+</html>

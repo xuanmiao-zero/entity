@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /**
+         * 需求：图片切换 点击图片， 切换图片
+         * 
+         */
+        window.onload =function(){
+            /*获取元素*/
+            var image = document.getElementById('image');
+            /*声明标志*/
+            var ToggleFlag = false;
+            /*添加事件*/
+            console.log(image.src);
+            image.onclick = function(){
+                if(ToggleFlag){
+                    ToggleFlag = false;
+                    image.src = "./2.jpg";
+                }else{
+                    ToggleFlag = true;
+                    image.src = "./1.jpg";
+                }
+            };
+        }
+    </script>
+</head>
+<body>
+<img  id="image" src="1.jpg" alt="">
+</body>
+</html>

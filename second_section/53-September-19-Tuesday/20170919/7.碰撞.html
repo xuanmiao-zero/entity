@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position:absolute;
+        }
+        #box1{
+
+        }
+        #box2{
+            left:500px;
+            top:200px;
+            background-color: green;
+        }
+        .div1{
+            width:200px;
+            height:40px;
+            border:1px solid #000;
+            background-color: rgba(0,0,0,.4);
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<div id="box1"></div>
+<div id="box2"></div>
+
+
+<script>
+
+
+//    var box1 = document.querySelector('#box1');
+    var box2 = document.querySelector('#box2');
+
+    //计算  x2 y2
+
+    var x2 = box2.offsetLeft+box2.offsetWidth/2;
+    var y2 = box2.offsetTop+box2.offsetHeight/2;
+
+    //x y 的最小距离
+    var w = box2.offsetWidth/2;
+    var h = box2.offsetHeight/2;
+
+
+    document.onmousedown = function(ev){
+
+
+        var downX = ev.clientX;
+        var downY = ev.clientY;
+
+        var ele = document.createElement('div');
+        ele.className='div1';
+        ele.style.zIndex = 100;
+
+        document.body.appendChild(ele);
+
+        ele.style.left = downX + 'px';
+        ele.style.top = downY + 'px';
+
+
+        document.onmousemove = function(ev){
+
+            //鼠标的中心点
+            var x1 = ev.clientX;
+            var y1 = ev.clientY;
+
+            ele.style.left = x1 + 'px';
+            ele.style.top = y1 + 'px';
+
+            var x = x1-x2;
+            var y = y1-y2;
+
+
+            if(Math.abs(x)<w&&Math.abs(y)<h){
+
+
+                //做想做的事情
+                window.isPengshang = true;
+
+                console.log('碰上了');
+            }else{
+                window.isPengshang = false;
+                console.log('没碰上');
+            }
+
+            return false;//清除默认事件
+
+
+
+
+
+        };
+
+
+    };
+
+    document.onmouseup = function(){
+        document.onmousemove = null;
+        var div1 = document.querySelector('.div1');
+        document.body.removeChild(div1);
+
+        if(isPengshang){
+            alert('删除我吧');
+        }
+    };
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="轩邈">
+    <meta name="copyright" content="轩邈">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <!-- 网站SEO -->
+    <title>Title</title>
+    <meta name="keywords" content="轩邈 xuanmiao xuanmiao.com">
+    <meta name="description" content="轩邈 | 猎奇蜗牛">
+    <!-- 标题栏logo图标 -->
+    <link rel="icon" href="" type="image/x-icon">
+    <!-- 收藏夹logo图标 -->
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: #00CCFF;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+
+<script>
+    var div = document.querySelector('div');
+    var index = 0;
+//    var timer = setInterval(function () {
+//        var arr = [-30,30,-20,20,-10,10,0];
+//        div.style.marginLeft = arr[index] + 'px';
+//        index++;
+//        if(div.style.marginLeft === 0){
+//            clearInterval(timer);
+//        }
+//    },30);
+
+    jitter(div,"marginTop",30,10,30);
+    function jitter(obj,attr,dist,diff,interval){
+        var attrArrIndex = 0;
+        clearInterval(obj.timer);
+        var attrArr = [];
+
+        while(Math.abs(dist) >= diff){
+            dist = -dist;
+            attrArr[attrArrIndex] = dist;
+            if(dist > 0){
+                dist = dist - diff;
+            }
+            attrArrIndex++;
+        }
+        attrArr[attrArr.length]  = 0;
+        attrArrIndex = 0;
+
+        obj.timer = setInterval(function () {
+            console.log(getCss(obj,attr));
+            obj.style[attr] = attrArr[attrArrIndex] + "px";
+            attrArrIndex++;
+            if(getCss(obj,attr) === 0){
+                clearInterval(obj.timer);
+            }
+        },interval);
+    }
+
+    function getCss(obj,attr){
+        var objAttr = getComputedStyle(obj)[attr];
+        return isNaN(parseFloat(objAttr))?objAttr:parseFloat(objAttr);
+    }
+</script>
+</body>
+</html>

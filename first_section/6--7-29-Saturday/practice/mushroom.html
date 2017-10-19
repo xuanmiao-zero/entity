@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>mushroom Street</title>
+    <style>
+        body{
+            background-color: #5A94EF;
+            margin:0;
+        }
+        #carousel{
+            width:720px;
+            height:360px;
+            margin: 100px auto;
+            position: relative;
+        }
+        #carousel .imgs-box{
+            padding: 0;
+            height:100%;
+            position: relative;
+            overflow: hidden;
+        }
+        #carousel .imgs-box img{
+            width:720px;
+            height:360px;
+            display: inline-block;
+            position: absolute;
+            transition: 1s;
+            left: 0;
+            z-index: 1;
+            opacity: 1;
+        }
+        #carousel .dots-box{
+            width: 100%;
+            height: 20px;
+            line-height: 20px;
+            vertical-align: middle;
+            text-align: center;
+            position: absolute;
+            bottom: 18px;
+            z-index: 3;
+            word-spacing: -0.3em;//去除元素键空白
+            /*word-spacing: 3.3em;//去除元素键空白*/
+        }
+        #carousel .dots-box a{
+            width: 20px;
+            height: 20px;
+            text-decoration: none;
+            display: inline-block;
+            padding: 0;
+            margin: 0;
+            vertical-align: middle;
+            text-align: center;
+        }
+        #carousel .dots-box  img{
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+            background-position: center center;
+        }
+        #carousel .dots-box a {
+            padding: 0;
+            margin: 0;
+            display: inline-block;
+            background: url("../../img/mushRoom/dot-set.png") -97px -18px no-repeat;
+        }
+        #carousel .dots-box .dot_deafault img{
+            display: none;
+        }
+        #carousel .dots-box .dot_show img{
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div id="carousel">
+        <div class="imgs-box">
+            <img src="../../img/mushRoom/1.webp" alt="">
+            <img src="../../img/mushRoom/2.webp" alt="">
+            <img src="../../img/mushRoom/3.webp" alt="">
+        </div>
+        <div class="dots-box">
+            <a href="javascript:void(0);" class="dot_deafault dot_show">
+                <img src="../../img/mushRoom/red-dot.png" alt="" class="bot_show_img">
+            </a>
+            <a href="javascript:void(0);" class="dot_deafault">
+                <img src="../../img/mushRoom/red-dot.png" alt="" class="bot_show_img">
+            </a>
+            <a href="javascript:void(0);" class="dot_deafault">
+                <img src="../../img/mushRoom/red-dot.png" alt="" class="bot_show_img">
+            </a>
+        </div>
+    </div>
+<script>
+    //显示效果
+    //    z-index: 1; left: 0px; opacity: 1; display: block;
+    //隐藏效果
+    //    z-index: 0; left: -180px; opacity: 0; display: block;
+    //获取元素
+    var carousel = document.getElementById('carousel');
+    var imgs = carousel.querySelector('.imgs-box').getElementsByTagName('img');
+    var dots = carousel.querySelector('.dots-box').getElementsByTagName('a');
+
+    function delayShow(dotsI) {
+        dotsI.className = "dot_deafault dot_show";
+        for (var j = 0; j < dots.length; j++) {
+            if (j !== dotsI.index) {
+                dots[j].className = "dot_deafault";
+                imgs[j].style.left = "-180px";
+                imgs[j].style.zIndex = "0";
+                imgs[j].style.opacity = "0";
+                setTimeout("imgs[" + j + "].style.left = \"180px\";", 200);
+            }
+        }
+        imgs[dotsI.index].style.zIndex = "2";
+        imgs[dotsI.index].style.opacity = "1";
+        imgs[dotsI.index].style.left = "0";
+    }
+    for(var i=0; i <dots.length; i ++){
+        dots[i].index = i;
+        if(i !== 0){
+            imgs[i].style.left = "180px";
+            imgs[i].style.zIndex = 0;
+        }
+        dots[i].onmouseover = function () {
+            setTimeout(delayShow(this),200);
+        };
+    }
+</script>
+</body>
+</html>
+
+
+
+
+
+<!--//    dots[1].onmouseover = function () {
+//        this.className = "dot_deafault dot_show";
+//        dots[0].className = "dot_deafault";
+//
+//        imgs[0].style.left = "-180px";
+//        imgs[0].style.zIndex = "0";
+//        imgs[0].style.opacity = "0";
+//        var t=setTimeout("imgs[0].style.left = \"180px\";",100);
+//
+//        imgs[1].style.zIndex = "2";
+//        imgs[1].style.opacity = "1";
+//        imgs[1].style.left = "0px";
+//
+//    };
+//    dots[0].onmouseover = function () {
+//        setTimeout(delayShow(imgs[0]),300);
+//    };
+//    function delayShow(img) {
+//        dots[0].className = "dot_deafault dot_show";
+//        dots[1].className = "dot_deafault";
+//
+//        imgs[1].style.left = "-180px";
+//        imgs[1].style.zIndex = "0";
+//        imgs[1].style.opacity = "0";
+//        var t=setTimeout("imgs[1].style.left = \"180px\";",100);
+//
+//        img.style.zIndex = "2";
+//        img.style.opacity = "1";
+//        img.style.left = "0px";
+//    }-->

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="轩邈">
+    <meta name="copyright" content="轩邈">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <!-- 网站SEO -->
+    <title>Title</title>
+    <meta name="keywords" content="轩邈 xuanmiao xuanmiao.com">
+    <meta name="description" content="轩邈 | 猎奇蜗牛">
+    <style>
+        body{
+            margin: 0;
+        }
+        ul{
+            margin: 0;
+            padding: 0;
+        }
+        #pic-toggle{
+            margin: 80px auto;
+            width: 700px;
+            height: 440px;
+            background: url("../../../img/assembly_hall/assembly_hall.jpg");
+            background-size: 100% 100%;
+        }
+        .wrap{
+            margin: 0 auto;
+            width: 400px;
+            height: 260px;
+            background-size: 100% 100%;
+            overflow: hidden;
+        }
+        #pic-toggle .wrap ul{
+            position: relative;
+            width: 2000px;
+        }
+        #pic-toggle .wrap ul li {
+            position: relative;
+            width: 400px;
+            float: left;
+        }
+        #pic-toggle .pic img{
+            width: 100%;
+            height: 260px;
+        }
+        #pic-toggle li{
+            list-style: none;
+        }
+        #pic-toggle .pic p{
+            position: absolute;
+            bottom: -100px;
+            left: 0;
+            right: 0;
+            margin:auto;
+            padding: 20px 20px 10px 20px;
+            background: linear-gradient(0deg, rgba(0,0,0,0.8), transparent);
+            text-align: center;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+<div id="pic-toggle">
+    <div class="wrap">
+        <ul class="img-box">
+        </ul>
+    </div>
+</div>
+
+<script>
+
+    var imgBox = document.querySelector('#pic-toggle .wrap ul');
+
+    autoToggle();
+
+    /*第几章图片*/
+    var PicIndex = 0;
+    var imgsSrc = [
+        "plant/plant1.jpg",
+        "plant/plant2.jpg",
+        "plant/plant3.jpg",
+        "plant/plant4.jpg"
+    ];
+    //    往最后加一张图片
+    imgsSrc[imgsSrc.length] = imgsSrc[0];
+
+    /*生成图片的HTML*/
+    for(var i = 0; i < imgsSrc.length; i ++){
+        if( i === imgsSrc.length - 1){
+            imgBox.innerHTML += '<li class="pic"><img src="'+ imgsSrc[0] + '" alt=""><p class="intro">这是第'+ 1 +'张图片</p></li>';
+        }else{
+            imgBox.innerHTML += '<li class="pic"><img src="'+ imgsSrc[i] + '" alt=""><p class="intro">这是第'+ (i + 1) +'张图片</p></li>';
+        }
+    }
+    /*获取图片介绍信息*/
+    var intros = document.querySelectorAll('#pic-toggle .pic p');
+
+
+    /*图片切换函数*/
+    function autoToggle() {
+        var speed = 2;
+        var picToggleTimer = setInterval(function () {
+            var imgBoxMarginLeft = parseFloat(getComputedStyle(imgBox)['marginLeft']);
+            imgBox.style.marginLeft = imgBoxMarginLeft - speed + 'px';
+            if(imgBoxMarginLeft %400 === 0){
+                clearInterval(picToggleTimer);
+                if(PicIndex === 5){
+                    autoShowIntro();
+                }else{
+                    setTimeout(autoShowIntro(),1000);
+
+                }
+            }
+            if(imgBoxMarginLeft <= -1600){
+                clearInterval(picToggleTimer);
+            }
+        }, 2);
+    }
+
+    /*图片描述信息显示*/
+    function autoShowIntro() {
+        var speed = 2;
+        /*去除第一张图片介绍信息显示两次*/
+        if(PicIndex === 4){
+            PicIndex = 0;
+            imgBox.style.marginLeft = 0;
+            autoToggle();
+            console.log(PicIndex);
+            return;
+        }
+        var picIntroToggleTimer = setInterval(function () {
+            var introBottom = parseFloat(getComputedStyle(intros[PicIndex])['bottom']);
+            intros[PicIndex].style.bottom = introBottom + speed + 'px';
+            if(introBottom === 0){
+                clearInterval(picIntroToggleTimer);
+                setTimeout(function () {
+                    var timer = setInterval(function(){
+                        introBottom = parseFloat(getComputedStyle(intros[PicIndex])['bottom']);
+                        if(introBottom < -100){
+                            PicIndex ++;
+                            autoToggle();
+                            clearInterval(timer);
+                        }
+                        intros[PicIndex].style.bottom = introBottom - speed + 'px';
+                    }, 20);
+                },1000);
+            }
+        }, 1);
+    }
+</script>
+</body>
+</html>

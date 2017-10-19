@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="轩邈">
+    <meta name="copyright" content="轩邈">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <!-- 网站SEO -->
+    <title>Title</title>
+    <meta name="keywords" content="轩邈 xuanmiao xuanmiao.com">
+    <meta name="description" content="轩邈 | 猎奇蜗牛">
+    <!-- 标题栏logo图标 -->
+    <link rel="icon" href="" type="image/x-icon">
+    <!-- 收藏夹logo图标 -->
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <style>
+        #operatingInterface{
+            margin: auto;
+            border: 1px solid transparent;
+            width: 700px;
+            height: 500px;
+            color: #fff;
+            background-image:linear-gradient(to right bottom, royalblue, #DD5044);
+            text-align: center;
+        }
+        #operatingInterface h2{
+            font-size:  36px;
+            text-align: center;
+            line-height: 40px;
+        }
+        .folders-container{
+            margin-top: 60px;
+            text-align: center;
+        }
+        .folder{
+            display: inline-block;
+            position: relative;
+            border: 2px solid #aaa;
+            border-radius: 10px;
+            width: 120px;
+            height: 120px;
+            background-color: rgba(0,0,0,0.2);
+        }
+        .checkbox{
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            margin: 2px 2px;
+            border-radius: 2px;
+            display: inline-block;
+            border: none;
+            width: 12px;
+            height: 12px;
+            background-color: rgba(255,255,255,0.9);
+            color: #fff;
+        }
+
+        .folder .checked{
+            background: url("selected.png") #00a8e0 top left;
+            background-size: 11px 11px;
+        }
+
+        .folder img{
+            display: block;
+            margin: 10px auto auto 12px;
+            padding: 10px;
+            border-radius: 10px;
+            user-select: none;
+        }
+        .folder input.folder-name{
+            display: block;
+            margin: 0 auto; /*？为什么*/
+            padding: 2px 4px;
+            width: 70px;
+            border: none;
+            color: #fff;
+            background-color: transparent;
+        }
+        
+        .create-folder, .delete-folder{
+            margin: 40px 10px;
+            border: 2px solid #eee;
+            border-radius: 4px;
+            display: inline-block;
+            padding: 4px 14px;
+            color: #fff;
+            background-color: transparent;
+            cursor: pointer;
+            user-select: none;
+        }
+
+    </style>
+</head>
+<body>
+
+<div id="operatingInterface">
+    <h2>xuanmiao</h2>
+    <div class="folders-container">
+        <div class="folder">
+            <div class="checkbox"></div>
+            <img src="folder.svg" alt="">
+            <input class="folder-name" type="text" value="文件夹1">
+        </div>
+    </div>
+    <div class="create-folder">新建文件夹</div>
+    <div class="delete-folder">删除文件夹</div>
+
+</div>
+
+<script>
+    var checkboxs = document.querySelectorAll('.checkbox');
+    var folder = document.querySelector('.folder');
+    var createFolder = document.querySelector('.create-folder');
+    var deleteFolder = document.querySelector('.delete-folder');
+    var foldersContainer = document.querySelector('.folders-container');
+
+    var checkedFolderArr = [];
+    choseFolder();
+    //新建文件夹
+    createFolder.onclick = function () {
+        foldersContainer.appendChild(folder.cloneNode(true));
+        //新建的节点置为未选中状态
+        foldersContainer.lastElementChild.firstElementChild.className = "checkbox";
+        foldersContainer.lastElementChild.lastElementChild.value = "文件夹" + foldersContainer.children.length;
+        choseFolder();
+    };
+
+    //删除选中文件夹
+    deleteFolder.onclick = function () {
+        for(var i = 0; i < checkedFolderArr.length; i++){
+            foldersContainer.removeChild(checkedFolderArr[i]);
+        }
+        checkedFolderArr = [];
+    };
+
+    //多选文件夹
+    function choseFolder(){
+        checkboxs = document.querySelectorAll('.checkbox');
+        for(var i = 0; i < foldersContainer.children.length; i++){
+            checkboxs[i].checked = false;
+            checkboxs[i].onclick = function () {
+                if(!this.checked){
+                    this.checked = true;
+                    this.className = "checkbox checked";
+                    //将选中的文件夹添加入一个数组中
+                    checkedFolderArr.push(this.parentElement);
+                }else{
+                    this.checked = false;
+                    this.className = "checkbox";
+                    checkedFolderArr.splice(checkedFolderArr.indexOf(this.parentElement),1);
+                }
+            };
+        }
+    }
+
+</script>
+</body>
+</html>

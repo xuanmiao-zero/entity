@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="轩邈">
+    <meta name="copyright" content="轩邈">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <!-- 网站SEO -->
+    <title>Like for your beauty</title>
+    <meta name="keywords" content="轩邈 xuanmiao xuanmiao.com">
+    <meta name="description" content="轩邈 | 猎奇蜗牛">
+    <link rel="stylesheet" href="hexagon.css">
+    <style>
+        body{
+            margin: 0;
+
+            background: url("background2.jpg") no-repeat;
+            background-size: 100%;
+            text-align: center;
+        }
+        h1.title{
+            margin-top: 100px;
+            color: #fff;
+            text-align: center;
+        }
+        #likeWrap{
+            margin: auto;
+            width: 1000px;
+            height: 300px;
+            text-align: center;
+            user-select: none;
+        }
+        #likeWrap .avator{
+            position: relative;
+            display: inline-block;
+            margin: 60px 20px;
+            width: 170px;
+            height: 180px;
+        }
+        .hex.hex-1{
+            background-image:url("beauty_1.jpg");
+            /*background-position: right top;*/
+        }
+        .like-box{
+            z-index: 5;
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform:translate(-50%,0);
+        }
+        .like-box .hex{
+            z-index: 5;
+            margin: 0;
+            width: 30px;
+            height: 54px;
+            background: rgba(255,255,255,1);
+            opacity: 0.6;
+            transform: rotate(90deg);
+        }
+        .like-box .hex:hover{
+            opacity: 0.9;
+        }
+        .like-box .heart:hover +div{
+            opacity: 0.9;
+
+        }
+        .like-box .heart{
+            z-index: 6;
+            background-size: 100%;
+            width: 30px;
+            height: 30px;
+            opacity: 0.9;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            display: inline-block;
+            background: url("heart1.png") no-repeat center;
+            background-size: 100%;
+            transform: translate(-50%,-50%);
+            cursor: pointer;
+        }
+
+        .like-box .heart-up{
+            display: none;
+            z-index: 5;
+            background-size: 100%;
+            width: 20px;
+            height: 20px;
+            opacity: 0.6;
+            position: absolute;
+            top: -22px;
+            left: 50%;
+            background: url("heart1.png") no-repeat center;
+            background-size: 100%;
+            transform: translate(-50%,0);
+            cursor: pointer;
+        }
+        #likeWrap .like-count{
+            color: #fff;
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="title">选出你心目中的女神</h1>
+    <div id="likeWrap">
+        <div class="avator">
+            <div class="hex hex-1">
+                <div class="corner-1"></div>
+                <div class="corner-2"></div>
+            </div>
+            <div class="like-box">
+                <div class="heart"></div>
+                <div class="hex hex-1">
+                    <div class="corner-1"></div>
+                    <div class="corner-2"></div>
+                </div>
+                <div class="heart-up"></div>
+            </div>
+            <p class="like-count">已为她点赞<span>0</span>次</p>
+        </div>
+        <div class="avator">
+            <div class="hex hex-1">
+                <div class="corner-1"></div>
+                <div class="corner-2"></div>
+            </div>
+            <div class="like-box">
+                <div class="heart"></div>
+                <div class="hex hex-1">
+                    <div class="corner-1"></div>
+                    <div class="corner-2"></div>
+                </div>
+                <div class="heart-up"></div>
+            </div>
+            <p class="like-count">已为她点赞<span>0</span>次</p>
+        </div>
+        <div class="avator">
+            <div class="hex hex-1">
+                <div class="corner-1"></div>
+                <div class="corner-2"></div>
+            </div>
+            <div class="like-box">
+                <div class="heart"></div>
+                <div class="hex hex-1">
+                    <div class="corner-1"></div>
+                    <div class="corner-2"></div>
+                </div>
+                <div class="heart-up"></div>
+            </div>
+            <p class="like-count">已为她点赞<span>0</span>次</p>
+        </div>
+        <div class="avator">
+            <div class="hex hex-1">
+                <div class="corner-1"></div>
+                <div class="corner-2"></div>
+            </div>
+            <div class="like-box">
+                <div class="heart"></div>
+                <div class="hex hex-1">
+                    <div class="corner-1"></div>
+                    <div class="corner-2"></div>
+                </div>
+                <div class="heart-up"></div>
+            </div>
+            <p class="like-count">已为她点赞<span>0</span>次</p>
+        </div>
+
+    </div>
+
+<script>
+    var hearts = document.querySelectorAll('.heart');
+    var heartsUp = document.querySelectorAll('.heart-up');
+    var likeCount = document.querySelectorAll('.like-count span');
+    var beautyImg = document.querySelectorAll(".avator>.hex.hex-1");
+
+    var imgArr = [
+        "url(beauty_1.jpg)",
+        "url(beauty_2.jpg)",
+        "url(beauty_3.jpg)",
+        "url(beauty_4.jpg)"
+    ];
+
+
+    var hearsUpTop = [];
+    var hearsUpOpacity = [];
+    var beautyLikeCount = [];
+
+    for(var i =0; i < hearts.length; i++){
+
+        beautyImg[i].style.backgroundImage = imgArr[i];
+        hearts[i].index = i;
+        hearsUpTop[i] = parseFloat(getComputedStyle(heartsUp[i]).top);
+        hearsUpOpacity[i] = parseFloat(getComputedStyle(heartsUp[i]).opacity) * 100;
+        //动画是否在执行标志
+        hearts[i].isAnimationFlag = false;
+        hearts[i].onclick = function () {
+            //判断动画是否在执行
+            if(this.isAnimationFlag)
+                return;
+            var _this = this;
+            /*初始化往上飘的❤的属性*/
+            heartsUp[this.index].style.display = "block";
+            heartsUp[this.index].style.top = "-22px";
+            heartsUp[this.index].style.opacity = 0.6;
+            hearsUpOpacity[this.index] = 0.6 * 100;
+            hearsUpTop[this.index] = -22;
+            /*让小❤往上飘*/
+            this.isAnimationFlag = true;
+            heartUpfun(this.index,function(){
+                _this.isAnimationFlag = false;
+            });
+            /*统计加一*/
+            beautyLikeCount = parseInt(likeCount[this.index].innerHTML);
+            likeCount[this.index].innerHTML =  ++beautyLikeCount;
+        };
+    }
+
+    function heartUpfun(index,fn){
+        clearInterval(hearts[index].timer);
+        hearts[index].timer = setInterval(function(){
+            if(parseFloat(heartsUp[index].style.opacity) === 0){
+                heartsUp[index].style.display = "none";
+                clearInterval(hearts[index].timer);
+            }
+            hearsUpOpacity[index] = hearsUpOpacity[index] - 2;
+            hearsUpTop[index] = hearsUpTop[index] - 2;
+            heartsUp[index].style.top = hearsUpTop[index] + "px";
+            heartsUp[index].style.opacity = hearsUpOpacity[index]/100;
+            if(heartsUp[index].style.opacity < 0)
+                heartsUp[index].style.opacity = 0;
+            /*动画完成后需要做的事，通过回调函数让用户自己定义。*/
+            if(parseFloat(heartsUp[index].style.opacity) === 0){
+                fn&&fn(); //如果fn存在就执行fn。
+            }
+        },17);
+    }
+
+</script>
+</body>
+</html>

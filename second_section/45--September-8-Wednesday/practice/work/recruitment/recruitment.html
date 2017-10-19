@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="轩邈">
+    <meta name="copyright" content="轩邈">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <!-- 网站SEO -->
+    <title>recruitment</title>
+    <meta name="keywords" content="轩邈 xuanmiao xuanmiao.com">
+    <meta name="description" content="轩邈 | 猎奇蜗牛">
+    <style>
+        /*css reset*/
+        body{
+            margin: 0;
+        }
+        a{
+            text-decoration: none;
+        }
+        ul{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        /*全局样式*/
+        body{
+            color: #fff;
+        }
+        a{
+            color: #fff;
+        }
+        /*招聘模块*/
+        #recruitmentList{
+            margin: auto;
+            border-radius: 10px;
+            width: 700px;
+            height: 400px;
+            background-color: #1C9ABE;
+            overflow: hidden;
+            font-size: 0;
+        }
+        /*标题*/
+        h1{
+            margin: 10px;
+            text-align: center;
+            font-size: 30px;
+        }
+
+        /*侧边栏*/
+        #recruitmentList .menu{
+            float: left;
+            display: inline-block;
+            border-right: 1px inset skyblue;
+            width: 100px;
+            height:320px;
+            font-size: 14px;
+        }
+        #recruitmentList .menu a{
+            margin: 10px;
+            width: 80px;
+            text-align: center;
+            display: inline-block;
+            vertical-align: top;
+        }
+        #recruitmentList .menu a:hover{
+            color: yellow;
+
+        }
+        /*主栏信息*/
+        #recruitmentList .list{
+            display: inline-block;
+            margin: 0 14px auto 0;
+            width: 580px;
+            height:260px;
+            font-size: 14px;
+            vertical-align: top;
+        }
+        #recruitmentList .list .serial-num{
+            font-size: 30px;
+            opacity: 0.7;
+            vertical-align: -16%;
+        }
+        #recruitmentList .request{
+            margin: 10px;
+            display: inline-block;
+            width: 360px;
+            height: 40px;
+            overflow:hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            vertical-align: middle;
+        }
+        #recruitmentList .time-more{
+            margin-left: 40px;
+            display: inline-block;
+            width: 80px;
+            height: 40px;
+            vertical-align: middle;
+        }
+        #recruitmentList .more:hover{
+            color: lightgoldenrodyellow;
+        }
+        .list .list-item{
+            padding: 0 10px;
+            border-bottom: 1px dashed skyblue;
+            border-left: 2px solid transparent;
+        }
+        .list .list-item:hover{
+            border-left: 2px solid lightgoldenrodyellow;
+            background-color: #00a8e0;
+        }
+        #page-box{
+            width: 580px;
+            display: inline-block;
+            font-size: 14px;
+            text-align: center;
+            opacity: 0.8;
+            user-select: none;
+        }
+        .next-page{
+            display: inline-block;
+            content: '>';
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .next-page:hover{
+            color: yellow;
+            opacity: 1;
+            transform: scale(1.3);
+        }
+        .pre-page{
+            display: inline-block;
+            content: '<';
+            font-size: 18px;
+            cursor: pointer;
+        }
+        .pre-page:hover{
+            color: yellow;
+            opacity: 1;
+            transform: scale(1.3);
+        }
+        .page, .page li{
+            margin: 10px 8px;
+            display: inline-block;
+            cursor: pointer;
+        }
+        .page li:hover{
+            color: yellow;
+            opacity: 1;
+            transform: scale(1.3);
+        }
+        .active{
+            color: yellow;
+        }
+        li.active a{
+            color: yellow;
+        }
+    </style>
+</head>
+<body>
+<div id="recruitmentList">
+    <h1>RECRUITMENT</h1>
+    <div class="menu">
+        <!--<a class="active" href="?type=social#1">社会招聘 <br> social</a>-->
+        <!--<a href="?type=campus#1">校园招聘 <br> campus</a>-->
+    </div>
+    <ul class="list">
+    </ul>
+    <div id="page-box">
+        <div class="pre-page"><</div>
+        <ul class="page">
+        </ul>
+        <div class="next-page">></div>
+    </div>
+</div>
+<script src="animal_collection.js"></script>
+<script src="data.js"></script>
+<script>
+    var menu = document.querySelector('.menu');
+    var page = document.querySelector('#page-box .page');
+    var list = document.querySelector('.list');
+    var html;
+    //默认激活列表
+    var activeList = "social";
+    var navList = recruitmentData.list;
+
+
+    //获取当前激活列表
+    var searchJson = searchToJson(window.location.search);
+    if(searchJson.type){
+        activeList = searchJson.type;
+    }
+    //添加侧边栏
+    for(var i = 0; i < navList.length; i++){
+        if(navList[i].type === activeList){
+
+            html = '<a class="active" href="?type=' + navList[i].type + '#1">' + navList[i].name + ' <br> ' + navList[i].type + '</a>';
+        }else{
+            html = '<a href="?type=' + navList[i].type + '#1">' + navList[i].name + ' <br> ' + navList[i].type + '</a>';
+        }
+        menu.innerHTML += html;
+    }
+    //点击侧边栏事件
+
+
+    //页数
+    var startNum = 0;
+    var perPageNum = 4;
+
+    //总页数
+    var pageNumCount = Math.ceil(recruitmentData[activeList].length / perPageNum);
+
+    //生成页码
+    for(var j = 0 ; j < pageNumCount; j++){
+        if(j === 0){
+            page.innerHTML += '<li class="active"><a href="#'+ (j + 1) +'">' + (j + 1) + '</a></li>';
+        }else{
+            page.innerHTML += '<li><a href="#'+ (j + 1) +'">' + (j + 1) + '</a></li>';
+        }
+    }
+
+    //页码点击事件
+    var pageItem = page.querySelectorAll('li');
+    for(var k = 0; k < pageItem.length; k++){
+        pageItem[k].index = k;
+        pageItem[k].onclick = function () {
+            for(var i = 0 ; i < pageItem.length; i++){
+                pageItem[i].className = "";
+            }
+            this.className = 'active';
+            //获取页数
+//            pageIndex = window.location.hash.slice(1); //?怎么办
+            pageIndex = this.index;
+            switchPage(this.index * perPageNum);
+        };
+    }
+
+    /*生成列表*/
+    var pageIndex;
+    switchPage(startNum);
+    function switchPage(pageIndex){
+        list.innerHTML = "";
+        var index = 0;
+        for(var k = pageIndex; k < pageIndex + perPageNum && k <recruitmentData[activeList].length ; k++ ){
+            var listItem = document.createElement('li');
+            if(k<10){
+                index = '0' + (k + 1);
+            }else{
+                index = k;
+            }
+
+            var a = document.createElement('a');
+            listItem.className = 'list-item';
+            a.innerHTML = '<span class="serial-num">' + index +'</span><span class="request">' + recruitmentData[activeList][k].title + '<br>' + recruitmentData[activeList][k].content.requirement + '</span><span class="time-more"><span class="release-time">' + recruitmentData[activeList][k].time + '</span><span class="more">查看详情>></span></span>';
+            a.href = 'spefic_info/spefic_info.html?type=' + activeList +'#' + k;
+            listItem.appendChild(a);
+            list.appendChild(listItem);
+        }
+    }
+</script>
+</body>
+</html>

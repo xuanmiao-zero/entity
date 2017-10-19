@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>yesterdayPractice</title>
+    <style>
+        html,body{
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            width:100px;
+            height:100px;
+            border:5px solid #000;
+            margin-left: 60px;
+        }
+        #box-btn{
+            margin-top: 20px;
+        }
+        #mark{
+            display: none;
+            /*display: block;*/
+            position: absolute;
+            top: 0;
+            left: 0;
+            width:100%;
+            height:100%;
+            background: rgba(0,0,0,0.2);
+        }
+        #mark ul{
+            width:300px;
+            border:10px solid rgba(0,0,0,0.4);
+            list-style: none;
+            margin-left: 200px;
+            margin-top: 200px;
+        }
+        #mark li {
+            cursor: pointer;
+            height:40px;
+            line-height:40px;
+        }
+        #mark li span{
+            display: inline-block;
+            width: 34px;
+            height: 34px;
+            text-align: center;
+            border:1px solid blue;
+            margin:3px;
+            line-height: 36px;
+        }
+        #mark li:nth-of-type(1) span:nth-last-of-type(1){
+            background: blue;
+        }
+        #mark li:nth-of-type(1) span:nth-last-of-type(2){
+            background: yellow;
+        }
+        #mark li:nth-of-type(1) span:nth-last-of-type(3){
+            background: red;
+        }
+    </style>
+    <script>
+        /**
+         * 1.获取元素
+         * 2.显示隐藏遮罩层
+         *
+         *
+         */
+
+        //获取元素
+        window.onload=function(){
+            var btn = document.getElementById('btn');//显示隐藏遮罩层的按钮
+            var mark = document.getElementById('mark'); //遮罩层
+            var box = document.getElementById('box');
+
+            var setRedBtn = document.getElementById('set-red');
+            var setYellowBtn = document.getElementById('set-yellow');
+            var setBlueBtn = document.getElementById('set-blue');
+
+            var setW200 = document.getElementById('set-width-200');
+            var setW300 = document.getElementById('set-width-300');
+            var setW400 = document.getElementById('set-width-400');
+
+            var setH200 = document.getElementById('set-height-200');
+            var setH300 = document.getElementById('set-height-300');
+            var setH400 = document.getElementById('set-height-400');
+
+            var sure = document.getElementById('sure'); //确定按钮-隐藏遮罩层
+            var cancel = document.getElementById('cancel'); //确定按钮-隐藏遮罩层
+
+            //添加事件
+            //点击设置
+            btn.onclick=function(){
+                mark.style.display = "block";
+            };
+            /*设置元素属性*/
+            //设置背景颜色
+            setRedBtn.onclick=function () {
+                box.style.backgroundColor = 'red';
+            }
+            setYellowBtn.onclick=function () {
+                box.style.backgroundColor = 'yellow';
+            }
+            setBlueBtn.onclick=function () {
+                box.style.backgroundColor = 'blue';
+            }
+            //设置宽度
+            setW200.onclick=function () {
+                box.style.width= '200px';
+            }
+            setW300.onclick=function () {
+                box.style.width = '300px';
+            }
+            setW400.onclick=function () {
+                box.style.width = '400px';
+            }
+
+            //设置高度
+            setH200.onclick=function () {
+                box.style.height = '200px';
+            }
+            setH300.onclick=function () {
+                box.style.height = '300px';
+            }
+            setH400.onclick=function () {
+                box.style.height = '400px';
+            }
+
+            //恢复按钮
+            cancel.onclick=function () {
+                box.style.backgroundColor = '';
+                box.style.width = '';
+                box.style.height = '';
+            }
+            //确定按钮
+            sure.onclick=function(){
+                mark.style.display = "none";
+            };
+        };
+
+    </script>
+</head>
+<body>
+    <div id="box-btn">
+        请为下面的DIV设置样式：<input id = "btn" type="button" value = "点击设置">
+    </div>
+
+    <div id = "box"></div>
+
+    <div id = "mark">
+        <ul>
+            <li>请选择背景颜色：<span id="set-red">红</span><span id="set-yellow">黄</span><span id="set-blue">蓝</span></li>
+            <li>请选择宽度(px)：<span id="set-width-200">200</span><span id="set-width-300">300</span><span id="set-width-400">400</span></li>
+            <li>请选择高度(px)：<span id="set-height-200">200</span><span id="set-height-300">300</span><span id="set-height-400">400</span></li>
+            <input id ="cancel" type="button" value = "恢复">
+            <input id ="sure" type="button" value = "确定">
+        </ul>
+    </div>
+</body>
+</html>

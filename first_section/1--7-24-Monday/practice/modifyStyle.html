@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>modify</title>
+</head>
+<script>
+    //需求：点击按钮，获取input中的值，通过input内容修改div的样式
+    /**
+     *思路：
+     * 1.获取元素       input button div
+     * 2.按钮添加事件
+     * 3.获取input的值
+     * 4.修改样式
+     *
+     */
+
+    window.onload=function(){
+        //获取元素
+        var btn = document.getElementById('btn');
+        var attrInp = document.getElementById('attr');
+        var valInp = document.getElementById('val');
+        var box = document.getElementById('box');
+
+        //给按钮添加事件
+        btn.onclick = function () {
+            //获取input值
+            var attr = attrInp.value;
+            var val  = valInp.value;
+            //给div设置样式
+            box.style[attr] = val;
+        }
+    }
+
+</script>
+<style>
+    #box{
+        width:200px;
+        height:200px;
+        border:3px solid dodgerblue;
+    }
+</style>
+<body>
+    <input id = "attr" type="text" placeholder="属性名">
+    <input id = "val" type="text" placeholder="属性值">
+    <input id = "btn" type="button" value ="按钮">
+
+    <div id="box"></div>
+</body>
+</html>

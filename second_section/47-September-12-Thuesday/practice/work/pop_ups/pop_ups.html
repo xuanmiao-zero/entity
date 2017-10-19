@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="轩邈">
+    <meta name="copyright" content="轩邈">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <!-- 网站SEO -->
+    <title>弹窗</title>
+    <meta name="keywords" content="轩邈 xuanmiao xuanmiao.com">
+    <meta name="description" content="轩邈 | 猎奇蜗牛">
+    <style>
+        body{
+            background-color: #00a8e0;
+            text-align: center;
+        }
+        h1{
+            display: inline-block;
+            z-index: 0;
+            position: relative;
+            margin:0 0 0 9px;
+            font-size: 30px;
+            color: #fff;
+        }
+        h1:before{
+            z-index: -1;
+            position: absolute;
+            content: '';
+            display: block;
+            width: 26%;
+            height: 77%;
+            background-color: #fff;
+            border-radius: 100%;
+            margin: 7% 0 0 -10%;
+        }
+        h1::first-letter {
+            color: #1C9ABE;
+            font-size: 130%;
+        }
+        input[type="button"]{
+            display: block;
+            margin: 34px auto;
+            border: 1px inset transparent;
+            background-color: #fff;
+            color: #1C9ABE;
+            padding: 4px 30px;
+            font-weight: bold;
+            border-radius: 100px;
+            box-shadow: 2px 2px  10px #777 ;
+            cursor: pointer;
+            outline: none;
+        }
+        input[type="button"]:hover{
+            color: #00aaee;
+        }
+        .pop-ups{
+            position: absolute;
+            margin:0 auto;
+            width: 14rem;
+            border: 1px solid #e7e7e7;
+            border-radius: 4px;
+            color: #fff;
+            background-color: rgba(100,100,100,0.6);
+        }
+        .message-result{
+            font-size: 14px;
+            color: lightskyblue;
+        }
+        .pop-ups .close{
+            margin: 4px auto auto 190px ;
+            width: 20px;
+            height: 20px;
+            text-align: right;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .pop-ups .confirm{
+            box-shadow: 2px 2px 3px #aaa;
+        }
+    </style>
+</head>
+<body>
+    <div id="popUpBox">
+        <h1>xuanmiao</h1>
+        <input class="submit" type="button" value = "提交">
+    </div>
+<script>
+    var submit = document.querySelector('.submit');
+    var confirm = document.querySelector('.confirm');
+    var close = document.querySelector('.close');
+
+    //提交
+    submit.onmousedown = function () {
+        this.style.boxShadow = "0 0";
+        this.style.border = "1px inset #00aaee";
+
+        //创建弹窗
+        if(document.querySelector('.pop-ups'))
+            return;
+        var popUps = document.createElement('div');
+        popUps.className = "pop-ups";
+
+        //关闭按钮
+        var closeBtn = document.createElement('div');
+        closeBtn.className = "close";
+        closeBtn.innerHTML = "×";
+
+        //关闭事件
+        closeBtn.onmousedown = function () {
+            this.parentNode.parentNode.removeChild(this.parentNode);
+        };
+        popUps.appendChild(closeBtn);
+
+        //提交成功图片
+        var img = document.createElement('img');
+        img.src = "success.png";
+        popUps.appendChild(img);
+
+        //提交成功提示语
+        var p = document.createElement('p');
+        p.innerHTML = "恭喜你，提交成功！";
+        popUps.appendChild(p);
+
+        var p1 = document.createElement('p');
+        p1.className = "message-result";
+        p1.innerHTML = "已获得屠龙宝刀";
+        popUps.appendChild(p1);
+
+        //确定按钮
+        var confirmBtn = document.createElement('input');
+        confirmBtn.className = "confirm";
+        confirmBtn.type = "button";
+        confirmBtn.value = "确定";
+
+        //确认按钮事件
+        confirmBtn.onmousedown = function () {
+            this.style.boxShadow = "0 0";
+            this.style.border = "1px inset #00aaee";
+        };
+        confirmBtn.onmouseup = function () {
+            this.parentNode.parentNode.removeChild(this.parentNode);
+        };
+        confirmBtn.onmouseout = function () {
+            this.style.boxShadow = "";
+            this.style.border = "";
+        };
+
+        popUps.appendChild(confirmBtn);
+        document.body.appendChild(popUps);
+        objCenter(popUps);
+    };
+    submit.onmouseout = function () {
+        this.style.boxShadow = "";
+        this.style.border = "";
+    };
+
+    function objCenter(obj){
+        (window.onresize = function () {
+            obj.style.left = (window.innerWidth - obj.offsetWidth)/2 + 'px';
+            obj.style.top = (window.innerHeight - obj.offsetHeight)/2 + 'px';
+        })();
+    }
+</script>
+</body>
+</html>

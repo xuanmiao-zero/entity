@@ -1,0 +1,65 @@
+body{
+	margin: 0;
+}
+a{
+	text-decoration: none;
+	color: black;
+}
+ul,li{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.clearfix{
+	zoom: 1;
+}
+.clearfix:after{
+	content: "";
+	display: block;
+	clear: both;
+}
+.section{
+	width: 941px;
+	height: 592px;
+	border-top: 1px solid #05a790;
+	margin: 50px auto;
+}
+.section .content{
+	height: 592px;
+}
+.section .content .goods{
+	border-left: 1px solid #dfdedd;
+	border-right: 1px solid #dfdedd;
+	border-bottom: 1px solid #dfdedd;
+	width: 217px;
+	height: 284px;
+	margin-right: -1px;
+	background: url(../img/goods_bg.png) ;
+	padding: 11px 0 0 17px;
+	float: left;
+}
+.section .content .goods .cover{
+	height: 200px;
+	float: left;
+}
+.section .content .goods .name{
+	font: 12px/18px "宋体";
+	float: left;
+	margin: 6px 13px 0 4px;
+	width: 183px;
+}
+.section .content .goods .info{
+	height: 42px;
+	margin-top: 242px;
+}
+.section .content .goods .info .price{
+	width: 50px;
+	height: 42px;
+	float: left;
+}
+.section .content .goods .info .buy{
+	width: 56px;
+	height: 22px;
+	float: right;
+	margin-top: 20px;
+}

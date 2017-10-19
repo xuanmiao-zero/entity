@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>getAttribute</title>
+</head>
+<script>
+    /**
+     * 属性操作，获取属性（查），添加属性（增），修改属性（改），删除属性（删）
+     * 增删改查
+     */
+    window.onload=function(){
+        //获取属性
+        var box = document.getElementById('box');
+        //什么时候
+        box.style.backgroundColor = "#33a933";
+        box.style.height = "400px";
+        //删除 只是清空
+        box.style.height = '';//并没有变为0，修改的是行间样式。
+        box.index = 1;
+        console.log(box.index);
+        var imgEye = document.getElementById('eye');
+        console.log(imgEye['src']);
+
+//        console.log(box['innerHTML']);//单双引号都可以
+//        console.log(box.style);
+        //元素中的有些属性是不显示出来的
+    }
+</script>
+<style>
+    #box{
+        width:200px;
+        height:200px;
+        background-color: dodgerblue;
+    }
+    #eye{
+        width:300px;
+        height:200px;
+    }
+</style>
+<body>
+    <div id="box">
+        xuanmiao
+    </div>
+    <img  id ="eye" src="1.jpg" alt="">
+</body>
+</html>

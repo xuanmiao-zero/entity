@@ -1,0 +1,93 @@
+/*css reset*/
+body, h3{
+	margin: 0
+}
+ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+img{
+	vertical-align: top;
+}
+/*工具*/
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}
+.clearfix{
+	*zoom:1;
+}
+.clearfix:hover{
+	content: "";
+	display: block;
+	clear: both;
+}
+/*main*/
+.box{
+	width: 988px;
+	margin: 50px auto;
+	background-color: #f3f3f3;
+}
+.item{
+	width: 968px;
+	height: 66px;
+	margin: 4px 10px 6px 10px;
+}
+.bar{
+	margin-left: 29px;
+}
+.type{
+	width: 948px;
+	height: 32px;
+	border-bottom: 1px solid #e2e2e2;
+}
+.tittle{
+	font:bold 12px/32px "宋体";
+}
+.height{
+	font:bold 12px/18px "宋体";
+}
+.hover{
+	font:bold 12px/32px "宋体";	
+	color: #444444;
+}
+.bg{
+	width: 34px;
+	height: 18px;
+	background-color: #0066cc;
+	margin-top: 6px;
+	text-align: center;
+	margin-right: 21px;
+	color: #fff;
+}
+.color{
+	color: #b8aaaa;
+}
+.right{
+	color: #ff9900;
+	width: 42px;
+	height: 32px;
+	font: 12px/32px "宋体";
+	background:url(../img/1.jpg) 27px 8px no-repeat;
+}
+.list{
+	width: 948px;
+	height: 28px;	
+}
+.tittle_c{
+	line-height: 22px;
+	margin-left: 10px;
+}
+.photo{
+	margin-left: 30px;
+	font:12px "宋体";
+}
+.photo img{
+	margin-right: 4px;
+}

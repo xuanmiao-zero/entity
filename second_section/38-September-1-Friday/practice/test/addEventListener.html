@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="轩邈">
+    <meta name="copyright" content="轩邈">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <!-- 网站SEO -->
+    <title>Title</title>
+    <meta name="keywords" content="轩邈 xuanmiao xuanmiao.com">
+    <meta name="description" content="轩邈 | 猎奇蜗牛">
+    <!-- 标题栏logo图标 -->
+    <link rel="icon" href="" type="image/x-icon">
+    <!-- 收藏夹logo图标 -->
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <style>
+
+    </style>
+</head>
+<body>
+    <button id="btns"></button>
+<script>
+    var btns = document.getElementById('#btns');
+    function handleAction (event) {
+        console.log('im action', event);
+    }
+
+    var newHandle = function (event) {
+        handleAction(event);
+    }
+
+    btns.addEventListener('click', newHandle, false);
+    btns.addEventListener('click', newHandle, false);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="轩邈">
+    <meta name="copyright" content="轩邈">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <!-- 网站SEO -->
+    <title>Title</title>
+    <meta name="keywords" content="轩邈 xuanmiao xuanmiao.com">
+    <meta name="description" content="轩邈 | 猎奇蜗牛">
+    <style>
+    </style>
+</head>
+<body>
+    <!--<p>这是一个非常敏感的敏感词，因为过于政治导致无法显示。再次测试,马智</p>-->
+
+</body>
+</html>
+
+
+
+
+<script>
+    /*var p = document.querySelector('p');
+     var str = p.innerHTML;
+     p.innerHTML = str.replace(/再次测试|敏感|政治|马智/g,function ($0) {
+     var temp = "";
+     for(var i = 0; i < $0.length; i++){
+     temp += "*";
+     }
+     return temp;
+     });*/
+
+
+    /* var str = "2014--10fsjk09++";
+     var reg = new RegExp("\\d+\\D+\\d+\\D+\\d+\\D+\\D?","g");
+     console.log(reg);
+     console.log(reg.exec(str));
+
+     str.replace(/(\d+)(\D+)(\d+)(\D+)(\d+)(\D+)(\D?)/g,function ($0,$1,$2,$3,$4,$5,$6,$7,$8,$9) {
+     console.log($0,$1,$2,$3,$4,$5,$6,$7,$8,$9);
+     });
+
+     */
+
+    var str = '<title>Title</title> <title>Title</title><title>Title</title><title>Title</title><meta name="keywords" content="轩邈 xuanmiao xuanmiao.com"> <meta name="description" content="轩邈 | 猎奇蜗牛"> <style> </style>'.replace(/<.+?>/g,'');
+    console.log(str);
+
+
+    /*var obj = {
+     name:'马智',
+     age:"38",
+     sex:"男"
+     };
+
+     var str = "我的名字叫{name},今年{age}岁, 性别{sex}";
+
+     str = str.replace(/{([a-zA-Z\_\$][0-9a-zA-Z\_\$]*?)}/g,function ($0,$1) {
+     //        console.log(obj[$1]);
+     return obj[$1];
+     });
+     console.log(str);*/
+
+</script>

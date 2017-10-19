@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position:absolute;
+        }
+        #box1{
+
+        }
+        #box2{
+            left:500px;
+            top:200px;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+<div id="box1"></div>
+<div id="box2"></div>
+
+
+<script>
+
+
+    var box1 = document.querySelector('#box1');
+    var box2 = document.querySelector('#box2');
+
+
+    //找到box2碰不到的位置
+    var site = {
+        top:box2.offsetTop,
+        right:box2.offsetLeft+box2.offsetWidth,
+        bottom:box2.offsetTop+box2.offsetHeight,
+        left:box2.offsetLeft
+    };
+
+
+    box1.onmousedown = function(ev){
+
+        var _this = this;
+
+        var downX = ev.clientX;
+        var downY = ev.clientY;
+
+        var _left = _this.offsetLeft;
+        var _top = _this.offsetTop;
+
+        document.onmousemove = function(ev){
+
+            var moveX = ev.clientX;
+            var moveY = ev.clientY;
+
+            //计算box1的位置
+            var l = moveX-downX+_left;
+            var t = moveY-downY+_top;
+
+            //设置样式
+            _this.style.left = l +'px';
+            _this.style.top = t +'px';
+
+
+            if(_this.offsetTop+_this.offsetHeight<site.top||_this.offsetLeft>site.right||_this.offsetTop>site.bottom||_this.offsetLeft+_this.offsetWidth<site.left){
+                console.log('没有碰撞');
+            }else{
+                console.log('碰到了');
+            }
+
+
+
+
+
+        };
+
+
+    };
+
+    document.onmouseup = function(){
+        document.onmousemove = null;
+    };
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+/*默认样式重置*/
+body,h1,h3,dl,dt,dd,h5,p{
+	margin: 0;
+	font-size: 14px;
+	line-height: 24px;
+	font-family: "微软雅黑";
+	font-weight: normal;
+}
+a{
+	text-decoration: none;
+	color: inherit;
+}
+input{
+	padding: 0;
+	border-width: 1px;
+}
+img{
+	vertical-align: top;
+	border: none;
+}
+ul,li{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}

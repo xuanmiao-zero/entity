@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script></script>
+    <style>
+        #msg-title{
+            margin-top:10px;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            /**
+             * 1.获取元素 按钮，输入框，留言板
+             * 2.添加事件
+             * 3.获取输入框内容
+             * 3.把内容显示在留言板上
+             */
+
+            //获取元素
+            var btn = document.getElementById('btn');
+            var content  = document.getElementById('content');
+            var ul = document.getElementById('msg-box');
+
+            //添加事件
+            btn.onclick=function(){
+                //获取输入框内容
+//                var conVal = content.value;
+                //往留言板放内容
+                ul.innerHTML += "<li>" + content.value + "</li>";
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="content">
+    <input type="button" id="btn" value = "留言">
+    <div id="msg-title">留言板</div>
+    <ul id="msg-box">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+
+</body>
+</html>

@@ -1,0 +1,534 @@
+.search .head{
+	height: 75px;
+}
+.search .more_shop{
+	width: 80px;
+	height: 24px;
+	border: 1px solid #e2e2e2;
+	margin: 26px 59px 0 0;
+}
+.search .head_form{
+	width: 950px;
+}
+.search .sosuo{
+	width:619px;
+	height: 31px;
+	border: 2px solid #ff5500;
+	border-right: none;
+	margin-top: 20px;
+}
+
+.search .baby{
+	width: 69px;
+	height: 31px;
+	border-right: 1px solid #e5e5e5;
+}
+.search .sosuo .sousuolan{
+	width: 550px;
+	height: 31px;
+	padding-left: 6px;
+}
+.search .sousuoniu{
+	width: 80px;
+	height: 35px;
+	background-color: #ff4400;
+	margin-top: 20px;
+}
+.search .zhaoxiangji{
+	width: 17px;
+	height: 15px;
+	right: 9px;
+	top: 7px;
+}
+.search .upload{
+	width: 165px;
+	height: 26px;
+	background-color: #fff1dc;
+	border: 1px solid #ffe5bd;
+	right: -5px;
+	top:40px;
+}
+.search .upload .no{
+	width: 7px;
+	height: 7px;
+	background-position: -10px -15px;
+}
+.search .upload .shangsanjiao{
+	width: 10px;
+	height: 5px;
+	background-position: 0 -17px;
+	right: 18px;
+	top:-5px;
+}
+/**/
+.search .top_nav .all_baby{
+	height: 38px;
+	border-bottom: 2px solid #ff4400;
+}
+.search .top_nav .all_baby a{
+	font: 16px/38px "微软雅黑";
+	padding: 0 20px;
+	color: #333333;
+}
+.search .top_nav .all_baby a:hover{
+	background-color: #ff4400;
+	color: #fff3ff;
+}
+.search .top_nav .all_class{
+	height: 46px;
+}
+.search .top_nav .all_class .left{
+	height: 44px;
+	margin: 2px 0 0 20px;
+	line-height: 44px;
+	color: ;
+}
+.search .top_nav .all_class .right{
+	width: 72px;
+	height: 24px;
+	padding-left: 9px;
+	line-height: 24px;
+	background-color: #f6f6f6;
+	border: 1px solid #e8e8e8;
+	margin-top: 10px;
+}
+.search .top_nav .all_class .right_text{
+	color: #6b6b6b;
+}
+.search .top_nav .all_class .xiaojianjian{
+	width: 7px;
+	height: 4px;
+	background-position: -2px -24px;
+	margin: 11px 9px 0 0;
+}
+.search .top_nav .about_class{
+	height: 36px;
+	border: 1px solid #e8e8e8;
+	line-height: 36px;
+	margin-bottom: 10px;
+}
+.search .top_nav .about_class span{
+	margin-right: 48px;
+	color: #999999;
+}
+.search .top_nav .about_class a{
+	margin-right: 40px;
+	color: #000000;
+}
+.search .top_nav .find{
+	height: 42px;
+	border: 1px solid #e8e8e8;
+	line-height: 42px;
+}
+.search .top_nav .find span{
+	margin-right: 27px;
+	color: #999999;
+}
+.search .top_nav .find a{
+	margin-right: 20px;
+	color: #6c6c6c;
+}
+.search .top_nav .synthesize{
+	width: 938px;
+	height: 39px;
+	border: 1px solid #e8e8e8;
+	margin-top: 10px;
+}
+.search .top_nav .rank{
+	width: 699px;
+	height: 39px;
+}
+.search .top_nav .rank .sort{
+	width: 86px;
+	height: 38px;
+	padding-top: 1px;
+	line-height: 38px;
+	color: #ff5500;
+	border-right: 1px solid #e5e5e5;
+}
+.search .top_nav .rank .four_but{
+	width: 273px;
+	height: 38px;
+	padding-top: 1px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	background-color: #f5f5f5;
+}
+.search .top_nav .rank .four_but a{
+	color: #6d6d6d;
+	line-height: 38px;
+}
+.search .top_nav .rank .four_but .xiajianjian{
+	width: 7px;
+	height: 4px;
+	background-position: -10px -24px;
+	margin: 17px 0 0 4px;
+}
+.search .top_nav .rank .money-to-money{
+	width: 120px;
+	height: 39px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	background-color: #f5f5f5;
+}
+.search .top_nav .rank .money-to-money .price{
+	width: 55px;
+	height: 23px;
+	border: 1px solid #dfdfdf;
+	margin: auto;
+}
+.search .top_nav .rank .money-to-money span{
+	margin: auto;
+}
+.search .top_nav .rank .form_img{
+	width: 204px;
+	height: 39px;
+	background-color: #f5f5f5;
+	padding-left: 15px;
+}
+.search .top_nav .screen{
+	width: 239px;
+	height: 39px;
+	background-color: #f5f5f5;
+}
+.search .top_nav .screen .place{
+	width: 67px;
+	height: 38px;
+	padding-top: 1px;
+	line-height: 38px;
+	color: #6d6d6d;
+	border-right: 1px solid #e5e5e5;
+}
+.search .top_nav .screen .place .from{
+	width: 7px;
+	height: 4px;
+	margin: 19px 0 0 3px;
+	background-position: -10px -24px;
+}
+.search .top_nav .screen .fangkuan{
+	width: 40px;
+	height: 39px;
+	border-right: 1px solid #e5e5e5;
+}
+.search .top_nav .screen .sidian{
+	background-position: -20px -39px;
+}
+.search .top_nav .screen .sangang{
+	background-position: -20px 0;
+}
+.search .top_nav .screen .turning{
+	width: 89px;
+	height: 39px;
+	line-height: 39px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+.search .top_nav .screen .jian{
+	width: 6px;
+	height: 9px;
+	margin-top: 15px;
+}
+.search .top_nav .screen .zuojianjian{
+	background-position: -2px -30px;
+}
+.search .top_nav .screen .youjianjian{
+	background-position: -10px -30px;
+}
+.search .top_nav .selet{
+	width:918px ;
+	height: 38px;
+	padding: 0 8px 0 12px;
+	border: 1px solid #e8e8e8;
+	border-top: none;
+	line-height: 18px;
+	margin-bottom: 32px;
+}
+.search .top_nav .selet input{
+	margin: 12px 4px 0 0;
+}
+.search .top_nav .selet label{
+	line-height: 18px;
+	font-size: 12px;
+	margin: 10px 12px 0 0;
+}
+.search .top_nav .selet .form_more{
+	width: 34px;
+	height: 18px;
+	border-right: 1px solid #ededed ;
+	padding: 0 10px 0 14px;
+	color: #404040;
+	margin-top: 10px;
+}
+.search .top_nav .selet .xiajianjian{
+	width: 7px;
+	height: 4px;
+	background-position: -10px -24px;
+	margin: 8px 0 0 3px;
+}
+.search .top_nav .selet .samebaby{
+	width: 84px;
+	height: 24px;
+	background-color: #fff;
+	border: 1px solid #dedede;
+}
+.search .search_list{
+	width: 940px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: flex-start;
+	flex-wrap: wrap;
+}
+.search .search_list .search_item{
+	width: 220px;
+	height: 360px;
+	border: 1px solid #ededed;
+}
+.search .search_list .search_item .seaitem_img{
+	width: 220px;
+	height: 220px;
+}
+.search .search_list .search_item .seaitem_info{
+	width: 210px;
+	height: 140px;
+	padding-left: 10px;
+}
+.search .search_list .search_item .seaitem_info .item_money{
+	width: 200px;
+	height: 14px;
+	margin-top: 5px;
+	padding: 10PX 10PX 10PX 0;
+}
+.search .free_post{
+	width: 27px;
+	height: 14px;
+	line-height: 14px;
+	background-color: #ff4400;
+	font-size: 10px;
+	color:#fff;
+	margin-left: 2PX;
+}
+.search .search_list .search_item .seaitem_info .item_name{
+	width: 200px;
+	height: 36px;
+	padding-right: 10px;
+	line-height: 18px;
+}
+.search .search_list .search_item .seaitem_info .item_seller{
+	width: 200px;
+	height: 32px;
+	padding-right: 10px;
+	line-height: 32px;
+}
+.search .search_list .search_item .seaitem_info .item_seller .hongsangang{
+	width:8px;
+	height: 12px;
+	background-position: 0 -41px;
+	margin-right: 4px;
+}
+.search .search_list .search_item .seaitem_info .item_seller a{
+	height: 13px;
+	padding: 10px 0 9px 0;
+	
+}
+.search .search_list .search_item .seaitem_info .item_seller .shopper{
+	height: 12px;
+	font: 12px/12px arial,"微软雅黑";
+	border-bottom: 1px solid #888888;
+	color: #888888;
+}
+.search .search_list .search_item .seaitem_info .item_insurance{
+	width: 210px;
+	height: 28px;
+	padding-top: 5px;
+}
+.search .search_list .search_item .seaitem_info .item_insurance a{
+	margin-right: 4px;
+}
+.search  .hot_sell{
+	width: 49px;
+	height: 16px;
+	background-color: #ff5619;
+	color: white;
+	font-size: 10px;
+}
+.search .jin{
+	width:15px;
+	height: 16px;
+	background-position: 0 -53px;
+}
+.search .xian{
+	width: 16px;
+	height: 16px;
+	background-position: 0 -71px;
+}
+.search .dun{
+	width: 16px;
+	height: 16px;
+	background-position: 0 -125px;
+}
+.search .guanggao{
+	width: 24px;
+	height: 14px;
+	font-size: 10px;
+	line-height: 14px;
+	border: 1px solid #f1f1f1;
+	color: #dedede;
+	margin-right: 5px;
+}
+.search .search_list .search_item .seaitem_info .item_insurance .wangwang{
+	width: 16px;
+	height: 16px;
+	margin-right: 10px;
+	background-position: 0 -107px;
+}
+.search .down_nav{
+	height: 37px;
+	line-height: 35px;
+	width: 354px;
+	margin:0 auto;
+	margin-bottom: 30px;
+}
+.search .down_nav  .page{
+	height: 35px;
+	padding: 0 9px;
+	border: 1px solid #ededed;
+	color: #cccccc;
+	margin-right: 5px;
+}
+.search .down_nav  .number{
+	width: 35px;
+	height: 35px;
+	border: 1px solid #ededed;
+	margin-right: -1px;
+	color: #3d3d3d;
+}
+.search .down_nav  .number:hover{
+	background-color: #ff4400;
+	border: 1px solid #ff4400;
+	color: white;
+}
+.search .down_nav  .diandiandian{
+	width: 22px;
+	height: 37px;
+}
+/**/
+.search .right_side_sell{
+	height: 34px;
+	border-bottom: 1px solid #e8e8e8;
+	padding-top: 4px;
+	line-height: 34px;
+	margin-bottom: 13px;
+}
+.search .right_list{
+	width: 238px;
+	height: 268px;
+	margin-bottom: 10px;
+	border: 1px solid #e5e5e5;
+}
+.search .right_list .right_list_img{
+	width: 238px;
+	height: 240px;
+}
+.search .right_list .right_list_info{
+	width: 218px;
+	height: 16px;
+	padding: 7px 10px 5px 10px;
+}
+/**/
+.search .finddown{
+	height: 36px;
+	border: 2px solid #dedede;
+	background-color: #f5f5f5;
+}
+.search .finddown .showpop{
+	height: 35px;
+	line-height: 35px;
+	padding: 0 10px 0 15px;
+	border-bottom: 2px solid rgba(0,0,0,0);
+	color: #000000;
+	margin: 1px 5px 0 0;
+}
+.search .finddown .showpop:hover{
+	font-weight: bold;
+	color: #ff4400;
+	border-bottom: 2px solid #ff4400;
+}
+.search .finddown .wanthere{
+	padding: 10px 10px 9px 0;
+}
+.search .pink{
+	widows: 1188px;
+	height: 375px;
+	border: 1px solid #ededed;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+}
+.search .pink .pink_list{
+	width: 220px;
+	height: 347px;
+	border: 1px solid #ededed;
+}
+.search .pink .pink_list .pink_img{
+	width: 220px;
+	height: 220px;
+}
+.search .pink .pink_list .pink_info{
+	width: 200px;
+	height: 127px;
+	padding: 0 10px;
+}
+.search .pink .pink_list .pink_info .pinkprice{
+	width: 200px;
+	height: 14px;
+	padding: 12px 0 13px 0;
+}
+.search .pink .pink_list .pink_info .pinkprice .nomoney{
+	margin-left: 7px;
+	font-size: 10px;
+	color: #aaaaaa;
+	height: 10px;
+	line-height: 10px;
+	margin-top: 4px;
+}
+.search .pink .pink_list .pink_info .pinkname{
+	height: 30px;
+	line-height: 15px;
+	margin-bottom: 8px;
+}
+.search .pink .pink_list .pink_info .pinkshop{
+	height: 13px;
+	margin-bottom: 11px;
+}
+.search .pink .pink_list .pink_info .pinkshop a{
+	font-size: 12px;
+	line-height: 12px;
+	border-bottom: 1px solid #888888;
+	color: #888888;	
+}
+.search .pink .pink_list .pink_info .pinkico{
+	height: 16px;
+}
+.search .bot_search{
+	width: 714px;
+	height: 35px;
+	margin: 20px auto;
+}
+.search .bot_search .bottom_search{
+	width: 634px;
+	height: 35px;
+	border: 2px solid #ff5500;
+	border-right:none ;
+}
+.search .bot_search .bottom_button{
+	width: 80px;
+	height: 35px;
+	background-color: #ff4400;
+	color: white;
+	line-height: 35px;
+}

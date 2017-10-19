@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="轩邈">
+    <meta name="copyright" content="轩邈">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <!-- 网站SEO -->
+    <title>sort and random</title>
+    <meta name="keywords" content="轩邈 xuanmiao xuanmiao.com">
+    <meta name="description" content="轩邈 | 猎奇蜗牛">
+    <!-- 标题栏logo图标 -->
+    <link rel="icon" href="" type="image/x-icon">
+    <!-- 收藏夹logo图标 -->
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <style>
+        #colorBlockBox{
+            display: block;
+            border: 1px solid transparent;
+            margin: 100px auto;
+            width: 770px;
+            height: 520px;
+            text-align: center;
+            background-color: #574B98;
+        }
+        #colorBlockBox h1{
+            margin-top: 36px;
+            color: #fff;
+        }
+        #colorBlockBox .operation-btns div{
+            display: inline-block;
+            border: 1px solid #777;
+            border-radius: 16px;
+            margin: 6px 25px;
+            width: 116px;
+            height: 30px;
+            font-size: 14px;
+            line-height: 30px;
+            color: #2D2748;
+            background-color: #eee;
+            cursor: pointer;
+        }
+        #colorBlockBox .operation-btns div:hover, #colorBlockBox .operation-btns div.active{
+            color: #eee;
+            background-color: #2D2748;
+        }
+        #colorBlockBox .colorBlock{
+            display: flex;
+            justify-content: space-between;
+            flex-flow: row wrap;
+            flex-wrap: wrap;
+            margin:20px auto;
+            width: 650px;
+            height: 340px;
+        }
+        #colorBlockBox .colorBlock div{
+            position: relative;
+            margin: auto 23px;
+            border-radius: 10px;
+            width: 116px;
+            height: 116px;
+            line-height: 120px;
+            font-size: 26px;
+            font-weight: 100;
+            color: #fff;
+        }
+        #colorBlockBox .colorBlock div:after{
+            display: block;
+            position: absolute;
+            left: 14px;
+            bottom: -13px;
+            border: 1px solid rgba(100,100,100,0.7);
+            border-radius: 13px;
+            width: 87px;
+            height: 24px;
+            color: #777;
+            font: 14px/24px "microsoft yahei";
+            background-color: #fff;
+        }
+        .pink-purple{
+            background-image: linear-gradient(135deg, #F67FA8 0%, #BA7AE5 100% );
+        }
+        .pink-yellow{
+            background-image: linear-gradient(135deg, #CC5C94 0%, #F9CC7E 100% );
+        }
+        .yellow-green{
+            background-image: linear-gradient(135deg, #F6E244 0%, #95CC52 100% );
+        }
+        .tender-green{
+            background-image: linear-gradient(135deg, #8BCA58 0%, #4ABCCA 100% );
+        }
+        .lake-blue{
+            background-image: linear-gradient(135deg, #41B0BB 0%, #4E60BA 100% );
+        }
+        .blue-purple{
+            background-image: linear-gradient(135deg, #497CEE 0%, #8854F5 100% );
+        }
+        .purple-pink{
+            background-image: linear-gradient(135deg, #8854F5 0%, #DB85EB 100% );
+        }
+        .purple-red{
+            background-image: linear-gradient(135deg, #DD87ED 0%, #F77EA6 100% );
+        }
+
+        .pink-purple:after{
+            content: "1-粉紫";
+        }
+        .pink-yellow:after{
+            content: "2-粉黄";
+        }
+        .yellow-green:after{
+            content: "3-黄绿";
+        }
+        .tender-green:after{
+            content: "4-嫩绿";
+        }
+        .lake-blue:after{
+            content: "5-湖蓝";
+        }
+        .blue-purple:after{
+            content: "6-蓝紫";
+        }
+        .purple-pink:after{
+            content: "7-粉紫";
+        }
+        .purple-red:after{
+            content: "8-紫红";
+        }
+    </style>
+</head>
+<body>
+    <div id="colorBlockBox">
+        <h1>xuanmiao</h1>
+        <div class="operation-btns">
+            <div class="active">从小到大</div>
+            <div>打乱顺序</div>
+        </div>
+        <div class="colorBlock">
+            <div class="pink-purple">One</div>
+            <div class="pink-yellow">Two</div>
+            <div class="yellow-green">Three</div>
+            <div class="tender-green">Four</div>
+            <div class="lake-blue">Five</div>
+            <div class="blue-purple">Six</div>
+            <div class="purple-pink">Seven</div>
+            <div class="purple-red">Eight</div>
+        </div>
+    </div>
+
+<script>
+    var operationBtns = document.querySelectorAll(".operation-btns div");
+    var colorBlocks = document.querySelectorAll(".colorBlock div");
+    var randomArry = [];
+    colorBlockNumber = 8;
+    var divClassName =[
+        "pink-purple",
+        "pink-yellow",
+        "yellow-green",
+        "tender-green",
+        "lake-blue",
+        "blue-purple",
+        "purple-pink",
+        "purple-red"
+    ];
+    var isRepeat = false;
+
+    function getRandom(randomArry,length){
+        var i = 0;
+        while( i < 8 ){
+            randomArry[i] = Math.floor(Math.random() * 8);
+            for(var j = 0; j < i; j ++){
+                if(randomArry[i] === randomArry[j]){
+                    isRepeat = true;
+                    break;
+                }
+            }
+            if(j === i){
+                isRepeat = false;
+            }
+            if(!isRepeat){
+                i++;
+            }
+        }
+    }
+    operationBtns[0].onclick = function () {
+        getRandom(randomArry, colorBlockNumber);
+        for(var i = 0; i < colorBlockNumber; i ++){
+            colorBlocks[i].className = divClassName[i];
+        }
+        operationBtns[1].className = "";
+        this.className = "active";
+    };
+    operationBtns[1].onclick = function () {
+        getRandom(randomArry, colorBlockNumber);
+        for(var i = 0; i < colorBlockNumber; i ++){
+            colorBlocks[i].className = divClassName[randomArry[i]];
+        }
+        operationBtns[0].className = "";
+        this.className = "active";
+    }
+</script>
+</body>
+</html>

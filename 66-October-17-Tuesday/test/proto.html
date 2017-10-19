@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+<script>
+function f(){
+  console.log("我是函数")
+};
+
+//f.__proto__ => Function.prototype  -> Object.prototype
+//f1.__proto__ -> f.prototype -> f.prototype.__proto__
+var f1= new f();
+console.dir(f1);
+console.log(f.__proto__)   ;//Function  Object
+// console.dir(f1);
+// console.log(f.__proto__);
+// console.log(f1.__proto__);//f1.prototype;
+// console.log(f.__proto__.__proto__);
+// console.log(f1.__proto__.__proto__);//f1.prototype;
+// console.log(f1.__proto__.__proto__=== f.__proto__.__proto__);//true
+// console.log(f1.__proto__.__proto__);//object
+// console.log(f1.__proto__.__proto__.__proto__);//null
+</script>
+</html>

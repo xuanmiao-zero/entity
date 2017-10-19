@@ -1,0 +1,50 @@
+h3{
+	font:bold 26px/52px "黑体";
+	color: #4193d7;
+	padding-top:8px;
+	text-shadow:1px 1px 2px white ;
+}
+h5{
+	font: bold 16px/32px "微软雅黑";
+	padding-bottom: 5px;
+}
+.home_box h3{
+	font: 26px "黑体";
+	color: #e42112;
+	padding: 23px 0px 21px;
+	height: 26px;
+	display: inline-block;
+}
+.head{
+	width: 1263px;
+	height:108px;
+	border-bottom: 1px solid #e6e6e6;
+}
+.head_nav{
+	width:981px;
+	height: 30px;
+	padding: 0px 129px 0px 153px;
+	background-color: #f8f8f8;
+}
+.zhui{
+	width:140px;
+	font: 12px/30px "微软雅黑";
+	color:#fd5959 ;
+}
+.head .hnav{
+	width:510px;
+	height: 14px;
+	padding: 9px 0px 7px;
+}
+.hnav a{
+	font: 14px/14px "微软雅黑";
+	float: left;
+	padding-right: 16px;
+	color: #a2a2a2;
+}
+.head_con{
+	width:967px;
+	height: 78px;
+	padding:0px 158px 0px 138px;
+	position: relative;
+}

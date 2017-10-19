@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="轩邈">
+    <meta name="copyright" content="轩邈">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <!-- 网站SEO -->
+    <title>Understand Context</title>
+    <meta name="keywords" content="轩邈 xuanmiao xuanmiao.com">
+    <meta name="description" content="轩邈 | 猎奇蜗牛">
+    <!-- 标题栏logo图标 -->
+    <link rel="icon" href="" type="image/x-icon">
+    <!-- 收藏夹logo图标 -->
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <style>
+
+    </style>
+</head>
+<body>
+
+
+<script>
+
+    var apple = {
+        color: "red",
+        say:function () {
+            console.log("my color is " + this.color);
+        }
+    };
+    var banana = {
+        color: "yellow"
+    };
+//    apple.say();
+//    apple.say.call(banana);
+//    apple.say.apply(banana);
+    //apply和call常用用法
+    var array1 = [12 , "foo" , {name :"Joe"} , -2458];
+    var array2 = ["Doe" , 555 , 100];
+
+    //方法一
+//    array1.push(array2);
+    console.log(array1);
+
+    //方法二
+    Array.prototype.push.apply(array1,[array2,2,3,4] ); //?为什么后面不会添加其他元素
+
+    console.log(array1);
+
+    /*数组合并*/
+    var arr1 = [1,2,3];
+    var arr2 = [4,5,6];
+    arr1.concat(arr2);
+    console.log(arr1.concat(arr2));
+
+
+</script>
+</body>
+</html>

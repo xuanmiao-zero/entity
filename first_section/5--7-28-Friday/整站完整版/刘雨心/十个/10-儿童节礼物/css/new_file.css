@@ -1,0 +1,95 @@
+body,h3{
+	margin: 0;
+}
+ul,li{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+a{
+	text-decoration: none;
+}
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}
+.clearfix{
+	zoom:1;
+	}
+.clearfix:after{
+	content: "";
+	display: block;
+	clear: both;
+}
+.section{
+	width: 969px;
+	height: 420px;
+	border-right: 1px solid #dddddd;
+	border-bottom: 1px solid #dddddd;
+	margin: 50px auto;
+}
+.section .item1{
+	width: 161px;
+	height: 417px;
+	border-top: 3px solid #addf7e;
+	border-left: 1px solid #dbe1dd;
+}
+.section .item1 .head,.section .item1 .content{
+	margin:0 11px 0 10px;
+}
+.section .item1 .head a{
+	display: inline-block;
+	width: 61px;
+	height: 16px;
+	margin: 13px 37px 12px 40px;
+}
+.section .item1 .head a img{
+	vertical-align: top;
+}
+.section .item1 .content{
+	height: 376px;
+}
+.section .item1 .content .main{
+	height: 265px;
+	border-bottom: 1px dashed #d9d9d9;
+}
+.section .item1 .content .main li{
+	margin-bottom: 6px;
+	height: 124px;
+}
+.section .item1 .content .main li .img{
+	width: 140px;
+	height: 100px;
+	display: inline-block;
+}
+.section .item1 .content ul li .img img{
+	padding: 1px;
+	border: 1px solid #dddddd;
+}
+.section .item1 .content ul li .name{
+	font: 14px "宋体";
+	color: #3d3d3d;
+}
+.section .item1 .content ul li .name .info,.section .item1 .content ul li .intro{
+	font: 12px "宋体";
+	color: #b9b9b9;
+}
+.section .item1 .content .main li .more{
+	height: 10px;
+	margin-top: 3px;
+}
+.section .item1 .content .main li .more img{
+	vertical-align: top;
+}
+.section .item1 .content .minor{
+	height: 95px;
+	padding-top: 14px;
+}
+.section .item1 .content .minor li .name{
+	display: block;
+}
+.section .item1 .content .minor li{
+	margin-bottom: 10px;
+}

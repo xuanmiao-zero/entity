@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="author" content="xuanmiao"/>
+    <meta name="copyright" content="xuanmiao"/>
+    <meta name="keywords" content="轩邈"/>
+    <meta name="description" content="xuanmiao"/>
+
+    <title>Evaluation</title>
+    <!--<link href="./stxuanmiao.css.css" rel="stylesheet" type="text/css"/>-->
+    <style>
+        body{
+            margin:0;
+            background: #BBABA4;
+        }
+        #container {
+            width:460px;
+            height:200px;
+            background: #FFFFFF;
+            margin:40px auto;
+            border-radius: 6px;
+            border: 1px solid transparent;
+            position: relative;
+        }
+        #container .title{
+            width: 206px;
+            height: 20px;
+            margin: 20px auto auto;
+        }
+        #container .logo{
+            width: 80px;
+            height:20px;
+            background: url("../../img/eye/eye (5).jpg") center center no-repeat ;
+            background-size: 30px 20px;
+            margin: 0;
+            display: inline-block;
+        }
+        #container h3{
+            width: 100px;
+            height:20px;
+            line-height: 20px;
+            display: inline-block;
+            margin: 0;
+            vertical-align: top;
+            color: #DE4A63;
+        }
+        #container .evaluation{
+            width: 220px;
+            height: 40px;
+            margin: 30px auto auto;
+            font-size: 0;
+            line-height: 40px;
+            text-align: center;
+        }
+        #container .evaluation .noGrade{
+            width:20px;
+            /*background: #DE4A63;*/
+            color: #DE4A63;
+            font-size: 18px;
+            vertical-align: -20%;
+            margin: 5px;
+            cursor: pointer;
+            opacity: 0;
+        }
+        #container .evaluation .star{
+            font-size: 30px;
+            display: inline-block;
+            vertical-align: middle;
+            cursor: pointer;
+        }
+        /*不设置行高会被挤下来，why？*/
+        #container .evaluation .level{
+            display: inline-block;
+            width:50px;
+            line-height: 30px;
+            background: #DE4A63;
+            margin: 8px;
+            color: #fff;
+            font-size:14px;
+            text-align: center;
+            vertical-align: top;
+            opacity: 0;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        #container .prompt{
+            width: 100%;
+            height: 40px;
+            background: #DE4A63;
+            color: #fff;
+            font-weight: bold;
+            text-align: center;
+            vertical-align: middle;
+            position: absolute;
+            bottom: 0;
+            margin:-1px;
+            border: 1px solid transparent;
+            vertical-align: middle;
+            line-height: 40px;
+        }
+    </style>
+</head>
+<body>
+<h1 id="title" class="title"></h1>
+<div id="container">
+    <div class="title">
+        <div class="logo"></div>
+        <h3> | 总体评价</h3>
+    </div>
+    <div class="evaluation">
+        <b class="noGrade">☹</b>
+        <span class="star">★</span>
+        <span class="star">★</span>
+        <span class="star">★</span>
+        <span class="star">★</span>
+        <span class="star">★</span>
+        <b class="level">极差</b>
+    </div>
+    <div class="prompt">小提示，点击星星就能打分！</div>
+</div>
+
+<script type="text/javascript">
+    var stars = document.querySelectorAll('.star');
+    var level = document.querySelector('.level');
+    var noGrade = document.querySelector('.noGrade');
+    //声明变量
+    var levelNames = ['极差','一般','不错','推荐','力荐'];
+    for(var i = 0; i < stars.length; i++){
+        stars[i].index = i;
+        var clickFlag = -1;
+        stars[i].onmouseover = function () {
+            for(var i =0 ; i <= this.index; i ++){
+                if(i <1)
+                    stars[i].style.color = "rgba(221,76,100,0.2)";
+                else if(i <2)
+                    stars[i].style.color = "rgba(221,76,100,0.4)";
+                else if(i <3)
+                    stars[i].style.color = "rgba(221,76,100,0.6)";
+                else if(i <4)
+                    stars[i].style.color = "rgba(221,76,100,0.8)";
+                else
+                    stars[i].style.color = "rgba(221,76,100,1)";
+            }
+            for( i = this.index + 1; i <stars.length; i ++){
+                    stars[i].style.color = "";
+            }
+            level.innerText = levelNames[this.index];
+            level.style.opacity = 1;
+        };
+
+        stars[i].onmouseout = function () {
+            if(clickFlag <= -1){
+                for(var i = 0 ; i < stars.length; i ++){
+                    stars[i].style.color = "";
+                }
+                level.style.opacity = 0;
+            }else{
+                if(this.index === 0){
+                    noGrade.style.opacity = 1;
+                }
+                if(this.index <= clickFlag){
+                    for(var i = 0; i <= clickFlag; i ++){
+                        if(i <1)
+                            stars[i].style.color = "rgba(221,76,100,0.2)";
+                        else if(i <2)
+                            stars[i].style.color = "rgba(221,76,100,0.4)";
+                        else if(i <3)
+                            stars[i].style.color = "rgba(221,76,100,0.6)";
+                        else if(i <4)
+                            stars[i].style.color = "rgba(221,76,100,0.8)";
+                        else
+                            stars[i].style.color = "rgba(221,76,100,1)";
+                    }
+                }else{
+                    for(var i = clickFlag + 1; i < stars.length; i ++){
+                        stars[i].style.color = "";
+                    }
+                }
+            }
+
+        };
+        stars[i].onclick =function () {
+            clickFlag = this.index;
+        };
+    }
+    noGrade.onclick = function () {
+        clickFlag = -1;
+        for(var i = clickFlag + 1; i < stars.length; i ++){
+            stars[i].style.color = "";
+        }
+        this.style.opacity = 0;
+    }
+
+</script>
+</body>
+</html>

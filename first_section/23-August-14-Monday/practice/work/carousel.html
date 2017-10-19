@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="轩邈">
+    <meta name="copyright" content="轩邈">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <!-- 网站SEO -->
+    <title>Title</title>
+    <meta name="keywords" content="轩邈 xuanmiao xuanmiao.com">
+    <meta name="description" content="轩邈 | 猎奇蜗牛">
+    <style>
+        #box{
+            width: 600px;
+            height: 400px;
+            background: #0DFF92;
+            margin: 100px auto;
+            border: 1px solid transparent;
+        }
+        #box .photo-frame{
+            position: relative;
+            margin: 50px auto;
+            width: 500px;
+            height: 300px;
+            padding: 0;
+
+            background:  url(../../../img/frame/hanheld2.png) left 30%;
+            background-size: 110% 110%;
+        }
+        #box .photo-frame .wrap{
+            width: 160px;
+            height: 244px;
+            padding: 0;
+            position: relative;
+            left: 146px;
+            top: 27px;
+            transform: rotate(1deg);
+            letter-spacing: -0.31em;
+            overflow: hidden;
+        }
+        #box ul{
+            width: 800px;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+            letter-spacing: -0.31em;
+        }
+        ul li{
+            height: 100%;
+            margin: 0;
+            display: inline-block;
+            list-style: none;
+            letter-spacing: -0.31em;
+        }
+        .photo-frame .wrap ul li img{
+            margin: 0;
+            width:160px;
+            height: 100%;
+            display: inline-block;
+            letter-spacing: normal;
+            word-spacing: normal;
+            vertical-align: top;
+        }
+        #box .toggle-btns div{
+            width: 30px;
+            height: 60px;
+            position: absolute;
+            top: 50%;
+            transform: translate(0%,-50%);
+            background-image: url("../../../img/icon/dot-set.png");
+            cursor: pointer;
+        }
+
+        #box .toggle-btns .prev{
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+        #box .toggle-btns .next{
+            right: 0;
+            background-position: -50px 0;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+        .photo-frame .square-seq {
+            position: relative;
+        }
+        #box .photo-frame .square-seq ul{
+            margin: 0;
+            padding: 0;
+
+            width: 120px;
+            height: 20px;
+
+            position: absolute;
+            left: 34%;
+            border: 1px solid transparent;
+            list-style: none;
+            transform: rotate(1deg);
+        }
+        .photo-frame .square-seq li{
+            display: inline-block;
+            padding: 0;
+            width: 10px;
+            margin: 6px;
+            height: 10px;
+
+            background: #fff;
+
+            opacity: 0.8;
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div class="photo-frame">
+            <div class = "wrap">
+                <ul class="img-box">
+                </ul>
+            </div>
+            <div class="toggle-btns">
+                <div class="prev"></div>
+                <div class="next"></div>
+            </div>
+            <div class = "square-seq">
+                <ul>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+<script src="MTween.js"></script>
+<script>
+    var ul = document.querySelector('.img-box');
+    var squareSeqUl = document.querySelector('.square-seq ul');
+    //图片地址数组
+    var imgSrcArr = [
+        "../../../img/beauty/beauty_1.jpg",
+        "../../../img/beauty/beauty_2.jpg",
+        "../../../img/beauty/beauty_3.jpg",
+        "../../../img/beauty/beauty_4.jpg",
+        "../../../img/beauty/beauty_7.jpg"
+    ];
+
+    ul.style.width = (imgSrcArr.length + 2) * 160  + "px";
+    ul.style.marginLeft = "-160px";
+    addImg(ul,imgSrcArr);
+    /*往ul*/
+    function addImg(obj,imgSrcArr) {
+        /*往开始添加数组最后一张图片*/
+        var li = document.createElement('li');
+        var img = document.createElement('img');
+        img.src = imgSrcArr[imgSrcArr.length-1];
+        li.appendChild(img);
+        obj.appendChild(li);
+
+        /*添加图片数组的所有图片*/
+        for(var i = 0; i < imgSrcArr.length; i++){
+            li = document.createElement('li');
+            img = document.createElement('img');
+            img.src = imgSrcArr[i];
+            li.appendChild(img);
+            obj.appendChild(li);
+            li = document.createElement('li');
+            squareSeqUl.appendChild(li);
+        }
+
+        /*往最后添加数组第一张图片*/
+        li = document.createElement('li');
+        img = document.createElement('img');
+        img.src = imgSrcArr[0];
+        li.appendChild(img);
+        obj.appendChild(li);
+    }
+    /*左右切换按钮*/
+    var prevBtn = document.querySelector('.prev');
+    var nextBtn = document.querySelector('.next');
+    var squareSeq = document.querySelectorAll('.square-seq ul li');
+    var index = 1;
+    var numberSeq = 1;
+    /*切换函数*/
+
+    MTween(squareSeq[0],10,500,'height','linear',function(){
+        numberSeq = 0;
+    });
+    prevBtn.onclick = function () {
+        MTween(ul,160,500,'marginLeft','linear',function(){
+            index --;
+            if(index <= 0){
+                ul.style.marginLeft = "-800px";
+                index = imgSrcArr.length;
+            }
+        });
+        for(var i = 0; i < imgSrcArr.length; i ++){
+            if(squareSeq[i].style.height >= "20px"){
+                MTween(squareSeq[i],-10,500,'height','linear');
+            }
+        }
+        numberSeq--;
+        if(numberSeq < 0){
+            numberSeq = imgSrcArr.length - 1;
+        }
+        MTween(squareSeq[numberSeq],10,500,'height','linear');
+
+    };
+
+    nextBtn.onclick = function () {
+        MTween(ul,-160,500,'marginLeft','linear',function(){
+            index ++;
+            if(index >= imgSrcArr.length + 1){
+                ul.style.marginLeft = "-160px";
+                index = 1;
+            }
+        });
+
+        for(var i = 0; i < imgSrcArr.length; i ++){
+            if(squareSeq[i].style.height >= "20px"){
+                MTween(squareSeq[i],-10,500,'height','linear');
+            }
+        }
+        numberSeq++;
+        if(numberSeq >= imgSrcArr.length){
+            numberSeq = 0;
+        }
+        MTween(squareSeq[numberSeq],10,500,'height','linear');
+    };
+
+    /*图片高度增加*/
+
+</script>
+</body>
+</html>

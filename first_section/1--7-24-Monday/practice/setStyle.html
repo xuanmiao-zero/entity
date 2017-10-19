@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>setStyle</title>
+    <style>
+        html{
+            width:100%;
+            height:100%;
+            overflow: hidden;
+        }
+        body{
+            width:100%;
+            height:100%;
+            overflow: auto;
+            padding: 0px;
+            margin:0px;
+        }
+        #prompt{
+            font-size:24px;
+            font-weight:700;
+            margin:15px;
+            float: left;
+        }
+        #setStyleBtn{
+            float: left;
+            font-size: 14px;
+            border:0px;
+            margin:11px;
+            font-weight: 700;
+            padding: 10px 20px;
+            color: #fff;
+            background-color: red;
+        }
+        #container{
+            width:1000px;
+        }
+        #box{
+            width:300px;
+            height:300px;
+            border:3px solid dodgerblue;
+            float: left;
+            margin:10px 30px;
+            clear: left;
+        }
+        #operPanel{
+            width:360px;
+            height:200px;
+            background-color: #fff;
+            float: left;
+            position: absolute;
+            top:0px;
+            left:0px;
+            bottom: 0px;
+            right:0;
+            margin:auto;
+            border:20px solid #9C949C;
+            z-index: 1;
+        }
+        .promptInfo{
+            float: left;
+            margin:13px 10px 10px 40px ;
+        }
+        #operPanel input{
+            width:40px;
+            height:32px;
+            border:0px;
+            float: left;
+            margin:10px 5px;
+            line-height: 32px;
+            border-radius:5px;
+        }
+        #redBtn{
+            background-color: red;
+        }
+        #yellowBtn{
+            background-color: #EFBD00;
+        }
+        #blueBtn{
+            background-color: #5A94EF;
+        }
+        #shade{
+             position:fixed;
+             width: 100%;
+             height:100%;
+             background-color: black;
+             opacity: 0.5;
+         }
+        #confirm{
+            position: absolute;
+            bottom: 6px;
+        }
+        #confirm div{
+            float: left;
+            background-color: #002952;
+            color: #fff;
+            padding: 5px 15px;
+            margin: 5px;
+        }
+        #confirm div:nth-child(1){
+            margin-left: 110px;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var box = document.getElementById('box');
+            var redBtn = document.getElementById('redBtn');
+            var yellowBtn = document.getElementById('yellowBtn');
+            var blueBtn = document.getElementById('blueBtn');
+            var width200 = document.getElementById('width200');
+            var width300 = document.getElementById('width300');
+            var width400 = document.getElementById('width400');
+            var height200 = document.getElementById('height200');
+            var height300 = document.getElementById('height300');
+            var height400 = document.getElementById('height400');
+            var ok = document.getElementById('ok');
+            var recover = document.getElementById('recover');
+            var shade = document.getElementById('shade');
+            var operPanel = document.getElementById('operPanel');
+            var setStyleBtn  = document.getElementById('setStyleBtn');
+            /*红色按钮*/
+            redBtn.onclick=function () {
+                box.style.backgroundColor = "red";
+            };
+            /*黄色按钮*/
+            yellowBtn.onclick=function () {
+                box.style.backgroundColor = "#EFBD00";
+            };
+            /*蓝色按钮*/
+            blueBtn.onclick=function () {
+                box.style.backgroundColor = "#5A94EF";
+            };
+            /*宽度200按钮*/
+            width200.onclick=function () {
+                box.style.width = "200px";
+            };
+            /*宽度300按钮*/
+            width300.onclick=function () {
+                box.style.width = "300px";
+            };
+            /*宽度400按钮*/
+            width400.onclick=function () {
+                box.style.width = "400px";
+            };
+            /*高度200按钮*/
+            height200.onclick=function () {
+                box.style.height = "200px";
+            };
+            /*高度300按钮*/
+            height300.onclick=function () {
+                box.style.height = "300px";
+            };
+            /*高度400按钮*/
+            height400.onclick=function () {
+                box.style.height = "400px";
+            };
+            ok.onclick=function () {
+                shade.style.display = "none";
+                operPanel.style.display = "none";
+            };
+            /*恢复*/
+            recover.onclick=function () {
+                box.style.height = "300px";
+                box.style.width = "300px";
+            }
+            /*点击设置*/
+            setStyleBtn.onclick=function () {
+                shade.style.display = "block";
+                operPanel.style.display = "block";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="prompt">请为下面的DIV设置样式:</div>
+    <input id = "setStyleBtn" type="button" value="点击设置" />
+    <div id="container">
+        <div id = "box"></div>
+        <div id="operPanel">
+            <div id="colorSet">
+                <div class="promptInfo">请选择背景色：</div>
+                <input id="redBtn" type="button">
+                <input id="yellowBtn" type="button">
+                <input id="blueBtn" type="button">
+            </div>
+            <div id="widthSet">
+                <div class="promptInfo">请选择宽(px)：</div>
+                <input id="width200" type="button" value="200">
+                <input id="width300" type="button" value="300">
+                <input id="width400" type="button" value="400">
+            </div>
+            <div id="bgColorSet">
+                <div class="promptInfo">请选择高(px)：</div>
+                <input id="height200" type="button" value="200">
+                <input id="height300" type="button" value="300">
+                <input id="height400" type="button" value="400">
+            </div>
+            <div id="confirm">
+                <div id="recover">恢复</div>
+                <div id="ok">确定</div>
+            </div>
+        </div>
+    </div>
+
+    <div id = "shade"></div>
+</body>
+</html>

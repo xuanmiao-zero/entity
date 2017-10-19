@@ -1,0 +1,140 @@
+body,h3{
+	margin: 0;
+}
+ul,li{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+a{
+	text-decoration: none;
+	color: black;
+}
+img{
+	vertical-align: top;
+}
+.clearfix{
+	zoom: 1;
+}
+.clearfix:after{
+	content: "";
+	display: block;
+	clear: both;
+}
+.section{
+	width: 700px;
+	height: 264px;
+	margin: 50px auto;
+}
+.section .head{
+	height: 37px;
+}
+.section .head .logo{
+	float: left;
+}
+.section .head .logo .logo_img{
+	float: left;
+	width: 40px;
+	height: 31px;
+	background: url(../img/logo.png) no-repeat;
+	margin-right: 7px;
+}
+.section .head .logo .title,.section .head .logo .title h3{
+	float: left;
+	font: 23px/35px "微软雅黑";
+}
+.section .head .tab{
+	height: 36px;
+	margin:0 24px 0 23px;	
+	font: 17px/36px "微软雅黑";
+	border-bottom: 1px solid #e6e9f0;
+	display: inline-block;
+}
+.section .head .tab li,.section .head .tab li a{
+	float: left;
+	margin-right: 10px;
+	width: 48px;
+	height: 35px;
+	text-align: center;
+}
+.section .head .tab .w7{
+	margin-right: 0;
+}
+.section .head .tab .w5,.section .head .tab .w5 a{
+	border-bottom: 1px solid #00a3d8;
+	height: 36px;
+	display: block;
+}
+.section .head .tab .w5 a span{
+	color: #00A3D8;
+	height: 24px;
+	line-height: 24px;
+	margin-top: 6px;
+	margin-left: 7px;
+	vertical-align: top;
+	float: left;
+}
+.section .head .tab .w5 a .bor{
+	height: 1px;
+	display: inline-block;
+	border: 3px dashed #00A3D8;
+	border-top-color:transparent;
+	border-right-color:transparent;
+	border-left-color:transparent;
+	vertical-align: bottom;
+	margin-right: 10px;
+	margin-left: 21px;
+	margin-top: 0px;
+}
+.section .head .list{
+	float: right;
+	width: 106px;
+	height: 36px;
+	background-image: url(../img/time.png);
+	vertical-align: top;
+}
+.section .content{
+	height: 180px;
+	margin-top: 29px;
+}
+.section .content li{
+	float: left;
+	width: 233px;
+	height: 72px;
+	font: 12px "微软雅黑";
+}
+.mod4,.mod5{
+	margin-top: 36px;
+}
+.p{
+	color: #aaa9ae;
+	margin-top: 54px;
+	width: 77px;
+	height: 18px;
+}
+.section .content .mod_in{
+	width: 180px;
+	height: 72px;
+}
+.section .content .mod_in .img{
+	float: left;
+	width: 72px;
+	height: 72px;
+	margin-right: 12px;
+}
+.section .content li .mod_in .right{
+	float: left;
+	width: 96px;
+	height: 72px;
+}
+.section .content li .mod_in .right .name{
+	float: left;
+	width: 96px;
+	height: 54px;
+	display: block;
+}
+.section .content li .mod_in .right .info{
+	height: 18px;
+	float: right;
+	vertical-align: top;
+}

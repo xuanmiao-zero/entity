@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style title="text/css">
+        body{
+            margin: 0;
+        }
+        #scroll {
+            color:#fff;
+            background:#369;
+            width:70px;
+            height:70px;
+            position:absolute;
+            left:500px;
+            top:200px;
+        }
+        div{
+            width:160px;
+            height:90px;
+            border: 1px solid #5A94EF;
+            float: left;
+            margin: 5px;
+            padding: 5px;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+<div id="mouse">请在这里点击，测试左中右鼠标键绑定函数 </div>
+<div id="explanation">鼠标哪个键被点击了结果显示 </div>
+<div id="coordinate"></div>
+<div id="scroll">请用鼠标滚轮移动方块</div>
+
+<script>
+    /*鼠标按键点击*/
+    //获取元素
+    //获取鼠标点击区域
+    var el = document.getElementById('mouse');
+    var ex = document.getElementById('explanation');
+    var left = function(){ ex.innerHTML = "左键被按下";};
+    var right = function(){ ex.innerHTML = "右键被按下";};
+    var middle = function(){ ex.innerHTML = "中键被按下";};
+    //获取鼠标点击结果显示区域
+    function bindMouseEvent(el){
+        var args = [].slice.call(arguments),
+            el = el || document;
+        args[0] = function(){},
+            args[1] = args[1] || args[0],
+            args[2] = args[2] || args[0],
+            args[3] = args[3] || args[0],
+            el.onmousedown = function(e){
+                e = e || window.event;
+                var button = e.button;
+                if ( !e.which && isFinite(button) ) {
+                    e.which  = [0,1,3,0,2,0,0,0][button];//0现在代表没有意义
+                }
+                args[e.which](e);
+            }
+    }
+    bindMouseEvent(el,left,middle,right);
+
+    /*获得鼠标在网页的坐标*/
+    var getCoordInDocument = function(e) {
+        e = e || window.event;
+        var x = e.pageX ||
+            (e.clientX + (document.documentElement.scrollLeft　
+                || document.body.scrollLeft));
+        var y= e.pageY ||
+            (e.clientY + (document.documentElement.scrollTop
+                || document.body.scrollTop));
+        return {'x':x,'y':y};
+    };
+    document.querySelector('body').onmousemove = function () {
+        document.getElementById('coordinate').innerHTML = "X,Y=("
+            + getCoordInDocument().x +", " + getCoordInDocument().y + ")";
+    };
+
+    /*鼠标滚动*/
+    var $ = function (id) {
+        return document.getElementById(id)
+    };
+
+    window.onload = function () {
+        mouseScroll(function (delta) {
+            var obj = $('scroll'),
+                current = parseInt(obj.offsetTop) + (delta * 10);
+            obj.style.top = current + "px";
+        });
+    };
+
+    var mouseScroll = function (fn) {
+        var roll = function () {
+            var delta = 0,
+                e = arguments[0] || window.event;
+            delta = (e.wheelDelta) ? e.wheelDelta / 120 : -(e.detail || 0) / 3;
+            fn(delta);//回调函数中的回调函数
+        };
+        if (window.netscape) {
+            document.addEventListener('DOMMouseScroll', roll, false);
+        } else {
+            document.onmousewheel = roll;
+        }
+    };
+
+
+</script>
+</body>
+</html>

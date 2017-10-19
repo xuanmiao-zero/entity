@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="轩邈">
+    <meta name="copyright" content="轩邈">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <!-- 网站SEO -->
+    <title>Title</title>
+    <meta name="keywords" content="轩邈 xuanmiao xuanmiao.com">
+    <meta name="description" content="轩邈 | 猎奇蜗牛">
+    <!-- 标题栏logo图标 -->
+    <link rel="icon" href="" type="image/x-icon">
+    <!-- 收藏夹logo图标 -->
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <style>
+
+    </style>
+</head>
+<body>
+    <h2>离开抢还有 <span class="countdown"></span></h2>
+<script>
+//    console.log(new Date(0));
+    var countdown = document.querySelector('.countdown');
+    //倒计时
+    var endTime = new Date('August 18,2017 10:56:30');
+
+
+    fCountdown(endTime);
+
+    setInterval(function () {
+        fCountdown(endTime);
+    },1000);
+
+    function fCountdown(endTime){
+        var currentTime = new Date();
+console.log(currentTime);
+        var differTime = endTime.getTime() - currentTime.getTime();
+        var countdownDay = parseInt (differTime / 86400000);
+        var countdownHour = parseInt (differTime % 86400000 / 3600000);
+        var countdownMinutes = parseInt (differTime % 3600000 / (60*1000));
+        if(countdownMinutes < 10) countdownMinutes = '0' + countdownMinutes;
+        var countdownSecond = parseInt (differTime % 60000 / 1000 );
+        if(countdownSecond < 10) countdownSecond = '0' + countdownSecond;
+        countdown.innerHTML = countdownDay + "天" + countdownHour + "时"
+            + countdownMinutes + "分" + countdownSecond +"秒";
+    }
+
+</script>
+</body>
+</html>

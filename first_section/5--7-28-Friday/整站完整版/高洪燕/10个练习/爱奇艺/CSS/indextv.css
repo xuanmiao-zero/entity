@@ -1,0 +1,68 @@
+body,h3{
+	margin:0;
+}
+a{
+	text-decoration:none;
+	color:#1a1a1a;
+}
+body{
+	font:12px "宋体";
+	color:#1a1a1a;
+}
+ul,li{
+	padding:0;
+	margin:0;
+	list-style:none;
+}
+img{
+	vertical-align: top;
+	border:none;
+}
+.box{
+	width:640px;
+	height:405px;
+	border:1px solid #d9d9d9;
+	padding:17px 19px 25px 19px;
+}
+.head{
+	height:26px;
+}
+.fl{
+	float:left;
+}
+.fr{
+	float:right;
+}
+nav{
+	margin-left:15px;
+	margin-top:14px;
+}
+nav a{
+	margin-right:18px;
+	line-height:12px;
+}
+.head .more{
+	margin-top:14px;
+	margin-right:5px;
+	line-height:12px;
+}
+.content{
+	width:640px;
+	height:380px;
+	margin-right:-20px;
+}
+.content .item{
+	width:112px;
+	height:190px;
+	margin-right:20px;
+}
+.item .pic{
+	margin-top:20px;
+}
+.item .name{
+	margin-top:10px;
+	line-height:12px;
+}
+.content .nomargin{
+	margin-right:0;
+}

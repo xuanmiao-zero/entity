@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="轩邈">
+    <meta name="copyright" content="轩邈">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <!-- 网站SEO -->
+    <title>Title</title>
+    <meta name="keywords" content="轩邈 xuanmiao xuanmiao.com">
+    <meta name="description" content="轩邈 | 猎奇蜗牛">
+    <!-- 标题栏logo图标 -->
+    <link rel="icon" href="" type="image/x-icon">
+    <!-- 收藏夹logo图标 -->
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <style>
+        body{
+            background: linear-gradient(to right bottom, dodgerblue, greenyellow) no-repeat;
+        }
+        #tag_add{
+            width: 800px;
+            height: 400px;
+            margin:100px  auto;
+            font: 12px/1.5 tahoma,arial,'Hiragino Sans GB','\5b8b\4f53',sans-serif;
+            background: rgba(220,220,220,0.3);
+            color: #fff;
+            line-height: 40px;
+        }
+        #tag_add>span:first-of-type{
+            margin-left: 20px;
+        }
+        h4{
+            margin:0;
+            font-weight: normal;
+        }
+        dl,dd{
+            margin: 0;
+        }
+        .tag-header{
+            display: inline-block;
+        }
+        .tag-group{
+            border: 1px solid #ddd;
+            padding: 0 20px;
+        }
+        .tag-group dd{
+            border-bottom: 1px dashed #ddd;
+        }
+        dd.network-type{
+            border-bottom: none;
+        }
+
+        dd span{
+            margin: 0 6px;
+            cursor: pointer;
+        }
+        dd span:hover{
+            opacity: 0.9;
+        }
+        h6{
+            font-size: 12px;
+            margin: 0;
+            font-weight: normal;
+            display: inline-block;
+            opacity: 0.8;
+        }
+        .selected-tag{
+            margin: 0 2px;
+            line-height: 16px;
+            display: inline-block;
+            border: 1px solid #fff;
+            padding: 2px;
+        }
+        .selected-tag .close{
+            font-weight: bold;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        .selected-tag:hover{
+            border: 1px solid lightsalmon;
+        }
+        .selected-tag:hover .close{
+            color: lightsalmon;
+        }
+    </style>
+</head>
+<body>
+<div id="tag_add">
+    <span>类型选择></span>
+    <h4 class="tag-header">
+    </h4>
+    <dl class="tag-group">
+        <dd class="brand">
+            <h6 class="type-name">品牌 ：</h6>
+            <span>苹果</span>
+            <span>小米</span>
+            <span>荣耀</span>
+            <span>华为</span>
+            <span>OPPO</span>
+            <span>vivo</span>
+            <span>三星</span>
+            <span>魅族</span>
+            <span>美图</span>
+            <span>一加</span>
+        </dd>
+        <dd class="size">
+            <h6 class="type-name">尺寸 ：</h6>
+            <span>3.0-3.9英寸</span>
+            <span>4.0-4.5英寸</span>
+            <span>4.6-4.9英寸</span>
+            <span>5.0-5.5英寸</span>
+        </dd>
+        <dd class="system">
+            <h6 class="type-name">操作系统 ：</h6>
+            <span>Android/安卓</span>
+            <span>iOS</span>
+            <span>阿里手机系统</span>
+            <span>Symbian/塞班</span>
+            <span>Nucleus</span>
+            <span>BlackBerry/黑莓</span>
+            <span>Windows phone</span>
+            <span>Linux</span>
+        </dd>
+        <dd class="network-type">
+            <h6 class="type-name">网络类型 ：</h6>
+            <span>移动4G/联通4G/电信4G</span>
+            <span>联通4G</span>
+            <span>电信4g</span>
+            <span>移动4G</span>
+            <span>移动3G</span>
+            <span>电信3G</span>
+            <span>联通3G</span>
+            <span>电信2G(CDMA)</span>
+        </dd>
+    </dl>
+</div>
+
+<script>
+    var type = {
+        "brand": "",
+        "size": "",
+        "system": "",
+        "network-type": ""
+    };
+    var typeChart = {
+        "brand":"品牌 ：",
+        "size":"尺寸 ：",
+        "system":"操作系统 ：",
+        "network-type":"网络类型 ："
+    };
+    var tagHeader = document.querySelector('.tag-header');
+    var spans = document.querySelectorAll('.tag-group span');
+    for(var i = 0 ; i < spans.length; i++){
+        spans[i].onclick = function () {
+
+            //更改颜色
+            var siblings = this.parentNode.children;
+            for(var i = 0 ; i < siblings.length; i ++){
+                siblings[i].style.color = "";
+            }
+            this.style.color = "lightsalmon";
+
+            //将选择加入type中
+            type[this.parentNode.className] = this.innerHTML;
+
+            //将type中的选中的添加到类型选择
+            show(this);
+        };
+    }
+    function show(obj){
+        tagHeader.innerHTML = "";
+        for(var key in type){
+            if(!type[key]) continue;
+            //遍历所有内容 渲染所有要显示的数据
+
+            //创建要显示的数据
+            var p = document.createElement('p');
+            p.className = "selected-tag";
+            var productType = document.createElement('span');
+            productType.className =  "type";
+            productType.innerHTML = typeChart[key];
+            p.appendChild(productType);
+
+            var productTypeContent = document.createElement('span');
+            productTypeContent.className =  "selected-content";
+            productTypeContent.innerHTML = type[key];
+            p.appendChild(productTypeContent);
+
+            var close = document.createElement('span');
+            close.className =  "close";
+            close.innerHTML =  "×";
+
+            //关闭按钮
+            close.onclick = function(){
+                var content = this.parentNode.querySelector('.selected-content').innerHTML;
+                for(var key in type){
+                    if(content === type[key]){
+                        type[key] = '';
+                        break;
+                    }
+                }
+
+                //重新渲染显示的内容
+                show(obj);
+
+                //清除被标记的同名数据
+
+                var spans = document.querySelectorAll('.selected-content');
+
+                for(var i = 0; i < spans.length; i++){
+                    if(spans[i].innerHTML.trim() === content){
+                        spans[i].style.color = '';
+                        break;
+                    }
+                }
+            };
+
+            p.appendChild(close);
+            tagHeader.appendChild(p);
+
+        }
+    }
+
+</script>
+</body>
+</html>

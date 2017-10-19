@@ -1,0 +1,386 @@
+/*顶部固定区域*/
+.head{
+	left: 0;
+	top: 0;
+	height: 1.15625rem;
+	background-color: #fe5400;
+}
+.head .head_bg{
+	width:0.84375rem;
+	height: 0.640625rem;
+	margin: 0.265625rem 0.171875rem 0 0.140625rem;
+	background: url(../img/h1.png) no-repeat;
+	text-indent: -9999px;
+}
+.head .head_form{
+	width: 8.640625rem;
+	height: 0.78125rem;
+	margin-top: 0.1875rem;
+}
+.head_form .head_search{
+	width: 8.640625rem;
+	height: 0.78125rem;
+	background-color: #b52600;
+	border: none;
+	border-radius: 0.09375rem;
+	color: white;
+	font-size: 0.375rem;
+}
+.head_form .search_bg{
+	text-indent: -9999px;
+	background: url(../img/search_bg.png) no-repeat;
+	width: 0.421875rem;
+	height: 0.421875rem;
+	top: 0.1875rem;
+	left: 2.15625rem;
+}
+/*底部固定*/
+footer{
+	left: 0;
+	bottom: 0;
+	height: 1.125rem;
+	padding-top: 0.203125rem;
+	border-top:0.03125rem solid #e7e7e7 ;
+	border-bottom: 0.015625rem solid #adadad;
+	background-color: #ffffff;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+footer a{
+	width: 1.25rem;
+	height: 1.125rem;
+	font-size:0.3125rem ;
+	line-height: 0.46875rem;
+}
+footer a .foot_img{
+	width: 1.25rem;
+	height: 0.65625rem;
+}
+footer a .foot_text{
+	width: 1.25rem;
+	height: 0.46875rem;
+	color: #6a7277;
+}
+/*内容区域*/
+section{
+	margin-top: 1.15625rem;
+}
+.banner{
+	height: 8.828125rem;
+}
+.banner .banner_img{
+	height: 3.125rem;
+}
+.banner .banner_btn {
+  position: absolute;
+  left: 0;
+  bottom: 18px;
+  width: 100%;
+  height: 0.25rem;
+  text-align: right;
+  font-size: 0;
+}
+.banner_btn .yuan{
+  margin: 0 0.09375rem;
+  vertical-align: top;
+  display: inline-block;
+  width: 0.25rem;
+  height: 0.25rem;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 0.125rem;
+  box-sizing: border-box;
+}
+.banner_btn .active {
+  background-color: #ff5501;
+}
+.banner .banner_nav{
+	/*width:9.46875rem;
+	padding-left: 0.53125rem;*/
+	height: 4.59375rem;
+	border-bottom:0.03125rem solid #e8e8e8 ;
+	width: 8.90625rem;
+	padding: 0 0.546875rem;
+	display: flex;
+	flex-direction: row;
+	justify-content:space-between;
+	align-items: flex-start;
+	flex-wrap: wrap;
+	align-self:center;
+}
+.banner .banner_nav .tmall_ico{
+	width: 1.5rem;
+	height: 2.125rem;
+	line-height: 0.6875rem;
+	color: #666666;
+	/*margin-right:0.375rem ;*/
+}
+.banner .banner_nav .tmall_ico .tmall_icos{
+	width: 1.484375rem;
+	height: 1.4375rem;
+}
+.banner .banner_nav .tmall_ico .tmall_icot{
+	width: 1.484375rem;
+	height: 0.6875rem;
+	line-height: 0.6875rem;
+	font-size: 0.34375rem;
+}
+.banner .banner_photo{
+	height: 0.734375rem;
+	padding: 0.171875rem 0 0.015625rem 0;
+	border-bottom: 0.15625rem solid #eeeeee;
+}
+.banner .banner_photo .toutiao{
+	text-indent: -9999px;
+	width:2.15625rem ;
+	height: 0.734375rem;
+	border-right: 0.03125rem solid #e8e8e8;
+	background: url(../img/toutiao.png) no-repeat;
+}
+.banner .banner_photo .new{
+	width: 1rem;
+	height: 0.46875rem;
+	border: 0.03125rem solid #d81421;
+	color: #d81421;
+	border-radius: 0.09375rem;
+	font-size:0.40625rem ;
+	line-height: 0.4375rem;
+	margin: 0.125rem 0.1875rem 0 0.28125rem;
+}
+.banner .banner_photo .how{
+	height: 0.734375rem;
+	line-height: 0.734375rem;
+	color: #353535;
+	font-size:0.4375rem ;
+}
+.sec3{
+	height: 5.03125rem;
+	border-bottom: 0.03125rem solid #e0e0e0;
+}
+.sec3 .sec-left{
+	width: 3.8125rem;
+	height: 5rem;
+	border-bottom: 0.03125rem solid #d9d9d9;
+}
+.sec3 .sec-left .sec-left_top{
+	width: 3.609375rem;
+	height: 1.65625rem;
+	padding: 0.28125rem 0 0 0.203125rem;
+}
+.sec3 .sec-left .sec-left_top .taoqianghui{
+	height: 0.484375rem;
+}
+.sec3 .sec-left .sec-left_top .taoqianghui .taoqianghui-img{
+	width: 1.921875rem;
+	height: 0.484375rem;
+	background: url(../img/sec3_2.png) no-repeat;
+}
+.sec3 .sec-left .sec-left_top .haohuo{
+	width: 3.609375rem;
+	height: 0.5625rem;
+	line-height: 360.5625rem;
+	font-size: 0.3125rem;
+	margin-bottom: 0.078125rem;
+}
+.sec3 .sec-left .sec-left_top time{
+	width: 3.609375rem;
+	height: 0.53125rem;
+	font-size: 0.25rem;
+	line-height: 0.53125rem;
+}
+.sec3 .sec-left .sec-left_top time .time0{
+	width: 0.53125rem;
+	height: 0.53125rem;
+	line-height: 0.53125rem;
+	background-color: #333333;
+	color: white;
+}
+.sec3 .sec-left .sec-left_top time .timehao{
+	width: 0.25rem;
+	height:  0.53125rem;
+	line-height:0.53125rem;
+}
+.sec3 .sec-left .sec-left_bot{
+	width: 3.8125rem;
+	height: 3.0625rem;
+}
+.sec3 .sec-right{
+	width: 6.15625rem;
+	height: 5.015625rem;
+	border-left: 0.03125rem solid #e8e8e8;
+}
+.sec3 .sec-right .sec-right_top{
+	width: 6.15625rem;
+	height: 2.3125rem;
+	border-bottom: 2px solid #e8e8e8;
+	box-sizing: border-box;
+}
+.sec3 .sec-right .sec-right_bot{
+	width: 6.15625rem;
+	height: 2.671875rem;
+	border-bottom: 1px solid #d9d9d9;
+}
+.sec3 .sec-right .sec-right_bot .shopping{
+	width: 3.046875rem;
+	height: 2.671875rem;
+	border-right: 0.03125rem solid #e8e8e8;
+}
+.sec3 .sec-right .sec-right_bot .must{
+	width: 3.078125rem;
+	height: 2.671875rem;
+}
+.good{
+	height:9.671875rem ;
+	border-top:0.15625rem solid #eeeeee ;
+	border-bottom:0.15625rem solid #eeeeee ;
+}
+.good .goodhead{
+	height:0.84375rem ;
+}
+.good .goodhead h3{
+	width:2.28125rem ;
+	height:0.453125rem;
+	margin: 0.1875rem 0 0 3.921875rem;
+	text-indent: -9999px;
+	background: url(../img/good.png) no-repeat;
+}
+.good .goodcon{
+	height: 8.796875rem;
+	border-top: 0.03125rem solid #f2f2f2;
+	border-bottom: 0.15625rem solid #f2f2f2;
+}
+.good .goodcon .list{
+	height: 5.84375rem;
+}
+.good .goodcon .list .list_left{
+	width:3.8125rem ;
+	height: 5.84375rem;
+	border-right: 0.03125rem solid #e8e8e8;
+}
+.good .goodcon .list .global{
+	width: 3.78125rem;
+	height:2.90625rem ;
+	border-bottom: 1px solid #e8e8e8;
+}
+.good .goodcon .list .list_right{
+	width: 6.15625rem;
+	height: 5.84375em;
+}
+.good .goodcon .list .list_right .bor{
+	width: 2.03125rem;
+	height: 2.90625rem;
+	border-bottom: 1px solid #e8e8e8;
+	border-right: 0.03125rem solid #e8e8e8;
+	margin-right: -0.03125rem;
+}
+.good .goodcon .ser{
+	height: 0.9375rem;
+	border-bottom: 1px solid #f0ffd3;
+}
+.good .goodcon .ser .ser_left{
+	width: 1.8125rem;
+	height: 0.5625rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin: 0.1875rem 0 0 0.28125rem;
+}
+.good .goodcon .ser .ser_left a{
+	width: 0.53125rem;
+	height: 0.5625rem;
+}
+.good .goodcon .ser .ser_left a img{
+	vertical-align: top;
+}
+.good .goodcon .ser .ser_right{
+	width: 1.828125rem;
+	height: 0.5625rem;
+	margin: 0.1875rem 0.1875rem 0 0;
+}
+.good .goodcon .ser .ser_right img{
+	vertical-align: top;
+}
+.good .goodcon .long{
+	height: 2rem;
+}
+.good .goodcon .long img{
+	vertical-align: top;
+}
+.guess{
+	
+	background-color: #eeeeee;
+}
+.guess .guesshead{
+	height:1.4375rem ;
+	border-top: 1px solid #dbdbdb;
+}
+.guess .guesshead h3{
+	width: 2.4375rem;
+	height: 0.53125rem;
+	margin: 0.25rem 0 0 3.703125rem;
+}
+.guess .guesshead div{
+	height: 0.34375rem;
+	line-height: 0.34375rem;
+	color: #787878;
+	font-size: 0.34375rem;
+}
+.guess .guess_item{
+	width: 4.9375rem;
+	height: 6.6875rem;
+	background-color: white;
+	margin: 0 0.0625rem 0.125rem 0;
+}
+.guess .guess_item .guessimg{
+	width: 4.9375rem;
+	height: 4.375rem;
+}
+.guess .guess_item .guessinfo{
+	width: 4.1875rem;
+	height: 1.125rem;
+	padding: 0.15625rem 0.421875rem 0 0.328125rem;
+	line-height: 0.5625rem;
+	font-size: 0.375rem;
+}
+.guess .guess_item .guessinfo a{
+	color: black;
+	line-height: 0.5625rem;
+}
+.guess .guess_item .guessmoney{
+	width: 4.1875rem;
+	padding-left:0.328125rem ;
+	font-size: 0.40625rem;
+	line-height: 0.40625rem;
+	color: orange;
+	margin-top: 0.28125rem;
+}
+.end{
+	height: 3.3125rem;
+	background-color: #4e525e;
+	border-top: 0.03125rem solid #292c33;
+}
+.end .btn{
+	height: 1.0625rem;
+	margin-top: 0.5625rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+.end .btn a{
+	padding: 0 0.484375rem;
+	height: 0.9375rem;
+	line-height:0.9375rem ;
+	border: 0.0625rem solid #42454d;
+	border-radius: 0.1875rem;
+	background-color: #555965;
+	color: #c0c3c7;
+	font-size: 0.40625rem;
+}
+.end .text{
+	height: 0.375rem;
+	line-height: 0.375rem;
+	font-size: 0.34375rem;
+	margin-top: 0.625rem;
+	color: #9b9fa5;
+}

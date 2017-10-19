@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /**{*/
+            /*padding:0;*/
+            /*margin:0;*/
+        /*}*/
+        body{
+            user-select: none;
+            background-color: mediumpurple;
+        }
+        #pad{
+            width:600px;
+            height:400px;
+            background-color: #f8f8f8;
+            margin:100px auto 0;
+            border-radius:20px;
+            border:1px solid #fff;
+            position: relative;
+            /*overflow: hidden;*/
+        }
+        #pad .earpiece{
+            height:100px;
+            width:4px;
+            border:1px solid #fff;
+            background-color: #666;
+            border-radius:3px;
+            position: absolute;
+            top:151px ;
+            left: 15px;
+        }
+        #pad .home{
+            width:30px;
+            height:30px;
+            background-color: #fff;
+            border-radius: 17px;
+            border: 2px solid #f0f0f0;
+            position: absolute;
+            right: 10px;
+            top:175px;
+        }
+        #pad .screen{
+            /*width:520px;*/
+            height:340px;
+            background-color: #5A94EF;
+            margin:30px 50px 0 30px;
+        }
+        .toggle-btns{
+            color: #fff;
+            /*font-size: 0px;*/
+            text-align: center;
+        }
+        .toggle-btns div{
+            border: 1px solid #fff;
+            width:100px;
+            display: inline-block;
+            margin:14px -3px 0;
+            padding: 5px;
+            font-weight: bold;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        .toggle-btns p{
+            margin:3px;
+            font-size: 14px;
+        }
+        .active{
+            background-color: #fff;
+            color: #5A94EF;
+        }
+        .img-box{
+            height: 100%;
+            position: relative;
+            transition:0.7s;
+        }
+        .visable-area{
+            width: 520px;
+            height:270px;
+            position: relative;
+            overflow: hidden;
+        }
+        .img-box img{
+            width:520px;
+            height:100%;
+            display: block;
+            float: left;
+        }
+        .visable-area .prev,.visable-area .next{
+            position: absolute;
+            width:30px;
+            height:40px;
+            text-align: center;
+            line-height:40px;
+            top:110px;
+            color: transparent;
+            background-color: transparent;
+            cursor: pointer;
+        }
+        .visable-area .next{
+            right:0;
+        }
+        .visable-area .prev:hover ,.visable-area .next:hover{
+            background-color: rgba(40,180,255,0.4);
+            color: #fff;
+        }
+        .visable-area .top-seq{
+            position: absolute;
+            bottom:0;
+            color: rgba(40,180,255,0.4);
+            width:100%;
+            text-align: center;
+            line-height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div id="pad">
+        <div class="earpiece"></div>
+        <div class="home"></div>
+        <div class="screen">
+            <div class="toggle-btns">
+                <div class="loop-btn active">循环切换</div>
+                <div class="order-btn">顺序切换</div>
+                <p>图片可以循环切换</p>
+            </div>
+            <div class="visable-area">
+                <div class="img-box">
+                    <img src="../../img/simple_style/simpleStyle%20(1).jpg" alt="">
+                    <img src="../../img/simple_style/simpleStyle%20(2).jpg" alt="">
+                    <img src="../../img/simple_style/simpleStyle%20(3).jpg" alt="">
+                    <img src="../../img/simple_style/simpleStyle%20(4).jpg" alt="">
+                    <img src="../../img/simple_style/simpleStyle%20(5).jpg" alt="">
+                    <img src="../../img/simple_style/simpleStyle%20(6).jpg" alt="">
+                    <img src="../../img/simple_style/simpleStyle%20(7).jpg" alt="">
+                </div>
+                    <div class="prev">&lt;</div>
+                    <div class="next">&gt;</div>
+                    <div class="top-seq">1/8</div>
+                    <div class="bot-des">随便写点什么</div>
+            </div>
+
+        </div>
+    </div>
+<script>
+
+    /*获取元素*/
+    //两个循环按钮
+    var loopBtn = document.querySelector('.loop-btn');
+    var orderBtn = document.querySelector('.order-btn');
+    //上一张下一张
+    var prevBtn = document.querySelector('.prev');
+    var nextBtn = document.querySelector('.next');
+    //图片数组
+    var picArray = document.querySelector('.img-box').querySelectorAll('img');
+    //可见区域
+    var imgBox = document.querySelector('.img-box');
+    var visArea = document.querySelector('.visable-area');
+    //序号显示区域
+    var seqText = document.querySelector('.top-seq');
+    /*声明变量*/
+    //循环状态
+    var loopFlag = 0;
+    //第几张图片
+    var picArrIndex = 0;
+
+    /*初始化*/
+    //    imgBox.style.transition = "0s";
+    //在最后一张放置第一张图片（称作替代图片）
+    var repImg1 = document.createElement('img');
+    repImg1.src = "../../img/simple_style/simpleStyle%20(1).jpg";
+    imgBox.appendChild(repImg1);
+    //在第一张放置最后一张图片（称作替代图片）
+    var repImgN = document.createElement('img');
+    repImgN.src = "../../img/simple_style/simpleStyle%20(7).jpg";
+    imgBox.insertBefore(repImgN, imgBox.firstChild);
+
+    //设置imgBox宽度
+    imgBox.style.width = "4680px";
+    picArray = document.querySelector('.img-box').querySelectorAll('img');
+
+    /*绑定事件*/
+    loopBtn.onclick = function(){
+        loopFlag = 0;
+        this.className = "loop-btn active";
+        orderBtn.className = "order-btn";
+    };
+    orderBtn.onclick = function(){
+        loopFlag = 0;
+        this.className = "loop-btn active";
+        loopBtn.className = "order-btn";
+    };
+    /*解决最后一张和第一张的切换问题
+    * 思路：
+    * 在最后一张放置第一张图片（称作替代图片）
+    * 最后一张切换时切换到替代图片，
+    * 替代图片切换时先取消过渡动画，将图片切换到第一张，
+    * 添加上动画效果再切换到第二张。
+    * */
+
+    prevBtn.onclick = function () {
+        picArrIndex --;
+        if(picArrIndex < 0) picArrIndex = picArray.length - 1;
+        imgBox.style.marginLeft =  "-" + (picArrIndex) * 520 + "px";
+        seqText.innerHTML = picArrIndex+1 + "/" + picArray.length;
+    };
+    nextBtn.onclick = function () {
+        picArrIndex ++;
+        if(picArrIndex > picArray.length - 1){
+            imgBox.style.transition = "0s";
+            picArrIndex = 1;
+            imgBox.style.marginLeft =  "-" + (picArrIndex * 520) + "px";
+            console.log("-------" + imgBox.style.marginLeft + imgBox.style.transition);
+            imgBox.style.transition = "1s";
+            console.log("-------" + imgBox.style.marginLeft + imgBox.style.transition);
+            picArrIndex  = 2;
+        }
+        imgBox.style.marginLeft =  "-" + (picArrIndex * 520) + "px";
+        console.log(imgBox.style.marginLeft);
+        seqText.innerHTML = picArrIndex + 1 + "/" + picArray.length;
+    };
+</script>
+</body>
+</html>
+

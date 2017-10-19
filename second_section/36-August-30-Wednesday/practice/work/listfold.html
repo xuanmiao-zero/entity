@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="轩邈">
+    <meta name="copyright" content="轩邈">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <!-- 网站SEO -->
+    <title>listFold</title>
+    <meta name="keywords" content="轩邈 xuanmiao xuanmiao.com">
+    <meta name="description" content="轩邈 | 猎奇蜗牛">
+    <!-- 标题栏logo图标 -->
+    <link rel="icon" href="" type="image/x-icon">
+    <!-- 收藏夹logo图标 -->
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <style>
+        ul, h2 {
+            margin: 0;
+            padding: 0;
+            color: skyblue;
+        }
+        li {
+            list-style: none;
+            color: skyblue;
+        }
+        #nav {
+            border: 1px solid skyblue;
+            float: left;
+            margin: 100px auto;
+            padding: 5px 0;
+            background: #fefefe;
+        }
+        #nav ul {
+            padding-left: 20px;
+            display: none;
+        }
+        #nav h2 {
+            font-size: 16px;
+            height: 25px;
+            line-height: 25px;
+            padding: 0 15px;
+            cursor: pointer;
+        }
+        #nav h2:hover { color: dodgerblue; }
+        #nav ul.active { display: block; }
+    </style>
+    <script>
+
+        window.onload = function () {
+            var h2s = document.querySelectorAll('h2');
+            for(var i = 0; i < h2s.length; i++){
+                var siblingH2;
+                h2s[i].index = i;
+                h2s[i].foldStatus = false;
+
+                //h2标题点击事件操作
+                h2s[i].onclick = function () {
+                    if(this.foldStatus){
+                        //关闭后代列表
+                        closeChildrenList(this);
+                    }else{
+                        //打开下一级列表
+                        openChildrenList(this);
+                    }
+
+                    //关闭同级列表
+                    this.nextElementSibling && closeSiblingsList(this);
+                };
+            }
+
+            //关闭子级列表
+            function closeChildrenList(obj) {
+                obj.firstElementChild && (obj.firstElementChild.innerHTML = "+");
+                obj.nextElementSibling && (obj.nextElementSibling.className = "none");
+                obj.foldStatus = false;
+                while(obj.nextElementSibling){
+                    obj = obj.nextElementSibling.firstElementChild.firstElementChild;
+                    closeSiblingsList(obj);
+                    closeChildrenList(obj);
+                }
+            }
+
+            //打开下一级列表
+            function openChildrenList(obj) {
+                obj.firstElementChild && (obj.firstElementChild.innerHTML = "-");
+                obj.nextElementSibling && (obj.nextElementSibling.className = "active");
+                obj.foldStatus = true;
+            }
+
+            //关闭同级列表
+            function closeSiblingsList(obj) {
+                /*关闭节点后的同级列表*/
+                siblingH2 = obj;
+                while(siblingH2.parentElement.nextElementSibling){
+                    siblingH2 = siblingH2.parentElement.nextElementSibling.firstElementChild;
+                    if(siblingH2.foldStatus) {
+                        siblingH2.firstElementChild && (siblingH2.firstElementChild.innerHTML = "+");
+                        siblingH2.nextElementSibling && siblingH2.nextElementSibling.firstElementChild && (siblingH2.nextElementSibling.className = "none");
+                        siblingH2.foldStatus = false;
+                        closeChildrenList(siblingH2);
+                    }
+                }
+
+                /*关闭节点前的同级列表*/
+                siblingH2 = obj;
+                while(siblingH2.parentElement.previousElementSibling){
+                    siblingH2 = siblingH2.parentElement.previousElementSibling.firstElementChild;
+                    if(siblingH2.foldStatus){
+                        siblingH2.firstElementChild && (siblingH2.firstElementChild.innerHTML = "+");
+                        siblingH2.nextElementSibling && siblingH2.nextElementSibling.firstElementChild && (siblingH2.nextElementSibling.className = "none");
+                        siblingH2.foldStatus = false;
+                        closeChildrenList(siblingH2);
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<ul id="nav">
+    <li>
+        <h2><span>+</span> 第一级菜单 </h2>
+        <ul>
+            <li>
+                <h2><span>+</span> 第二级菜单 </h2>
+                <ul>
+                    <li>
+                        <h2><span>+</span>第三级菜单 </h2> <ul>
+                        <li>
+                            <h2><span>+</span>第四级菜单</h2>
+                            <ul>
+                                <li>
+                                    <h2>第五级菜单</h2>
+                                </li>
+                                <li>
+                                    <h2>第五级菜单</h2>
+                                </li>
+                                <li>
+                                    <h2>第五级菜单</h2>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h2><span>+</span>第四级菜单</h2>
+                            <ul>
+                                <li>
+                                    <h2>第五级菜单</h2>
+                                </li>
+                                <li>
+                                    <h2>第五级菜单</h2>
+                                </li>
+                                <li>
+                                    <h2>第五级菜单</h2>
+                                </li>
+                            </ul>
+                        </li><li>
+                        <h2><span>+</span>第四级菜单</h2>
+                        <ul>
+                            <li>
+                                <h2>第五级菜单</h2>
+                            </li>
+                            <li>
+                                <h2>第五级菜单</h2>
+                            </li>
+                            <li>
+                                <h2>第五级菜单</h2>
+                            </li>
+                        </ul>
+                    </li><li>
+                        <h2><span>+</span>第四级菜单</h2>
+                        <ul>
+                            <li>
+                                <h2>第五级菜单</h2>
+                            </li>
+                            <li>
+                                <h2>第五级菜单</h2>
+                            </li>
+                            <li>
+                                <h2>第五级菜单</h2>
+                            </li>
+                        </ul>
+                    </li>
+                    </ul>
+                    </li>
+                    <li>
+                        <h2> 第三级菜单 </h2>
+                    </li>
+                    <li>
+                        <h2> 第三级菜单 </h2>
+                    </li>
+                    <li>
+                        <h2> 第三级菜单 </h2>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h2><span>+</span> 第二级菜单 </h2>
+                <ul>
+                    <li>
+                        <h2>第三级菜单 </h2>
+                    </li>
+                    <li>
+                        <h2> 第三级菜单 </h2>
+                    </li>
+                    <li>
+                        <h2> 第三级菜单 </h2>
+                    </li>
+                    <li>
+                        <h2> 第三级菜单 </h2>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h2> 第二级菜单 </h2>
+            </li>
+            <li>
+                <h2> 第二级菜单 </h2>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <h2><span>+</span> 第一级菜单 </h2>
+        <ul>
+            <li>
+                <h2><span>+</span> 第二级菜单 </h2>
+                <ul>
+                    <li>
+                        <h2>第三级菜单 </h2>
+                    </li>
+                    <li>
+                        <h2> 第三级菜单 </h2>
+                    </li>
+                    <li>
+                        <h2> 第三级菜单 </h2>
+                    </li>
+                    <li>
+                        <h2> 第三级菜单 </h2>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h2><span>+</span> 第二级菜单 </h2>
+                <ul>
+                    <li>
+                        <h2> 第三级菜单 </h2>
+                    </li>
+                    <li>
+                        <h2> 第三级菜单 </h2>
+                    </li>
+                    <li>
+                        <h2> 第三级菜单 </h2>
+                    </li>
+                    <li>
+                        <h2> 第三级菜单 </h2>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h2> 第二级菜单 </h2>
+            </li>
+            <li>
+                <h2> 第二级菜单 </h2>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <h2><span>+</span> 第一级菜单 </h2>
+        <ul>
+            <li>
+                <h2><span>+</span> 第二级菜单 </h2>
+                <ul>
+                    <li>
+                        <h2>第三级菜单 </h2>
+                    </li>
+                    <li>
+                        <h2> 第三级菜单 </h2>
+                    </li>
+                    <li>
+                        <h2> 第三级菜单 </h2>
+                    </li>
+                    <li>
+                        <h2> 第三级菜单 </h2>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h2><span>+</span> 第二级菜单 </h2>
+                <ul>
+                    <li>
+                        <h2> 第三级菜单 </h2>
+                    </li>
+                    <li>
+                        <h2> 第三级菜单 </h2>
+                    </li>
+                    <li>
+                        <h2> 第三级菜单 </h2>
+                    </li>
+                    <li>
+                        <h2> 第三级菜单 </h2>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h2> 第二级菜单 </h2>
+            </li>
+            <li>
+                <h2> 第二级菜单 </h2>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <h2><span>+</span> 第一级菜单 </h2>
+        <ul>
+            <li>
+                <h2><span>+</span> 第二级菜单 </h2>
+                <ul>
+                    <li>
+                        <h2>第三级菜单 </h2>
+                    </li>
+                    <li>
+                        <h2> 第三级菜单 </h2>
+                    </li>
+                    <li>
+                        <h2> 第三级菜单 </h2>
+                    </li>
+                    <li>
+                        <h2> 第三级菜单 </h2>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h2><span>+</span> 第二级菜单 </h2>
+                <ul>
+                    <li>
+                        <h2> 第三级菜单 </h2>
+                    </li>
+                    <li>
+                        <h2> 第三级菜单 </h2>
+                    </li>
+                    <li>
+                        <h2> 第三级菜单 </h2>
+                    </li>
+                    <li>
+                        <h2>第三级菜单 </h2>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h2> 第二级菜单 </h2>
+            </li>
+            <li>
+                <h2> 第二级菜单 </h2>
+            </li>
+        </ul>
+    </li>
+</ul>
+
+<script>
+
+</script>
+</body>
+</html>

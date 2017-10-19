@@ -1,0 +1,84 @@
+/*css reset*/
+.fl{
+	float: left;
+}
+.fr{
+	float:right;
+}
+.box{
+	width: 700px;
+	margin: 50px auto;
+}
+.head{
+	height: 37px;
+}
+.tittle{
+	font: 22px/36px "宋体";
+	margin-left: 7px;
+}
+
+.nav{
+	height: 36px;
+	margin-left: 23px;
+	border-bottom: 1px solid #e6e9f0;
+}
+.dec{
+	width: 48px;
+	height: 36px;
+	margin-right: 10px;
+	line-height: 36px;
+	text-align: center;
+	font-size: 18px;
+	color: #222220;
+}
+.dec:hover{
+	color: #42a1d7;
+	border-bottom: 1px solid #42a1d7;
+}
+.right_dec{
+	border: 1px solid #f35c8f;
+	width: 104px;
+	height: 34px;
+	font: 14px/34px "微软雅黑";
+	color: #f35c8f;
+	text-align: center;
+}
+
+.item{
+	height: 216px;
+	padding-bottom: 11px;
+}
+.dec_one{
+	width: 233px;
+	height: 72px;
+	margin-top: 29px;
+	margin-bottom: 7px
+}
+.dec_display{
+	width: 161px;
+	height: 72px;
+}
+.dec_name{
+	width: 77px;
+	font: 12px "微软雅黑";
+	color: #2d2230;
+	margin-left: 12px;
+}
+.btn_news{
+	width: 77px;
+	height: 18px;
+	margin-top: 40px;
+	margin-left: 12px;
+	font: 12px "宋体";
+	color: #bcabbd;
+}
+.btn_font{
+	line-height: 16px;
+}
+.bg{
+	width: 36px;
+	height: 18px;
+	background: url(../img/juji.jpg);
+	text-indent: -9999px;
+	margin-left: 5px;
+}

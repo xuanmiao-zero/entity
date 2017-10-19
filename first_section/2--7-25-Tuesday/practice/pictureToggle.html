@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PicToggle</title>
+    <style>
+        #purple-container{
+            width: 700px;
+            height: 500px;
+            background-color: #C18CDF;
+            position: absolute;
+            top:0px;
+            bottom:0px;
+            left:0px;
+            right:0px;
+            margin:auto;
+        }
+        #white-container{
+            width: 630px;
+            height: 450px;
+            background-color: #F8F7FD;
+            position: absolute;
+            top:0;
+            bottom:0;
+            left:0;
+            right:0;
+            margin:auto;
+            border-radius: 3%;
+        }
+        #black-container,#mask{
+            width: 510px;
+            height: 370px;
+            background-color: #000;
+            position: absolute;
+            top:0;
+            bottom:0px;
+            left:0px;
+            right:0px;
+            margin:auto;
+            word-spacing:-7px;/*去除inline-block间距*/
+        }
+        #mask{
+            display: none;
+            background-color: transparent;
+            z-index: 1;
+        }
+        #black-container{
+            letter-spacing: 1px;
+        }
+        #picBox{
+            position: absolute;
+            bottom: 0;
+            padding: 0;
+            margin: 0;
+        }
+        #pic{
+            width: 500px;
+            height: 260px;
+            background-color: #000;
+            position: relative;
+            bottom:0px;
+            left:0px;
+            right:0px;
+            margin:5px 5px;
+        }
+        #btn-container{
+            width:60%;
+            margin:auto;
+        }
+        .CyclicSwitching,.SequentialCycle{
+            cursor:auto;
+            margin: 16px 0px ;
+            padding: 0px;
+            display: inline-block;
+            color: #fff;
+            background-color: #000;
+            border:1px solid #aaa;
+            width: 150px;
+            height:40px;
+            text-align: center;
+            line-height: 40px;
+            font-weight:bold;
+        }
+        .CyclicSwitching:hover,.SequentialCycle:hover{
+            cursor: pointer;
+            color: #000;
+            background-color: #fff;
+        }
+        .PitchOn{
+            color: #000;
+            background-color: #fff;
+        }
+        #prompt{
+            color: #878886;
+            text-align: center;
+            margin:-8px;
+            font-size:13px;
+        }
+        #seq,#describe,#popup,#prePic,#nextPic{
+            color: #fff;
+            position: absolute;
+            z-index:1;
+            background-color: rgba(0,0,0,.5);
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        #seq{
+            height:30px;
+            background-color: transparent;
+            background-image:linear-gradient(180deg,rgba(0,0,0,1) 0%,rgba(0,0,0,0) 100%);
+            top:5px;
+            left:0;
+            right:0;
+            /*box-shadow: 0 -20px 30px #000;*/
+        }
+        #describe{
+            vertical-align: middle;
+            bottom: 0;
+            left:0;
+            right:0;
+            height: 30px;
+            padding:10px;
+        }
+        #prePic,#nextPic{
+            border-radius: 10px;
+            font-size: 30px;
+            padding: 10px;
+            height:40px;
+            /*width: 40px;*/
+            top:0px;
+            bottom:0px;
+            margin:auto;
+            cursor: pointer;
+            background-color: transparent;
+        }
+        #prePic:hover,#nextPic:hover{
+            background-color: rgba(0,0,0,.7);
+        }
+        #prePic{
+            left:0;
+        }
+        #nextPic{
+            right:0;
+        }
+        #popup{
+            display: none;
+            background-color: rgba(0,0,0,0.8);
+            width:280px;
+            height:140px;
+            top:0;
+            left:0;
+            right:0;
+            bottom:0;
+            margin:auto;
+            text-align: center;
+            z-index: 2;
+        }
+        #popup div{
+            margin:14px;
+        }
+        #sure{
+            border:1px solid #c5c5c5;
+            background: transparent;
+            color: #fff;
+            padding: 3px 25px;
+        }
+        #PopCont{
+            font-size: 14px;
+            color: #6F6E6B;
+        }
+        #sure:hover{
+            cursor: pointer;
+            background-color: #fff;
+            color: #000;
+        }
+        #close{
+            position: absolute;
+            top:2px;
+            right:2px;
+            border:0;
+            background-color: transparent;
+            color: #777;
+            font-size:17px;
+            font-weight: lighter;
+        }
+        #close:hover{
+            cursor: pointer;
+            font-family: 等线;
+            background-color: #aaa;
+            color: #000;
+        }
+        body
+        {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="purple-container">
+        <div id="white-container">
+            <div id="black-container">
+                <div id="btn-container">
+                    <div class="CyclicSwitching PitchOn" id="CyclicSwitching">循环切换</div>
+                    <div class="SequentialCycle" id="SequentialCycle">顺序循环</div>
+                </div>
+                <div id="prompt">图片可以从最后一张跳转到第一张循环切换</div>
+                <div id="picBox">
+                    <div id="seq">1/5</div>
+                    <img id="pic"src="img/ (1).jpg" alt="图片">
+                    <div id="prePic"><</div>
+                    <div id="nextPic">></div>
+                    <div id="popup">
+                            <input id="close" type="button" value="x">
+                            <h3>JavaScript提醒</h3>
+                            <div id="PopCont">已经是最后一张了</div>
+                            <input id="sure" type="button" value="确定">
+                    </div>
+                    <div id="describe">文字描述四</div>
+                </div>
+            </div>
+            <div id="mask"></div>
+        </div>
+    </div>
+</body>
+<script>
+    /**
+     * 图片循环切换
+     *功能点
+     * 1.循环切换
+     * 2.顺序切换（顺序切换到最后一张和第一张提示提示）
+     * 3.两种循环状态切换（文字和状态）
+     * 4.弹窗提醒（确定按钮，关闭按钮）
+     * 6.自动滚动图片
+     * 7.弹窗提醒时其他事件不能触发
+     */
+    //图片只能到最后一张或只能到第一张切换
+
+    //获取元素
+    var prePic = document.getElementById('prePic');
+    var nextPic = document.getElementById('nextPic');
+    var pic = document.getElementById('pic');
+    var CyclicSwitching = document.getElementById('CyclicSwitching');
+    var SequentialCycle = document.getElementById('SequentialCycle');
+    var popup = document.getElementById('popup');
+    var PopCont = document.getElementById('PopCont');
+    var seq = document.getElementById('seq');
+    var prompt = document.getElementById('prompt');
+    var sure = document.getElementById('sure');
+    var close = document.getElementById('close');
+    var mask = document.getElementById('mask');
+    //声明变量
+    //图片路径数组
+    var imgSrc = ["img/ (1).jpg","img/ (2).jpg","img/ (3).jpg","img/ (4).jpg","img/ (5).jpg",]
+    var imgSrcIndex = 0;
+    //两种状态切换标志
+    var circulateFlag = true;
+
+    /*绑定事件*/
+
+    /*循环切换*/
+    function circulateSwitch(){
+        //点击上一张
+        prePic.onclick = function () {
+            imgSrcIndex > 0 ? imgSrcIndex -- : imgSrcIndex = 4;
+            pic.src = imgSrc[imgSrcIndex];
+            seq.innerHTML = imgSrcIndex+1+"/5";
+        };
+        //鼠标按下颜色
+        prePic.onmousedown = function () {
+            this.style.backgroundColor = "rgba(255,255,255,.7)";
+            this.style.color = "rgba(0,0,0,.7)";
+        };
+        prePic.onmouseup = function () {
+            this.style.backgroundColor = "";
+            this.style.color = "rgba(255,255,255,.7)";
+        };
+
+        //点击下一张
+        nextPic.onclick = function () {
+            imgSrcIndex < 4 ? imgSrcIndex ++ : imgSrcIndex = 0;
+            pic.src = imgSrc[imgSrcIndex];
+            seq.innerHTML = imgSrcIndex+1+"/5";
+        };
+        //鼠标按下颜色
+        nextPic.onmousedown = function () {
+            this.style.backgroundColor = "rgba(255,255,255,.7)";
+            this.style.color = "rgba(0,0,0,.7)";
+        };
+        nextPic.onmouseup = function () {
+            this.style.backgroundColor = "";
+            this.style.color = "rgba(255,255,255,.7)";
+        };
+    }
+
+    /*顺序切换*/
+    function SeqCirculate(){
+        //点击上一张
+        prePic.onclick = function () {
+            //若是第一张图片弹窗提醒否则切换图片
+            if(imgSrcIndex > 0 ){
+                imgSrcIndex --;
+                pic.src = imgSrc[imgSrcIndex];
+                seq.innerHTML = imgSrcIndex+1+"/5";
+            }else{
+                //弹窗提醒
+                //使其他事件点击无效(通过添加一个遮罩盖住)
+                mask.style.display = "block";
+                PopCont.innerHTML = "已经是第一张了";
+                popup.style.display = "block";
+            }
+        };
+        //鼠标按下颜色
+        prePic.onmousedown = function () {
+            this.style.backgroundColor = "rgba(255,255,255,.7)";
+            this.style.color = "rgba(0,0,0,.7)";
+        };
+        prePic.onmouseup = function () {
+            this.style.backgroundColor = "";
+            this.style.color = "rgba(255,255,255,.7)";
+        };
+
+        //点击下一张
+        nextPic.onclick = function () {
+            //若是第一张图片弹窗提醒否则切换图片
+            if(imgSrcIndex < 4 ){
+                imgSrcIndex ++;
+                pic.src = imgSrc[imgSrcIndex];
+                seq.innerHTML = imgSrcIndex+1+"/5";
+            }else{
+                //弹窗提醒
+                //使其他事件点击无效(通过添加一个遮罩盖住)
+                mask.style.display = "block";
+                PopCont.innerHTML = "已经是最后一张了";
+                popup.style.display = "block";
+            }
+        };
+        //鼠标按下颜色
+        nextPic.onmousedown = function () {
+            this.style.backgroundColor = "rgba(255,255,255,.7)";
+            this.style.color = "rgba(0,0,0,.7)";
+        };
+        nextPic.onmouseup = function () {
+            this.style.backgroundColor = "";
+            this.style.color = "rgba(255,255,255,.7)";
+        };
+    }
+
+    /*两种循环切换*/
+    CyclicSwitching.onclick = function () {
+        circulateFlag = true;
+        //循环按钮颜色改变
+        CyclicSwitching.className = "CyclicSwitching PitchOn";
+        SequentialCycle.className = "SequentialCycle";
+        //循环状态改变
+        circulateSwitch();
+        //提示信息改变
+        prompt.innerHTML = "图片可以从最后一张跳转到第一张循环切换";
+    };
+    SequentialCycle.onclick = function () {
+        circulateFlag = false;
+        //循环按钮颜色改变
+        SequentialCycle.className = "SequentialCycle PitchOn";
+        CyclicSwitching.className = "CyclicSwitching";
+        //循环状态改变
+        SeqCirculate();
+        //提示信息改变
+        prompt.innerHTML = "图片只能到最后一张或只能到第一张切换";
+    };
+
+    /*弹窗提醒时其他事件不能触发*/
+
+    //确定按钮和关闭按钮
+    //确定
+    sure.onclick = function(){
+        popup.style.display = "none";
+        mask.style.display = "none";
+    };
+    //关闭
+    close.onclick = function(){
+        popup.style.display = "none";
+        mask.style.display = "none";
+    };
+
+    /*初始化*/
+    circulateSwitch();
+</script>
+</html>

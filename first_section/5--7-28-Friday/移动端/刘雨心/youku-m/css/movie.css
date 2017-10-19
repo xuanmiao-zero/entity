@@ -1,0 +1,142 @@
+html {
+  height: 100%;
+  overflow: hidden;
+}
+body {
+  height: 100%;
+  overflow: auto;
+  margin: 0;
+}
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #555555;
+  font-family: "微软雅黑";
+  -webkit-tap-highlight-color: transparent;
+}
+img {
+  vertical-align: top;
+}
+h1,
+h3,
+p {
+  margin: 0;
+}
+input {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+.pr {
+  position: relative;
+}
+.clearfix:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+.head {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: #F6F6F6;
+}
+.logo {
+  width: 2.83333333rem;
+  height: 0.52777778rem;
+  background-image: url(../img/logo.png);
+  background-repeat: no-repeat;
+  background-size: 2.83333333rem 0.52777778rem;
+  text-indent: -999999px;
+  margin-left: ;
+  margin-top: ;
+  margin-right: ;
+  margin: 0.23148148rem 0.28703704rem 0.2037037rem 0.38888889rem;
+}
+.head_btn {
+  margin-top: 0.08333333rem;
+  width: 0.55555556rem;
+  font-size: 0.27777778rem;
+  line-height: 0.35185185rem;
+  font-family: "微软雅黑";
+}
+.head_btn a img {
+  margin: 0 0.07407407rem;
+  width: 0.38888889rem;
+}
+.seach {
+  margin-right: 0.51851852rem;
+}
+.land {
+  margin-right: 0.49074074rem;
+}
+.content {
+  width: 9.52777778rem;
+  padding: 1.2037037rem 0.23148148rem 0;
+  overflow: hidden;
+}
+.souku_text {
+  width: 7.87962963rem;
+  height: 0.73148148rem;
+  border: 3px solid #a0a0a0;
+  border-right: none;
+  font-size: 0.31481481rem;
+}
+.souku_btn {
+  width: 1.64814815rem;
+  height: 0.73148148rem;
+  border: 2px solid #1A67CB;
+  border-top-width: 3px;
+  border-bottom-width: 3px;
+  background-image: url(../img/sou_btns.png);
+  background-size: 1.61111111rem 0.67592593rem;
+}
+.nav {
+  border-bottom: 8px solid #e6e6e6;
+  margin-top: 0.39814815rem;
+  height: 0.96296296rem;
+}
+.nav_btns {
+  margin-right: -0.75925926rem;
+}
+.nav_btn {
+  float: left;
+  font-size: 0.42592593rem;
+  line-height: 0.96296296rem;
+  color: #555555;
+  text-align: center;
+  width: 0.88888889rem;
+  margin-right: 0.75925926rem;
+  border-bottom: 8px solid transparent;
+}
+.nav .on {
+  border-bottom-color: #06a7e1;
+  color: #06A7E1;
+}
+.main_ad {
+  margin-top: 0.48148148rem;
+}
+.ad_img {
+  margin-bottom: 0.37962963rem;
+}
+.change {
+  margin-left: 2.69444444rem;
+}
+.change a {
+  float: left;
+  width: ;
+}

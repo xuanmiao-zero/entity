@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="轩邈">
+    <meta name="copyright" content="轩邈">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <!-- 网站SEO -->
+    <title>Title</title>
+    <meta name="keywords" content="轩邈 xuanmiao xuanmiao.com">
+    <meta name="description" content="轩邈 | 猎奇蜗牛">
+    <!-- 标题栏logo图标 -->
+    <link rel="icon" href="./style/image/favicon_logo.ico" type="image/x-icon">
+    <!-- 收藏夹logo图标 -->
+    <link rel="shortcut icon" href="./style/image/favicon_logo.ico" type="image/x-icon">
+    <style>
+        div, button{
+            margin: 10px;
+            width: 50px;
+            height: 40px;
+            background: #00CCFF;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <button id="begin">开始</button>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+
+<script src="../../20170814/MTween.js"></script>
+
+<script>
+    //获取元素
+    var divs = document.querySelectorAll('div');
+    var beginBtn = document.querySelector('#begin');
+    //声明标志
+    var clickStat = true;
+    beginBtn.onclick = function(){
+
+        if(clickStat)    return;
+
+        beginBtn.clickStat =
+        for(var i = 0; i < divs.length; i++){
+            (function(index){
+                if(isLeft){
+                    MTween(divs[index], 700, 1000, marginLeft, MTween.linear, function(){
+                        MTween(divs[index], -700, 1000, marginLeft, MTween.linear)
+                    });
+                }else{
+                    MTween(divs[index], 700, 1000, marginLeft, MTween.linear, function(){
+                        MTween(divs[index], -700, 1000, marginLeft, MTween.linear)
+                    });
+                }
+            })(i);
+        }
+    };
+    /*左右移动*/
+</script>
+</body>
+</html>

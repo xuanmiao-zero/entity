@@ -1,0 +1,100 @@
+.clearfix:after{
+	clear: both;
+	content: "";
+	display: block;
+}
+dd{
+	margin: 0;
+}
+img{
+	display: block;
+}
+.box{
+	height: 600px;
+	width: 300px;
+	margin: auto;
+	border: 2px solid #909090;
+}
+.content{
+	height: 540px;
+	overflow-y: auto;
+	padding: 20px;
+	box-sizing: border-box;
+}
+.bottom{
+	background-color: rgb(227,227,227);
+	height: 60px;
+	padding: 10px;
+	box-sizing: border-box;
+}
+#user{
+	cursor: pointer;
+	float: left;
+}
+#import{
+	height: 36px;
+	vertical-align: top;
+	padding-left: 5px;
+	margin-top: 2px;
+	border: none;
+	border-radius: 5px;
+	margin-left: 5px;
+	outline: none;
+}
+.enter{
+	display: inline-block;
+	margin-left: 14px;
+	vertical-align: top;
+	font: 16px/22px "微软雅黑";
+	color: deeppink;
+	margin-top: 9px;
+	cursor: pointer;
+}
+.blue dt,.blue dd{
+	float: left;
+}
+.red dt,.red dd{
+	float: right;
+}
+.blue dd{
+	position: relative;
+	margin-left: 10px;
+	background-color: rgb(225,225,225);
+	padding: 10px;
+	font-size: 12px;
+	line-height: 16px;
+	color: #000;
+	border-radius: 5px;
+	max-width: 180px;
+	box-sizing: border-box;
+	word-break: break-all;
+}
+.blue dd:before{
+	content: "";
+	position: absolute;
+	left: -10px;
+	top: 10px;
+	border: 5px solid transparent;
+	border-right-color: rgb(225,225,225);
+}
+.red dd{
+	position: relative;
+	margin-right: 10px;
+	background-color: rgb(178,169,200);
+	padding: 10px;
+	font-size: 12px;
+	line-height: 16px;
+	color: white;
+	border-radius: 5px;
+	max-width: 180px;
+	box-sizing: border-box;
+	word-break: break-all;
+}
+.red dd:after{
+	content: "";
+	position: absolute;
+	right: -10px;
+	top: 10px;
+	border: 5px solid transparent;
+	border-left-color: rgb(178,169,200);
+}

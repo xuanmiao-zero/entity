@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+				width: 200px;
+				height: 200px;
+				border: 10px solid black;
+				background-image: repeating-linear-gradient(135deg, red 0%, red 10%, rgba(0,0,0,0) 10%, rgba(0,0,0,0) 20%, red 20%);
+			}
+		</style>
+		<!--
+			渐变是设置在background-image上！！！
+			linear-gradient(角度, 颜色 位置, 颜色 位置)
+			
+			当不同颜色之间没有富裕位置，那么就不会有渐变
+			
+			重复渐变效果
+			repeating-linear-gradient
+		-->
+	</head>
+	<body>
+		<div>
+			50遍
+		</div>
+	</body>
+</html>

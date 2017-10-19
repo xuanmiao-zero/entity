@@ -1,0 +1,26 @@
+/* 重置样式 */
+body,h1,h3,h5,h4,dd,dt,dl{
+	margin: 0;
+}
+dd{
+	list-style: none;
+}
+ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+img{
+	vertical-align: top;
+}
+input{
+	padding: 0px;
+	border: none;
+	background-color: transparent;
+}
+p{
+	margin: 0px;
+}

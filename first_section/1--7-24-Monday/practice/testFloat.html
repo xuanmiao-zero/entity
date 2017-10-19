@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>testFloat</title>
+    <style>
+        /*
+            test Float
+         */
+        div:nth-child(2){
+            width:200px;
+            height:200px;
+            background-color: lightgreen;
+        }
+        div:nth-child(3){
+            width:200px;
+            height:300px;
+            background-color: #8BC5E6;
+            float:right;
+        }
+        /*
+            test opacity
+         */
+        .transparent_class {
+            /* Required for IE 5, 6, 7 */
+            /* ...or something to trigger hasLayout, like zoom: 1; */
+            width:300px;
+            height:300px;
+            line-height:300px;
+            text-align:center;
+            background:#000;
+            color:#fff;
+            /* older safari/Chrome browsers */
+            -webkit-opacity: 0.5;
+            /* Netscape and Older than Firefox 0.9 */
+            -moz-opacity: 0.5;
+            /* Safari 1.x (pre WebKit!) 老式khtml内核的Safari浏览器*/
+            -khtml-opacity: 0.5;
+            /* IE9 + etc...modern browsers */
+            opacity: .5;
+            /* IE 4-9 */
+            filter:alpha(opacity=50);
+            /*This works in IE 8 & 9 too*/
+            -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+            /*IE4-IE9*/
+            filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+        }
+    </style>
+</head>
+<body>
+    <div class="transparent_class">测试透明度</div>
+    <div></div>
+    <div></div>
+</body>
+</html>

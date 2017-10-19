@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="轩邈">
+    <meta name="copyright" content="轩邈">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <!-- 网站SEO -->
+    <title>MOVE MENU</title>
+    <meta name="keywords" content="轩邈 xuanmiao xuanmiao.com">
+    <meta name="description" content="轩邈 | 猎奇蜗牛">
+    <style>
+        #moveMenu{
+            margin: 0 auto;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            width: 340px;
+            height: 400px;
+            background-color: dodgerblue;
+        }
+
+        h2{
+            margin-top: 30px;
+            font-size: 36px;
+            text-align: center;
+            color: #fff;
+        }
+
+        ul, li{
+            padding: 0;
+            list-style: none;
+        }
+
+        .menu-list{
+            position: relative;
+        }
+
+        .menu-list li{
+            position: absolute;
+            margin: 0 25px;
+            border-radius: 3px;
+            width: 290px;
+            height: 36px;
+            font-weight: 700;
+            color: #777;
+            background-color: #fff;
+        }
+
+        .menu-list li p{
+            display: inline-block;
+            margin: 9px 12px;
+            width: 160px;
+            border-left: 3px solid dodgerblue;
+            padding-left: 10px;
+            font-size: 14px;
+        }
+
+        .menu-list div{
+            display: inline-block;
+            padding: 2px 4px;
+            margin: 2px ;
+            border-radius: 2px;
+            color: #fff;
+            background-color: dodgerblue;
+            font-size: 13px;
+            cursor: pointer;
+        }
+        .menu-list div:hover{
+            color: #fff;
+            background-color: royalblue;
+            transition: 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <div id="moveMenu">
+        <h2 class="title">xuanmiao</h2>
+        <ul class="menu-list">
+            <li>
+                <p>0.JavaScript</p>
+                <div class="move-up">上移</div>
+                <div class="move-down">下移</div>
+            </li>
+            <li>
+                <p>1.jQuery</p>
+                <div class="move-up">上移</div>
+                <div class="move-down">下移</div>
+            </li>
+            <li>
+                <p>2.BootStrap</p>
+                <div class="move-up">上移</div>
+                <div class="move-down">下移</div>
+            </li>
+            <li>
+                <p>3.React</p>
+                <div class="move-up">上移</div>
+                <div class="move-down">下移</div>
+            </li>
+            <li>
+                <p>4.Angular</p>
+                <div class="move-up">上移</div>
+                <div class="move-down">下移</div>
+            </li>
+        </ul>
+    </div>
+<script src="animal_collection.js"></script>
+<script>
+    var menuList = document.querySelector('.menu-list');
+    var lis = document.querySelectorAll('.menu-list li');
+    var moveUpBtns = document.querySelectorAll('.move-up');
+    var moveDownBtns = document.querySelectorAll('.move-down');
+
+    //初始化
+    var distance = 56;
+
+    moveUp();
+    moveDown();
+    menuListItemPositionInit();
+
+    //列表位置初始化
+    function menuListItemPositionInit(){
+        for(var i = 0; i < lis.length; i++){
+            lis[i].style.top = i * distance + "px";
+        }
+    }
+    //元素上移
+    function moveUp(){
+        for(var i=0; i < moveUpBtns.length; i ++){
+            //动画效果函数
+            moveUpBtns[i].onclick = function () {
+                if(this.parentElement.previousElementSibling){
+                    ATween(this.parentElement,-distance,500,'marginTop','linear');
+                    ATween(this.parentElement.previousElementSibling,distance,500,'marginTop','linear'); //？ obj为什么不行
+                    menuList.insertBefore(this.parentElement,this.parentElement.previousElementSibling);
+                }else{
+                    //第一个元素移动动画
+                    ATween(this.parentElement, distance * (lis.length -1),500,'marginTop','linear');
+                    for(var i = 1; i < this.parentElement.parentElement.children.length; i++){
+                        ATween(this.parentElement.parentElement.children[i], -distance, 500,'marginTop','linear');
+                    }
+                    menuList.insertBefore(this.parentElement,this.parentElement.previousElementSibling);
+                }
+            };
+        }
+    }
+
+    //元素下移
+    function moveDown(){
+        for(var i=0; i < moveDownBtns.length; i ++){
+            moveDownBtns[i].onclick = function () {
+                if(this.parentElement.nextElementSibling){
+                    ATween(this.parentElement,distance,500,'marginTop','linear');
+                    ATween(this.parentElement.nextElementSibling,-distance,500,'marginTop','linear');
+                    menuList.insertBefore(this.parentElement,this.parentElement.nextElementSibling.nextElementSibling);
+                }else{
+                    ATween(this.parentElement, -distance * (lis.length -1),500,'marginTop','linear');
+                    for(var i = 0; i < this.parentElement.parentElement.children.length - 1; i++){
+                        ATween(this.parentElement.parentElement.children[i], distance, 500,'marginTop','linear');
+                    }
+                    menuList.insertBefore(this.parentElement,this.parentElement.parentElement.children[0]); //？
+                }
+            };
+        }
+    }
+</script>
+</body>
+</html>

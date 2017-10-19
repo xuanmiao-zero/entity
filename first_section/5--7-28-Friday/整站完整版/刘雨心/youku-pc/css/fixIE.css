@@ -1,0 +1,115 @@
+/* 处理兼容性样式 */
+
+/*index*/
+.ico{
+	overflow: hidden;
+}
+
+.index .m_pd{
+	overflow: hidden;
+}
+
+.index .change_ico{
+	overflow: hidden;
+}
+
+.index .ri_logo{
+	overflow: hidden;
+}
+
+.index .dongni_content{
+	overflow: hidden;
+}
+
+.ct_bg{
+	filter:alpha(opacity=50);
+}
+
+.index .mod_nav a{
+	border-bottom: 1px solid white;
+}
+
+.index .spr{
+	margin-right: 4px;
+}
+
+.index .mod_i_info{
+	background-color: black;
+	filter:alpha(opacity=50);
+}
+
+.index .mod_i_info2{
+	background-color: red;
+	filter:alpha(opacity=50);
+}
+
+.index .mod_a1{
+	display: inline;
+}
+
+.index .ft_con a{
+	white-space: nowrap;
+}
+
+.movie .con_ad,.movie .con_ad  a{
+	overflow: hidden;
+}
+
+.movie .yugao_con{
+	overflow: hidden;
+}
+
+.movie .border1,.movie .border2{
+	overflow: hidden;
+}
+
+.movie .jiedu{
+	overflow: hidden;
+}
+
+.movie .jiedu_con{
+	overflow: hidden;
+}
+
+.movie .tuijian_con{
+	overflow: hidden;
+}
+
+.movie .huayu{
+	overflow: hidden;
+}
+
+.movie .zhuanchang{
+	overflow: hidden;
+}
+
+.movie .gangtai,.movie .haolaiwu,.movie .rihan{
+	overflow: hidden;
+}
+
+.movie .like_con{
+	overflow: hidden;
+}
+
+.movie .content_bg{
+	overflow: hidden;
+}
+
+.movie .hezuohuoban{
+	overflow: hidden;
+}
+
+.yule .play_icon,.yule .pinglun_icon{
+	overflow: hidden;
+}
+
+
+.yule .paihang_con li{
+	margin-bottom: 16px;
+}
+
+.yule .mingxingpaike{
+	margin-top: -6px;
+	width: 310px;
+	overflow: hidden;
+}

@@ -1,0 +1,78 @@
+body,h3{
+	margin:0;
+}
+.fl{
+	float:left;
+}
+.fr{
+	float:right;
+}
+a{
+	text-decoration:none;
+}
+ul,li{
+	padding:0;
+	margin:0;
+	list-style:none;
+}
+img{
+	vertical-align: top;
+	border:none;
+}
+.box{
+	width:390px;
+	height:444px;
+}
+.head{
+	height:55px;
+	background:url(../img/title_left.jpg) no-repeat #409099;
+	padding:0 10px;
+}
+.head .title{
+	font:24px/55px "宋体";
+	color:#fdfffc;
+	padding-left:30px;
+}
+.head .title_right{
+	margin-right:11px;
+}
+.title_right .name{
+	font:14px/48px "宋体";
+	color:#ffead5;
+	margin-top:7px;
+}
+.title_right .pic_right{
+	margin-top:23px;
+	margin-left:4px;
+}
+.content{
+	height:362px;
+	padding:10px 10px 17px 10px;
+}
+.content .item{
+	width:184px;
+	height:120px;
+	border:1px solid #e7e7e7;
+	border-top:none;
+	border-left:none;
+}
+.item .text{
+	font:14px/22px "宋体";
+	color:#4b97b1;
+	width:70px;
+	height:41px;
+	padding-left:20px;
+	padding-top:15px;
+}
+.item img{
+	padding:41px 18px 9px 0;
+}
+.content .border_right{
+	border-right:0;
+}
+.content .border_bottom{
+	border-bottom:0;
+}
+.content .noborder{
+	border:0;
+}

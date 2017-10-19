@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="轩邈">
+    <meta name="copyright" content="轩邈">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <!-- 网站SEO -->
+    <title>textToRight</title>
+    <meta name="keywords" content="轩邈 xuanmiao xuanmiao.com">
+    <meta name="description" content="轩邈 | 猎奇蜗牛">
+    <!-- 标题栏logo图标 -->
+    <link rel="icon" href="" type="image/x-icon">
+    <!-- 收藏夹logo图标 -->
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <style>
+        body{
+            margin: 0;
+            background: #00AA88;
+            text-align: center;
+        }
+        .leftInputBox, .rightInputBox, .intermediate{
+            margin:22px 0;
+            display: inline-block;
+            min-height: 580px;
+            max-height: 1000px;
+        }
+        .leftInputBox, .rightInputBox{
+            width: 440px;
+            padding:10px;
+            background: #fff;
+            text-align: left;
+            line-height: 1.5;
+            letter-spacing: 1px;
+            font-family: Arial;
+            color: #777;
+            overflow: auto;
+            -webkit-user-modify: read-write-plaintext-only;
+        }
+        .leftInputBox{
+            margin-left: 40px;
+            float: left;
+        }
+        .rightInputBox{
+            margin-right: 40px;
+            float: right;
+        }
+        .intermediate{
+            position: relative;
+            width:200px;
+        }
+        .to-right{
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            margin-left: -30%;
+            width: 60%;
+            padding: 5px;
+            background-color: deepskyblue;
+            color: #fff;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        .count{
+            position: absolute;
+            top: 46%;
+            left: 50%;
+            margin-left: -30%;
+            width: 60%;
+            padding: 5px;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="leftInputBox" contenteditable="true"></div>
+    <div class="intermediate">
+        <div class="to-right">TEXT TO RIGHT</div>
+        <div class="count">50/50</div>
+    </div>
+    <div class="rightInputBox" contenteditable="true"></div>
+
+    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.min.js"></script>
+    <script>
+        var leftInputBox = document.querySelector(".leftInputBox");
+        var toRight = document.querySelector(".to-right");
+        var count = document.querySelector(".count");
+        var rightInputBox = document.querySelector(".rightInputBox");
+        var timer = 0;
+        var num = 0;
+        var isMove = false;
+        toRight.onclick = function () {
+            if(isMove) return;
+            isMove = true;
+            num = 0;
+            var leftText = leftInputBox.innerHTML;
+            //去除空格
+//            leftText = leftText.replace(/\s/g,"");
+            var textCount = leftText.length;
+            if(textCount === 0) return;
+            clearInterval(timer);
+            console.log(leftText);
+            timer = setInterval(function(){
+                num ++;
+                count.innerHTML = textCount - num + "/" + num;
+                leftInputBox.innerHTML = leftText.slice(num);
+                rightInputBox.innerHTML = leftText.slice(0,num);
+                if(num === textCount){
+                    isMove = false;
+                    clearInterval(timer);
+                }
+
+            },1);
+        };
+        //防止复制粘贴时的富文本污染(兼容非chrome浏览器)
+        $('[contenteditable]').each(function() {
+            // 干掉IE http之类地址自动加链接
+            try {
+                document.execCommand("AutoUrlDetect", false, false);
+            } catch (e) {}
+
+            $(this).on('paste', function(e) {
+                e.preventDefault();
+                var text = null;
+
+                if(window.clipboardData && clipboardData.setData) {
+                    // IE
+                    text = window.clipboardData.getData('text');
+                } else {
+                    text = (e.originalEvent || e).clipboardData.getData('text/plain') || prompt('在这里输入文本');
+                }
+                if (document.body.createTextRange) {
+                    if (document.selection) {
+                        textRange = document.selection.createRange();
+                    } else if (window.getSelection) {
+                        sel = window.getSelection();
+                        var range = sel.getRangeAt(0);
+
+                        // 创建临时元素，使得TextRange可以移动到正确的位置
+                        var tempEl = document.createElement("span");
+                        tempEl.innerHTML = "&#FEFF;";
+                        range.deleteContents();
+                        range.insertNode(tempEl);
+                        textRange = document.body.createTextRange();
+                        textRange.moveToElementText(tempEl);
+                        tempEl.parentNode.removeChild(tempEl);
+                    }
+                    textRange.text = text;
+                    textRange.collapse(false);
+                    textRange.select();
+                } else {
+                    // Chrome之类浏览器
+                    document.execCommand("insertText", false, text);
+                }
+            });
+            // 去除Crtl+b/Ctrl+i/Ctrl+u等快捷键
+            $(this).on('keydown', function(e) {
+                // e.metaKey for mac
+                if (e.ctrlKey || e.metaKey) {
+                    switch(e.keyCode){
+                        case 66: //ctrl+B or ctrl+b
+                        case 98:
+                        case 73: //ctrl+I or ctrl+i
+                        case 105:
+                        case 85: //ctrl+U or ctrl+u
+                        case 117: {
+                            e.preventDefault();
+                            break;
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

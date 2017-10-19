@@ -1,0 +1,181 @@
+/*css reset*/
+body{
+	margin: 0;
+}
+ul{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+img{
+	vertical-align: top;
+	border: none;
+}
+/*工具*/
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}
+.clearfix{
+	*zoom:1;
+}
+.clearfix:after{
+	content: ;
+	display: block;
+	clear: both;
+}
+/*main*/
+body{
+	margin: 50px 50px;
+	font: 14px "宋体";
+}
+.box{
+	width: 969px;
+	height: 420px;
+	border-right: 1px solid #dddddd;
+	border-bottom: 1px solid #dddddd;
+	margin-right: -3px;
+}
+.border{
+	width: 162px;
+	height: 418px;
+	border-top: 2px solid #addf7e;
+}
+.little{
+	width: 161px;
+	height: 418px;
+	border-left: 1px solid #dddddd;
+}
+.min{
+	border-top: 1px solid #addf7e;
+	padding: 10px;
+	padding-right: 11px;
+}
+.head{
+	height: 16px;
+	padding-top: 3px;
+	font:bold 16px/16px "微软雅黑";
+	text-align: center;
+}
+.head_color{
+	color: #739d1d;
+	font-family: "arial"；
+}
+.item{
+	width: 140px;
+	height: 366px;
+	margin-top: 12px;
+}
+.pic{
+	width: 140px;
+	height: 260px;
+}
+.tupian{
+	display: block;
+	padding: 1px;
+	border: 1px solid #dce0df;
+}
+.font{
+	width: 140px;
+	font: 14px/23px "宋体";
+	margin-bottom: 7px;
+}
+.font span{
+	font: 12px arial;
+	color: #b7b7b7;
+}
+.font .name{
+	float: left;
+	color: #3b3b3b;
+}
+.font .jieshao{
+	float: right;
+	display: block;
+	margin-top: 7px;
+}
+.dashed{
+	border: 1px dashed #dbdbdb;
+	margin-top: 5px;
+}
+.fon{
+	margin-top: 8px;
+}
+.second{
+	width: 140px;
+    margin-top: -1px;
+}
+.second .font2{
+	font: 14px "宋体";
+	color:#3d3d3d;
+	display: block;
+	margin-top: 6px;
+}
+.block{
+	font-family: "arial";
+	line-height: 27px;
+	white-space: nowrap;
+}
+span{
+	color: #ababab;
+	font: 8px "arial";
+}
+.xia{
+	margin-top: 6px;
+	margin-left: 6px;
+}
+.border_3{
+	width: 159px;
+}
+.dec2{
+	border-top: 2px solid #e187c4;
+}
+.dec3{
+	border-top: 2px solid #a6a6a6;
+}
+.dec4{
+	border-top: 2px solid #7fbfda;
+}
+.dec5{
+	border-top: 2px solid #e18787;
+}
+.dec6{
+	border-top: 2px solid #e5cc6f;
+}
+
+
+.cr2{
+	border-top: 1px solid #e187c4;
+}
+.cr3{
+	border-top: 1px solid #a6a6a6;
+}
+.cr4{
+	border-top: 1px solid #7fbfda;
+}
+.cr5{
+	border-top: 1px solid #e18787;
+}
+.cr6{
+	border-top: 1px solid #e5cc6f;
+}
+
+.fc2{
+	color: #e187c4;
+}
+.fc3{
+	color: #a6a6a6;
+}
+.fc4{
+	color: #7fbfda;
+}
+.fc5{
+	color: #e18787;
+}
+.fc6{
+	color: #e5cc6f;
+}

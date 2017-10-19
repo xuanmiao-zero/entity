@@ -1,0 +1,274 @@
+/*all style*/
+.index .head_color{
+	background-color: #fff;
+}
+.index .head{
+	width: 1200px;
+	height: 106px;
+	margin: 0 auto;
+}
+.index .head h1{
+	width: 325px;
+	height: 106px;
+	background: url(../img/logo.jpg) no-repeat;
+}
+.index .head h1 a{
+	float: left;
+	width: 325px;
+	height: 106px;
+	font-size: 0;
+}
+.index .head .search{
+	width: 554px;
+	padding: 21px 0 12px;
+}
+.index .head .search .txt{
+	height: 40px;
+}
+.index .head .search .txt .import{
+	width: 502px;
+	height: 16px;
+	padding: 10px 0 10px 8px;
+	border: 2px solid #f04848;
+	border-right: none;
+	border-radius: 4px 0 0 4px;
+}
+.index .head .search .txt .confirm{
+	width: 40px;
+	height: 40px;
+	border: 2px solid #f04848;
+	background: url(../img/subimt.jpg) no-repeat -2px -2px;
+	border-radius: 0 4px 4px 0;
+	cursor: pointer;
+}
+.index .head .search .hot_search{
+	font-size: 12px;
+	line-height: 33px;
+	font-family: "微软雅黑";
+	padding-left: 5px;
+	height: 33px;
+	color: #666666;
+}
+.index .head .search .hot_search a{
+	float: left;
+	margin-left: 11px;
+}
+.index .head .festival{
+	width: 310px;
+	height: 106px;
+	background: url(../img/headimg.jpg) no-repeat 0 6px;
+}
+.index .top_nav{
+	width: 100%;
+	background-color: #333333;
+}
+/*头部导航*/
+.index .top_nav nav{
+	width: 1200px;
+	height: 34px;
+	margin: 0 auto;
+	background-color: #333333;
+	border-left: 1px solid #444444;
+	border-right: 1px solid #222222;
+}
+.index .top_nav nav div a{
+	float: left;
+	font-size: 14px;
+	line-height: 30px;
+	font-family: "微软雅黑";
+	color: #ffffff;
+}
+.index .top_nav nav div a:hover{
+	padding-bottom: 0;
+	border-bottom: 2px solid #f04848;
+}
+.index .top_nav nav div .link1{
+	padding: 2px 14px;
+	border-right: 1px solid #222222;
+}
+.index .top_nav nav div .link2{
+	padding: 2px 14px;
+	border-left: 1px solid #444444;
+	border-right: 1px solid #222222;
+}
+.index .top_nav nav div .link3{
+	padding: 2px 13px;
+	border-left: 1px solid #444444;
+}
+.index .top_nav nav div .link4{
+	padding: 2px 11px;
+}
+.index .top_nav nav div .link5{
+	padding: 2px 14px;
+}
+.index .top_nav nav div .link6{
+	padding: 2px 13px 2px 10px;
+	border-right: 1px solid #222222;
+}
+.index .top_nav nav div .link7{
+	padding: 2px 13px;
+	border-left: 1px solid #444444;
+}
+.index .top_nav nav div .link8{
+	padding: 2px 13px 2px 11px;
+	border-right: 1px solid #222222;
+}
+.index .top_nav nav div .link9{
+	padding: 2px 14px 2px 13px;
+	border-left: 1px solid #444444;
+	border-right: 1px solid #222222;
+}
+.index .top_nav nav div .link10{
+	padding: 2px 31px 2px 14px;
+	border-left: 1px solid #444444;
+	border-right: 1px solid #222222;
+	background: url(../img/arrows.jpg) no-repeat 52px 2px;
+}
+.index .top_nav nav div .link11{
+	padding: 2px 13px 2px 14px;
+	border-left: 1px solid #444444;
+	border-right: 1px solid #222222;
+}
+.index .top_nav nav div .link12{
+	padding: 2px 31px 2px 14px;
+	border-left: 1px solid #444444;
+	border-right: 1px solid #222222;
+	background: url(../img/arrows.jpg) no-repeat 52px 2px;
+}
+.index .top_nav nav div .link13{
+	padding: 2px 29px;
+	border-right: 1px solid #222222;
+}
+.index .top_nav nav div .link14{
+	padding: 2px 23px 2px 5px;
+	border-left: 1px solid #444444;
+	border-right: 1px solid #222222;
+	background: url(../img/arrows.jpg) no-repeat 71px 2px;
+}
+.index .top_nav nav div .link15{
+	padding: 2px 6px 2px 14px;
+	border-left: 1px solid #444444;
+}
+.index .top_nav nav div span{
+	float: left;
+	width: 1px;
+	height: 14px;
+	background-color: #7e7e7e;
+	overflow: hidden;
+	margin-top: 10px;
+}
+.index .top_nav nav div .link16{
+	padding: 2px 10px 2px 7px;
+}
+/*头部导航 END*/
+/*页脚区域*/
+.index footer{
+	height: 312px;
+	background-color: #333333;
+}
+.index footer .copy{
+	background-color: #333333;
+	width: 1200px;
+	margin: 0 auto;
+	padding: 25px 0 18px;
+	position: relative;
+}
+.index footer .copy .text{
+	width: 858px;
+	height: 269px;
+	font-size: 12px;
+	color: #aaaaaa;
+}
+.index footer .copy .text nav{
+	height: 16px;
+	padding-bottom: 20px;
+	border-bottom: 1px solid #696969;
+	color: #f5f5f5;
+}
+.index footer .copy .text nav a{
+	float: left;
+	margin-right: 37px;
+	line-height: 16px;
+	*color: #f5f5f5;
+}
+.index footer .copy .text nav span{
+	float: left;
+	width: 1px;
+	height: 14px;
+	background-color: #696969;
+	margin: 2px 44px 0 29px;
+	overflow: hidden;
+}
+.index footer .copy .text dl{
+	margin-bottom: 22px;
+}
+.index footer .copy .text dl dt{
+	margin-top: 13px;
+	height: 32px;
+	font-size: 12px;
+	line-height: 32px;
+	font-family: "微软雅黑";
+	color: #f5f5f5;
+	position: relative;
+}
+.index footer .copy .text dl dt .a1{
+	float: left;
+	font-weight: bold;
+	*color: #f5f5f5;
+}
+.index footer .copy .text dl dt i{
+	width: 34px;
+	height: 16px;
+	background-color: #fff;
+	border-radius: 2px;
+	opacity: 0.3;
+	*filter:alpha(opacity=30); /*IE滤镜*/
+	position: absolute;
+	left: 69px;
+	top: 8px;
+}
+.index footer .copy .text dl dt .a2{
+	width: 34px;
+	height: 16px;
+	position: absolute;
+	left: 69px;
+	top: 8px;
+	text-align: center;
+	color: #aaaaaa;
+	line-height: 16px;
+}
+.index footer .copy .text dl dt dd{
+	height: 28px;
+}
+.index footer .copy .text dl dd a{
+	float: left;
+	line-height: 28px;
+	margin-right: 46px;
+	*color: #aaaaaa;
+}
+.index footer .copy .text ul li{
+	height: 27px;
+}
+.index footer .copy .text ul li a,.index footer .copy .text ul li span{
+	float: left;
+	line-height: 27px;
+	margin-right: 8px;
+	*color: #aaaaaa;
+}
+.index footer .copy .text ul li a i{
+	float: left;
+	background: url(../img/sprite1.png) no-repeat -268px -199px;
+	width: 15px;
+	height: 15px;
+	margin-top: 5px;
+}
+.index footer .copy .text ul li .no_margin{
+	margin-right: 0;
+}
+.index footer .copy .erweima{
+	width: 136px;
+	height: 223px;
+	position: absolute;
+	right: 0;
+	top: 25px;
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="轩邈">
+    <meta name="copyright" content="轩邈">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <!-- 网站SEO -->
+    <title>Title</title>
+    <meta name="keywords" content="轩邈 xuanmiao xuanmiao.com">
+    <meta name="description" content="轩邈 | 猎奇蜗牛">
+    <style>
+    </style>
+</head>
+<body>
+<input type="text" value="0">
+
+<script>
+//    document.onmousewheel = function(ev){
+//        if(ev.wheelDelta>0)
+//            console.log("上");
+//        else if(ev.wheelDelta)
+//            console.log("下");
+//    };
+//
+//    document.addEventListener("DOMMouseScroll",function(ev){
+//        if(ev.detail>0)
+//            console.log("上");
+//        else if(ev.detail)
+//            console.log("下");
+//    },false);
+
+
+    var input = document.querySelector('input');
+
+    Scroll(input);
+
+    function Scroll(obj){
+        obj.onmousewheel = function(ev){
+            if(ev.wheelDelta>0)
+                upScroll(obj);
+            else if(ev.wheelDelta)
+                downScroll(obj);
+        };
+
+        obj.addEventListener("DOMMouseScroll",function(ev){
+            if(ev.detail>0)
+                downScroll(obj);
+            else if(ev.detail)
+                upScroll(obj);
+        },false);
+    }
+
+    function downScroll(obj){
+        obj.value = Number(obj.value) - 1;
+    }
+
+    function upScroll(obj){
+        obj.value = Number(obj.value) + 1;
+    }
+
+</script>
+</body>
+</html>

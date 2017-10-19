@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="轩邈">
+    <meta name="copyright" content="轩邈">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <!-- 网站SEO -->
+    <title>Title</title>
+    <meta name="keywords" content="轩邈 xuanmiao xuanmiao.com">
+    <meta name="description" content="轩邈 | 猎奇蜗牛">
+    <style>
+        .container{
+            width: 400px;
+            height: 600px;
+            margin: 0 auto;
+            background: url("rocket.svg") no-repeat;
+            background-size: cover;
+            overflow: hidden;
+        }
+
+        .search-box{
+            margin: 100px auto;
+            width: 346px;
+            background: #E0E1FE;
+            border-radius: 20px;
+        }
+
+        .search-input{
+            outline: none;
+            border: 1px solid #C5C6D2;
+            border-radius: 100px;
+            width: 220px;
+            line-height: 30px;
+            background: #D2D3DE url("search.svg") no-repeat 6px 2px;
+            padding-left: 40px;
+            background-size: 28px 28px;
+            vertical-align: top;
+            margin: 4px;
+        }
+
+        .search-input:focus{
+            border: 1px solid #FF574F;
+            background-color: #fff;
+        }
+
+        .search-input:focus~.search-history{
+            display: block;
+        }
+
+        .go-btn{
+            border: none;
+            border-radius: 100px;
+            margin: 4px;
+            padding: 3px 20px 1px 20px;
+            line-height: 30px;
+            vertical-align: top;
+            background-color: #FF574F;
+            color: #fff;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .search-history{
+            display: none;
+            list-style: none;
+            margin:10px 4px;
+            padding: 0;
+        }
+
+        li:hover{
+            background-color: #FF574F;
+            color: #fff;
+        }
+
+        li{
+            line-height: 24px;
+            padding: 4px 14px;
+            border-radius: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="search-box">
+            <input class="search-input" type="text">
+            <input class="go-btn" type="button" value="GO">
+            <ul class="search-history">
+                <li>html+css</li>
+                <li>html5+css3</li>
+                <li>svg</li>
+                <li>react</li>
+                <li>Angular</li>
+                <li>vue</li>
+            </ul>
+        </div>
+    </div>
+
+<script>
+    var searchInput = document.querySelector('.search-input');
+    var searchHistory = document.querySelector('.search-history');
+    searchHistory.onmousedown = function (ev) {
+        searchInput.value = ev.target.innerHTML;
+        var children = ev.target.parentElement.children;
+        for(var i = 0; i < children.length; i++){
+            children[i].style.backgroundColor = "";
+            children[i].style.color = "";
+        }
+        ev.target.style.backgroundColor = "#FF574F";
+        ev.target.style.color = "#fff";
+    };
+</script>
+</body>
+</html>

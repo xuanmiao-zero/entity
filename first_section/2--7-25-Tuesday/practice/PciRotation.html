@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PicRotation</title>
+    <script>
+        window.onload=function(){
+            /**
+             * 图片轮换 1.jpg 1.jpg 2.jgp 3.jpg 4.jpg 5.jpg 6.jpg
+             */
+
+            /* 获取元素*/
+            var imgBox = document.getElementById('img-box');
+
+            /*声明标志*/
+            var num = 3;
+            /*添加事件*/
+            /*方法一*/
+//            imgBox.onclick = function () {
+//                if(num === 3){
+//                    imgBox.src = "img/4.jpg";
+//                    num = 4;
+//                }else if(num === 4){
+//                    imgBox.src = "img/5.jpg";
+//                    num = 5;
+//                }else if(num === 5){
+//                    imgBox.src = "img/6.jpg";
+//                    num = 6;
+//                }else if(num === 6){
+//                    imgBox.src = "img/1.jpg";
+//                    num = 3;
+//                }
+//            }
+
+            /*方法二*/
+            imgBox.onclick = function () {
+//                num <6 ? num +=  1 : num = 1;
+//                num = num % 6;
+                num += 1;
+                if(num >=6){
+                    num =1;
+                }
+                num += 1;
+                imgBox.src = "img/" + num + ".jpg";
+
+            }
+        }
+    </script>
+</head>
+<body>
+<img id = "img-box" src="img/3.jpg" alt="">
+</body>
+</html>

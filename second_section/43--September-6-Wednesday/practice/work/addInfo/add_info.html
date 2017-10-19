@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="轩邈">
+    <meta name="copyright" content="轩邈">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <!-- 网站SEO -->
+    <title>Title</title>
+    <meta name="keywords" content="轩邈 xuanmiao xuanmiao.com">
+    <meta name="description" content="轩邈 | 猎奇蜗牛">
+    <!-- 标题栏logo图标 -->
+    <link rel="icon" href="" type="image/x-icon">
+    <!-- 收藏夹logo图标 -->
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <style>
+        #addInfo{
+            width: 700px;
+            margin: 50px auto;
+            background: url("lMkneiP-plain-blue-background-wallpaper.jpg") #61CBFF;
+            background-size: 100%;
+            overflow: hidden;
+            text-align: center;
+        }
+        h1{
+            color: #fff;
+            font-size: 50px;
+            line-height: 50px;
+        }
+        .input-box{
+            position: relative;
+            text-align: center;
+            margin: auto;
+            width: 420px;
+            height: 80px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 20px;
+            color: #61CBFF;
+            font-weight: 700;
+        }
+        .input-box>div{
+            display: inline-block;
+            margin: 8px 10px auto 10px;
+            line-height: 30px;
+            vertical-align: middle;
+            font-weight: 700;
+        }
+        .input-box>div  div{
+            box-sizing: border-box;
+            padding:0 10px;
+            display: inline-block;
+            margin-left: 10px;
+            width: 140px;
+            vertical-align: middle;
+            height: 30px;
+            border-radius: 15px;
+            border: 1px solid #61CBFF;
+            overflow: hidden;
+            outline: none;
+        }
+        .add-btn{
+            display: inline-block;
+            margin-left: 10px;
+            width: 188px;
+            vertical-align: middle;
+            height: 30px;
+            border-radius: 15px;
+            background-color: #61CBFF;
+            color: #fff;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .sex-option{
+            position: absolute;
+            top: 100px;
+            left: 67px;
+            height: 0;
+            display: inline-block;
+            margin-left: 10px;
+            width: 140px;
+            vertical-align: middle;
+            overflow: hidden;
+            border-radius: 15px;
+            background-color: rgba(0,0,0,0.3);
+            color: #fff;
+        }
+        .sex-option span{
+            cursor: pointer;
+        }
+        .sex-option span:hover{
+            color: rgba(49,220,255,1);
+        }
+        .sex{
+            position: relative;
+        }
+        .sex .sex-down{
+            border: none;
+            width: 20px;
+            padding: 0;
+            text-align: center;
+            position: absolute;
+            right: 4px;
+            top: 2px;
+            color: #61CBFF;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        .info-list{
+            margin: 36px auto;
+            padding: 0;
+            width: 460px;
+            font-size: 14px;
+            font-weight: 700;
+            color: #61CBFF;
+        }
+        .info-list ul,li{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            border-radius: 4px;
+        }
+        .info-list .title{
+            padding: 8px 10px;
+            color: #fff;
+            background-color: rgba(0,0,0,0.3);
+        }
+        .info-list  span{
+            display: inline-block;
+            width: 50px;
+        }
+        .choice{
+            text-align: left;
+            display: inline-block;
+            width: 60px;
+        }
+        .choice span{
+            width: 30px;
+            text-align: right;
+        }
+        .info-list .checkbox{
+            display: inline-block;
+            width: 14px;
+            height:14px;
+            border: 1px solid #61CBFF;
+            vertical-align: -20%;
+            line-height: 16px;
+            cursor: pointer;
+        }
+        .info-list .list-item{
+            margin: 4px 0;
+            padding: 8px 10px;
+            background-color: #fff;
+        }
+        .info-list .operating-box{
+            line-height: 19px;
+            display: inline-block;
+            width: 120px;
+        }
+        .info-list .operating-box span{
+            display: inline-block;
+            width: 30px;
+            cursor: pointer;
+        }
+        .info-list .operating-box .delete{
+            vertical-align: middle;
+            margin: 0;
+            padding: 0;
+            line-height: 19px;
+            width: 19px;
+            height: 19px;
+            background: url("delete_61CBFF.png") no-repeat center;
+            background-size: 19px 19px;
+        }
+    </style>
+</head>
+<body>
+<div id="addInfo">
+    <!--标题-->
+    <h1>xuanmiao</h1>
+    <!-- 输入框盒子 -->
+    <div class="input-box">
+        <div class="name">姓名 <div contenteditable=""></div></div>
+        <div class="age">年龄 <div contenteditable=""></div></div>
+        <div class="sex">性别 <div>选择性别</div><div class="sex-down">▼</div></div>
+        <div class="sex-option">
+            <span class="man">男</span>
+            <span class="woman">女</span>
+            <span class="secret">保密</span>
+        </div>
+        <div class="add-btn">添加</div>
+    </div>
+    <!--//信息列表-->
+    <ul class="info-list">
+        <li class="title">
+            <div class="choice">
+                <div class="checkbox"></div>
+                <span>全选</span>
+            </div>
+            <span>ID</span>
+            <span>姓名</span>
+            <span>年龄</span>
+            <span>性别</span>
+            <div class="operating-box">
+                <span>操作</span>
+            </div>
+        </li>
+
+    </ul>
+
+    <li class="list-item" style="display: none">
+        <div class="choice">
+            <div class="checkbox"></div>
+        </div>
+        <span>1</span>
+        <span>xuanmiao</span>
+        <span>23</span>
+        <span>男</span>
+        <div class="operating-box">
+            <span class="up">↑</span>
+            <span class="down">↓</span>
+            <span class="delete"></span>
+        </div>
+    </li>
+</div>
+<script src="animal_collection.js"></script>
+<script src="add_info.js"></script>
+</body>
+</html>

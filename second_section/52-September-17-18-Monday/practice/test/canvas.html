@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="轩邈">
+    <meta name="copyright" content="轩邈">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <!-- 网站SEO -->
+    <title>Title</title>
+    <meta name="keywords" content="轩邈 xuanmiao xuanmiao.com">
+    <meta name="description" content="轩邈 | 猎奇蜗牛">
+    <style>
+
+    </style>
+</head>
+<body>
+<canvas id="myCanvas" width="200" height="200" style="border:1px solid #000"></canvas>
+<img id="imgTest1" src="1.jpg" alt="">
+
+<script>
+    var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext("2d");
+
+    var imgTest1 = document.getElementById('imgTest1');
+    //斜线line
+    ctx.moveTo(0,0);
+    ctx.lineTo(100,200);
+    ctx.stroke();
+
+    //圆圈circle
+    ctx.beginPath();
+    ctx.arc(50,60,50,0,2*Math.PI);
+    ctx.stroke();
+
+
+    //线性渐变
+    //创建渐变
+    var grd = ctx.createLinearGradient(0,0, 200, 0);
+    grd.addColorStop(0,"skyblue");
+    grd.addColorStop(.5, "lightgreen");
+    grd.addColorStop(1, "yellow");
+
+    //填充到矩形
+    ctx.fillStyle = grd;
+    ctx.fillRect(0,0,200,200);
+
+    //放射渐变
+    var grdr = ctx.createRadialGradient(10,100,20,10,100,100);
+    grdr.addColorStop(0,"skyblue");
+    grdr.addColorStop(.5, "lightgreen");
+    grdr.addColorStop(1, "yellow");
+
+    ctx.fillStyle = grdr;
+    ctx.fillRect(0,0,200,200);
+
+    //字
+    ctx.fillStyle = "#000";
+    ctx.font = "30px 'Arial'";
+    ctx.fillText("马智请客吃饭",10,60);
+
+    ctx.strokeText("xuanmiao",10,160);
+
+    ctx.font = "30px comic Sans MS";
+    ctx.fillStyle = "green";
+    ctx.textAlign = "center";
+    ctx.fillText("xuanmiao",canvas.width/2,canvas.height/2);
+
+//    ctx.drawImage(imgTest1, 10,10);
+
+
+
+</script>
+</body>
+</html>

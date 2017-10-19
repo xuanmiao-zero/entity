@@ -1,0 +1,337 @@
+img{
+	*border: 0;
+}
+.film_box .head_input{
+	*overflow: hidden;
+}
+.film_box .head_right{
+	*width: 200px;
+	*overflow: hidden;
+}
+.film_box .jiantou{
+	*border: 0;
+}
+.film_box .big-nav{
+	*overflow: hidden;
+}
+.film_box .nav_right a{
+	*font: 14px "微软雅黑";
+}
+.film_box .ico_dian{
+	*overflow: hidden;
+}
+.film_box .hnav a{
+	*font: 14px "微软雅黑";
+}
+.film_box .banner_nav{
+	*width:880px;
+	*overflow: hidden;
+}
+.film_box .chu_add{
+	*position: absolute;
+	*top:810px ;
+	*left: 0px;
+}
+.tv_box .head_input{
+	*overflow: hidden;
+}
+.tv_box .head_right{
+	*width: 200px;
+	*overflow: hidden;
+}
+.tv_box .jiantou{
+	*border: 0;
+}
+.tv_box .big-nav{
+	*overflow: hidden;
+}
+.tv_box .nav_right a{
+	*font: 14px "微软雅黑";
+}
+.tv_box .ico_dian{
+	*overflow: hidden;
+}
+.tv_box .theme dd{
+	*overflow: hidden;
+}
+.tv_box .hnav a{
+	*font: 14px "微软雅黑";
+}
+.tv_box .tu{
+	*overflow: hidden;
+}
+.tv_box .tong ul{
+	*width: 985px;
+	*overflow: hidden;
+}
+.tv_box .reju{
+	*overflow: hidden;
+}
+.tv_box .reju .reju_left{
+	*width: 785px;
+	*height: 580px;
+	*overflow: hidden;
+}
+.tv_box .reju .reju_right{
+	*width: 180px;
+	*overflow: hidden;
+	*height: 580px;
+}
+.tv_box .reju_right_up dd{
+	padding-bottom: 5px;
+}
+.tv_box .pianhau{
+	*overflow: hidden;
+}
+.tv_box .pianhua .pianhua-left{
+	*width: 785px;
+	*height: 380px;
+	*overflow: hidden;
+}
+.tv_box .pianhau .pianhua-right{
+	*width: 180px;
+	*overflow: hidden;
+	*height: 380px;
+}
+.home_box .head_logo{
+	*display:inline;
+	*overflow: hidden;
+}
+.home_box .head nav{
+	*display:inline;
+}
+.home_box .head_input {
+	*overflow: hidden;
+	*position: relative;
+}
+.home_box .head_input input{
+	*position: absolute;
+	*left:238px ;
+}
+.home_box .le{
+	*position: absolute;
+	*left:215px ;
+}
+.home_box .ico_sou{
+	*position: absolute;
+	*left:272px ;
+}
+.home_box .jiantou{
+	*border: 4px dashed transparent;
+}
+.home_box .banner{
+	*overflow: hidden;
+}
+.home_box .banner_name{
+	*overflow: hidden;
+}
+.home_box .all-nav{
+	*overflow: hidden;
+}
+.home_box .leftIE{
+	*width:157px;
+}
+.home_box .LE{
+	*width:223px;
+}
+.home_box .HUI{
+	*width: 162px;
+}
+.home_box .today_left{
+	*overflow: hidden;
+	*width: 381px;
+}
+.home_box .content .today_right{
+	*width: 602px;
+	*overflow: hidden;
+	*height: 333px;
+}
+.home_box .today_right li{
+	*display: inline;
+	*width: 180px;
+	*height:147px;
+	*overflow: hidden;
+}
+.home_box img{
+	*float: left;
+	*border: 0;
+}
+.home_box .chu_name{
+	*width:381px;
+}
+.home_box .content .play{
+	*width: 983px;
+	*height: 147px;
+	*overflow: hidden;
+}
+.home_box .play li{
+	*display: inline;
+	*width: 180px;
+	*height:147px;
+	*overflow: hidden;
+}
+.home_box .TV_right .list_one{
+	*width: 180px;
+	*height:101px ;
+	*overflow: hidden;
+}
+.home_box .content .TV{
+	*width:795px;
+	*height:413px ;
+	*overflow: hidden;
+}
+.home_box .content .TV_center{
+	*width: 400px;
+	*height: 333px;
+	*overflow: hidden;
+}
+.home_box .content .TV_left{
+	*width: 351px;
+	*height: 333px;
+	*background-color: #000000;
+}
+.content .TV_right{
+	*width:180px;
+	*height:413px;
+	*overflow: hidden;
+}
+.home_box .content .TV-UP{
+	*width:983px;
+	*height:413px;
+	*overflow: hidden;
+}
+.home_box .benpao_show{
+	*height:197px;
+	*width: 983px;
+	*overflow: hidden;
+}
+.home_box .benpao_show .jiuqi{
+	*width:381px;
+	*height: 147px;
+	*overflow: hidden;
+}
+.home_box .benpao_show .benpao_int{
+	*width:600px;
+	*height: 147px;
+	*overflow: hidden;
+}
+.home_box .benpao_show .benpao_int li{
+	*width:180px;
+	*height: 147px;
+	*overflow: hidden;
+}
+.home_box .content .film_left li{
+	*width:180px;
+	*height: 286px;
+	*overflow: hidden;
+}
+.home_box .content .film_right{
+	*width:180px;
+	*height:692px;
+	*overflow: hidden;
+}
+.home_box .content .left_all{
+	*height:692px;
+	*width:801px;
+}
+.home_box .content.film_left{
+	*width:801px;
+	*height:612px;
+	*overflow: hidden;
+}
+.home_box .content .film{
+	*width: 983px;
+	*height:900px;
+	*overflow: hidden;
+}
+.home_box .content .film_left{
+	*width:801px;
+	*height:612px;
+	*overflow: hidden;
+}
+.home_box .content .film_left li{
+	*width:180px;
+	*height: 286px;
+	*overflow: hidden;
+}
+.home_box .content .film_right{
+	*width:180px;
+	*height:692px;
+	*overflow: hidden;
+}
+.home_box .content .film_bt{
+	*width: 983px;
+	*height:207px;
+	*overflow: hidden;
+}
+.home_box .content .film_bt dd{
+	*width: 180px;
+	*height: 147px;
+	*overflow: hidden;
+}
+.home_box .content .film_bt_left{
+	*width: 381px;
+	*height: 207px;
+	*overflow: hidden;
+}
+.home_box .content .film_bt_right{
+	*width: 580px;
+	*height: 207px;
+	*overflow: hidden;
+}
+.home_box .content .benpao{
+	*width: 983px;
+	*height: 90px;
+	*overflow: hidden;
+}
+.home_box .content .life{
+	*height: 226px;
+	*width: 983px;
+	*overflow: hidden;
+}
+.home_box .qinzi li{
+	*width:180px;
+	*height: 147px;
+	*overflow: hidden;
+}
+.home_box .qinzi{
+	*width:983px;
+	*height: 227px;
+	*overflow: hidden;
+}
+.home_box .qinzi .qinzi_left{
+	*width: 381px;
+	*height: 227px;
+	*overflow: hidden;
+}
+.home_box .qinzi .qinzi_right{
+	*width: 581px;
+	*height: 227px;
+	*overflow: hidden;
+}
+.home_box .game{
+	*width:180px;
+	*height:227px;
+	*overflow: hidden;
+}
+.home_box .game_int{
+	*width: 180px;
+	*height: 147px;
+	*overflow: hidden;
+}
+.home_box .end_nav{
+	*width:783px;
+	*height: 180px;
+	*overflow: hidden;
+}
+.home_box .content{
+	*overflow: hidden;
+}
+.home_box .tv_tu{
+	*width: 781px;
+	*height: 333px;
+	*overflow: hidden;
+}
+.home_box .end_nav_right nav{
+	*width:185px ;
+}

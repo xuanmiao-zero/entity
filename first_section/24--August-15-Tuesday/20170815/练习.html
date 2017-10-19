@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+        #box{
+            width:800px;
+            height:500px;
+            overflow: hidden;
+            margin:auto;
+            position: relative;
+        }
+        .imgs{
+            height:500px;
+            overflow: hidden;
+        }
+        img{
+            float: left;
+            width:800px;
+            height:500px;
+        }
+        a{
+            display: block;
+            position: absolute;
+            width:50px;
+            height:100px;
+            border:1px solid #666;
+            top:200px;
+            color:#fff;
+            background-color: rgba(0,0,0,.5);
+            text-align: center;
+            line-height: 100px;
+            font-size:42px;
+            text-decoration: none;
+        }
+        a:first-of-type{
+            left:0;
+        }
+        a:last-of-type{
+            right:0;
+        }
+
+        ul{
+            list-style: none;
+            padding: 0;
+            width:100%;
+            margin-top:-100px;
+            height:100px;
+            position: relative;
+            z-index: 10;
+            width:150px;
+            margin-left:auto;
+            margin-right:auto;
+        }
+        li{
+            width:20px;
+            height:20px;
+            background-color: #fff;
+            position: absolute;
+            bottom:20px;
+        }
+
+    </style>
+</head>
+<body>
+<div id="box">
+    <div class="imgs">
+        <img src="img/1.jpg" alt="">
+        <img src="img/2.jpg" alt="">
+        <img src="img/3.jpg" alt="">
+        <img src="img/4.jpg" alt="">
+        <img src="img/5.jpg" alt="">
+    </div>
+    <a href="javascript:;">&lt;</a>
+    <a href="javascript:;">&gt;</a>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+
+<script src="MTween.js"></script>
+<script>
+
+    window.onload = function(){
+
+        //获取元素
+        var imgBox = document.querySelector('.imgs');
+        var btns = document.querySelectorAll('a');
+        var lis = document.querySelectorAll('li');
+        var imgs = document.querySelectorAll('img');
+
+        //li动画的默认位置
+        var prevLiIndex = -1;//上一次动画执行完的位置
+        var currLiIndex = 0;//当前应该要运动的位置
+
+
+        //初始化li位置
+        for(var i=0;i<lis.length;i++){
+            lis[i].style.left = i*30+'px';
+        }
+        //初始化滚动框的宽度
+        imgBox.style.width = imgs.length*getCss(imgs[0],'width')+'px';
+
+        //动画思路
+        /*
+        * li
+        * 1.把有高度li运动成原始值
+        * 2.下一个li运动到相对高度
+        *
+        * .imgs
+        *
+        *
+        *
+        *
+        * */
+
+        liPaly();
+
+        //li整体动画
+
+        /*
+        * param:
+        *   direction : 方向
+        *          值： prev ->  向左
+        *               next ->  向右
+        *
+        * */
+
+
+        function liPaly(direction){
+
+            //方向切换的时候，要把 c值切换到p的上一个值 p-1
+            if(direction=='prev'){
+                if(currLiIndex>prevLiIndex||(currLiIndex==0&&prevLiIndex==lis.length-1)){
+                    currLiIndex = prevLiIndex-1;
+                }
+            }
+            //方向切换的时候要把c值切换到p的下一个值  p+1
+            if(direction=='next'||!direction){
+                if(currLiIndex<prevLiIndex||(currLiIndex==lis.length-1&&prevLiIndex==0)){
+                    currLiIndex = prevLiIndex+1;
+                }
+            }
+            if(currLiIndex<0){
+                currLiIndex = lis.length-1;
+            }
+            if(currLiIndex>lis.length-1){
+                currLiIndex = 0;
+            }
+
+            //把原来设置过高度的li还原
+            if(prevLiIndex!=-1){//不是-1的情况就说明有上一次运动的位置，必须要还原
+                MTween(lis[prevLiIndex],-20,200,'height','linear');
+            }
+
+            //当前的li运动到相对位置（凸出）
+            MTween(lis[currLiIndex],20,200,'height','linear',function(){
+                //修改储备值，以备下一次运动使用
+                //修改的时候要确保当前修改值没有被使用，或者已经使用完
+                prevLiIndex = currLiIndex;
+                if(direction=='prev'){
+                    //用户必须传prev值 才能执行以下代码
+                    currLiIndex--;
+                    if(currLiIndex<0){
+                        currLiIndex = lis.length-1;
+                    }
+                }
+
+                if(direction=='next'||!direction){
+                    //如果用户传了next或者没传值得情况下执行以下代码
+                    currLiIndex++;
+                    if(currLiIndex>lis.length-1){
+                        currLiIndex = 0;
+                    }
+                }
+
+
+            });
+        }
+
+
+        //向右运动
+        btns[1].onclick = function(){
+            liPaly('next');
+        };
+
+        //向左运动
+        btns[0].onclick = function(){
+            liPaly('prev');
+        };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    };
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="轩邈">
+    <meta name="copyright" content="轩邈">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <!-- 网站SEO -->
+    <title>Title</title>
+    <meta name="keywords" content="轩邈 xuanmiao xuanmiao.com">
+    <meta name="description" content="轩邈 | 猎奇蜗牛">
+    <!-- 标题栏logo图标 -->
+    <link rel="icon" href="" type="image/x-icon">
+    <!-- 收藏夹logo图标 -->
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <style>
+        body{
+            margin: 0;
+            background: url("img/8.jpg");
+            background-size: 100%;
+        }
+        a{
+            text-decoration: none;
+            color: #2B5C67;
+        }
+        #searchAndreplace{
+            position: relative;
+            width: 450px;
+            margin: 80px auto;
+        }
+        #searchAndreplace>div{
+            position: relative;
+        }
+        .article-box{
+            z-index: 2;
+            border: 2px solid #B4E0E9;
+            border-radius: 6px;
+            width: 450px;
+            height: 260px;
+            padding: 9px;
+            box-sizing: border-box;
+            background: #fff;
+        }
+        .article-box article{
+            display: inline-block;
+            overflow: hidden;
+            margin-left: 13px;
+            margin-top: 13px;
+            border: 2px solid #B4E0E9;
+            border-radius: 5px;
+            padding: 16px;
+            width: 316px;
+            height: 214px;
+            font: 700 11px/22px microsoft yahei ;
+            text-overflow: ellipsis;
+            color: #2B5C67;
+            background: #EBF8F9;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        .operation{
+            display: inline-block;
+            width: 90px;
+            height: 214px;
+            overflow: hidden;
+            text-align: center;
+        }
+        .btn{
+            position: relative;
+            margin-bottom: 13px;
+            padding: 3px;
+            width: 79px;
+            border-radius: 3px;
+            font-size: 12px;
+            line-height: 22px;
+            color: #fff;
+            text-align: center;
+            cursor: pointer;
+        }
+        .operation .btn{
+            display: block;
+            transition: all 0.5s ease-in-out;
+        }
+        .unfolded-putaway{
+            z-index: 3;
+            background: #83DFF1;
+        }
+        .operation .search{
+            z-index: 2;
+            margin-top: -75px;
+        }
+        .operation .replace{
+            z-index: 1;
+            margin-top: -150px;
+        }
+        .search{
+            background: #9E9BF6;
+        }
+        .replace{
+            background: #93E69D;
+        }
+        .btn img{
+            margin-top: 4px;
+            width: 24px;
+            height: 24px;
+        }
+        .btn p{
+            margin: 0;
+        }
+        .operation-box{
+            position: relative;
+            margin-top: -124px;
+            width: 450px;
+            height: 124px;
+            overflow: hidden;
+            border: 2px solid #B4E0E9;
+            padding: 20px;
+            border-radius: 6px;
+            box-sizing: border-box;
+            background: #fff;
+            transition: all 0.5s ease-in-out;
+        }
+        .operation-box .btn{
+            display: inline-block;
+            margin: 0;
+            border: 0;
+        }
+        .operation-box .replace{
+            margin-right: 140px;
+        }
+
+        .operation-box div:last-of-type{
+            margin-right: 0;
+        }
+        .operation-box input{
+            display: inline-block;
+            border: 1px solid #BFE7EE;
+            height: 30px;
+            width: 307px;
+            margin-top: 10px;
+            background: #EBF8F9;
+            color: #174B57;
+            font-weight: 700;
+            text-indent: 1em;
+        }
+        .operation-box .replace-input{
+            display: none;
+        }
+        ::-webkit-input-placeholder { /* WebKit browsers */
+            color:    #57838C;
+        }
+        :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+            color:    #57838C;
+        }
+        ::-moz-placeholder { /* Mozilla Firefox 19+ */
+            color:    #57838C;
+        }
+        :-ms-input-placeholder { /* Internet Explorer 10+ */
+            color:    #57838C;
+        }
+        .operation-box .search, .operation .replace{
+            padding: 2px;
+        }
+        .operation-box .search img{
+            display: block;
+            margin: 3px auto;
+        }
+        .operation-box .btn{
+            height: 30px;
+            line-height: 30px;
+            vertical-align: middle;
+        }
+        .close{
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 20px;
+            height: 20px;
+            background: transparent url("img/close.png") center center;
+            background-size: 16px 16px;
+            cursor: pointer;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="searchAndreplace">
+        <div class="article-box">
+            <article>
+                1.	js无法操作放大缩小和书签。
+                3.	script可以放在页面任何地方。
+                4.	css外联 link href
+                5.	js外联 script src
+                6.	js执行顺序从上到下，从左到右。
+                7.	获取元素
+                a)	getElementById();
+                b)	getElementsByTagName();
+                8.	代码调试
+                a)	console.log(element);//打印元素
+                b)	console.dir(element);//元素的所有属性
+                9.	注意script的放置位置（会导致获取不到元素）。
+            </article>
+            <div class="operation">
+                <div class="unfolded-putaway btn">
+                    <img src="img/put_away_2_64.png" alt="">
+                    <p>展开</p>
+                </div>
+                <div class="search btn">
+                    <img src="img/search_2_64.png" alt="">
+                    <p>查找</p>
+                </div>
+                <div class="replace btn">
+                    <img src="img/replace_2.png" alt="">
+                    <p>替换</p>
+                </div>
+            </div>
+        </div>
+        <div class="operation-box">
+            <div class="search btn">查找</div>
+            <div class="replace btn">替换</div>
+            <div class="close"></div>
+            <input class="search-input" type="text" placeholder="请输入要查找的内容">
+            <input class="replace-input" type="text" placeholder="请输入要替换的内容">
+            <div class="search btn" >
+                <img src="img/search_2_64.png" alt="">
+            </div>
+        </div>
+    </div>
+
+<script>
+    var articleBox = document.querySelector('.article-box');
+    var operationBox = document.querySelector('.operation-box');
+    var article = articleBox.querySelector('article');
+    var unfoldedPutaway = articleBox.querySelector(".unfolded-putaway");
+    var unfoldedPutawayImg = unfoldedPutaway.querySelector('img');
+    var search = document.querySelectorAll('.search');
+    var replace = document.querySelectorAll('.replace');
+    var close = document.querySelector('.close');
+    var allInput = operationBox.querySelectorAll('input');
+    var searchInput = document.querySelector('.search-input');
+    var replaceInput = document.querySelector('.replace-input');
+    var searchAndReplaceBtn =  operationBox.querySelectorAll('div')[operationBox.querySelectorAll('div').length - 1];
+    var searchAndReplaceBtnImg = searchAndReplaceBtn.querySelector('img');
+    //声明变量
+    var unfoldedPutawayFlag = false;
+    unfoldedPutaway.onclick = function () {
+        if(unfoldedPutawayFlag){
+            unfoldedPutawayImg.src = "img/put_away_2_64.png";
+            unfoldedPutaway.querySelector('p').innerHTML = "展开";
+            unfoldedPutawayFlag　= false;
+            search[0].style.marginTop = "";
+            replace[0].style.marginTop = "";
+            operationBox.style.marginTop = "";
+        }else{
+            unfoldedPutawayImg.src = "img/unfolded_2_64.png";
+            unfoldedPutaway.querySelector('p').innerHTML = "收起";
+            unfoldedPutawayFlag　= true;
+            search[0].style.marginTop = "0px";
+            replace[0].style.marginTop = "0px";
+            operationBox.style.marginTop = "20px"
+        }
+    };
+    //搜索按钮
+    for(var i = 0; i < search.length - 1; i ++){
+        search[i].onclick = function () {
+            searchAndReplaceBtnImg.src = "img/search_2_64.png";
+            searchAndReplaceBtn.className = "search" + " btn";
+            for(var i = 0; i < allInput.length; i++){
+                allInput[i].style.width = "307px";
+            }
+            replaceInput.style.display = "none";
+            replaceInput.value = "";
+            searchInput.value = "";
+        };
+    }
+    //替换按钮
+    for(var i = 0; i < replace.length; i++){
+        replace[i].onclick = function () {
+            //判断是否为切换操作
+            searchAndReplaceBtnImg.src = "img/replace_2.png";
+            searchAndReplaceBtn.className = "replace" + " btn";
+            for(var i = 0; i < allInput.length; i++){
+                allInput[i].style.width = "150px";
+            }
+            replaceInput.style.display = "inline-block";
+        }
+    }
+    //关闭按钮
+    close.onclick = function () {
+        operationBox.style.display = "none";
+    };
+    //查找功能
+//    var articleText = article.innerHTML;
+//    searchAndReplaceBtn.onclick = function () {
+//        if(searchAndReplaceBtn.className === "replace btn"){
+//            var searchText = searchInput.value;
+//            var replaceText = replaceInput.value;
+//            articleText.split(searchText);
+//            article.innerHTML =  articleText.split(searchText).join('<span style="background: #00a8e0; color:#fff;">' +
+//            replaceText + '</span>');
+//            articleText = articleText.split(searchText).join(replaceText);
+//        }else{
+//            var searchText = searchInput.value;
+//            articleText.split(searchText);
+//            article.innerHTML = articleText.split(searchText).join('<span style="background: #00a8e0; color:#fff;">' +
+//                searchText + '</span>');
+//            console.log(article.innerHTML);
+//        }
+//    };
+    searchAndReplaceBtn.onclick = function () {
+        var articleText = article.innerHTML;
+        if(searchAndReplaceBtn.className === "replace btn"){
+
+            articleText = articleText.split('<span style="background: #00a8e0; color:#fff;">').join('');
+            articleText = articleText.split('</span>').join('');
+
+            var searchText = searchInput.value;
+            var replaceText = replaceInput.value;
+            article.innerHTML =  articleText.split(searchText).join('<span style="background: #00a8e0; color:#fff;">' +
+                replaceText + '</span>');
+            articleText = articleText.split(searchText).join(replaceText);
+        }else{
+            articleText = articleText.split('<span style="background: #00a8e0; color:#fff;">').join('');
+            articleText = articleText.split('</span>').join('');
+
+            var searchText = searchInput.value;
+            article.innerHTML = articleText.split(searchText).join('<span style="background: #00a8e0; color:#fff;">' +
+                searchText + '</span>');
+            console.log(article.innerHTML);
+        }
+    };
+</script>
+</body>
+</html>

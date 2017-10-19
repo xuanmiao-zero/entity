@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>9x9</title>
+</head>
+<style>
+div{
+    width:70px;
+    height:20px;
+    background-color: yellow;
+    display: inline-block;
+    text-align: center;
+    padding: 5px;
+    margin:5px;
+}
+</style>
+<body>
+
+
+
+    <script>
+ /*       var div99=[];
+        for(var i = 0; i < 9 ; i ++){
+            for(var j = 0; j < i; j ++){
+                var x = i + 1;
+                var y = j + 1;
+                div99[i][j] = document.createElement('div');
+                div99[i][j].innerHTML= x +'x'+ y;
+                console.log(div99[i][j]);
+                body.appendChild(div99[i][j]);
+            }
+        }*/
+        var div99=[];
+        for(var i = 1; i < 10; i++){
+            for(var j = 1; j <= i ; j ++){
+                document.body.innerHTML += "<div>" + j + 'x' + i + '=' + i*j + '</div>' ;
+            }
+            document.body.innerHTML += '<br/>';
+        }
+        for(var i = 9; i >= 1; i--){
+             for(var j = 1; j <= i ; j ++){
+                 document.body.innerHTML += "<div>" + j + 'x' + i + '=' + i*j + '</div>' ;
+             }
+             document.body.innerHTML += '<br/>';
+         }
+    </script>
+</body>
+</html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>无标题文档</title>
+    <style>
+        body, ul, p {
+            margin: 0;
+            padding: 0;
+        }
+
+        img {
+            display: none;
+            float: left;
+        }
+
+        #box {
+            width: 314px;
+            height: 148px;
+            margin: 30px auto;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #list2 {
+            display: none;
+        }
+
+        #box div {
+            width: 292px;
+            height: 104px;
+            border: 1px solid #c6c6c6;
+            padding: 10px 0 0 10px;
+        }
+
+        #top {
+            height: 30px;
+        }
+
+        span {
+            display: block;
+            width: 80px;
+            height: 30px;
+            border: 1px solid #c6c6c6;
+            float: left;
+            font-size: 14px;
+            line-height: 30px;
+            text-align: center;
+            color: #737373;
+            border-bottom: none;
+        }
+
+        .show {
+            width: 80px;
+            height: 30px;
+            border: 1px solid #c6c6c6;
+            border-bottom: none;
+            color: #000;
+            background: #fff;
+        }
+
+        ul {
+            float: left;
+            width: 170px;
+            height: 96px;
+        }
+
+        li {
+            width: 170px;
+            height: 31px;
+            font-size: 12px;
+            line-height: 30px;
+            margin: 0 0 1px 1px;
+            background: #dee7e7;
+            list-style: none;
+        }
+
+        li a {
+            text-decoration: none;
+            color: #8c9191;
+            padding-left: 7px;
+        }
+
+        .active {
+            background: #636363;
+            display: block;
+        }
+
+        .active a {
+            color: #fff;
+        }
+
+        .show1 {
+            display: block;
+        }
+
+        .hide {
+            display: none;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            /*获取元素*/
+            var box = document.getElementById('box');
+
+            var oDivs = document.querySelectorAll(".oDiv");
+            var messagesBoxes = [];
+            var messages = [];
+
+            var top = document.querySelector("#top");
+            var topTitles = top.querySelectorAll("span");
+
+
+
+            /*声明变量*/
+            var oDivsIndex = 0;
+            var messagesIndex = 0;
+
+            /*初始化*/
+
+            var switchTabCard = function () {
+                var messages = messagesBoxes[oDivsIndex].querySelectorAll('li');
+                var messageImages = oDivs[oDivsIndex].querySelectorAll('img');
+
+                if(messagesIndex >= messages.length){
+                    /*切换选项卡*/
+                    oDivsIndex ++;
+                    if(oDivsIndex >= oDivs.length){
+                        oDivsIndex = 0;
+                    }
+                    for(var i =0; i < oDivs.length; i++){
+                        oDivs[i].className = "hide oDiv";
+                        topTitles[i].className = "";
+
+                    }
+                    oDivs[oDivsIndex].className = "show1 oDiv";
+                    topTitles[oDivsIndex].className = "show";
+
+                    /*消息从头开始*/
+                    messagesIndex = 0;
+                    messages = messagesBoxes[oDivsIndex].querySelectorAll('li');
+                    messageImages = oDivs[oDivsIndex].querySelectorAll('img');
+                }
+
+                /*消息切换*/
+                for(var j = 0; j < messages.length; j++){
+                    messages[j].className = "";
+                    messageImages[j].className = "";
+                }
+                messages[messagesIndex].className = "active";
+                messageImages[messagesIndex].className = "active";
+                messagesIndex ++;
+            };
+
+            box.timer = setInterval(switchTabCard,700);
+
+            for(var i =0; i < oDivs.length; i++){
+                messagesBoxes.push(oDivs[i].querySelector('ul'));
+            }
+
+            for(var j =0; j < messagesBoxes.length; j++){
+                for(var k = 0; k < messagesBoxes[j].querySelectorAll('li').length; k++){
+                    messages.push(messagesBoxes[j].querySelectorAll('li')[k]);
+                }
+            }
+
+            /*移入移出选项卡*/
+            (function () {
+                for(var i = 0; i < topTitles.length; i++){
+                    topTitles[i].index = i;
+                    topTitles[i].onmouseenter = function () {
+
+                        var messages = messagesBoxes[this.index].querySelectorAll('li');
+                        var messageImages = oDivs[this.index].querySelectorAll('img');
+
+                        clearInterval(box.timer);
+                        for(var j =0; j < oDivs.length; j++){
+                            oDivs[j].className = "hide oDiv";
+                            topTitles[j].className = "";
+                        }
+                        oDivs[this.index].className = "show1 oDiv";
+                        this.className = "show";
+
+                        if(this.index !== oDivsIndex){
+                            for(var j = 0; j < messages.length; j++){
+                                messages[j].className = "";
+                                messageImages[j].className = "";
+                            }
+                            messagesIndex = 0;
+                            messages[messagesIndex].className = "active";
+                            messageImages[messagesIndex].className = "active";
+                        }
+
+                        oDivsIndex = this.index;
+                    };
+
+                    topTitles[i].onmouseout = function () {
+                        clearInterval(box.timer);
+                        box.timer = setInterval(switchTabCard,1000);
+                    };
+                }
+            })();
+
+
+            /*移入移出消息*/
+            (function () {
+                for(var i = 0; i < messages.length; i++){
+                    var messageImages = oDivs[oDivsIndex].querySelectorAll('img');
+                    /*移入*/
+                    messages[i].index = i;
+                    messages[i].onmouseenter = function () {
+                        messageImages = oDivs[oDivsIndex].querySelectorAll('img');
+                        for(var j = 0; j < this.parentNode.children.length; j++){
+                            this.parentNode.children[j].className = "";
+                            messageImages[j].className = "";
+                        }
+                        messagesIndex = this.index % 3;
+                        this.className = "active";
+                        messageImages[messagesIndex].className = "active";
+                        console.log(messagesIndex);
+                    };
+                }
+            })();
+
+
+            box.onmouseenter = function () {
+                clearInterval(box.timer);
+            };
+
+            box.onmouseleave = function () {
+                clearInterval(box.timer);
+                box.timer = setInterval(switchTabCard,1000);
+            };
+
+
+        };
+    </script>
+</head>
+
+<body>
+
+<div id="tags">
+
+</div>
+
+<div id="box">
+    <p id="top">
+        <span class="show">专题</span>
+        <span>视频</span>
+    </p>
+    <div class="show1 oDiv" id="bottom">
+        <img class="active" src="image_two/list1.jpg" alt=""/>
+        <img src="image_two/list2.jpg" alt=""/>
+        <img src="image_two/list1.jpg" alt=""/>
+        <!-- <img src="image_two/list2.jpg" alt="" /> -->
+        <ul>
+            <li class=""><a href="#">奇虎360纽交所上市11</a></li>
+            <li><a href="#">2011年IT领袖峰会</a></li>
+            <li><a href="#">CCBN召开 助三网融合</a></li>
+            <!-- <li><a href="#">CCBN召开 助三网融合</a></li> -->
+        </ul>
+    </div>
+    <div class="hide oDiv" id="bottom1">
+        <img src="image_two/list2.jpg" alt="" class="active"/>
+        <img src="image_two/list1.jpg" alt=""/>
+        <img src="image_two/list2.jpg" alt=""/>
+        <ul>
+            <li class=""><a href="#">奇虎360纽交所上市22</a></li>
+            <li><a href="#">CCBN召开 助三网融合</a></li>
+            <li><a href="#">CCBN召开 助三网融合</a></li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

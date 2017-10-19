@@ -1,0 +1,69 @@
+body,h3{
+	margin:0;
+}
+a{
+	text-decoration:none;
+}
+ul,li{
+	padding:0;
+	margin:0;
+	list-style:none;
+}
+img{
+	vertical-align:top;
+	border:none;
+}
+.box{
+	width:696px;
+	height:629px;
+	padding:6px 31px 0 23px;
+}
+.head{
+	height:36px;
+	border-bottom:1px solid #dddddd;
+}
+.head .title{
+	font:18px/36px "宋体";
+}
+.fl{
+	float:left;
+}
+.fr{
+	float:right;
+}
+.head .more{
+	font:12px/36px "宋体";
+	margin-right:4px;
+}
+.content{
+	width:698px;
+	height:592px;
+	
+}
+.item{
+	width:110px;
+	height:277px;
+	margin-right:37px;
+}
+.item .pic{
+	margin-top:23px;
+}
+.item .name{
+	font:14px/30px "宋体";
+	
+}
+.item .text{
+	height:60px;
+}
+.text .font{
+	font:12px/18px "宋体";
+	display:block;
+}
+.text .money{
+	font:12px/18px "宋体";
+	display:block;
+	margin-top:6px;
+}
+.content .nomargin{
+	margin-right:0;
+}

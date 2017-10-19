@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ul{
+            border: 1px solid #000;
+            width: 300px;
+            list-style: none;
+        }
+    </style>
+    <script>
+        /**
+         * 需求：一个菜单，能够显示，能够隐藏
+         */
+        window.onload=function(){
+            //获取元素
+            var showBtn = document.getElementById('show-btn');
+            var hideBtn = document.getElementById('hide-btn');
+            var menu = document.getElementById('menu');
+
+            //添加事件
+            showBtn.onclick = function(){
+                menu.style.display = "block";
+            };
+            hideBtn.onclick = function(){
+                menu.style.display = "none";
+            };
+        }
+    </script>
+</head>
+<body>
+<input type="button" value="显示" id="show-btn">
+<input type="button" value="隐藏" id="hide-btn">
+    <ul id="menu">
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="轩邈">
+    <meta name="copyright" content="轩邈">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <!-- 网站SEO -->
+    <title>Title</title>
+    <meta name="keywords" content="轩邈 xuanmiao xuanmiao.com">
+    <meta name="description" content="轩邈 | 猎奇蜗牛">
+    <style>
+        #scroll_number{
+            margin: 100px auto;
+            width: 640px;
+            height: 350px;
+            background-color: #FFE9AB;
+            padding: 20px;
+            color: #fff;
+        }
+
+        .scroll_number{
+            display: inline-block;
+            border-radius: 10px;
+            width: 280px;
+            height: 350px;
+            text-align: center;
+        }
+
+        .scroll_number.left{
+            float: left;
+            background-color: #30B8C5;
+        }
+
+        .scroll_number.right{
+            float: right;
+            background-color: #FFBB14;
+        }
+
+        /*标题*/
+        h1{
+            display: inline-block;
+            z-index: 0;
+            position: relative;
+            margin: 20px 0 0 9px;
+            font-size: 30px;
+            color: #fff;
+
+        }
+        h1:before{
+            z-index: -1;
+            position: absolute;
+            content: '';
+            display: block;
+            width: 24%;
+            height: 80%;
+            background-color: #fff;
+            border-radius: 100%;
+            margin: 6% 0 0 -8%;
+        }
+        h1::first-letter {
+            margin-right: 2%;
+            color: #30B8C5;
+            font-size: 120%;
+        }
+
+        /*请输入数值*/
+        h3{
+            margin-top: 70px;
+            font-weight: normal;
+            font-size: 18px;
+        }
+
+        /*滚动盒子*/
+        .scroll_box{
+            display: inline-block;
+            box-sizing: border-box;
+            border: 1px solid rgba(255,255,255,0.7);
+            border-radius: 4px;
+            width: 220px;
+            height: 56px;
+            overflow: hidden;
+        }
+
+        .scroll_box_item{
+            float: left;
+            position: relative;
+            display: block;
+            margin-top: -324px;
+            margin-left: 4px;
+            margin-right: 1px;
+            width: 31px;
+            border-radius: 4px;
+            line-height: 48px;
+            font-size: 24px;
+            color: #30B8C5;
+            height: 648px;
+        }
+        .scroll_box p{
+            position: relative;
+            display: inline-block;
+            margin: 3px 0;
+            width: 31px;
+            border-radius: 4px;
+            line-height: 48px;
+            font-size: 24px;
+            color: #30B8C5;
+            height: 48px;
+            /*background-color: rgba(255,255,255,1);*/
+        }
+        .scroll_box p span{
+            z-index: 2;
+            display: inline-block;
+            position: relative;
+            margin: 0;
+            width: 31px;
+            border-radius: 4px;
+            line-height: 48px;
+            font-size: 24px;
+            color: #30B8C5;
+            height: 48px;
+        }
+
+        .scroll_box p:before{
+            /*z-index: -1;*/
+            content: "";
+            display: block;
+            position: absolute;
+            top: -1px;
+            border-top-left-radius: 2px;
+            border-top-right-radius: 2px;
+            width: 100%;
+            height: 50%;
+            background: linear-gradient(180deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,1) 60%, rgba(255,255,255,.9) 97%,rgba(255,255,255,.2) 100%);
+        }
+
+        .scroll_box p:after{
+            /*z-index: -1;*/
+            content: "";
+            display: block;
+            position: absolute;
+            bottom: 0;
+            border-bottom-left-radius: 2px;
+            border-bottom-right-radius: 2px;
+            width: 100%;
+            height: 50%;
+            background: linear-gradient(0deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,1) 60%, rgba(255,255,255,.9) 97%,rgba(255,255,255,.3) 100%);
+        }
+
+        .prompt{
+            font-size: 14px;
+            color: rgba(255,255,255,.8);
+        }
+
+        /*右面*/
+        .right h1::first-letter{
+            color:#FFBB14;
+        }
+
+        .right .prompt{
+            /*color: #30B8C5;*/
+            /*opacity: 0.4;*/
+            color: #C7EBEC;
+        }
+
+        .right input{
+            line-height: 40px;
+            width: 200px;
+            border: 3px solid #FA7B00;
+            color: #F54800;
+            font-size: 24px;
+            outline:none;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+<div id="scroll_number">
+    <section class="scroll_number left">
+        <h1>xuanmiao</h1>
+        <h3>请输入数值</h3>
+        <div class="scroll_box">
+            <div class="scroll_box_item">
+                <p><span>9</span></p>
+                <p><span>0</span></p>
+                <p><span>1</span></p>
+                <p><span>2</span></p>
+                <p><span>3</span></p>
+                <p><span>4</span></p>
+                <p><span>5</span></p>
+                <p><span>6</span></p>
+                <p><span>7</span></p>
+                <p><span>8</span></p>
+                <p><span>9</span></p>
+                <p><span>0</span></p>
+            </div>
+            <div class="scroll_box_item">
+                <p><span>9</span></p>
+                <p><span>0</span></p>
+                <p><span>1</span></p>
+                <p><span>2</span></p>
+                <p><span>3</span></p>
+                <p><span>4</span></p>
+                <p><span>5</span></p>
+                <p><span>6</span></p>
+                <p><span>7</span></p>
+                <p><span>8</span></p>
+                <p><span>9</span></p>
+                <p><span>0</span></p>
+            </div>
+            <div class="scroll_box_item">
+                <p><span>9</span></p>
+                <p><span>0</span></p>
+                <p><span>1</span></p>
+                <p><span>2</span></p>
+                <p><span>3</span></p>
+                <p><span>4</span></p>
+                <p><span>5</span></p>
+                <p><span>6</span></p>
+                <p><span>7</span></p>
+                <p><span>8</span></p>
+                <p><span>9</span></p>
+                <p><span>0</span></p>
+            </div>
+            <div class="scroll_box_item">
+                <p><span>9</span></p>
+                <p><span>0</span></p>
+                <p><span>1</span></p>
+                <p><span>2</span></p>
+                <p><span>3</span></p>
+                <p><span>4</span></p>
+                <p><span>5</span></p>
+                <p><span>6</span></p>
+                <p><span>7</span></p>
+                <p><span>8</span></p>
+                <p><span>9</span></p>
+                <p><span>0</span></p>
+            </div>
+            <div class="scroll_box_item">
+                <p><span>9</span></p>
+                <p><span>0</span></p>
+                <p><span>1</span></p>
+                <p><span>2</span></p>
+                <p><span>3</span></p>
+                <p><span>4</span></p>
+                <p><span>5</span></p>
+                <p><span>6</span></p>
+                <p><span>7</span></p>
+                <p><span>8</span></p>
+                <p><span>9</span></p>
+                <p><span>0</span></p>
+            </div>
+            <div class="scroll_box_item">
+                <p><span>9</span></p>
+                <p><span>0</span></p>
+                <p><span>1</span></p>
+                <p><span>2</span></p>
+                <p><span>3</span></p>
+                <p><span>4</span></p>
+                <p><span>5</span></p>
+                <p><span>6</span></p>
+                <p><span>7</span></p>
+                <p><span>8</span></p>
+                <p><span>9</span></p>
+                <p><span>0</span></p>
+            </div>
+        </div>
+        <p class="prompt">可以通过鼠标滚轮改变数值大小</p>
+    </section>
+    <section class="scroll_number right">
+        <h1>xuanmiao</h1>
+        <h3>请输入数值</h3>
+        <p class="prompt">可以通过鼠标滚轮改变数值大小</p>
+        <input type="text" readonly="readonly" value="789562">
+    </section>
+</div>
+
+<script>
+    var scrollNumberLeft = document.querySelector('.scroll_number.left');
+
+    var scrollNumberRight = document.querySelector('.scroll_number.right');
+    var input = scrollNumberRight.querySelector('input');
+
+    /*左面*/
+    var scrollBox = scrollNumberLeft.querySelector('.scroll_box');
+    var scrollNumberItems = scrollBox.querySelectorAll('.scroll_box_item');
+
+//    每次滚动上移的距离
+    var count = getCss(scrollNumberItems[0].querySelector('p'), "height") + getCss(scrollNumberItems[0].querySelector('p'), "marginTop") * 2;
+
+    /*滚动动画*/
+    (function () {
+        for(var i = 0; i < scrollNumberItems.length; i++){
+            scrollNumberItems[i].index = 6;
+            scrollNumberItems[i].animation = false;
+            scrollNumberItems[i].childrenNumber = scrollNumberItems[i].querySelectorAll('p').length;
+            scroll({
+                obj:scrollNumberItems[i],
+                up:function (ev) {
+                    if(this.obj.animation)
+                        return;
+                    this.obj.animation = true;
+
+
+
+                    ATween(this.obj, -count, 200, "marginTop", "linear",function (obj) {
+                        obj.animation = false;
+                        obj.index ++;
+
+                        if(obj.index === obj.childrenNumber - 1){
+                            obj.style.marginTop = -count + "px";
+                            obj.index = 1;
+                        }
+                    });
+                },
+                down:function (ev) {
+                    if(this.obj.animation)
+                        return;
+                    this.obj.animation = true;
+
+
+                    ATween(this.obj, count, 200, "marginTop", "linear",function (obj) {
+                        obj.animation = false;
+                        obj.index --;
+                        if(obj.index === 0){
+                            obj.style.marginTop = -count * (obj.childrenNumber - 2) + "px";
+                            obj.index = obj.childrenNumber - 2;
+                        }
+                    });
+                }
+            });
+        }
+    })();
+
+
+    /*右面*/
+
+    scroll({
+        obj:input,
+        up:function (ev) {
+            input.value = Number(input.value) + 1;
+        },
+        down:function (ev) {
+            input.value = Number(input.value) - 1;
+        }
+    });
+
+    /*滚动函数*/
+    function scroll(option){
+        if(option.obj === null)
+            option.obj = document;
+        option.obj.onmousewheel = function (ev) {
+
+            /*向上滚动*/
+            if(ev.wheelDelta > 0){
+                option.up&&option.up(ev);
+            }
+
+            /*向下滚动*/
+            if(ev.wheelDelta < 0){
+                option.down&&option.down(ev);
+            }
+
+            ev.preventDefault();
+            return false;
+        };
+
+        option.obj.addEventListener("DOMMouseScroll", function (ev) {
+
+            /*向上滚动*/
+            if(ev.detail < 0){
+                option.up&&option.up(ev);
+            }
+
+            /*向下滚动*/
+            if(ev.detail > 0)
+                option.down&&option.down(ev);
+
+            ev.preventDefault();
+            return false;
+        }, false);
+    }
+
+
+    /*
+     * t   已过时间
+     * b:  开始位置
+     * c:  总路程
+     * d:  总时间
+     *
+     * */
+
+
+    var Tween = {
+        linear: function (t, b, c, d){  //匀速
+            return c*t/d + b;
+        },
+        easeIn: function(t, b, c, d){  //加速曲线
+            return c*(t/=d)*t + b;
+        },
+        easeOut: function(t, b, c, d){  //减速曲线
+            return -c *(t/=d)*(t-2) + b;
+        },
+        easeBoth: function(t, b, c, d){  //加速减速曲线
+            if ((t/=d/2) < 1) {
+                return c/2*t*t + b;
+            }
+            return -c/2 * ((--t)*(t-2) - 1) + b;
+        },
+        easeInStrong: function(t, b, c, d){  //加加速曲线
+            return c*(t/=d)*t*t*t + b;
+        },
+        easeOutStrong: function(t, b, c, d){  //减减速曲线
+            return -c * ((t=t/d-1)*t*t*t - 1) + b;
+        },
+        easeBothStrong: function(t, b, c, d){  //加加速减减速曲线
+            if ((t/=d/2) < 1) {
+                return c/2*t*t*t*t + b;
+            }
+            return -c/2 * ((t-=2)*t*t*t - 2) + b;
+        },
+        elasticIn: function(t, b, c, d, a, p){  //正弦衰减曲线（弹动渐入）
+            if (t === 0) {
+                return b;
+            }
+            if ( (t /= d) == 1 ) {
+                return b+c;
+            }
+            if (!p) {
+                p=d*0.3;
+            }
+            if (!a || a < Math.abs(c)) {
+                a = c;
+                var s = p/4;
+            } else {
+                var s = p/(2*Math.PI) * Math.asin (c/a);
+            }
+            return -(a*Math.pow(2,10*(t-=1)) * Math.sin( (t*d-s)*(2*Math.PI)/p )) + b;
+        },
+        elasticOut: function(t, b, c, d, a, p){    //*正弦增强曲线（弹动渐出）
+            if (t === 0) {
+                return b;
+            }
+            if ( (t /= d) == 1 ) {
+                return b+c;
+            }
+            if (!p) {
+                p=d*0.3;
+            }
+            if (!a || a < Math.abs(c)) {
+                a = c;
+                var s = p / 4;
+            } else {
+                var s = p/(2*Math.PI) * Math.asin (c/a);
+            }
+            return a*Math.pow(2,-10*t) * Math.sin( (t*d-s)*(2*Math.PI)/p ) + c + b;
+        },
+        elasticBoth: function(t, b, c, d, a, p){
+            if (t === 0) {
+                return b;
+            }
+            if ( (t /= d/2) == 2 ) {
+                return b+c;
+            }
+            if (!p) {
+                p = d*(0.3*1.5);
+            }
+            if ( !a || a < Math.abs(c) ) {
+                a = c;
+                var s = p/4;
+            }
+            else {
+                var s = p/(2*Math.PI) * Math.asin (c/a);
+            }
+            if (t < 1) {
+                return - 0.5*(a*Math.pow(2,10*(t-=1)) *
+                    Math.sin( (t*d-s)*(2*Math.PI)/p )) + b;
+            }
+            return a*Math.pow(2,-10*(t-=1)) *
+                Math.sin( (t*d-s)*(2*Math.PI)/p )*0.5 + c + b;
+        },
+        backIn: function(t, b, c, d, s){     //回退加速（回退渐入）
+            if (typeof s == 'undefined') {
+                s = 1.70158;
+            }
+            return c*(t/=d)*t*((s+1)*t - s) + b;
+        },
+        backOut: function(t, b, c, d, s){
+            if (typeof s == 'undefined') {
+                s = 3.70158;  //回缩的距离
+            }
+            return c*((t=t/d-1)*t*((s+1)*t + s) + 1) + b;
+        },
+        backBoth: function(t, b, c, d, s){
+            if (typeof s == 'undefined') {
+                s = 1.70158;
+            }
+            if ((t /= d/2 ) < 1) {
+                return c/2*(t*t*(((s*=(1.525))+1)*t - s)) + b;
+            }
+            return c/2*((t-=2)*t*(((s*=(1.525))+1)*t + s) + 2) + b;
+        },
+        bounceIn: function(t, b, c, d){    //弹球减振（弹球渐出）
+            return c - Tween['bounceOut'](d-t, 0, c, d) + b;
+        },
+        bounceOut: function(t, b, c, d){//*
+            if ((t/=d) < (1/2.75)) {
+                return c*(7.5625*t*t) + b;
+            } else if (t < (2/2.75)) {
+                return c*(7.5625*(t-=(1.5/2.75))*t + 0.75) + b;
+            } else if (t < (2.5/2.75)) {
+                return c*(7.5625*(t-=(2.25/2.75))*t + 0.9375) + b;
+            }
+            return c*(7.5625*(t-=(2.625/2.75))*t + 0.984375) + b;
+        },
+        bounceBoth: function(t, b, c, d){
+            if (t < d/2) {
+                return Tween['bounceIn'](t*2, 0, c, d) * 0.5 + b;
+            }
+            return Tween['bounceOut'](t*2-d, 0, c, d) * 0.5 + c*0.5 + b;
+        }
+    };
+
+    /*
+     * obj  ：  要运动的元素
+     * count:  运动的总路程
+     * duration: 运动的总时间
+     * attr ： 变化的属性
+     * fx: 运动的模式
+     * fn：运动结束后要做的事情 （回调函数）
+     *
+     * */
+
+    function ATween(obj,count,duration,attr,fx,fn){
+        //清除定时器
+        clearInterval(obj.timer);
+        var startTime = new Date().getTime();//运动前的时间
+        var begin = getCss(obj,attr);//运动前的位置
+
+        //运动动画
+        obj.timer = setInterval(function(){
+            //计算已经运动过的时间
+            //由于定时器执行间隔时间不稳定，受到其他程序影响，所以间隔时间要通过计算来获取
+            var t = new Date().getTime()-startTime;
+            if(t>=duration){
+                t = duration;
+                clearInterval(obj.timer);
+            }
+            obj.style[attr] = Tween[fx](t,begin,count,duration)+'px';
+            //是否有fn参数
+            if(t>=duration&&fn) fn(obj);
+        },30);
+    }
+
+    //获取元素属性
+    function getCss(obj,attr){
+        var objAttr = getComputedStyle(obj)[attr];
+        return isNaN(parseFloat(objAttr))?objAttr:parseFloat(objAttr);
+    }
+
+
+</script>
+</body>
+</html>

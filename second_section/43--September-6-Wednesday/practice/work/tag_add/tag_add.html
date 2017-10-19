@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            background: linear-gradient(to right bottom, dodgerblue, greenyellow) no-repeat;
+        }
+        #tag_add{
+            width: 800px;
+            height: 400px;
+            margin:100px  auto;
+            font: 12px/1.5 tahoma,arial,'Hiragino Sans GB','\5b8b\4f53',sans-serif;
+            background: rgba(220,220,220,0.3);
+            color: #fff;
+            line-height: 40px;
+        }
+        h4{
+            margin:0 20px;
+            font-weight: normal;
+        }
+        dl,dd{
+            margin: 0;
+        }
+        .tag-group{
+            border: 1px solid #ddd;
+            padding: 0 20px;
+        }
+        .tag-group dd{
+            border-bottom: 1px dashed #ddd;
+        }
+        dd.network-type{
+            border-bottom: none;
+        }
+
+        dd span{
+            margin: 0 6px;
+            cursor: pointer;
+        }
+        dd span:hover{
+            opacity: 0.9;
+        }
+        h6{
+            font-size: 12px;
+            margin: 0;
+            font-weight: normal;
+            display: inline-block;
+            opacity: 0.8;
+        }
+        .selected-tag{
+            margin: 0 2px;
+            line-height: 16px;
+            display: inline-block;
+            border: 1px solid #fff;
+            padding: 2px;
+        }
+        .selected-tag .close{
+            font-weight: bold;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        .selected-tag:hover{
+            border: 1px solid lightsalmon;
+        }
+        .selected-tag:hover .close{
+            color: lightsalmon;
+        }
+    </style>
+</head>
+<body>
+<div id="tag_add">
+    <h4 class="tag-header">
+        <span>类型选择></span>
+    </h4>
+    <dl class="tag-group">
+        <dd class="brand">
+            <h6 class="type-name">品牌 ：</h6>
+            <span>苹果</span>
+            <span>小米</span>
+            <span>荣耀</span>
+            <span>华为</span>
+            <span>OPPO</span>
+            <span>vivo</span>
+            <span>三星</span>
+            <span>魅族</span>
+            <span>美图</span>
+            <span>一加</span>
+        </dd>
+        <dd class="size">
+            <h6 class="type-name">尺寸 ：</h6>
+            <span>3.0-3.9英寸</span>
+            <span>4.0-4.5英寸</span>
+            <span>4.6-4.9英寸</span>
+            <span>5.0-5.5英寸</span>
+        </dd>
+        <dd class="system">
+            <h6 class="type-name">操作系统 ：</h6>
+            <span>Android/安卓</span>
+            <span>iOS</span>
+            <span>阿里手机系统</span>
+            <span>Symbian/塞班</span>
+            <span>Nucleus</span>
+            <span>BlackBerry/黑莓</span>
+            <span>Windows phone</span>
+            <span>Linux</span>
+        </dd>
+        <dd class="network-type">
+            <h6 class="type-name">网络类型 ：</h6>
+            <span>移动4G/联通4G/电信4G</span>
+            <span>联通4G</span>
+            <span>电信4g</span>
+            <span>移动4G</span>
+            <span>移动3G</span>
+            <span>电信3G</span>
+            <span>联通3G</span>
+            <span>电信2G(CDMA)</span>
+        </dd>
+    </dl>
+</div>
+
+<script>
+    var tagGroup = document.querySelector('.tag-group');
+    var tagHeader = document.querySelector('.tag-header');
+    var selectedTags = document.getElementsByClassName('selected-tag');
+    var typeSpan = tagGroup.querySelectorAll('span');
+
+    //将选中的添加到一个数组中
+    var checkedBox = [];
+    for(var i = 0; i < typeSpan.length; i++){
+        typeSpan[i].onclick = function () {
+
+            //判断选择类型是否存在
+            selectedTags = document.getElementsByClassName('selected-tag');
+            for(var i = 0 ; i < selectedTags.length; i++){
+                if(selectedTags[i].firstElementChild.innerHTML === this.parentNode.firstElementChild.innerHTML){
+                    //修改同类型选择
+                    selectedTags[i].children[1].innerHTML = this.innerHTML;
+                    break;
+                }
+            }
+
+            //添加新的选择
+            if(i === selectedTags.length){
+                var selectedTag = document.createElement('p');
+                selectedTag.className = "selected-tag";
+                selectedTag.innerHTML = '<span class="type">' + this.parentNode.firstElementChild.innerHTML + '</span>' + '<span class="selected-content">' + this.innerHTML;
+
+                var close = document.createElement('span');
+                close.className =  "close";
+                close.innerHTML =  "×";
+
+                close.onclick = function () {
+                    this.parentNode.parentNode.removeChild(this.parentNode);
+                    //关闭时将选中的颜色去掉
+                    for(var i = 0; i < checkedBox.length;i++){
+                        if(checkedBox[i].innerHTML === this.previousElementSibling.innerHTML){
+                            checkedBox[i].style.color = "";
+                            checkedBox.splice(i,1);
+                        }
+                    }
+                };
+
+                selectedTag.appendChild(close);
+                tagHeader.appendChild(selectedTag);
+            }
+            //选中添加颜色
+            var siblings = this.parentNode.children;
+            for(var j = 0; j < siblings.length; j ++){
+                siblings[j].style.color = "";
+            }
+            this.style.color = "lightsalmon";
+            checkedBox.push(this);
+        };
+    }
+
+</script>
+</body>
+</html>

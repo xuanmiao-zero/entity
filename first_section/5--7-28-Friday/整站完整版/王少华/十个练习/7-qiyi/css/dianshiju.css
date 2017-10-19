@@ -1,0 +1,76 @@
+body,h3{
+	margin: 0;
+}
+ul,li{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+a{
+	text-decoration: none;
+	color: black;
+}
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}
+.clearfix{
+	zoom:1;
+}
+.clearfix:after{
+	content: "";
+	display: block;
+	clear: both;
+}
+section{
+	width: 640px;
+	height: 431px;
+	border: 1px solid #d9d9d9;
+	margin: 50px auto;
+	padding: 16px 19px 0;
+}
+section .head{
+	height: 26px;
+}
+section .head h3,section .head h3 .titel{
+	height: 26px;
+	float: left;
+}
+section .head .channel{
+	margin-left: 15px;
+	width: 539px;
+	height: 14px;
+	margin-top: 12px;
+}
+section .head .channel .chan{
+	font: 14px/14px "微软雅黑";
+	height: 14px;
+	float: left;
+	margin-right: 19px;
+}
+section .head .more{
+	font: 12px/14px "微软雅黑";
+}
+section .content{
+	height: 385px;
+	margin-right: -20px;
+}
+section .content .cover{
+	width: 112px;
+	height: 170px;
+	float: left;
+	margin: 20px 20px 0 0;
+}
+section .content .cover .img{
+	width: 112px;
+	height: 149px;
+	float: left;
+}
+section .content .cover .name{
+	font: 12px/12px "微软雅黑";
+	height: 12px;
+	float: left;
+	margin-top: 9px;
+}

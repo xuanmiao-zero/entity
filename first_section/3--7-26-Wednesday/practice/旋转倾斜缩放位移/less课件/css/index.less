@@ -1,0 +1,51 @@
+/* 变量 */
+//变量
+@color: #4D926F;
+
+div{
+    width: 500px;
+    height: 500px;
+    margin: 10px;
+}
+
+#header {
+  background-color:  @color;
+  .br(200px);//调用一个混合类
+}
+
+/* 混合 */
+// 定义一个混合类
+.br(@rad: 50px){
+    border-radius: @rad;
+}
+
+/* 嵌套规则 */
+header{
+    height: 150px;
+    background-color: #842210;
+    .logo{
+        float: left;
+        width: 200px;
+        height: 150px;
+        margin: 0;
+        background-color: #7d2717;
+        a{
+            display: block;
+            width: 100px;
+            height: 100px;
+            background-color: paleturquoise;
+            &:hover{
+                background-color: peru;
+            }
+        }
+    }
+    .more{
+        float: right;
+        width: 200px;
+        height: 150px;
+        background-color: orange;
+        &:hover{
+            background-color: plum;
+        }
+    }
+}

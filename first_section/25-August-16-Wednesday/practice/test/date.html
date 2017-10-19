@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="轩邈">
+    <meta name="copyright" content="轩邈">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <!-- 网站SEO -->
+    <title>Title</title>
+    <meta name="keywords" content="轩邈 xuanmiao xuanmiao.com">
+    <meta name="description" content="轩邈 | 猎奇蜗牛">
+    <!--&lt;!&ndash; 标题栏logo图标 &ndash;&gt;-->
+    <!--<link rel="icon" href="./style/image/favicon_logo.ico" type="image/x-icon">-->
+    <!--&lt;!&ndash; 收藏夹logo图标 &ndash;&gt;-->
+    <!--<link rel="shortcut icon" href="./style/image/favicon_logo.ico" type="image/x-icon">-->
+    <style>
+
+    </style>
+</head>
+<body>
+
+<script>
+    /*
+    * 日期对象作用， 时钟，日历，倒计时。
+    *
+    * js中的日期对象：Date()
+    *
+    * 使用方式：  var date = new Date();
+    *
+    * date是Date对象的一个实例。
+    *
+    * 日期对象不会自动改变
+    *
+    * 日期对象只获取本机时间
+    * */
+
+
+//    console.log(date);        //时间戳
+
+//    console.log(Date.now());
+
+    /*设置时间*/
+    var dateSet = new Date(2017,7,16,11,16,12); //年月日时分秒
+//    var dateSet = new Date('August 16,2016 10:29:12'); //年月日时分秒
+//    console.log(dateSet); //？ 逗号和冒号
+
+    /*倒计时实现*/
+//    countDown();
+    function countDown (){
+        setInterval(function () {
+            var date1 = new Date();
+            var djs =  parseInt((dateSet.getTime() - date1.getTime()) / 1000);
+            document.body.innerHTML = djs; //？设置月份 - 1
+        },1000);
+    }
+
+    var date = new Date();
+//    console.log( date.getFullYear());
+//    console.log( date.getMonth() + 1);
+//    console.log( date.getDate());
+//    console.log( date.getDay());
+//    console.log( date.getHours());
+//    console.log( date.getMinutes());
+//    console.log( date.getSeconds());
+//    console.log( date.getMilliseconds());
+//    console.log( date.getTime());
+
+//    setInterval(showDate,1000);
+    function showDate() {
+        var date = new Date();
+        var week = ["日","一","二","三","四","五","六"];
+        document.body.innerHTML =  date.getFullYear() + "年"
+            + (date.getMonth() + 1) + "月"
+            + date.getDate() + "日"
+            + "星期"+ week[date.getDay()]
+            + "&nbsp&nbsp&nbsp&nbsp"
+            + date.getHours() + "时"
+            + date.getMinutes() + "分"
+            + date.getSeconds() + "秒";
+    }
+</script>
+</body>
+</html>

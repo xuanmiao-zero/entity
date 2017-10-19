@@ -1,0 +1,651 @@
+/* 同名html文件中独有的样式 */
+
+/*命名空间*/
+
+.index{}
+
+/*main*/
+
+/*内容部分*/
+
+.index .content_bg{
+	background-color: #f1f2f3;
+	border-bottom: 1px solid #e3e7e8;
+}
+
+.index .content{
+	width: 1120px;
+	margin: 0 auto;
+	padding-top: 20px;
+}
+
+.index .main_left{
+	width: 640px;
+	margin-right: 20px;
+	float: left;
+}
+
+.index .admod_a a,.index .admod_b1 a,.index .admod_b a,.index .admod_b2 a{
+	float: left;
+}
+
+.index .admod_a{
+	margin-bottom: 20px;
+	margin-right: 20px;
+}
+
+.index .admod_b1{
+	margin-right: 20px;
+} 
+
+.index .admod_b{
+	margin-bottom: 20px;
+}
+
+.index .admod_b2{
+	margin: 0;
+} 
+
+.index .right_ad,.index .right_ad a{
+	width: 200px;
+}
+
+.index .rad_text{
+	font: 12px/20px "微软雅黑";
+	color: white;
+	background-color: #888888;
+}
+
+.index .text_left{
+	padding: 0 2px;
+	margin-right: 25px;
+}
+
+.index .admod_a .a_bottom a{
+	font: 16px/20px "微软雅黑";
+	color: white;
+}
+
+.index .main_middle{
+	margin-right: 20px;
+	float: left;
+	width: 200px;
+}
+
+.index .main_right{
+	width: 420px;
+}
+
+.index .top_ad{
+	margin-bottom: 20px;
+}
+
+.index .top_ad .le{
+	right: 376px;
+	padding: 2px 5px;
+}
+
+.index .top_ad .ri{
+	font-family: "宋体";
+}
+
+.index .right_ad .le{
+	bottom: 8px;
+	right: 156px;
+	padding: 0px 5px;
+}
+
+.index .long_ad .le{
+	bottom: 10px;
+	right: 1036px;
+	padding: 2px 5px;
+}
+
+
+.index .right_lf{
+	width: 200px;
+	margin-right: 20px;
+}
+
+.index .right_lf .admod_b{
+	margin-bottom: 20px;
+}
+
+
+.index .dongni_content{
+	width: 860px;
+	margin-right: 20px;
+}
+
+.index .dongni .mod_logo{
+	background-position: 0 -145px;
+}
+
+.index .mod_land{
+	padding: 8px 0 4px;
+	font: 13px/13px "微软雅黑";
+	color: #909090;
+}
+
+.index .mod_land a{
+	color: #30b3ff;
+}
+
+.index .dongni .change{
+	padding: 11px 0 2px;
+}
+
+.index .dongni .change a{
+	font: 12px/12px "微软雅黑";
+}
+
+.index .dongni .change_ico{
+	background-position: 0 -170px;
+}
+
+.index .mod_con ul li{
+	margin-bottom: 20px;
+}
+
+.index .daquan{
+	width: 200px;
+}
+
+.index .dq_con a:hover{
+	color: red;
+}
+
+.index .dq_head{
+	padding-bottom: 10px;
+	border-bottom: 1px solid #eeeeee;
+	margin-bottom: 10px;
+	width: 200px;
+}
+
+.index .dq_title{
+	font: 20px/25px "微软雅黑";
+}
+
+.index .ri_logo{
+	margin-top: 6px;
+	margin-left: 21px;
+	width: 7px;
+	height: 18px;
+	background-position: 0 -182px;
+}
+
+.index .dq_c_ico{
+	width: 20px;
+	height: 20px;
+	background-position: 0 -200px;
+	margin-right: 10px;
+}
+
+.index .dq_c_ico2{
+	width: 20px;
+	height: 20px;
+	background-position: 0 -220px;
+	margin-right: 10px;
+}
+
+.index .dq_c_ico3{
+	width: 20px;
+	height: 20px;
+	background-position: 0 -240px;
+	margin-right: 10px;
+}
+
+.index .dq_c_ico4{
+	width: 20px;
+	height: 20px;
+	background-position: 0 -260px;
+	margin-right: 10px;
+}
+
+.index .dq_c_ico5{
+	width: 20px;
+	height: 20px;
+	background-position: 0 -280px;
+	margin-right: 10px;
+}
+
+.index .dq_c_ico6{
+	width: 20px;
+	height: 20px;
+	background-position: 0 -300px;
+	margin-right: 10px;
+}
+
+.index .dq_c_ico7{
+	width: 20px;
+	height: 20px;
+	background-position: 0 -320px;
+	margin-right: 10px;
+}
+
+.index .dq_c_ico8{
+	width: 20px;
+	height: 20px;
+	background-position: 0 -340px;
+	margin-right: 10px;
+}
+.index .dq_con{
+	padding-top: 10px;
+}
+.index .dq_c{
+	width: 83px;
+	height: 30px;
+}
+
+.index .dq_c_name{
+	padding-top: 2px;
+	padding-bottom: 12px;
+	border-bottom: 1px solid #f6f6f6;
+}
+
+.index .dq_c_name a{
+	font: 14px/16px "微软雅黑";
+	width: 47px;
+	padding-right: 5px;
+	border-right: 1px solid #E3E7E8;
+}
+
+.index .dq_c_c{
+	padding: 2px 3px 12px 7px;
+	border-bottom: 1px solid #f6f6f6;
+}
+
+.index .dq_c_c a{
+	font: 12px/15px "微软雅黑";
+	color: #909090;
+}
+
+.index .spr{
+	margin-right: 10px;
+}
+
+.index .juji .mod_logo{
+	background-position: 0 -360px;
+}
+
+.index .mod_nav{
+	height: 35px;
+}
+
+.index .mod_nav a{
+	margin-right: 20px;
+	float: left;
+	font: 14px/35px "微软雅黑";
+}
+
+.index .mod_nav .on{
+	color: #2FB3FF;
+	border-bottom: 1px solid #2FB3FF;
+}
+
+.index .mod_nav a:hover{
+	color: #2FB3FF;
+	border-bottom: 1px solid #2FB3FF;
+}
+
+.index .juji .change_ico{
+	background-position: 0 -385px;
+	padding-top: 1px;
+}
+
+.index .juji .change{
+	padding-top: 7px;
+}
+
+.index .juji .change a{
+	font: 13px/13px "微软雅黑";
+}
+
+.index .mod_a1,.index .mod_a{
+	margin-right: 20px;
+	margin-bottom: 16px;
+}
+
+.index .mod_a1 .mod_a_title a{
+	display: block;
+	width: 420px;
+}
+
+.index .mod_a1{
+	width: 420px;
+}
+
+.index .mod_a{
+	width: 200px;
+}
+
+.index .mod_a_title{
+	float: left;
+	margin-top: 5px;
+}
+
+.index .mod_a_title a{
+	display: block;
+	width: 200px;
+	font: 13px/23px "微软雅黑";
+	color: #565655;
+}
+
+.index .mod_a_info{
+	float: left;
+	font: 12px/16px "微软雅黑";
+	color: #999999;
+}
+
+.index .juji ul li{
+	float: left;
+}
+
+.index .mod_i_info{
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+	height: 18px;
+	padding: 0 5px;
+	font: 12px/18px "微软雅黑";
+	color: white;
+	z-index: 2;
+	background-color: rgba(0,0,0,0.5);
+}
+
+.index .mod_i_info2{
+	position: absolute;
+	bottom: 10px;
+	left: 10px;
+	height: 20px;
+	border: 1px solid red;
+	border-radius: 2px;
+	padding: 0 3px;
+	font: 12px/20px "微软雅黑";
+	color: white;
+	z-index: 2;
+	background-color: rgba(255,0,0,0.9);
+}
+
+.index .sp{
+	margin-right: 0;
+}
+
+.index .mod_ad_a{
+	margin-right: 20px;
+}
+
+.index .mod_ad_i{
+	margin-bottom: 5px;
+}
+
+.index .ad_info a{
+	display: block;
+	text-align: center;
+	font: 13px/23px "微软雅黑";
+}
+
+.index .big_l{
+	width: 30px;
+	height: 30px;
+}
+
+.index .mod_head_j .big_l{
+	margin-bottom: 8px;
+}
+
+.index .big_h .mod_nav a{
+	font: 14px/38px "微软雅黑";
+}
+
+.index .big_h .mod_title a{
+	font: 20px/30px "微软雅黑";
+	color: #555555;
+}
+
+.index .chaojiwangju .mod_logo{
+	background-position: 0 -397px;	
+}
+
+.index .big_h .ri_logo{
+	margin-top: 7px;
+}
+
+.index .cj_con li{
+	float: left;
+	margin-bottom: 20px;
+}
+
+.index .zy ul,.index .zy .j_c_top,.index .zy .mod_a1{
+	margin-bottom: 0;
+}
+
+.index .zy .j_c_top .mb0{
+	margin-bottom: 0;
+}
+
+.index .zy .mod_logo{
+	background-position: 0 -427px;
+}
+
+.index .movie .mod_logo{
+	background-position: 0 -452px;
+}
+
+.index .con_movie li{
+	margin-right: 1px;
+	margin-bottom: 20px;
+}
+
+.index .mod_b{
+	width: 170px;
+}
+
+.index .mod_b p a{
+	width: 170px;
+}
+
+.index .mod_r p a{
+	width: 54px;
+}
+
+.index .con_movie .mod_r{
+	margin-right: 0;
+	width: 54px;
+	height: 255px;
+}
+
+.index .dongman li{
+	margin-right: 20px;
+} 
+
+.index .dongman ul{
+	margin-right: -20px;
+} 
+
+.index .dongman .mod_logo{
+	background-position: 0 -477px;
+}
+
+.index .shaoer li{
+	margin-right: 20px;
+}
+
+.index .shaoer .mod_logo{
+	background-position: 0 -502px;
+}
+
+.index .zhuantijingxuan .mod_logo{
+	background-position: 0 -527px;
+}
+
+.index .zhuantijingxuan li{
+	margin-right: 20px;
+}
+
+
+.index .adad a{
+	float: left;
+	font: 12px/18px "微软雅黑";
+	color: #c5c5c5;
+	padding: 0 7px;
+	border: 1px solid #c5c5c5;
+}
+
+.index .yule .mod_logo{
+	background-position: 0 -552px;
+}
+
+.index .mr0{
+	margin-right: 0;
+}
+
+
+
+.index .content_bg .content .juji_con .mr0{
+	margin-right: 0;
+}
+
+.index .content_bg .content .mb0{
+	margin-bottom: 0;
+}
+
+.index .zixun .mod_logo{
+	background-position: 0 -577px;
+}
+
+.index .zixun li{
+	margin-right: 20px;
+}
+
+.index .gaoxiao .mod_logo{
+	background-position: 0 -602px;
+}
+
+.index .music .mod_logo{
+	background-position: 0 -627px;
+}
+
+.index .wenhua .mod_logo{
+	background-position: 0 -652px;
+}
+
+.index .caijing .mod_logo{
+	background-position: 0 -677px;
+}
+
+.index .jiaoyu .mod_logo{
+	background-position: 0 -707px;
+}
+
+.index .car .mod_logo{
+	background-position: 0 -732px;
+}
+
+.index .pinpaiguanwang .mod_logo{
+	background-position: 0 -757px;
+}
+
+.index .pinpaiguanwang li{
+	margin-right: 20px;
+}
+
+.index .sport .mod_logo{
+	background-position: 0 -782px;
+}
+
+.index .sport li{
+	margin-right: 20px;
+}
+
+
+.index .sport .j_c_top{
+	margin-bottom: 20px;
+}
+
+.index .zipindaojingxuan .mod_logo{
+	background-position: 0 -812px;
+}
+
+.index .shenghuo .mod_logo{
+	background-position: 0 -837px;
+}
+
+.index .lvyou .mod_logo{
+	background-position: 0 -862px;
+}
+
+.index .game .mod_logo{
+	background-position: 0 -887px;
+}
+
+.index .zhibo .mod_logo{
+	background-position: 0 -917px;
+}
+
+.index .dubo{
+	background-image: url(../img/sprit.png);
+	background-repeat: no-repeat;
+	width: 41px;
+	height: 41px;
+	background-position: -159px -224px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 3;
+}
+
+.index .shoubo{
+	background-image: url(../img/sprit.png);
+	background-repeat: no-repeat;
+	width: 41px;
+	height: 41px;
+	background-position: -159px -265px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 3;
+}
+
+.index .vip{
+	background-image: url(../img/sprit.png);
+	background-repeat: no-repeat;
+	width: 41px;
+	height: 41px;
+	background-position: -159px -306px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 3;
+}
+
+.index .jingxuan{
+	background-image: url(../img/sprit.png);
+	background-repeat: no-repeat;
+	width: 41px;
+	height: 41px;
+	background-position: -159px -347px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 3;
+}
+
+/*发现*/
+
+.index .faxian{
+	width: 600px;
+	margin: 0 auto;
+	margin-top: 76px;
+}
+
+.index .faxian .fx_a{
+	position: absolute;
+	top: 29px;
+	right: 102px;
+	font: 12px/24px "微软雅黑";
+	color: white;
+	background-color: #30b2ff;
+	padding: 0 10px;
+}
+

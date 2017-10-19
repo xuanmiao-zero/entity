@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+
+
+<script>
+    var obj = {
+         x:1,
+         y:0,
+         fn:function () {
+
+         },
+         arr:[1,2],
+         str:'1223'
+    };
+    for(var i in obj){
+//        console.log("键名：" + i + "键值：" + obj[i]); //i是对象的键名。
+    }
+    var arr = [
+        1,
+        2,
+        3
+    ];
+    for( var i in arr){
+//        console.log(i,arr[i]);
+    }
+    var a = 0;
+    while( a < 10){
+        console.log(a);
+        a ++;
+    }
+    var k = 0;
+    do{
+        console.log(k);
+        k++;
+    }while(k < 10);
+
+</script>
+</body>
+</html>

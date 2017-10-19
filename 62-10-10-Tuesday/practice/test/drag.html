@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="轩邈">
+    <meta name="copyright" content="轩邈">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <!-- 网站SEO -->
+    <title>Title</title>
+    <meta name="keywords" content="轩邈 xuanmiao xuanmiao.com">
+    <meta name="description" content="轩邈 | 猎奇蜗牛">
+    <style>
+        #div{
+            width: 200px;
+            height: 200px;
+            background-color: #2BAEF3;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="div">
+
+
+</div>
+
+<script>
+    function dragEle(ele){
+        var disX = 0;
+        var disY = 0;
+        ele.addEventListener("mousedown",down);
+        function down(ev) {
+            disX = ev.clientX - this.offsetLeft;
+            disY = ev.clientY - this.offsetTop;
+
+            document.addEventListener("mousemove",move);
+            document.addEventListener("mouseup",up);
+
+            /*鼠标移动方法*/
+            function move(ev) {
+                ele.style.left = ev.clientX - disX + "px";
+                ele.style.top = ev.clientY - disY + "px";
+            }
+
+            /*鼠标抬起*/
+            function up() {
+                document.removeEventListener("mousemove",move);
+                document.removeEventListener("mouseup",up);
+            }
+        }
+
+    }
+    dragEle(document.getElementById("div"));
+</script>
+</body>
+</html>

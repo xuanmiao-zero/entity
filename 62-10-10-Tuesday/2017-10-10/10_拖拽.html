@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+#box{
+    width:100px;
+    height: 100px;
+    background: red;
+    position: absolute;
+    top:0;
+    left:0;
+}
+</style>
+</head>
+<body>
+   <div id="box"></div>
+<script>
+
+    function Drag(id){
+        var box = document.getElementById(id);
+        var disX = 0;
+        var disY = 0;
+        box.addEventListener('mousedown',down);
+        function down(ev){
+            /*存储鼠标点下时距离元素顶边和左边的距离*/
+            disX = ev.clientX - this.offsetLeft;
+            disY = ev.clientY - this.offsetTop;
+
+            document.addEventListener('mousemove',move);
+            document.addEventListener('mouseup',up);
+            function move(ev){
+                /*将鼠标移动时的鼠标位置减去鼠标点下时距离元素顶边和左边的距离得到元素的left和top值*/
+                box.style.left = ev.clientX - disX + 'px';
+                box.style.top = ev.clientY - disY + 'px';
+            }
+
+            /*鼠标抬起时清除移动事件和鼠标抬起事件*/
+            function up(){
+                document.removeEventListener('mousemove',move);
+                document.removeEventListener('mouseup',up);
+                // alert(1);
+            }
+        }
+    }
+
+    Drag('box');
+
+</script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="轩邈">
+    <meta name="copyright" content="轩邈">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <!-- 网站SEO -->
+    <title>Title</title>
+    <meta name="keywords" content="轩邈 xuanmiao xuanmiao.com">
+    <meta name="description" content="轩邈 | 猎奇蜗牛">
+    <!-- 标题栏logo图标 -->
+    <link rel="icon" href="" type="image/x-icon">
+    <!-- 收藏夹logo图标 -->
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <style>
+        div{
+            text-transform: capitalize;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        this is a good way.
+        i'm great.
+    </div>
+
+<script>
+    //    str = "fjksjfk";
+    //    console.log(str.indexOf('f'));
+    //    console.log(str.indexOf(' '));
+    //    console.log(str.indexOf('a'));
+    //    console.log(str.indexOf('f',2));
+    //    console.log('',2);
+        strSlice1 = "轩邈硕，人性的弱点，少批评，多赞赏。";
+    //    console.log(strSlice.slice(1,2));
+    //    console.log(strSlice.slice(2,-1));
+    string = "    轩邈硕，人性的弱点，少批评，多赞赏。    ";
+    console.log(removeSpace(string));
+    console.log(strSlice1);
+    //去除空格函数
+    function removeSpace(string){
+        var startPosition = 0;
+        var endPosition = string.length - 1;
+        for(var i = 0; i < string.length; i++){
+            if(string.charAt(i) !== ' '){
+                startPosition = i;
+                break;
+            }
+        }
+        for(var j = string.length - 1; j >= 0; j--){
+            if(string.charAt(j) !== ' '){
+                endPosition = j + 1;
+                console.log(j);
+                break;
+            }
+        }
+        return string.slice(startPosition, endPosition);
+    }
+
+    //trim
+    string2 = "    are you  ok?    ";
+    firstLetterUpper(string2);
+    //首字母大写
+    function firstLetterUpper(string){
+        string = string.trim();
+        console.log(string);
+        var stringSplitArr = string.split(' ');
+        for(var i = 0; i < stringSplitArr.length; i ++){
+            if(stringSplitArr[i] !== ""){
+                //方法一：
+//                var stringSplitArrLetter = stringSplitArr[i].split('');
+//                stringSplitArrLetter[0] = stringSplitArrLetter[0].toUpperCase();
+//                stringSplitArr[i] = stringSplitArrLetter.join('');
+                //方法二：
+                stringSplitArr[i] = stringSplitArr[i].charAt(0).toUpperCase() + stringSplitArr[i].substring(1);
+            }
+        }
+        stringSplitArr.join();
+        console.log(stringSplitArr.join(' '));
+    }
+
+</script>
+</body>
+</html>

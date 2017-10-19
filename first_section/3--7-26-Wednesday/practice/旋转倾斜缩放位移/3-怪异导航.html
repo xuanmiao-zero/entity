@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			nav{
+				margin: 200px;
+				overflow: hidden;
+				padding: 0 40px;
+			}
+			nav a{
+				float: left;
+				padding: 20px;
+				line-height: 30px;
+				background-color: pink;
+				text-decoration: none;
+				color: #fff;
+				font-size: 18px;
+				border: 1px solid black;
+				transform: skew(-45deg);
+				margin-right: -1px;
+			}
+			nav a span{
+				float: left;
+				transform: skew(45deg);
+			}
+			nav a:hover{
+				background-color: orangered;
+			}
+		</style>
+		<!--
+			思考题：
+				不使用CSS3样式，实现怪异导航。并且需要有hover效果
+		-->
+	</head>
+	<body>
+		<nav>
+			<a href="">
+				<span>妙味课堂</span>
+			</a>
+			<a href="">
+				<span>关于我们</span>
+			</a>
+			<a href="">
+				<span>社区</span>
+			</a>
+			<a href="">
+				<span>课程</span>
+			</a>
+		</nav>
+	</body>
+</html>

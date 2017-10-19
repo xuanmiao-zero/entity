@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="轩邈">
+    <meta name="copyright" content="轩邈">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <!-- 网站SEO -->
+    <title>Title</title>
+    <meta name="keywords" content="轩邈 xuanmiao xuanmiao.com">
+    <meta name="description" content="轩邈 | 猎奇蜗牛">
+    <style>
+        #target{
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: #1C9ABE;
+        }
+    </style>
+</head>
+<body>
+    <div id="target">
+
+    </div>
+
+<script>
+    var leftSwitch = false;
+    var rightSwitch = false;
+    var upSwitch = false;
+    var downSwitch = false;
+
+    var target = document.querySelector('#target');
+    document.onkeydown = function(ev){
+        //向左移动
+        if(ev.keyCode  === 37 ){
+            //判断定时器是否开着
+            if(leftSwitch)
+                return;
+            leftSwitch = true;
+            target.leftTimer = setInterval(function () {
+                if(target.offsetLeft < 0){
+                    clearInterval(target.leftTimer);
+                    return;
+                }else{
+                    target.style.left = target.offsetLeft - 10 + "px";
+                }
+            },14);
+        }
+
+        //向右移动
+        if(ev.keyCode  === 39 ){
+            //判断定时器是否开着
+            if(rightSwitch)
+                return;
+            rightSwitch = true;
+            clearInterval(target.rightTimer);
+            target.rightTimer = setInterval(function () {
+                if(target.offsetLeft >= window.innerWidth - target.offsetWidth){
+                    clearInterval(target.rightTimer);
+                    target.style.left = window.innerWidth - target.offsetWidth + 'px';
+                    return;
+                }else{
+                    target.style.left = target.offsetLeft + 10 + "px";
+                }
+            },14);
+        }
+
+        //向上移动
+        if(ev.keyCode  === 38 ){
+            //判断定时器是否开着
+//            if(upSwitch)
+//                return;
+            upSwitch = true;
+            clearInterval(target.upTimer);
+            target.upTimer = setInterval(function () {
+                var top = target.offsetTop - 10;
+                if(top < 0){
+                    clearInterval(target.upTimer);
+                    top = 0;
+                }
+                target.style.top = top + "px";
+            },14);
+        }
+
+        //向下移动
+        if(ev.keyCode  === 40 ){
+            //判断定时器是否开着
+            if(downSwitch)
+                return;
+            downSwitch = true;
+            clearInterval(target.downTimer);
+            target.downTimer = setInterval(function () {
+                if(target.offsetTop >= window.innerHeight - target.offsetHeight){
+                    clearInterval(target.downTimer);
+                    target.style.top =  window.innerHeight - target.offsetHeight + "px";
+                    return;
+                }else{
+                    target.style.top = target.offsetTop + 10 + "px";
+                }
+            },14);
+        }
+    };
+
+    document.onkeyup = function(ev){
+        leftSwitch = false;
+        rightSwitch = false;
+        upSwitch = false;
+        downSwitch = false;
+
+        clearInterval(target.leftTimer);
+        clearInterval(target.rightTimer);
+        clearInterval(target.upTimer);
+        clearInterval(target.downTimer);
+    };
+
+</script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="轩邈">
+    <meta name="copyright" content="轩邈">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <!-- 网站SEO -->
+    <title>Title</title>
+    <meta name="keywords" content="轩邈 xuanmiao xuanmiao.com">
+    <meta name="description" content="轩邈 | 猎奇蜗牛">
+    <style>
+
+        a{
+            text-decoration: none;
+            color: #fff;
+        }
+
+        ul{
+            margin: 0;
+            padding: 0;
+            display: inline-block;
+            list-style: none;
+        }
+
+
+        #menu{
+            position: absolute;
+            left: 0;
+            top: 0;
+            margin: 1px 0 0 0;
+            padding: 0;
+            font-size: 12px;
+            background: #0a8cd2 ;
+            color: #fff;
+        }
+        #menu h2{
+            margin: 0;
+            font-size: 12px;
+            color: #fff;
+        }
+
+        ul{
+            border: 1px solid #0a8cd2;
+            margin: -1px 0 0 0;
+        }
+        ul li a{
+            background: #0a8cd2;
+            display: block;
+            line-height: 20px;
+            height: 20px;
+            border-bottom: 1px solid #0a8cd2;
+            padding: 0 18px;
+
+        }
+        ul li a:hover{
+            background: skyblue;
+        }
+        ul li>ul{
+            display: none;
+        }
+        ul li:hover>ul{
+            display: block;
+        }
+        ul>li{
+            position: relative;
+        }
+        ul>li>ul{
+            position: absolute;
+            width: 100%;
+            top: -4%;
+            left: 96%;
+        }
+    </style>
+</head>
+<body>
+<ul id="menu">
+    <li>
+        <h2><a href="http://www.xuanmiao.wang/">菜单一</a></h2>
+        <ul>
+            <li><a href="http://www.xuanmiao.wang/">菜单二</a></li>
+            <li><a href="http://www.xuanmiao.wang/">菜单二</a></li>
+        </ul>
+    </li>
+    <li>
+        <h2><a href="http://www.xuanmiao.wang/">菜单一</a></h2>
+        <ul>
+            <li><a href="http://www.xuanmiao.wang/">菜单二</a></li>
+            <li><a href="http://www.xuanmiao.wang/">菜单二</a></li>
+            <li><a href="http://www.xuanmiao.wang/">菜单二</a></li>
+            <li><a href="http://www.xuanmiao.wang/">菜单二</a></li>
+        </ul>
+    </li>
+</ul>
+<script>
+    var menu = document.getElementById("menu");
+    var links = document.getElementsByTagName('a');
+    document.oncontextmenu = function (ev) {
+        ev.preventDefault();
+        menu.style.left = ev.clientX + "px";
+        menu.style.top = ev.clientY + "px";
+    };
+
+    (function () {
+        for(var i = 0; i < links.length; i++){
+            links[i].onclick = function (ev) {
+                ev.preventDefault();
+            }
+        }
+    })();
+    menu.style.left = "-100%";
+    menu.style.top = "-100%";
+    document.onclick = function(){
+        menu.style.left = "-100%";
+        menu.style.top = "-100%";
+    };
+
+
+</script>
+</body>
+</html>

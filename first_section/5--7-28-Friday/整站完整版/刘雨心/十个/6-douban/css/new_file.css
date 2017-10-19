@@ -1,0 +1,82 @@
+body,h3,p{
+	margin: 0;
+	padding: 0;
+}
+ul,li{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+.clearfix{
+	zoom: 1;
+}
+.clearfix:after{
+	content: "";
+	display: block;
+	clear: both;
+}
+.section{
+	width: 696px;
+	height: 629px;
+	margin: 50px auto;
+}
+.section .head{
+	height: 36px;
+	border-bottom: 1px solid #dddddd;
+}
+.section .head h3,.section .head h3 a{
+	float: left;
+	width: 76px;
+	height: 36px;
+}
+.section .head h3 a{
+	text-indent: -99999px;
+	background: url(../img/new.png) no-repeat;
+}
+.section .head .more,.section .head .more a{
+	width: 63px;
+	font: 12px/14px "微软雅黑";
+	color: #825d5b;
+}
+.section .head .more{
+	float: right;
+	margin-top: 12px;
+}
+.section .content{
+	margin-top: 23px;
+	height: 569px;
+	margin-right: -36px;
+}
+.section .content li{
+	width: 110px;
+	height: 277px;
+	float: left;
+	margin-right: 36px;
+}
+.section .content li .cover{
+	display: inline-block;
+	width: 110px;
+	height: 164px;
+}
+.section .content li .name{
+	font: bold 14px/21px "宋体";
+	color: #825d5b;
+	display: block;
+}
+.section .content li .name span{
+	font: bold 12px/21px "宋体";
+	color: #999999;
+}
+.section .content li .info{
+	font: 12px/18px "宋体";
+	color: black;
+}
+.section .content li .price{
+	font: 12px/12px "宋体";
+	color: #825d5b;
+	display: block;
+	margin-top: 8px;
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="轩邈">
+    <meta name="copyright" content="轩邈">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <!-- 网站SEO -->
+    <title>Title</title>
+    <meta name="keywords" content="轩邈 xuanmiao xuanmiao.com">
+    <meta name="description" content="轩邈 | 猎奇蜗牛">
+    <style>
+
+        #box{
+            width:800px;
+            height:500px;
+            overflow: hidden;
+            margin:auto;
+            position: relative;
+        }
+        .imgs{
+            height:500px;
+            overflow: hidden;
+        }
+        img{
+            float: left;
+            width:800px;
+            height:500px;
+        }
+        a{
+            display: block;
+            position: absolute;
+            width:50px;
+            height:100px;
+            border:1px solid #666;
+            top:200px;
+            color:#fff;
+            background-color: rgba(0,0,0,.5);
+            text-align: center;
+            line-height: 100px;
+            font-size:42px;
+            text-decoration: none;
+        }
+        a:first-of-type{
+            left:0;
+        }
+        a:last-of-type{
+            right:0;
+        }
+
+        ul{
+            list-style: none;
+            padding: 0;
+            margin-top:-100px;
+            height:100px;
+            position: relative;
+            z-index: 10;
+            width:150px;
+            margin-left:auto;
+            margin-right:auto;
+        }
+        li{
+            width:20px;
+            height:20px;
+            background-color: #fff;
+            position: absolute;
+            bottom:20px;
+        }
+
+    </style>
+</head>
+<body>
+<div id="box">
+    <div class="imgs">
+        <img src="beauty_4.jpg" alt="">
+        <img src="beauty_1.jpg" alt="">
+        <img src="beauty_2.jpg" alt="">
+        <img src="beauty_3.jpg" alt="">
+        <img src="beauty_4.jpg" alt="">
+        <img src="beauty_1.jpg" alt="">
+    </div>
+    <a class="prev" href="javascript:">&lt;</a>
+    <a class="next" href="javascript:">&gt;</a>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+
+<script>
+    var lis = document.getElementById('box').getElementsByTagName('ul')[0].getElementsByTagName('li');
+    var imgs = document.getElementById('box').getElementsByClassName('imgs')[0].getElementsByTagName('img');
+    var prev = document.getElementsByClassName('prev')[0];
+    var next = document.getElementsByClassName('next')[0];
+
+    //设置图片上的序号点的位置
+    for(var i = 0; i < lis.length; i++){
+        lis[i].style.left = 32 * i + "px";
+    }
+
+    //设置上一张和下一张按钮
+    prev.onclick = function () {
+
+    };
+</script>
+</body>
+</html>

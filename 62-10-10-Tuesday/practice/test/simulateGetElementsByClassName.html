@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="轩邈">
+    <meta name="copyright" content="轩邈">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <!-- 网站SEO -->
+    <title>Title</title>
+    <meta name="keywords" content="轩邈 xuanmiao xuanmiao.com">
+    <meta name="description" content="轩邈 | 猎奇蜗牛">
+    <style>
+
+    </style>
+</head>
+<body>
+    <ul id="ul">
+        <li class="li li1">1</li>
+        <li id="li2">2</li>
+        <li class="li">3</li>
+    </ul>
+
+<script>
+    var ul = document.getElementById('ul');
+
+    /*模拟getElementsByClassName*/
+    function simGetElementsByClassName(className) {
+
+        /*通过首字母判断以什么方式找元素*/
+        var type = className.charAt();
+
+        /*先找到所有元素在判断是否与所要找的类相同*/
+        var allEle = document.getElementsByTagName("*");
+
+        /*返回结果*/
+        var classResult = [];
+        switch (type){
+
+            /*通过id找元素*/
+            case "#":{
+                return document.getElementById(className.slice(1));
+            }
+
+            /*通过类找元素*/
+            case ".":{
+                for(var i = 0; i < allEle.length; i++){
+                    /*将类名分解，挨个判断所有类名*/
+                    var splitClasses = allEle[i].className.split(" ");
+                    for(var j = 0; j < splitClasses.length; j++){
+                        if(splitClasses[j] === className.slice(1)){
+                            classResult.push(allEle[i]);
+                        }
+                    }
+                }
+                return undefined;
+            }
+
+            /*通过标签找元素*/
+            default:{
+                return document.getElementsByTagName(className);
+            }
+        }
+    }
+    simGetElementsByClassName("#li2").style.color="red";
+
+</script>
+</body>
+</html>

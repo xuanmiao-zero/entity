@@ -1,0 +1,381 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+}
+
+li{
+    list-style: none;
+}
+
+html{
+    height: 100%;
+}
+
+body{
+    height: 100%;
+}
+
+/*导航栏*/
+#navMenu{
+    float: left;
+    width: 200px;
+    height: 100%;
+    text-align: center;
+    color: #eee;
+    background-color: #11212F;
+    overflow: hidden;
+}
+
+#navMenu header{
+    height: 60px;
+    background-color: #DE4A63;
+}
+/*标题*/
+#navMenu h1{
+    display: inline-block;
+    z-index: 0;
+    position: relative;
+    margin: 12px 0 0 9px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #DE4A63;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+#navMenu h1 span{
+    font-size: 15px;
+    font-weight: normal;
+}
+
+#navMenu h1:before{
+    z-index: -1;
+    position: absolute;
+    content: '';
+    display: block;
+    width: 17%;
+    height: 77%;
+    background-color: #fff;
+    border-radius: 100%;
+    margin: 5% 0 0 -6%;
+}
+
+#navMenu h1::first-letter {
+    color: #DE4A63;
+    font-size: 130%;
+    margin-right: 1px;
+}
+
+/*写信，收信，通讯录*/
+#navMenu>ul>li{
+    text-align: left;
+}
+
+#navMenu>ul>li h2{
+    text-indent: 3em;
+    line-height: 34px;
+    font-size: 18px;
+    font-weight: normal;
+    background-size: 20px;
+    cursor: pointer;
+}
+
+#navMenu>ul>li h2.write{
+    background: url("../image/write.png") no-repeat 22px 8px;
+    background-size: 20px;
+}
+
+#navMenu>ul>li h2.received{
+    background: url("../image/received.png") no-repeat 22px 8px;
+    background-size: 20px;
+}
+
+#navMenu>ul>li h2.contacts{
+    background: url("../image/contacts.png") no-repeat 22px 8px;
+    background-size: 20px;
+}
+
+#navMenu>ul>li h2.inbox{
+    background: url("../image/inbox.png") no-repeat 22px 8px;
+    background-size: 20px;
+}
+
+/*收件箱 子菜单*/
+#navMenu .inbox+ul li{
+    line-height: 44px;
+    font-size: 16px;
+    font-weight: normal;
+    color: #8B9298;
+}
+
+#navMenu .inbox+ul li:hover{
+    border-left: 2px solid #DE4A63;
+}
+
+#navMenu .inbox+ul li:hover span:first-of-type{
+    color: #DE4A63;
+}
+
+#navMenu .inbox+ul span{
+    cursor: pointer;
+}
+
+#navMenu .inbox+ul li span:first-of-type{
+    display: inline-block;
+    text-indent: 3em;
+}
+
+
+/*清空*/
+#navMenu .inbox+ul .emptied{
+    float: right;
+    margin-right: 20px;
+}
+
+#navMenu .inbox+ul .star-mail span:first-of-type {
+    background: url("../image/star_gray.png") no-repeat 24px 13px;
+    background-size: 18px;
+}
+
+#navMenu .inbox+ul .star-mail span:first-of-type:hover {
+    background: url("../image/star_maroon.png") no-repeat 24px 13px;
+    background-size: 18px;
+}
+
+
+#navMenu .inbox+ul .group-mail span:first-of-type {
+    background: url("../image/group_gray.png") no-repeat 24px 13px;
+    background-size: 18px;
+}
+
+#navMenu .inbox+ul .group-mail span:first-of-type:hover {
+    background: url("../image/group_maroon.png") no-repeat 24px 13px;
+    background-size: 18px;
+}
+
+#navMenu .inbox+ul .draw-box span:first-of-type {
+    background: url("../image/draft_box_gray.png") no-repeat 24px 13px;
+    background-size: 18px;
+}
+
+#navMenu .inbox+ul .draw-box span:first-of-type:hover {
+    background: url("../image/draft_box_maroon.png") no-repeat 24px 13px;
+    background-size: 18px;
+}
+
+#navMenu .inbox+ul .sent span:first-of-type {
+    background: url("../image/sent_gray.png") no-repeat 24px 13px;
+    background-size: 18px;
+}
+
+#navMenu .inbox+ul .sent span:first-of-type:hover {
+    background: url("../image/sent_maroon.png") no-repeat 24px 13px;
+    background-size: 18px;
+}
+
+#navMenu .inbox+ul .deleted span:first-of-type {
+    background: url("../image/deleted_gray.png") no-repeat 24px 13px;
+    background-size: 18px;
+}
+
+#navMenu .inbox+ul .deleted span:first-of-type:hover {
+    background: url("../image/deleted_maroon.png") no-repeat 24px 13px;
+    background-size: 18px;
+}
+
+#navMenu .inbox+ul .bin span:first-of-type {
+    background: url("../image/bin_gray.png") no-repeat 24px 13px;
+    background-size: 18px;
+}
+
+#navMenu .inbox+ul .bin span:first-of-type:hover {
+    background: url("../image/bin_maroon.png") no-repeat 24px 13px;
+    background-size: 18px;
+}
+
+
+/*mainBox*/
+#mainBox{
+    margin-left: 200px;
+    height: 100%;
+    overflow: hidden;
+}
+
+
+#mainBox header{
+    width: 100%;
+    line-height: 30px;
+    background-color: #E0E8F0;
+}
+#mainBox header h2{
+    display: inline-block;
+    margin: 0;
+    height: 60px;
+    line-height: 60px;
+    font-size: 18px;
+    font-weight: normal;
+    text-indent: 2em;
+}
+#mainBox header h2 a{
+    text-indent: 0;
+    color: #000;
+    text-decoration: none;
+}
+#mainBox header span{
+    padding: 4px 8px;
+}
+#mainBox header span:first-of-type{
+    margin-left: 200px;
+    border-radius: 4px;
+    color: #fff;
+    background-color: #5DAFCE;
+}
+
+#mainBox header span:nth-of-type(2){
+    margin-left: 20px;
+    border-radius: 4px;
+    color: #fff;
+    background-color: #F6BB78;
+}
+
+#inbox>p{
+    text-indent: 2em;
+    margin: 0;
+    line-height: 40px;
+}
+
+#inbox>p span:first-of-type{
+    color: #5DAECE;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+
+/*table*/
+table{
+    width: 100%;
+}
+
+table thead tr:first-of-type th{
+    padding: 8px 20px;
+    text-align: left;
+    background: #F0F5F8;
+}
+
+table input{
+    outline:none;
+}
+table thead tr:first-of-type input{
+    padding: 4px 10px;
+    border-radius: 4px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+
+table thead tr:first-of-type input.down{
+    padding-right: 20px;
+    background: #fff url("../image/down.png") 90% center no-repeat;
+    background-size: 10px 10px;
+}
+
+table thead tr:first-of-type input:hover{
+    background-color: #5EB0CF;
+    color: #fff;
+}
+
+table thead tr:nth-of-type(2) td {
+    line-height: 40px;
+    border-bottom: 1px solid #EEF3F7;
+}
+
+table thead tr:nth-of-type(2) td input[type="checkbox"]{
+    vertical-align: middle;
+    margin: auto  10px auto 20px;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #eee;
+}
+
+table thead tr:nth-of-type(2) td input.send-mail{
+    vertical-align: middle;
+    width: 30px;
+    height: 26px;
+    border: none;
+    background: transparent url("../image/mail.png") no-repeat 0 0;
+    background-size: 24px 24px;
+    cursor: pointer;
+}
+
+table thead tr:nth-of-type(2) td input.link{
+    vertical-align: middle;
+    width: 30px;
+    height: 26px;
+    border: none;
+    background: transparent url("../image/link1.png") no-repeat 0 0;
+    background-size: 22px 22px;
+    cursor: pointer;
+}
+
+tbody tr{
+    width: 100%;
+    display: inline-block;
+    padding: 4px 0;
+    border-bottom: 1px solid #eee;
+}
+
+tbody tr td{
+    vertical-align: top;
+
+}
+
+tbody tr td:first-of-type{
+    width: 40px;
+}
+
+tbody tr td:nth-of-type(2){
+    width: 1000px;
+}
+
+tbody tr td:nth-of-type(3){
+    color: #999;
+}
+
+tbody tr td input[type=checkbox]{
+    margin-left: 20px
+}
+
+tbody tr td h4{
+    font-weight: normal;
+    line-height: 20px;
+    margin: 0;
+}
+
+tbody tr td p{
+    color: #999;
+    line-height: 28px;
+    margin: 0;
+}
+.mail-number-count{
+    position: absolute;
+    display: inline-block;
+    border-radius: 2px;
+    padding: 2px 8px;
+    font-size: 14px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+
+
+
+
+
+
+
+

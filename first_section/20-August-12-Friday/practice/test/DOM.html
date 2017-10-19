@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="轩邈">
+    <meta name="copyright" content="轩邈">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <!-- 网站SEO -->
+    <title>Title</title>
+    <meta name="keywords" content="轩邈 xuanmiao xuanmiao.com">
+    <meta name="description" content="轩邈 | 猎奇蜗牛">
+    <!-- 标题栏logo图标 -->
+    <link rel="icon" href="./style/image/favicon_logo.ico" type="image/x-icon">
+    <!-- 收藏夹logo图标 -->
+    <link rel="shortcut icon" href="./style/image/favicon_logo.ico" type="image/x-icon">
+    <style>
+
+    </style>
+</head>
+<body>
+    1
+    <div>2</div>3
+    <a>4</a>5
+    <ul>6
+        <li>7</li>8
+        <li>9</li>10
+    </ul>11
+    <img src="../../../img/background/4.jpg" alt="">
+    <form action="" name="myForm"></form>
+<script>
+//    var p1 = document.createElement('p');
+//    p1.textContent = "xuanmiao";
+//    document.body.appendChild(p1);
+//
+//    console.log(document.body.hasChildNodes());
+//
+////    var divClone = document.querySelector('div');
+////    document.body.appendChild(divClone);
+//
+//    var li1 = document.createElement('li');
+//    li1.appendChild(document.createTextNode('xuanmiao'));
+//    document.querySelector('ul').insertBefore(li1,document.querySelector('ul').firstChild);
+//    console.log(document.body.firstElementChild);
+//    document.body.insertBefore(document.createTextNode('xuanmiao'),document.body.firstElementChild);
+//    document.body.insertBefore(document.createTextNode('xuanmiao'),document.body.firstElementChild.nextSibling);
+//
+//    document.body.removeChild(document.querySelector('div'));
+//    document.body.replaceChild(document.createTextNode('xuanmiao>a'),document.querySelector('a'));
+//    console.log(document.querySelector('ul').contains(document.querySelector('li')));
+//    console.log(document.querySelector('ul').compareDocumentPosition(document.querySelector('li')));
+//    console.log(document.querySelector('ul').isEqualNode(document.querySelector('ul')));
+//
+//
+
+//    DOMComb(document.body,printContent);
+//    document.normalize();
+//    DOMComb(document.body,printContent);
+//
+//    console.log(typeof(NodeList));
+//    console.log(typeof(HTMLCollection));
+
+//    console.log(document.body.childNodes.length);
+//    document.body.appendChild(document.createElement('div'));
+//    console.log(document.body.childNodes.length);
+
+
+    // 实例
+//    var divs = document.getElementsByTagName("div");
+//    for (var item of divs) {
+//        console.log(divs.item(0));
+//    }
+//
+    //HTMLCollection对象
+//    console.log(document.links);
+//    console.log(document.forms);
+//    console.log(document.images);
+
+//    var c = document.images;
+
+//    var img1 = c.item(0);
+//    var img1 = c[0];
+//    console.log(c[0],img1);
+
+    var elem1 = document.forms.namedItem('myForm');
+    var elem2 = document.forms['myForm'];
+//    console.log(elem1,elem2);
+
+    console.log(document.querySelector('form').firstElementChild);
+
+/*遍历节点*/
+    function DOMComb(parent, callback){
+        if(parent.hasChildNodes()){
+            for(var node = parent.firstChild; node; node = node.nextSibling){
+                DOMComb(node, callback);
+            }
+        }
+        callback.call(parent);
+    }
+    function printContent(){
+        if(this.nodeValue){
+            console.log(this.nodeValue);
+        }
+        console.log(this.nodeName);
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="轩邈">
+    <meta name="copyright" content="轩邈">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <!-- 网站SEO -->
+    <title>Title</title>
+    <meta name="keywords" content="轩邈 xuanmiao xuanmiao.com">
+    <meta name="description" content="轩邈 | 猎奇蜗牛">
+    <!-- 标题栏logo图标 -->
+    <link rel="icon" href="./style/image/favicon_logo.ico" type="image/x-icon">
+    <!-- 收藏夹logo图标 -->
+    <link rel="shortcut icon" href="./style/image/favicon_logo.ico" type="image/x-icon">
+    <style>
+        #qqVerification{
+            width: 460px;
+            height: 200px;
+            background: linear-gradient(to right bottom,#DB4B66 0%,#804EBE 100%);
+            text-align: center;
+            margin: 120px auto;
+        }
+        #qqVerification h1{
+            margin: 0;
+            padding: 0;
+            color: #fff;
+            line-height: 100px;
+        }
+        .content{
+            position: relative;
+        }
+        #qqVerification div.content span, div.content input{
+            padding: 0 10px;
+            border: none;
+            line-height: 24px;
+            color: #fff;
+        }
+        div.content input{
+            line-height: 30px;
+            border-radius: 5px;
+        }
+        .prompt{
+            position: absolute;
+            display: inline-block;
+            top: 40px;
+            left: 174px;
+            width: 150px;
+            padding: 4px 20px;
+            border-radius: 5px;
+            color: #FEF86B;
+            background: #91446F;
+        }
+
+        div.content input[type="text"]{
+            color: #666;
+            letter-spacing: 1px;
+            font-size: 14px;
+        }
+        div.content input[type="button"]{
+            background: #000;
+            cursor: pointer;
+        }
+        div.content input[type="button"]:hover{
+            outline: 2px solid #4D75E7;
+        }
+    </style>
+</head>
+<body>
+    <div id="qqVerification">
+        <h1>xuanmiao.com</h1>
+        <div class="content">
+            <span>请输入QQ号码</span>
+            <input type="text" placeholder="请输入你的QQ号码">
+            <div class="prompt">请输入数字</div>
+            <input type="button" value="检测">
+        </div>
+    </div>
+
+<script>
+    var inputText = document.querySelector(".content input:first-of-type");
+    var checkBtn = document.querySelector(".content input:nth-of-type(2)");
+    var prompt = document.querySelector(".prompt");
+    checkBtn.onclick = function () {
+        if(inputText.value === ''){
+            prompt.innerText = "请输入内容";
+        }else if(inputText.value.length<5||inputText.value.length>10){
+            prompt.innerText = "输入的数字必须是5位以上10位以内";
+        }else{
+            if(isNaN(inputText.value)){
+                prompt.innerText = "请输入数字";
+            }else if(inputText.value.charAt(0) === '0'){
+                prompt.innerText = "不能有0在前面";
+            }else{
+                prompt.innerText = "QQ合法";
+            }
+        }
+    };
+
+</script>
+</body>
+</html>

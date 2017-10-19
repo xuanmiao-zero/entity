@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="轩邈">
+    <meta name="copyright" content="轩邈">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <!-- 网站SEO -->
+    <title>Title</title>
+    <meta name="keywords" content="轩邈 xuanmiao xuanmiao.com">
+    <meta name="description" content="轩邈 | 猎奇蜗牛">
+    <!-- 标题栏logo图标 -->
+    <link rel="icon" href="" type="image/x-icon">
+    <!-- 收藏夹logo图标 -->
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <style>
+        #calender{
+
+        }
+    </style>
+</head>
+<body>
+    <div id="calender">
+        <div></div>
+    </div>
+
+<script>
+
+    var monthDayCount = getMonthDayCount(2);
+    console.log(monthDayCount);
+    for(var i = 0; i < monthDayCount; i ++){
+        console.log(i + 1 + " ");
+    }
+    function getMonthDayCount(month){
+        var date = new Date();
+        date.setMonth(month);
+        date.setMonth(date.getMonth(date));
+
+        date.setDate(0);
+        return date.getDate();
+
+    }
+</script>
+</body>
+</html>

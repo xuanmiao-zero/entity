@@ -1,0 +1,94 @@
+.body,h1,h3{
+	margin: 0;
+	font-family: "微软雅黑";
+	font-size: 12px;
+}
+.box{
+	width:1263px;
+	height:5676px;
+	background: pink;
+	margin: 0 auto;
+}
+.top{
+	width:1263px;
+	height:40px;
+	background: #24282c;
+	border-bottom: 1px solid #45484b;
+}
+.top-left{
+	margin-top: 10px;
+	margin-left: 20px;
+	float:left;
+}
+.bt{
+	font-size: 15px;
+	color:white;
+	vertical-align: top;
+	margin-left: 4px;
+}
+.top-right{
+	width:364px;
+	height:18px;
+	float:left;
+	margin-left: 799px;
+	margin-top: 11px;
+}
+.top-right li{
+	float:left;
+	margin-right: 24px;
+}
+.top-right span{
+	margin-right: 9px;
+}
+.guo{
+	margin-right: 9px;
+	color:white;
+	vertical-align: top;
+}
+.fr a{
+	color:white;
+}
+.xia{
+	text-align: center;
+}
+.top2{
+	width:1263px;
+	height:60px;
+	background: #24282c;
+	border-bottom: 1px solid #45484b;
+	position: relative;
+}
+.top2 .left li a{
+	float: left;
+	margin-left: 19px;
+	margin-top: 20px;
+	color:white;
+}
+.top2 .left li span{
+	margin-right: 9px;
+	color:white;
+	vertical-align: top;
+}
+.top2 .right{
+	margin-left: 1143px;
+	background: #00c1de;
+	width:88px;
+	height:30px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	padding-left: 32px;
+}
+.top2 .left li .hot{
+	position: absolute;
+	left: 149px;
+	top: 8px;
+}
+.mianfei{
+	font-size: 12px;
+	line-height: 30px;
+}
+.head1{
+	width:1263px;
+	height:438px;
+	background: url(../img/rz.jpg) no-repeat;
+}

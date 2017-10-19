@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="轩邈">
+    <meta name="copyright" content="轩邈">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <!-- 网站SEO -->
+    <title>Title</title>
+    <meta name="keywords" content="轩邈 xuanmiao xuanmiao.com">
+    <meta name="description" content="轩邈 | 猎奇蜗牛">
+    <style>
+
+    </style>
+</head>
+<body>
+
+
+<script>
+    var str = "jqkgowhnksjQA'PKJJNWBAUPRIKBL62" +
+        "1252222222222222222222ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss2000000000000000000000000000000000000000000........QGHAFEPJSODNKBGYUIWRGD;FLVBDHGUHKNLMFDFSVGYjdksng;klsjfkjfwoirjnk498465744500000061327" +
+        "795621978956136" +
+        "4653200000000000000000000000000000005";
+    /*先排序再用replace回调函数找连续字符串其中长度最长的*/
+    /*声明连续字符最大的长度*/
+    var max = -Infinity;
+    var index = '';
+    str = str.split('').sort().join('');
+    console.log(str);
+    str.replace(/(.)\1+/g,function ($0,$1) {
+        if($0.length>max){
+            max = $0.length;
+            index = $1;
+        }
+    });
+    console.log(max,index);
+
+
+    /*json[key]代表字符，value代表字符数量*/
+    var max = -Infinity;
+    var index = '';
+
+    /*统计字符数量*/
+    var json = {};
+    for(var i = 0; i < str.length; i++){
+        if(!json[str[i]]){
+            json[str[i]] = 1;
+        }else{
+            json[str[i]] ++;
+        }
+    }
+    /*找到最大值*/
+    for (var key in json){
+        if(json[key]>max){
+            max = json[key];
+            index = key;
+        }
+    }
+    console.log(index,max);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+    /*
+    * 定时器：不会阻断代码执行
+    *
+    * 定时器不会再完整的代码块执行完之前插入代码
+    *
+    * */
+    var time = (new Date()).getTime();
+    var timer = 0;
+    var num = 0;
+    timer = setInterval(function(){
+        num++;
+        if(num==3){
+            clearInterval(timer);
+        }
+        delayTime();
+    },800);
+
+    for(var i=0;i<10000;i++){
+        console.log(1);
+    }
+
+
+    console.log(1.1);
+
+
+
+    for(var i=0;i<10000;i++){
+        console.log(2);
+    }
+
+
+    for(var i=0;i<5000;i++){
+        console.log(3);
+    }
+
+    for(var i=0;i<2000;i++){
+        console.log(4);
+    }
+
+//    console.log(1);
+
+
+
+
+    function delayTime(){
+        var time2 = (new Date()).getTime();
+        console.log(time2-time);
+        time = time2;
+    }
+
+
+</script>
+</body>
+</html>

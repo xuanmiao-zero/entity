@@ -1,0 +1,469 @@
+/*命名空间*/
+
+.movie{}
+
+/*头部*/
+
+.movie .mr0{
+	margin-right: 0;
+}
+
+.movie .main_ad{
+	margin-top: 33px;
+}
+
+.movie .change_l,.movie .change_r{
+	width: 20px;
+	height: 32px;
+	position: absolute;
+	top: 189px;
+}
+
+.movie .change_l{
+	background-position: -54px -63px;
+	left: 20px;
+}
+
+.movie .change_r{
+	background-position: -54px -95px;
+	right: 20px;
+}
+
+.movie .main_ad .ad_btns{
+	position: absolute;
+	left: 490px;
+	bottom: 10px;
+}
+
+.movie .paihang{
+	margin-top: 20px;
+	border-bottom: 3px solid #e6e6e6;
+	padding-bottom: 16px;
+}
+
+.movie .ph_head{
+	background-color: #f5f5f5;
+	margin-bottom: 4px;
+}
+
+.movie .ph_head a{
+	font: 12px/22px "微软雅黑";
+	color: white;
+	padding: 0 10px;
+	background-color: #909090;
+}
+
+.movie .ph_1{
+	width: 285px;
+}
+
+.movie .ph_2,.movie .ph_3{
+	width: 300px;
+}
+
+.movie .ph_4{
+	width: 305px;
+}
+
+.movie .ph_1 .ph_con{
+	width: 220px;
+}
+
+.movie .ph_2 .ph_con,.movie .ph_3 .ph_con{
+	width: 250px;
+}
+
+.movie .ph_4 .ph_con{
+	width: 195px;
+}
+
+.movie .ph_con a{
+	font: 12px/24px "微软雅黑";
+	float: left;
+	margin-right: 20px;
+}
+
+.movie .con_ad{
+	margin-top: 40px;
+	margin-right: -20px;
+}
+
+.movie .con_ad a{
+	float: left;
+	margin-right: 20px;
+	background-color: white;
+}
+
+.movie .yugao{
+	margin-top: 40px;
+}
+
+.movie .yugao_l{
+	width: 866px;
+}
+
+.movie .yugao_head a{
+	float: left;
+	font: 19px/30px "微软雅黑";
+	padding: 0 20px;
+}
+
+.movie .yugao_head .on{
+	background-color: #30B2FF;
+	color: white;
+}
+
+.movie .yugao_con{
+	margin-right: -20px;
+}
+
+.movie .yugao_mod{
+	margin-top: 16px;
+	width: 200px;
+	margin-right: 20px;
+}
+
+.movie .yugao_mod .border1{
+	width: 196px;
+	height: 1px;
+	background-color: #cfcfcf;
+	margin: 0 2px 1px;
+}
+
+.movie .yugao_mod .border2{
+	width: 198px;
+	height: 1px;
+	background-color: #aeaeae;
+	margin: 0 1px 1px;
+}
+
+.movie .jilu{
+	width: 310px;
+}
+
+.movie .mv_head{
+	margin-bottom: 20px;
+}
+
+.movie .mv_title{
+	font: 25px/35px "微软雅黑";
+	color: #909090;
+	margin-right: 20px;
+}
+
+.movie .mv_more{
+	font: 12px/30px "微软雅黑";
+}
+
+.movie .jl_c_text{
+	text-align: center;
+	font: 13px/240px "微软雅黑";
+	color: #909090;
+}
+
+.movie .like{
+	margin-top: 39px;
+}
+
+.movie .mv_head{
+	margin-bottom: 16px;
+}
+
+.movie .like .mv_title{
+	line-height: 35px;
+}
+
+.movie .like_con{
+	margin-right: -20px;
+}
+
+.movie .like_con li{
+	margin-right: 20px;
+}
+
+.movie .channel_mod{
+	margin-top: 29px;
+}
+
+.movie .channel_mod .ad_btns{
+	margin-left: 570px;
+	margin-top: 10px;
+}
+
+.movie .channel_mod .ad_btns a{
+	background-color: #c3c3c3;
+}
+
+.movie .channel_mod .ad_btns .on{
+	background-color: #69AAEC;
+}
+
+.movie .shangyingjie .ad_btns{
+	margin-left: 580px;
+	margin-top: 10px;
+}
+
+.movie .con_left{
+	width: 880px;
+}
+
+.movie .gengxin{
+	width: 200px;
+	margin-right: 20px;
+	padding-top: 4px;
+}
+
+.movie .jiedu .mv_head,.movie .jiedu{
+	width: 880px;
+}
+
+.movie .jiedu .mod_con{
+	padding-top: 4px;
+}
+
+.movie .jiedu_con{
+	width: 640px;
+}
+
+.movie .jiedu_con li{
+	margin-right: 20px;
+	float: left;
+	margin-bottom: 16px;
+}
+
+.movie .jiedu_con .mr0{
+	margin-right: 0;
+}
+.movie .jiedu_con .mb0{
+	margin-bottom: 0;
+}
+
+.movie .box1{
+	margin-bottom: 40px;
+}
+
+.movie .gengxin{
+	width: 200px;
+	height: 238px;
+}
+
+.movie .gengxin a{
+	float: left;
+	width: 200px;
+	background-color: #f5f5f5;
+	font: 13px/34px "微软雅黑";
+	text-indent: 10px;
+}
+
+.movie .gengxin a:hover{
+	background-color: #06a7e1;
+	color: white;
+}
+
+.movie .gengxin .on{
+	background-color: #06a7e1;
+	color: white;
+}
+
+.movie .jiedu{
+	margin-top: 9px;
+}
+
+.movie .jiedu .mv_head{
+	margin-bottom: 12px;
+}
+
+.movie .jiedu_con .mod_con{
+	width: 420px;
+}
+
+.movie .tuijian{
+	width: 310px;
+}
+
+.movie .tuijian_head a{
+	font: 26px/34px "微软雅黑";
+	margin-bottom: 16px;
+}
+
+.movie .tuijian_head{
+	margin-bottom: 16px;
+}
+
+.movie .tuijian_con{
+	margin-bottom: -5px;
+}
+
+.movie .tuijian_mod{
+	margin-bottom: 5px;
+}
+
+.movie .tuijian_img{
+	margin-right: 10px;
+}
+
+.movie .tuijian_t{
+	font: 13px/22px "微软雅黑";
+}
+
+.movie .tuijian_text{
+	font: 12px/20px "微软雅黑";
+	color: #909090;
+}
+
+.movie .big_ad .ad_btns{
+	position: absolute;
+	left: 580px;
+	bottom: 10px;
+}
+
+.movie .box2{
+	margin-top: 50px;
+}
+
+.movie .net_movie{
+	width: 880px;
+}
+
+.movie .net_movie .yugao_head{
+	margin-bottom: 20px;
+}
+
+.movie .net_movie_con{
+	margin-right: -20px;
+	overflow: hidden;
+}
+
+.movie .net_movie_con li{
+	float: left;
+	margin-right: 20px;
+	margin-bottom: 20px;
+}
+
+.movie .tuijian_con{
+	width: 310px;
+	overflow: hidden;
+}
+
+.movie .jijiang .mv_head{
+	margin-bottom: 15px;
+}
+
+.movie .jijiang .tuijian_mod{
+	margin-bottom: 16px;
+}
+
+.movie .jijiang .tuijian_mod p{
+	width: 150px;
+	float: left;
+}
+
+.movie .huayu{
+	margin-top: 9px;
+	margin-bottom: 20px;
+	width: 860px;
+}
+
+.movie .huayu .ad_btns{
+	margin-left: 395px;
+}
+
+.movie .huayurebo{
+	margin-left: 20px;
+	margin-bottom: 40px;
+}
+
+.movie .huayurebo .mv_head{
+	margin-top: 9px;
+}
+
+.movie .ph_mod{
+	margin-bottom: 10px;
+}
+
+.movie .ph_text{
+	width: 280px;
+}
+
+.movie .ph_name{
+	font: 13px/20px "微软雅黑";
+}
+
+.movie .ph_play{
+	font: 13px/20px "微软雅黑";
+	color: #909090;
+}
+
+.movie .zhuanchang{
+	margin-right: -20px;
+}
+
+.movie .zhuanchang li{
+	float: left;
+	margin-right: 20px;
+}
+
+.movie .gangtai,.movie .haolaiwu,.movie .rihan{
+	width: 860px;
+}
+
+.movie .gangtai .ad_btns{
+	margin-left: 405px;
+}
+
+.movie .piaofang{
+	margin-top: 30px;
+	margin-left: 20px;
+}
+
+.movie .pf_h_a a{
+	float: left;
+	font: 14px/30px "微软雅黑";
+	padding: 0 10px;
+}
+
+.movie .pf_h_a .on{
+	color: white;
+	background-color: #06a7e1;
+}
+
+.movie .pf_h_p{
+	font: 12px/28px "微软雅黑";
+	color: #909090;
+	margin-bottom: 12px;
+}
+
+.movie .hezuo{
+	margin-bottom: 90px;
+}
+
+.movie .hezuo_mod{
+	float: left;
+	margin-right: 110px;
+	margin-bottom: 20px;
+}
+
+.movie .hezuohuoban .hezuo .mr0{
+	margin-right: 0;
+}
+
+.movie .foot_bg{
+	background-color: white;
+}
+
+.movie .box5 .huayurebo{
+	margin-top: 20px;
+}
+
+.movie .box6 .huayurebo{
+	margin-top: 20px;
+}
+
+.movie .box7 .jijiang{
+	margin-left: 20px;
+	margin-top: 30px;
+}
+
+.movie .box5 .ad_btns,.movie .box6 .ad_btns,.movie .box7 .ad_btns{
+	margin-left: 395px;
+}

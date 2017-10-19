@@ -1,0 +1,86 @@
+body,h5{
+	margin:0;
+}
+body{
+	font:12px "宋体";
+}
+a{
+	text-decoration:none;
+}
+ul,li{
+	padding:0;
+	margin:0;
+	list-style:none;
+}
+img{
+	vertical-align:top;
+	border:none;
+}
+.box{
+	width:689px;
+	height:507px;
+}
+.head{
+	
+	width:680px;
+	height:36px;
+	padding:0 4px 3px 5px;
+}
+.fl{
+	float:left;
+}
+.fr{
+	float:right;
+}
+.head .title{
+	font:12px/36px "宋体";
+}
+.title_pic .pic_right{
+	margin-left:4px;
+}
+.title_pic{
+	margin-top:4px;
+}
+.content{
+	width:680px;
+	height:457px;
+	padding:0 4px 12px 5px;
+}
+.content .item{
+	width:333px;
+	height:140px;
+	border:1px solid #e6e6e6;
+	background-color:#f3f3f3;
+	margin-right:10px;
+	margin-bottom:10px;
+}
+.content .nomargin{
+	margin-right:0;
+}
+.item .pic,.item .text {
+	margin-top:10px;
+	margin-left:10px;
+}
+.pic_top,.pic_bottom{
+	display:block;
+}
+.pic_bottom{
+	margin-top:6px;
+	margin-left:13px;
+}
+.text .name{
+	font-weight:bold;
+	color:#0a8cd2;
+	line-height:14px;
+	margin-right:-1px;
+	display:block;
+}
+.text .font{
+	display:block;
+	line-height:28px;
+	color:#808080;
+}
+.text .font2{
+	display:block;
+	line-height:12px;
+}

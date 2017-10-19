@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="轩邈">
+    <meta name="copyright" content="轩邈">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <!-- 网站SEO -->
+    <title>Title</title>
+    <meta name="keywords" content="轩邈 xuanmiao xuanmiao.com">
+    <meta name="description" content="轩邈 | 猎奇蜗牛">
+    <style>
+        /*内容盒子*/
+        #contentBox{
+            box-sizing: border-box;
+            padding: 20px;
+            margin: auto;
+            border-radius: 10px;
+            width: 700px;
+            height: 400px;
+            background-color: #1C9ABE;
+            overflow: hidden;
+            color: #fff;
+        }
+        /*logo加标题*/
+        #contentBox>header h1.title{
+            display: inline-block;
+            z-index: 0;
+            position: relative;
+            margin:0 0 0 9px;
+            font-size: 26px;
+        }
+        #contentBox>header h1.title:before{
+            z-index: -1;
+            position: absolute;
+            content: '';
+            display: block;
+            width:28px;
+            height: 28px;
+            background-color: #fff;
+            border-radius: 100%;
+            margin: 9px 0 0 -9px;
+        }
+        #contentBox>header h1.title::first-letter {
+            color: #1C9ABE;
+            font-size: 30px;
+        }
+        /*返回招聘列表*/
+        #contentBox>header a{
+            margin-left: 240px;
+            display: inline-block;
+            text-decoration: none;
+            color: #FFCE45;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        #contentBox>header a:hover, .submit-resume:hover{
+            color: yellow;
+        }
+        /*投个简历*/
+        .submit-resume{
+            margin-left: 30px;
+            border: 1px solid #FFCE45;
+            display: inline-block;
+            padding: 2px 20px;
+            border-radius: 50px;
+            color: #FFCE45;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        /*主要内容*/
+        .content header{
+            width:100%;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.5);
+        }
+        .content h2{
+            margin-bottom: 10px;
+        }
+        .content header p{
+            margin-top: 0;
+            display: inline-block;
+            font-size: 15px;
+            letter-spacing: 1px;
+        }
+        .content .time{
+            float: right;
+            font-size: 15px;
+        }
+
+        /*岗位要求*/
+        .request{
+            margin-top: 20px;
+        }
+        .request li, .responsibility p{
+            font-size: 15px;
+            line-height: 1.5;
+            color: rgba(255,255,255,0.9);
+        }
+        ul{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        .responsibility{
+            margin-top: 10px;
+        }
+        .responsibility p{
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="contentBox">
+        <header>
+            <h1 class="title">xuanmiao</h1>
+            <a href="../recruitment.html">&lt返回招聘列表</a>
+            <div class="submit-resume">投个简历</div>
+        </header>
+        <section class="content">
+            <header>
+                <h2>前端工程师【社会招聘】</h2>
+                <p class="recr-wrap"><span class="audition">面议</span> / <span class="address">上海</span> / <span class="work-time">3年以上</span> / <span class="educational-background">本科及以上</span> / <span class="recruits-number">3名</span></p>
+                <span class="time">2017-9-11</span>
+            </header>
+
+            <div class="request">岗位要求
+                <ul>
+                    <li>1.计算机或相关专业本科以上学历。</li>
+                    <li>2.从事软件测试工作3年及以上。</li>
+                    <li>3.具备良好的沟通能力和快速学习能力。</li>
+                    <li>4.精通测试策略和方法、测试用例设计。</li>
+                    <li>5.熟悉DB2、AIX等平台的基本操作。</li>
+                    <li>6.具备2年以上金融IT行业经验，特别是有金融行业相关业务的测试或者开发工作经验者优先</li>
+                </ul>
+            </div>
+            <div class="responsibility">工作职责
+                <p>从事计算机软件的测试工作</p>
+            </div>
+        </section>
+    </div>
+    <script src="../data.js"></script>
+    <script src="../animal_collection.js"></script>
+<script>
+    var contentBox = document.querySelector('#contentBox');
+    var contentHeader = contentBox.querySelector('.content header');
+    var job = contentHeader.querySelector('h2');
+    var recrWrap = contentHeader.querySelector('.recr-wrap');
+    var time = contentHeader.querySelector('.time');
+    var request = contentBox.querySelector('.request ul');
+    var responsibility = contentBox.querySelector('.responsibility p');
+    //默认
+    var search = searchToJson(window.location.search);
+    var type = search.type;
+    var hash = window.location.hash.slice(1);
+    if(!type){
+        window.location = "#0";
+        window.location.search = "type=social";
+//        window.location.hash = "#0";//？因为设置search会导致刷新。
+    }
+    job.innerHTML = recruitmentData.search[hash].title;
+</script>
+</body>
+</html>

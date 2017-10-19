@@ -1,0 +1,91 @@
+body,h3,p{
+	margin: 0;
+}
+a{
+	text-decoration: none;
+}
+ul,li{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.clearfix:after{
+	content: "";
+	clear: both;
+	display: block;
+}
+.section{
+	width: 228px;
+	height: 461px;
+	border: 1px solid #d0d1cc;
+	margin: 50px auto;
+}
+.section .head{
+	height: 37px;
+	background-color: #f3f3f3;
+	border-top: 1px solid white;
+	border-bottom: 1px solid white;
+	
+}
+.section .head h3{
+	font: bold 12px/12px "宋体";
+	margin: 13px 13px 0;
+	float: left;
+}
+.section .head a{
+	float: right;
+	font: 12px/12px "宋体";
+	color: #999999;
+	margin: 14px 15px 0 0;
+}
+.section .content{
+	height: 421px;
+	border-top: 1px solid #D0D1CC;
+	padding: 0 14px;
+}
+.section .content li{
+	width: 200px;
+	height: 90px;
+	padding-top: 12px;
+	border-bottom: 1px dashed #cecece;
+	margin-bottom: 2px;
+	float: left;
+}
+.section .content li .left{
+	height: 90px;
+	width: 40px;
+	margin-right: 8px;
+	float: left;
+}
+.section .content li .left .img{
+	float: left;
+	width: 40px;
+	height: 40px;
+	margin-bottom: 7px;
+}
+.section .content li .left .follow{
+	width: 40px;
+	height: 24px;
+	float: left;
+}
+.section .content li .right{
+	float: right;
+	width: 152px;
+	height: 85px;
+	margin-top: 5px;
+}
+.section .content li .right .name{
+	height: 12px;
+	font: 12px/12px "宋体";
+	color: black;
+	margin-bottom: 7px;
+	display: block;
+}
+.section .content li .right .info{
+	font: 12px/18px "宋体";
+	color: #5f80a9;
+}
+.section .content li .right .info2{
+	font: 12px/18px "宋体";
+	color: #999999;
+}

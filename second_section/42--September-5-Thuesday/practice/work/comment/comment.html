@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="轩邈">
+    <meta name="copyright" content="轩邈">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <!-- 网站SEO -->
+    <title>Title</title>
+    <meta name="keywords" content="轩邈 xuanmiao xuanmiao.com">
+    <meta name="description" content="轩邈 | 猎奇蜗牛">
+    <!-- 标题栏logo图标 -->
+    <link rel="icon" href="" type="image/x-icon">
+    <!-- 收藏夹logo图标 -->
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <style>
+        #commentMain{
+            margin: auto;
+            width: 700px;
+            background-color: #56A36C;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        #commentMain h2{
+            color: #eee;
+            font-size: 40px;
+            text-align: center;
+        }
+
+        #input{
+            border-radius: 6px;
+            padding: 10px;
+            background-color: #fefefe;
+        }
+
+        .submit{
+            margin: 10px 63%;
+            outline: none;
+            padding: 4px 20px;
+            border-radius: 20px;
+            border: 1px solid #5E8579;
+            background-color: #7E884F;
+            cursor: pointer;
+            color: #eee;
+        }
+
+        .comment-box{
+            margin: 10px auto;
+            width: 320px;
+            text-align: left;
+        }
+
+        img{
+            border-radius: 100%;
+            line-height: 36px;
+            width: 36px;
+            height: 36px;
+            vertical-align: middle;
+        }
+
+        p{
+            margin: 0;
+            padding: 0 20px;
+            display: inline-block;
+            color: #eee;
+            background-color: #2E68AA;
+            line-height: 36px;
+            border-radius: 6px;
+            max-width: 210px;
+            word-break:break-all;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+<div id="commentMain">
+    <h2>xuanmiao</h2>
+    <textarea name="input" id="input" cols="40" rows="6"></textarea>
+    <input class="submit" type="submit" value="提交">
+    <div class="comment-box">
+        <img class="avatar" src="little_girl_deer.jpg" alt="xuanmiao">
+        <p class="comment-item"></p>
+    </div>
+</div>
+
+<script>
+    var commentMain = document.querySelector('#commentMain');
+    var textarea = document.querySelector('#input');
+    var submitBtn = document.querySelector('.submit');
+    var commentBoxDemo = document.querySelector('.comment-box');
+    commentBoxDemo.style.display = "none";
+    submitBtn.onclick = function () {
+        if(textarea.value === ""){
+            alert("请输入内容");
+        }else{
+            var message = commentBoxDemo.cloneNode(true);
+            message.lastElementChild.innerHTML = textarea.value;
+            message.style.display = "block";
+            commentMain.appendChild(message);
+            textarea.value = "";
+        }
+    };
+</script>
+</body>
+</html>

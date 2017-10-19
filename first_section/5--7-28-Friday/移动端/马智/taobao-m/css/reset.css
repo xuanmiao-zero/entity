@@ -1,0 +1,30 @@
+body,h1,h2,h3,h4,h5,dl,dt,dd{
+	margin: 0;
+}
+img{
+	margin: 0;
+	width: 100%;
+	height: 100%;
+	vertical-align: top;
+}
+ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+html{
+	/* 让html高度以可视区域高度展示 */
+	height: 100%;
+	/* 将html滚动条去掉 */
+	overflow: hidden;
+}
+body{
+	/* 让body高度以html高度一致 */
+	height: 100%;
+	/* 将滚动条加给body */
+	overflow: auto;
+	margin: 0;
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="author" content="xuanmiao"/>
+    <meta name="copyright" content="xuanmiao"/>
+    <meta name="keywords" content="轩邈"/>
+    <meta name="description" content="xuanmiao"/>
+
+    <title>Title</title>
+    <!--<link href="./stxuanmiao.css.css" rel="stylesheet" type="text/css"/>-->
+    <style>
+        body{
+            margin: 0;
+        }
+        #container{
+            width:500px;
+            height:320px;
+            background: url("../../img/beauty/beaver.jpg") no-repeat ;
+            background-size: 500px 320px;
+            margin: 20px auto;
+        }
+        .blockImage{
+            width: 48px;
+            height: 30px;
+            background: #fff;
+            border: 1px solid rgba(200,200,200,0.2);
+            float: left;
+            /*margin:5px;*/
+        }
+    </style>
+</head>
+<body>
+<h1 id="title" class="title"></h1>
+<div id="container">
+
+</div>
+
+<!--<script type="text/javascript" src="./js/jx.min.js"></script>-->
+<script type="text/javascript">
+    var blockImages = [];
+    var container = document.getElementById('container');
+    for(var i = 0 ; i < 10; i ++){
+        for(j = 0; j < 10; j ++){
+            container.innerHTML += "<div class=\"blockImage\"></div>";
+        }
+    }
+    var blockImages = document.getElementsByClassName('blockImage');
+    for(var j = 0; j < blockImages.length; j ++){
+        blockImages[j].onmouseover = function () {
+            this.style.background = "transparent";
+        }
+    }
+
+</script>
+</body>
+</html>

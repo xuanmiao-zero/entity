@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="轩邈">
+    <meta name="copyright" content="轩邈">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <!-- 网站SEO -->
+    <title>Title</title>
+    <meta name="keywords" content="轩邈 xuanmiao xuanmiao.com">
+    <meta name="description" content="轩邈 | 猎奇蜗牛">
+    <!-- 标题栏logo图标 -->
+    <link rel="icon" href="" type="image/x-icon">
+    <!-- 收藏夹logo图标 -->
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <style>
+
+    </style>
+</head>
+<body>
+
+
+<script>
+
+    var arr1 = [1,2,3];
+    var arr2 = [4,5,6];
+    arr1.splice(0,0,4,5);   //添加
+    arr2.splice(0,2,1,2);   //删除
+//    console.log(arr1);
+//    console.log(arr2);
+
+    var arr3 = [3,2,6,1,9];
+//    从小到大
+    arr3.sort(function (a,b) {
+        console.log(a,b);
+        return a-b;
+    });
+    console.log(arr3);
+    var arr4 = [3,2,6,1,9];
+    arr4.sort(function () {
+        return Math.random() - 0.5;
+    });
+    console.log(arr4);
+
+
+</script>
+</body>
+</html>

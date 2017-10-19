@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+<script>
+    function Person (name, age, job){
+        this.name = name;
+        this.age = age;
+        this.job = job;
+    }
+
+/*    Person.say = function(){
+        alert(111);
+    }
+
+    Person.prototype.say = function(person){
+        alert(this.name);
+    }
+
+    Function.prototype.say = function(){
+        alert();
+    }
+*/
+   /* Object.prototype.say = function(obj){
+        alert(this.age);
+    }*/
+
+
+
+    var p = new Person("xuanmiao", 16, "前端");
+    // var p1 = new Person("mazhi", 16, "前端");
+    // alert(p.say === p1.say);
+    // p.say();
+    console.log(p);
+    console.log(p.__proto__ === Person.prototype);
+</script>
+</html>

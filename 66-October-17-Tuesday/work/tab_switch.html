@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="轩邈">
+    <meta name="copyright" content="轩邈">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <!-- 网站SEO -->
+    <title>选项卡切换-面向对象</title>
+    <meta name="keywords" content="轩邈 xuanmiao xuanmiao.com">
+    <meta name="description" content="轩邈 | 猎奇蜗牛">
+    <style>
+        .active{
+            background-color: deepskyblue;
+        }
+        div{
+            display: none;
+            width: 200px;
+            height: 200px;
+            border: 1px solid #333;
+        }
+        .show{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<button class="active">选项卡1</button>
+<button>选项卡2</button>
+<button>选项卡3</button>
+<div class="show">111111</div>
+<div>222222</div>
+<div>333333</div>
+
+<script>
+    function tabSwitch(){
+        this.btns = document.querySelectorAll('button');
+        this.contents = document.querySelectorAll('div');
+        this.autoPlay();
+    }
+
+    tabSwitch.prototype.fn1 = function () {
+        var _this = this;
+        for(var i = 0; i < this.btns.length; i++){
+            this.btns[i].index = i;
+            (function (index) {
+                _this.btns[index].onmouseover = function () {
+                    _this.switch(index);
+                }
+            })(i);
+        }
+    };
+
+    tabSwitch.prototype.switch = function (index) {
+        for(var i = 0; i< this.btns.length; i++){
+            this.btns[i].className = "";
+            this.contents[i].className = "";
+        }
+        this.btns[index].className = "active";
+        this.contents[index].className = "show";
+    };
+
+    /*自动切换*/
+    tabSwitch.prototype.autoPlay = function () {
+        var _this = this;
+        var i = 0;
+        var timer = setInterval(function () {
+            i++;
+            _this.switch(i % _this.btns.length);
+            console.log(i);
+        },1000);
+    };
+
+    var t = new tabSwitch();
+    t.fn1();
+
+</script>
+</body>
+</html>

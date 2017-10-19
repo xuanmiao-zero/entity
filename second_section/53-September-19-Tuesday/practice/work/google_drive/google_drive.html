@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="轩邈">
+    <meta name="copyright" content="轩邈">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <!-- 网站SEO -->
+    <title>Title</title>
+    <meta name="keywords" content="轩邈 xuanmiao xuanmiao.com">
+    <meta name="description" content="轩邈 | 猎奇蜗牛">
+    <style>
+        #box1{
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+        }
+
+        #box2{
+            position: absolute;
+            top: 300px;
+            left: 300px;
+            width: 100px;
+            height: 100px;
+            background-color: dodgerblue;
+        }
+    </style>
+</head>
+<body>
+    <div id="box1"></div>
+    <div id="box2"></div>
+<script>
+    var box1 = document.getElementById('box1');
+    var box2 = document.getElementById('box2');
+
+    box1.onmousedown = function (ev) {
+        var _this = this;
+
+        var downX = ev.clientX;
+        var downY = ev.clientY;
+
+        var _left = this.offsetLeft;
+        var _top = this.offsetTop;
+
+        //找到box2碰不到的位置
+
+
+        document.onmousemove = function (ev) {
+            var moveX = ev.clientX;
+            var moveY = ev.clientY;
+
+            //计算box1的位置
+            var l = moveX-downX + _left;
+            var t = moveY-downY + _top;
+            console.log(l,t);
+            //设置样式
+            _this.style.left = l + "px";
+            _this.style.top = t + "px";
+        };
+
+    };
+
+    document.onmouseup = function (ev) {
+        document.onmousemove = null;
+    }
+</script>
+</body>
+</html>

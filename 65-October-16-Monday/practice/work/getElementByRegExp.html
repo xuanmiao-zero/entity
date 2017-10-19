@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="轩邈">
+    <meta name="copyright" content="轩邈">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <!-- 网站SEO -->
+    <title>获取元素</title>
+    <meta name="keywords" content="轩邈 xuanmiao xuanmiao.com">
+    <meta name="description" content="轩邈 | 猎奇蜗牛">
+    <style>
+
+    </style>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li class="li1     li">2</li>
+        <li>3</li>
+        <li class="li1 li2">4</li>
+        <li>5</li>
+    </ul>
+
+<script>
+    var eles = getByClass('.li2');
+    for(var  i=0; i< eles.length; i++){
+        console.log(eles[i].innerHTML);
+    }
+    function getByClass(sClass){
+        var s = sClass.charAt();
+        /*通过id获取*/
+        if(s === "#"){
+            return document.getElementById(sClass.substring(1));/*去掉#*/
+        }else if(s === "."){
+            /*通过className获取*/
+            /*判断是否有getElementsByClassNmae方法*/
+            if(document.getElementsByClassName){
+                return document.getElementsByClassName(sClass.substring(1));/*去掉#*/
+            }else{
+                var arr = [];
+                /*获取所有元素*/
+                var aEle = document.getElementsByTagName('*');
+                /*声明正则表达式并制定规则*/
+//                var re = new RegExp("(^|\\s)" + sClass.substring(1) + '(\\s|$)','g');
+                /*边界符版*/
+                var re = new RegExp("\\b" + sClass.substring(1) + "\\b", 'g');
+                /*遍历元素*/
+                for(var i = 0 ; i< aEle.length; i++){
+                    /*看元素className中是否有所要找的类*/
+                    if(re.test(aEle[i].className)){
+                        arr.push(aEle[i]);
+                    }
+                }
+                return arr;
+            }
+        }
+    }
+</script>
+</body>
+</html>

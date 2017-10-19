@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="author" content="xuanmiao"/>
+    <meta name="copyright" content="xuanmiao"/>
+    <meta name="keywords" content="轩邈"/>
+    <meta name="description" content="xuanmiao"/>
+
+    <title>block_image2</title>
+    <!--<link href="./stxuanmiao.css.css" rel="stylesheet" type="text/css"/>-->
+    <style>
+        #container{
+        }
+        .blockImage{
+            width: 48px;
+            height: 30px;
+            background:  deepskyblue;
+            background-size: 480px 300px;
+            display: block;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+</div>
+
+<!--<script type="text/javascript" src="./js/jx.min.js"></script>-->
+<script type="text/javascript">
+    var container = document.getElementById('container');
+    var blockW = 48;
+    var blockH = 30;
+    var blockMargin = 5;
+    container.style.width = (blockW+blockMargin*2) * 10 + "px";
+    container.style.height = (blockH+blockMargin*2) * 10 + "px";
+    for(var i = 0 ; i < 10; i ++){
+        for(j = 0; j < 10; j ++){
+            container.innerHTML += "    <div class=\"blockImage\" style=\"background-position: -" + blockW*j + "px -" + blockH*i + "px;margin: " + blockMargin + "px;\"></div>\n";
+        }
+    }
+    var blockImages = document.getElementsByClassName('blockImage');
+    for(var j = 0; j < blockImages.length; j ++){
+        blockImages[j].onmouseover = function () {
+            this.style.backgroundImage = "url(\"../../img/beauty/beaver.jpg\") ";
+        }
+    }
+</script>
+</body>
+</html>

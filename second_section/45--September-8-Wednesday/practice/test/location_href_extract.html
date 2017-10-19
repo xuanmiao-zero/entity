@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        a{
+            text-decoration: none;
+        }
+        div {
+            border: 1px solid #00a8e0;
+            padding: 20px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<a href="?page=1">?page=1</a>
+<a href="?page=2">?page=2</a>
+<div>page1</div>
+<div>page2</div>
+<script>
+    var search = window.location.search;
+    var  searchJson = {};
+    searchJson = searchToJson(search);
+
+    function searchToJson(search){
+        var searchJson = {};
+        search = search.slice(1);
+        var arrSplit = search.split('&');
+        for(var i = 0; i < arrSplit.length; i++){
+            arrSplit[i] = arrSplit[i].split('=');
+            searchJson[arrSplit[i][0]] = arrSplit[i][1];
+        }
+        console.log(searchJson);
+        return searchJson;
+    }
+
+</script>
+</body>
+</html>

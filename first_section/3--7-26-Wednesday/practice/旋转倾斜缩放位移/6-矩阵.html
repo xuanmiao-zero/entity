@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+				width: 300px;
+				height: 300px;
+				background-color: pink;
+				transform: rotate(90deg);
+				/*filter: progid:DXImageTransform.Microsoft.Matrix( M11= 1, M12= 0, M21= 0 , M22=1,SizingMethod='auto expand');*/
+			}
+		</style>
+		<!--
+			matrix(a,b,c,d,e,f) 矩阵函数
+			
+			思考题：
+				1 2 3	  0 0 1		
+				2 3 4  +  1 0 1  = 
+				4 5 6 	  0 1 0
+
+		-->
+	</head>
+	<body>
+		<div id="box"></div>
+		
+		
+		<script>
+			window.onload = function() {
+				var oBox = document.getElementById("box");
+				oBox.onclick = function() {
+					var a = 1;
+					var b = 0;
+					var c = 0;
+					var d = 1;
+					var e = 0;
+					var f = 0;
+					//-----------------------------
+					/*
+					 		通过矩阵实现缩放
+								x轴缩放 a=x*a;    c=x*c;    e=x*e;
+								y轴缩放 b=y*b;   d=y*d;     f=y*f;
+							
+							通过矩阵实现位移
+								x轴位移: e=e+x;
+								y轴位移: f=f+y;
+							
+							通过矩阵实现倾斜
+								x轴倾斜: c=Math.tan(xDeg/180*Math.PI);
+								y轴倾斜: b=Math.tan(yDeg/180*Math.PI);
+							
+							通过矩阵实现旋转
+								a=Math.cos(deg/180*Math.PI); 
+								b=Math.sin(deg/180*Math.PI);
+								c=-Math.sin(deg/180*Math.PI);
+								d=Math.cos(deg/180*Math.PI);
+
+
+					 */
+					var deg = 45;
+					
+					a=Math.cos(deg/180*Math.PI); 
+					b=Math.sin(deg/180*Math.PI);
+					c=-Math.sin(deg/180*Math.PI);
+					d=Math.cos(deg/180*Math.PI);
+					//-----------------------------
+					oBox.style.transform = "matrix(" + a + "," + b + "," + c + "," + d + "," + e + "," + f + ")";
+					oBox.style.filter = "progid:DXImageTransform.Microsoft.Matrix( M11= " + a + ", M12= " + c + ", M21= " + b + " , M22=" + d + ",SizingMethod='auto expand')";
+				};
+			};
+		</script>
+	</body>
+</html>

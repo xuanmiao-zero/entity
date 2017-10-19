@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="轩邈">
+    <meta name="copyright" content="轩邈">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <!-- 网站SEO -->
+    <title>Title</title>
+    <meta name="keywords" content="轩邈 xuanmiao xuanmiao.com">
+    <meta name="description" content="轩邈 | 猎奇蜗牛">
+    <!-- 标题栏logo图标 -->
+    <link rel="icon" href="" type="image/x-icon">
+    <!-- 收藏夹logo图标 -->
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <style>
+
+    </style>
+</head>
+<body>
+
+
+<script>
+
+
+    var arr = [1,2,3,4,8,2,2,1,5,10];
+    number = 10;
+    var result = arrIndexOf(arr,number);
+    function arrIndexOf(arr,number) {
+        for(var i = 0; i < arr.length; i++){
+            if(arr[i] === number){
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    var count = 100;
+    var j = 0;
+//    while( j < count ){
+//
+//        j++;
+//    }
+    //数组去重
+    function dupRemove(arr) {
+        for(var i = 0; i < arr.length; i ++){
+            for(var j = i + 1; j <arr.length; j ++){
+                if(arr[i] === arr[j]){
+//                    for(var k = j; j < arr.length; k ++){
+//                        if(k === arr.length - 1){
+//                            arr.pop();
+//                        }else{
+//                            arr[k] = arr[k + 1];
+//                        }
+//                    }
+                   console.log(j);
+                }
+            }
+        }
+        return arr;
+    }
+    arr = dupRemove(arr);
+    console.log(arr);
+
+</script>
+</body>
+</html>
