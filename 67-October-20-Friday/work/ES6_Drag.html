@@ -6,17 +6,89 @@
     <meta name="copyright" content="轩邈">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
     <!-- 网站SEO -->
-    <title>$Title$</title>
+    <title>Title</title>
     <meta name="keywords" content="轩邈 xuanmiao xuanmiao.com">
     <meta name="description" content="轩邈 | 猎奇蜗牛">
     <style>
-
+        #box1, #box2{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            text-align: center;
+            line-height: 100px;
+            color: #fff;
+            border-radius: 6px;
+        }
+        #box1{
+            background: red;
+        }
+        #box2{
+            background: skyblue;
+        }
     </style>
 </head>
 <body>
-$END$
-
+<div id="box1">1</div>
+<div id="box2">2</div>
 <script>
+    class Drag{
+        constructor(id){
+            this.box = document.getElementById(id);
+            this.disX =  0;
+            this.disY =  0;
+        }
+
+        init(){
+                this.box.addEventListener('mousedown',(ev) =>{
+                this.down(ev);
+            });
+        }
+
+        /*点下事件*/
+        down(ev){
+            this.disX = ev.clientX - this.box.offsetLeft;
+            this.disY = ev.clientX - this.box.offsetTop;
+
+            let move = ev => this.move(ev);
+            let up = ev => this.up(ev,move,up);
+
+            document.addEventListener("mousemove",move);
+            document.addEventListener("mouseup",up);
+
+        }
+
+        move(ev){
+            this.box.style.left = ev.clientX - this.disX + "px";
+            this.box.style.top = ev.clientY - this.disY + "px";
+        }
+
+        up(ev,move,up){
+            document.removeEventListener("mousemove",move);
+            document.removeEventListener("mouseup",up);
+        }
+    }
+
+    class Drag2 extends Drag{
+        constructor(id){
+            super(id);
+        }
+
+        move(ev){
+            let l,t;
+            l = ev.clientX - this.disX;
+            t = ev.clientY - this.disY;
+            if(l < 0) l = 0;
+            if(t < 0) t = 0;
+            this.box.style.left = l + "px";
+            this.box.style.top = t + "px";
+
+        }
+    }
+
+    let d = new Drag("box1");
+    d.init();
+    let d2 = new Drag("box2");
+    d2.init();
 
 </script>
 </body>
