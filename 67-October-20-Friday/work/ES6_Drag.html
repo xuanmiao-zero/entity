@@ -47,13 +47,14 @@
         /*点下事件*/
         down(ev){
             this.disX = ev.clientX - this.box.offsetLeft;
-            this.disY = ev.clientX - this.box.offsetTop;
+            this.disY = ev.clientY - this.box.offsetTop;
 
             let move = ev => this.move(ev);
             let up = ev => this.up(ev,move,up);
 
             document.addEventListener("mousemove",move);
             document.addEventListener("mouseup",up);
+            ev.preventDefault();
 
         }
 
@@ -79,16 +80,18 @@
             t = ev.clientY - this.disY;
             if(l < 0) l = 0;
             if(t < 0) t = 0;
+
             this.box.style.left = l + "px";
             this.box.style.top = t + "px";
-
         }
     }
 
+
     let d = new Drag("box1");
     d.init();
-    let d2 = new Drag("box2");
+    let d2 = new Drag2("box2");
     d2.init();
+
 
 </script>
 </body>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="轩邈">
+    <meta name="copyright" content="轩邈">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <!-- 网站SEO -->
+    <title>Title</title>
+    <meta name="keywords" content="轩邈 xuanmiao xuanmiao.com">
+    <meta name="description" content="轩邈 | 猎奇蜗牛">
+    <style>
+
+    </style>
+</head>
+<body>
+
+
+<script>
+    class Events{
+        constructor(){
+            this.zdy = this.zdy || {};
+        }
+        on(evName, fn){
+            this.zdy[evName] = this.zdy[evName] || [];
+            this.zdy[evName].push(fn);
+        }
+
+        trigger(evName, that){
+            that = that || window;
+            if(!this.zdy[evName])return;
+            this.zdy[evName].forEach((e)=> e.call(that))
+        }
+
+        off(evName,fnName){
+            this
+        }
+    }
+
+    const o = new Events;
+    o.on("上滚",fn);
+
+    function fn() {
+        addWheel(document,function (o) {
+            if(o){
+                alert()
+            }
+        })
+    }
+
+    function addWheel(obj,fn){
+        /*火狐*/
+        if(obj.onmousewheel === undefined){
+            obj.addEventListener("DOMMouseScroll",fn1);
+        }else{
+            /*其他浏览器*/
+            obj.addEventListener("mousewheel",fn1);
+        }
+        function fn1(ev) {
+            var o = true;
+            /*chrome*/
+            if(ev.wheelDelta){
+                o = ev.wheelDelta > 0 ? true : false;
+            }else{
+                o = ev.detail < 0 ? true : false;
+            }
+            fn(o);
+        }
+    }
+
+
+</script>
+</body>
+</html>

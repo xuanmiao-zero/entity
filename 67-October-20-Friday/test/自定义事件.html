@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="轩邈">
+    <meta name="copyright" content="轩邈">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <!-- 网站SEO -->
+    <title>Title</title>
+    <meta name="keywords" content="轩邈 xuanmiao xuanmiao.com">
+    <meta name="description" content="轩邈 | 猎奇蜗牛">
+    <style>
+
+    </style>
+</head>
+<body>
+
+
+<script>
+    /*/!*
+    * 订阅
+    * evNmae -->事件名
+    * *!/
+    function addEvent(obj, evName, fn){
+        obj._event = obj._event || {};
+
+        obj._event[evName] = obj._event[evName] || [];
+
+        obj._event[evName].push(fn);
+        console.log();
+
+    }
+
+    function trigger(obj, evName){
+        if(!obj._event[evName])return;
+        obj._event[evName].forEach((e)=>{
+            e.call(this);
+        });
+    }
+
+    document.timer= null;
+
+    document.onmousedown = function () {
+        let d = new Date;
+        document.timer = setInterval(function () {
+            let d2 = new Date();
+            if(Math.ceil(d2-d)/1000 >= 1){
+                trigger(document, "长按");
+                clearInterval(document.timer);
+            }
+        });
+
+        document.onmouseup = function () {
+            clearInterval(document.timer);
+        }
+    };
+
+    addEvent(document, "长按", function () {
+        alert("别按了");
+    });*/
+
+
+    /*
+    * 订阅
+    * */
+
+    function addEvent(obj, evName, fn){
+        obj.event = event||{};
+        obj.event[evName] = obj.event[evName] || [];
+        obj.event[evName].push(fn);
+    }
+
+    function trigger(obj, evName){
+        if(!obj.event[evName]) reurn;
+        obj.event[evName].forEach((e)=>{
+            e.call(this);
+        })
+    }
+
+    document.timer = null;
+
+    document.onmousedown = function () {
+        let d = new Date();
+        this.timer = setInterval(()=>{
+            let d2 = new Date();
+            if(Math.ceil(d2 - d)/1000 >= 1){
+                alert("别按了");
+                clearInterval(this.timer);
+            }
+        },1000);
+    };
+    document.onmouseup =() =>{
+        clearInterval(this.timer);
+    };
+</script>
+</body>
+</html>

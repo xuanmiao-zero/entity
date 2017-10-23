@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="轩邈">
+    <meta name="copyright" content="轩邈">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <!-- 网站SEO -->
+    <title>Title</title>
+    <meta name="keywords" content="轩邈 xuanmiao xuanmiao.com">
+    <meta name="description" content="轩邈 | 猎奇蜗牛">
+    <style>
+
+    </style>
+</head>
+<body>
+    原始类型对象指的是number、string、boolean等，合成类型对象指的是array、object以及function。
+<script>
+    function depthClone(obj){
+        let o = obj instanceof Array ? []: {};
+        for(let attr in obj){
+            o[attr] = typeof obj[attr] === Object ? depthClone(obj[attr]) : obj[attr];
+        }
+        return o;
+    }
+
+    let c = [{1:'a',2:'b',3:'c'},1,[2,[2,[3,5],[3,4],3],"kfjksjfks"]];
+    let b = depthClone(c);
+    console.log(b);
+</script>
+</body>
+</html>
